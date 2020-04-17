@@ -1,0 +1,238 @@
+body {
+		height:160%;		
+		}
+		
+#resumeContainer{
+		position:relative;
+		width:97%;
+		height:150%;
+		border-style:ridge;
+		border-color:grey;
+		border-width:20px 20px 20px 20px;
+		font-family:Comic Sans, Comic Sans MS, cursive;
+		}
+		
+h2{
+	color:red;
+}
+
+h1{
+	margin:0em 0em 1em 1em;
+}
+
+ul{
+	padding-left: 2em;
+}
+
+h3{
+	color:gray;
+}
+
+div.jobContainer h2:hover ~ .description, div.joblessContainer h2:hover ~ .description
+{
+	display:block;
+	font-size:1.5em;
+	color:blue;
+	background-color:linen;
+	width:180%;
+	
+}
+
+.description:hover{
+	display:block;
+	font-size:1.5em;
+	color:blue;
+	background-color:linen;
+    width:180%;	
+}
+
+
+
+div.joblessContainer:hover>span, div.jobContainer:hover>span 
+{
+	font-size:1.0em;
+	font-style:italic
+	
+}
+
+
+div#technicalSkillsContainer span 
+{
+	color:black
+	
+}
+
+div.employerAddress 
+{
+	margin-bottom:0.5em
+	
+}
+
+
+
+
+
+div#techSkills ol 
+{
+	position:relative;
+	margin:0em;
+	padding:0em
+	
+}
+div#techSkills ol li  
+{
+	position:relative;
+	margin-left:1em
+	
+}
+div#techSkills ol li:first-child 
+{
+	margin-left:0.65em
+	
+}
+
+
+#headBar
+	{
+	 
+	 border-style:ridge;
+	 border-color:grey;
+	 border-width:20px 20px 20px 20px;
+	
+	}
+
+
+#hmenuContainer li 
+{
+	border-top-color:#00CCFF;
+	
+}
+
+
+div.jobContainer, div.joblessContainer 
+{
+	position:relative;
+	height:auto;
+	width:50%;
+	margin:0em 0em 2em 2em;
+	
+}
+
+
+
+
+.description{
+	
+	position:relative;
+	height:auto;
+	width:100%;
+	margin-left:2em;
+	padding:0em;
+	display:none;
+	
+}
+
+
+.jobContainer span:nth-child(1) {color:red}
+
+
+#techSkillsTitle 
+{
+	color:red;
+	margin-left:2em;
+	
+}
+
+#heading 
+{
+	margin: 10px auto;
+	text-align:center;
+	font-size:1.35em
+	
+}
+#techSkillsTitle, #profExpTitle, #eduHistTitle>span  
+{
+	font-size:1.5em
+	
+}
+
+#profExpTitle, #eduHistTitle {margin-left:2em}
+
+li 
+{
+
+}
+ul li ul 
+{
+	margin-top:-0.75em
+	
+}
+
+#topbar {
+	position:relative;
+	width:100%;
+	height:5em;
+	font-size:1.1em;
+	color:red;
+	padding:1.5em 0;
+	background-color:lightgray;
+}
+#toplabel {
+	position:relative;
+	float:left;
+	text-align:center;
+	font-size:1.45em;
+	width:70%;
+	height:100%;
+	padding:0.5em;
+	margin-bottm:2em;
+	
+}
+#tcon
+{
+	position:relative;
+	width:100vw;
+	margin:0 auto;
+}
+
+#viewPDF{
+		position:relative;
+		height:auto;
+	    text-align:center;
+		width:10%;
+		border:ridge 4px black;
+		font-size:0.9em;
+		padding:0.5em;
+		border-radius:15px;
+		background:linear-gradient(beige,tan);
+}
+
+#viewPDF 
+{
+	float:left;
+	cursor:pointer;
+	margin-left:5%;
+}
+
+div#viewPDF:hover {
+	background:linear-gradient(white,lightgray);
+	 box-shadow: inset 0px 0px 5px 3px rgba(0,0,0,0.2);
+	}
+
+#emailAdd1, #emailAdd2  {
+	color:blue;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+#emailAdd1:hover, #emailAdd2:hover  
+{
+	color:red;
+}
+
+
+	 
+#hmenuContainer > button   ul  li 
+{
+	background-color:transparent;
+}

@@ -1,0 +1,232 @@
+		
+		#footContainer {
+						position:relative;
+						float:left;
+						height:18em;
+						width:97%;
+						padding-top:2em;
+						padding-bottom:1em;
+						border-top-width:20px;
+						border-bottom-width:25px;
+						border-right-width:20px;
+						border-left-width:20px;
+						border-style:solid;
+						border-color:#282828;
+						font-size:1.0em;
+						transition: height 0.5s;
+				        -webkit-transition: height 0.5s;  /* Safari */
+						
+						}
+			
+			#footOuter {
+				position:relative;
+				width:97%;
+				height:100%;
+				padding-left:2.5em
+				
+			}			
+	
+	
+	
+	      .footerMenu{
+	        position:relative;
+	        left:2em;
+	      }
+		   
+		
+	
+		  
+		   .fTitle{
+		   		position:relative;
+		   		float:left;
+		   		width:15%;
+		   		height:1em;
+		   		margin-left:8%;
+		        cursor:pointer;
+		        font-size:1.2em;
+		        z-index:200;
+		        opacity:1.0;
+		   }
+		   
+		 
+			#techManuals>span.ui-icon  {
+			        position:relative;
+					float:right;
+					left:0.5em;
+					top:-3em;
+					margin:0.25em 1.5em 0 0;
+					-webkit-transform: scale(2);
+					-moz-transform: scale(2);
+					transform: scale(2);
+				}	
+				
+				
+			#techManuals>span.ui-icon  {
+			      
+					top:0.1em;
+					
+				}			
+	/*		#technicalWritingWork span.ui-icon{
+					left:4.2em;
+				}	
+
+			#engineeringWork span.ui-icon{
+					left:2.9em;
+				}
+				
+			#contacts span.ui-icon{
+					left:2.9em;
+				}
+				
+			#techManuals span.ui-icon{
+			        zoom:180%;
+					top:0.12em;
+					left:9.4em;
+				}
+			*/
+		   
+	
+		
+			#softwareDevMenu, #techWritingMenu, #engineeringMenu, #contactMenu{
+				position:relative;
+				color:black;
+				float:left;
+				background-color:white;
+				left:6%;
+		  		height:0em;
+		  	    width:83%;
+				top:0.5em;
+				opacity:1.0;
+				z-index:250;
+				margin-top:0em;
+				transition: margin-top 0.5s;
+				-webkit-transition: margin-top 0.5s;  /* Safari */
+				transition: height 0.5s;
+				-webkit-transition: height 0.5s;  /* Safari */
+				
+				
+		   
+			}
+			
+	    #softwareDevWork:hover ~ #softwareDevMenu, #softwareDevMenu:hover{
+	    		display:block;
+			  	left:6%;
+			  	width:83%;
+		    	height:auto;
+		    	padding:0.5em;
+	    }
+	
+		
+	    #softwareDevWork:hover ~ #softwareDevMenu #sdmHeader,#softwareDevMenu:hover #sdmHeader{
+		  	display:block;
+		  	font-size:1.2em;
+		  } 
+		 
+	    
+		#softwareDevWork:hover ~ #softwareDevMenu .sdmItem, #softwareDevMenu:hover .sdmItem{
+		  	display:block;
+		  	font-size:1.1em;
+		  } 	
+			
+		 #technicalWritingWork:hover ~ #techWritingMenu, #techWritingMenu:hover{
+		  	display:block;
+		  	left:6%;
+		    height:auto;
+		  	width:83%;
+		  	padding:2em;
+		  } 
+	
+	
+	     #technicalWritingWork:hover ~ #techWritingMenu #twmHeader,#techWritingMenu:hover #twmHeader{
+		  	display:block;
+		  	font-size:1.2em;
+		  } 
+		 
+	
+	
+		 #technicalWritingWork:hover ~ #techWritingMenu .twmItem,#techWritingMenu:hover .twmItem{
+		  	display:block;
+		  	font-size:1.1em;
+		  } 		
+			
+			
+			
+			
+		 #engineeringWork:hover ~ #engineeringMenu, #engineeringMenu:hover{
+		  	display:block;
+		  	left:6%;
+		    height:auto;
+		  	width:83%;
+		  	padding:2em;
+		  } 
+	
+	
+	     #engineeringWork:hover ~ #engineeringMenu #engHeader,#engineeringMenu:hover #engHeader{
+		  	display:block;
+		  	font-size:1.2em;
+		  } 
+		 
+	
+	
+		 #engineeringWork:hover ~ #engineeringMenu .engItem,#engineeringMenu:hover .engItem{
+		  	display:block;
+		  	font-size:1.1em;
+		  } 		
+			
+		
+		
+		 #contacts:hover ~ #contactMenu, #contactMenu:hover{
+		  	display:block;
+		  	left:6%;
+		    height:auto;
+		  	width:83%;
+		  	padding:2em;
+		  } 
+	
+	
+	     #contacts:hover ~ #contactMenu #contactHeader,#contactMenu:hover #contactHeader{
+		  	display:block;
+		  	font-size:1.2em;
+		  } 
+		 
+	
+	
+		 #contacts:hover ~ #contactMenu .contactItem,#contactMenu:hover .contactItem{
+		  	display:block;
+		  	font-size:1.1em;
+		  } 		
+			
+			
+			
+			
+			.sdmItem, .twmItem, .engItem, .contactItem{
+				position:relative;
+				width:40%;
+				margin: 0.125em;
+				cursor:pointer;
+				font-size:0.0em;
+			    transition: font-size 1s;
+				-webkit-transition: font-size 1s;  /* Safari */
+			}
+			
+			#sdmHeader, #twmHeader, #engHeader, #contactHeader{
+				position:relative;
+				font-size:0.0em;
+				margin:0.125em;
+			    transition: font-size 1s;
+				-webkit-transition: font-size 1s;  /* Safari */
+			}
+			
+			.sdmItem:nth-child(even), .twmItem:nth-child(even), .engItem:nth-child(even), .contactItem:nth-child(even){
+				color:blue;
+				float:right;
+			}
+			
+			.sdmItem:nth-child(odd), .twmItem:nth-child(odd), .engItem:nth-child(odd), .contactItem:nth-child(odd){
+				color:blue;
+				float:left;
+			}
+			
+			.sdmItem:hover, .twmItem:hover, .engItem:hover, .contactItem:hover  {
+				background-color:orange;
+			}
