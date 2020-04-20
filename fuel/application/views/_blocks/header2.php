@@ -19,6 +19,10 @@
 		<meta name="description" content="<?php echo fuel_var('meta_description')?>">
 	
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+		<!-- Latest compiled and minified CSS -->
+		<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'  rel='stylesheet' type='text/css'>
+		<link href='https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css'  rel='stylesheet' type='text/css'>
+
 		<?php
 			//echo css('main').css($css);
 	
@@ -189,11 +193,11 @@
 		
 		<script type="text/javascript">
 		
-			$(document).ready(function()
-				{
+		//	$(document).ready(function()
+		//		{
 						 var title = "<?php echo $pageTitle; ?>";
 						 $(document).prop('title', title);
-				});
+			//	});
 				
 		</script>
 	

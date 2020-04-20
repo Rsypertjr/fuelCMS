@@ -1245,7 +1245,7 @@
 							<span class="glyphicon glyphicon-tree-conifer"></span>
 						</div>
 						<div class="panel-body">
-							
+						<!--
 							
 							<li class="list-group-item list-group-item-warning">
 								<img style="position:relative;width:20em" src="<?php echo $vars['viewslimtwig']; ?>" alt="Vue.JS/Slim3/Twig">
@@ -1265,6 +1265,7 @@
 								including conditional looping.
 								</p>
 							</li>
+							-->
 							<li class="list-group-item list-group-item-warning">
 								<img class="img-circle" src="<?php echo $vars['laravelMVC']; ?>" alt="Laravel MVC">
 								<a href="laravelApp1" target="_blank">

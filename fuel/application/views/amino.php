@@ -17,6 +17,7 @@ function mobileLoader(message)
 $(document).ready(function()
 	{
 	
+
 	$('.aButton2')
 	    .on('mouseover',function()
 			{
@@ -87,15 +88,20 @@ function valInput()
 {
 var inform = document.forms["filein"];
 var fnm = inform.elements["fname"].value;
+var input = fnm.toString();
+var n = fnm.includes("input");
+
 var rcvid = "wait";
 
 if(!fnm.match(/(\w|\d|(\Q-_\E))*\.txt/))
   {
   var inform = document.forms["filein"];
   inform.elements["fname"].value = "Please input a FASTA type file";
+  alert("Ops! You Forgot File Name or Its not a Text File (.txt)");
   }
 else
    {
+	
           var mess = "Please Wait while Database Tables are being Built!";
           makeRequest(fnm,rcvid,"no",mess);
 
@@ -224,7 +230,7 @@ var recid = "wait";
 				<div id="fileinput" >
 					<form id="filein">
 						<div id="filecapt">
-							<p style="margin-bottom:2em">Input the file name below&nbsp;&nbsp;(<i><b>FASTA-TEST.txt</b> is an example file that will work.&nbsp;&nbsp;However, the database takes several minutes to build since it has over a million table entries.</i>)&nbsp;&nbsp;If database or tables already exist you can <b>'Drop Database'</b> to restart.&nbsp;&nbsp;Another file can be used but it must be in the <b>FASTA format</b> and <b>.txt</b> extension.
+							<p style="margin-bottom:2em">Input the file name below&nbsp;&nbsp;(<i><b>FASTA-TEST.txt</b> is an example file that will work.&nbsp;&nbsp;However, the database takes several minutes to build since with 10's thousands of entries.</i>)&nbsp;&nbsp;If database or tables already exist you can <b>'Drop Database'</b> to restart.&nbsp;&nbsp;Another file can be used but it must be in the <b>FASTA format</b> and <b>.txt</b> extension.
 							</p>
 						    <input class="fsiz" type="text"  onclick="clearInput()" name="fname" value="Input File Name Here"/>
 							<div class="aButton2" type="button"  onclick="valInput()">Verify File and Start Database Build</div>

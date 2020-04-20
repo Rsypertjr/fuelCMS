@@ -75,36 +75,48 @@
 		<br/>Citizenship: United States
 		<br/><span id="emailAdd1">Email:  Rsypertjr@hotmail.com</span>
 		<br/><span id="emailAdd2">Email:  Rsypertjr@gmail.com</span>
+		<br/><a href="http://159.65.100.7/fuel2/index.php/front">Website Portfolio</a>
 	</p>
 	
    
 	
 	<h1>Professional Experience:</h1>
-	
+
 	<div class="jobContainer">
-		<h2>Technical Expertise (Through Job Experience and Study)</h2>
+		<h2>Townsquare Media/AnalyticOwl.................September 2018 to March 2020</h2>
 		<div class="description">
-				<ul>
-					<li>B.S. Mechanical Engineering from Kansas University, and B.S. degree Equivalent in Computer Science from 140 additional college credits at the University of Nevada Las Vegas and the College of Southern Nevada.</li>
-					<li>Technical Project Management including Research/Design, Procurement,and Implementation; Object Oriented Programming (OOP) in (C++, Visual C++.Net, Visual Basic.Net, Visual C#.Net, Visual Studio, Java, VBScript, JavaScript, DHTML, DOM, XML, XSLT, AJAX, CSS, JQUERY, ASP.Net, ADO.Net)  Much of this OOP knowledge gained thru self-study in addition to many credit hours of Computer Science study at UNLV and CSN</li> 
-					<li>I have used PHP, DHTML, XMLDOM, HTMLDOM, Javascript, SVG, XML, and MySQL for programming Web-based applications</li>
-					<li>PHPUnit for unit-testing of code</li>
-					<li>Behant/Mink for behavior-driven code development</li>
-					<li>SQL, Microsoft SQL, PL/SQL programming.</li>
-					<li>ArcView GIS;</li> 
-					<li>AutoCad;</li> 
-					<li>Several years of Technical Writing experience as a Process Engineer (8 years) who led technical projects where I wrote Design, Purchase, and Operational specification documents.  I have also had two technical writing jobs, and I have done technical writing in other engineering and software jobs.</li>
-					<li>Microsoft Operating Systems (XP, Vista, 7);</li> 
-					<li>Ubuntu Linux, LAMP environment programming</li>
-					<li>Computer Networking Principles;</li> 
-					<li>Microsoft Word 2003, 2007, and 2010;</li> 
-					<li>Adobe InDesign</li>
-					<li>Graphic image editing and format conversions</li>
-					<li>Here is a link to some of my work:&nbsp;<a href='https://www.asuswebstorage.com/navigate/s/F15EBE072F6D4C63BB26399C941696384'>Work Archive</a></li>
-				</ul>
+			<h3>Web Developer</h3>
+			<h3>Townsquare Media/AnalyticOwl - Purchase, NY</h3>
+			<h2>I was laid off due to the Covid-19 corona virus and invited to return when things got better. My duties
+				included: </h2>
+			<ul>
+				<li>Ubuntu 18.04 and 19.10 for Linux operating system</li>
+				<li>Vue.js Javascript for front-end development of dashboards also comFreelanceprising Semantic UI
+					components for tables and modals. </li>
+				<li>Slim micro framework for PHP which incorporates routing, concentric middleware around request
+					and response objects, and dependency container object to inject external tools, and also PSR-7 HTTP
+					support</li>
+				<li>Backend PHP and node.js for processing data.</li>
+				<li>Node.js to transform non-uniform excel files into uniform csv files</li>
+				<li>PHPUnit testing of PHP classes and methods.</li>
+				<li>Twig HTML Templating</li>
+				<li>Performed a technical writing function in converting website pages into a linked Google Document.</li>
+				<li>Regularly communicated with colleagues using Slack, Google Email and Hangouts</li> 
+			</ul>
+			<h2>My work environment included:</h2>
+			<ul>
+				<li>Visual Studio Code</li>
+				<li>Git</li>
+				<li>Tilix for command line Linux</li>
+				<li>Php Xdebug extension to VSCode</li>
+				<li>Chrome Dev Tools for Javascript debugging</li>
+				<li>Vue devtools chrome extension</li>
+				<li>command line Postgresql for database</li>
+				<li>pgAdmin3 and 4 for managing databases</li>
+				<li>NPM, Composer, and Gulp for package managing</li> 
+			</ul> 
 		</div>
 	</div>
-	
 
 	
 	

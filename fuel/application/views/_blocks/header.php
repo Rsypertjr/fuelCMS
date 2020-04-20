@@ -19,6 +19,16 @@
 		<meta name="description" content="<?php echo fuel_var('meta_description')?>">
 	
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+		<!-- Latest compiled and minified CSS -->
+		<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'  rel='stylesheet' type='text/css'>
+		<link href='https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css'  rel='stylesheet' type='text/css'>
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+		
 		<?php
 			//echo css('main').css($css);
 	

@@ -1,43 +1,42 @@
 <?php
-function assocArray($m,&$resarr, $c/*for comments*/,$ss/*strip spaces*/,$prev)  
+function assocArray($m,&$resarr, $c/*for comments*/,$ss/*strip spaces*/,$prev)  // Recursive
 {
         global $turns;
         $index=0;
        	foreach ($m as $key=>$value)
-		  {
-			  if(!is_array($value))
-				   {
-					 if($c) echo $key.'=>'.$value.'<br />';
-						$resarr[$turns-$prev][$key]=$value;
+          {
+            if(!is_array($value))
+              {
+              if($c) echo $key.'=>'.$value.'<br />';
+                $resarr[$turns-$prev][$key]=$value;
 
-					 if($ss&&$key==0) 
-						$value = str_replace(" ", "", $value);
-					
-					 if($index==1) 
-						$index=0;
-					 else
-						$index++;
-						  
-				   }
-			  else
-				   {
-						if(is_array($value))
-						  {
-						 if($c) echo "Value #: ".$turns.'<br />';
-						   assocArray($value,$resarr,$c,$tr,$prev);
-						   $turns++;
-						  }
-						else 
-						  break;
-								 
-				   }
-		 }
-        
+              if($ss&&$key==0) 
+                $value = str_replace(" ", "", $value);
+              
+              if($index==1) 
+                $index=0;
+              else
+                $index++;
+                  
+              }
+            else
+              {
+                if(is_array($value))
+                  {
+                if($c) echo "Value #: ".$turns.'<br />';
+                  assocArray($value,$resarr,$c,$tr,$prev);
+                  $turns++;
+                  }
+                else 
+                  break;
+                    
+              }
+        }        
         return $turns;
 }
 
 
-function findMotifs($conn,$seq,$first,$last,$patt,$acc,$sName,$sLength)
+function findMotifs($dbhandle,$seq,$first,$last,$patt,$acc,$sName,$sLength)
 {
 
 $soSeq = strlen((string)$seq);
@@ -61,47 +60,39 @@ for($i=0;$i<$soSeq;$i++)
                 //$retPos[]=$i;
                 $sql = "INSERT INTO miniMotif (motifPattern,actualMotif,accessionNumber,speciesName,proteinLength,motifLength,startPosition,endPosition) values('$patt','$ss','$acc','$sName','$sLength','$sl','$st','$end')";
                 //execute SQL
-                $result = executeSQL($sql,$conn,$mess);
-               // if(!$result)
-                //     die($mess);
-				$i = $j;
-				$j = $j + $soSeq;
+                //$result = executeSQL($sql,$conn,$mess);
+                mysqli_query($dbhandle,$sql);
+                
+                $i = $j;
+                $j = $j + $soSeq;
                }
        }
    }
 
 }
 
-function connectTomysqli($server,$user,$pssword,&$message)
+
+function proteinDatabaseCreate($sql,$dbhandle)
 {
-   $isConnected ="Connection Made";
-   if($conn = mysqli_connect($server,$user,$pssword))
-     {
-       $message = $isConnected;
-       return $conn;
-     }
-
-   else
-    {
-    $message ='Could not connect: ' . mysqli_error();
-    return NULL;
-    }
-}
-
-function proteinDatabaseCreate($sql,$conn,&$message)
-{
-  $databaseCreated ="Database created";
-  if ($result=mysqli_query($sql,$conn))
-  {
-	  $message = $databaseCreated;
-	  return $result;
+  
+  //echo($sql."\n");
+   
+  mysqli_query($dbhandle,$sql);
+  if (mysqli_error()) {
+    echo "Error message: ". mysqli_error();
+    echo "<br>";
+    //exit();
+    return false;
   }
-  else
+ else if(!mysqli_error())
   {
-	  $message = "<br/>Error creating database: " . mysqli_error();
-	  return NULL;
+    echo "Database being created";
+    echo "<br>";
+    //exit();
+    return true;
   }
-
+  
+ 
 }
 
 function executeSQL($sql,$conn,&$message)
@@ -145,6 +136,7 @@ $pattern = '/gi\|[0-9]+\|ref/';
 
 
 echo "Unless you see any errors, the tables are ready!";
+echo "<br>";
 preg_match_all($pattern, $fileString, $matches, PREG_OFFSET_CAPTURE);
 
 $trns = assocArray($matches,$gi_number,0,0,0);
@@ -180,84 +172,79 @@ $num_Names=$trns5-$trns4;
 
 //Create Proteins Database
 
-$conn=connectTomysqli("localhost","rlswor5_richard","syp3rt",$mess);  //connect to mysqli
+$dbhandle = mysqli_connect("localhost","rlswor5_richard","syp3rt");
 
-if(!$conn)
-  die($mess);
-
-
-
-$dbName="rlswor5_proteins";                          //create Protein Database
-$createDb = "CREATE DATABASE ";
-$sql= $createDb.$dbName;
-
-$result = proteinDatabaseCreate($sql,$conn,$mess);
-
-if(!$result) 
-  {
-  if(stripos($mess,"database exists"))
-        mysqli_select_db($dbName);
-  else
-        die($mess);
-  }
-else
-       mysqli_select_db($dbName);
-
-
-$sql = "CREATE TABLE protein (id int not null primary key auto_increment, locus varchar(75),speciesNumber varchar(75),speciesName varchar(75), accessionNumber varchar(75), proteinSequence varchar(2000), proteinLength int)";
-
-//execute SQL
-$esql = executeSQL($sql,$conn,$mess);
-if(!$esql)
-    //if(!stripos($mess,"already exists"))
-      die($mess);
-else
-{
-             
-               
-		for($i=0;$i<$num_Seqs;$i++)  // clean up strings and fill protein database
-		{
-		   $locus[$i][0]= substr($locus[$i][0],1,strlen($locus[$i][0])-2);  // locus strings
-		   $lc = $locus[$i][0];
-		   //echo '<br/>'.$lc;
-
-		   $gi_number[$i][0]= substr($gi_number[$i][0],3,strlen($gi_number[$i][0])-7);  //  gi-number or species-number
-		   $gi = $gi_number[$i][0];
-		   //echo '<br/>'.$gi;
-
-		   $accession_num[$i][0]= substr($accession_num[$i][0],4,strlen($accession_num[$i][0])-5);  //  accession numbers
-		   $acc = $accession_num[$i][0];
-		   //echo '<br/>'.$acc;
-
-		   $seqnc[$i][0]= substr($seqnc[$i][0],4,strlen($seqnc[$i][0]));  //  sequences
-		   $sq =  $seqnc[$i][0];
-		   //echo '<br/>'.$sq;
-
-		   $spcNm = $spcName[$i][0];      // species Names
-
-		   $seqLength[$i] = strlen($sq);
-		   //echo '<br/> Length of String:  '.$locus_length[$i];
-
-		   // build sql insert statement'
-
-		//execute SQL
-			   
-			   $sql = "INSERT INTO protein values('$i', '$lc', '$gi','$spcNm', '$acc', '$sq','$seqLength[$i]' )";
-			   $esql = executeSQL($sql,$conn,$mess);
-                           
-		} 
+if(mysqli_connect_errno()){
+  echo "Failed to connect to MySQL: ".mysqli_connect_error(). "\n";
+  echo "<br>";
   
-       
 }
+else{
+    echo "Connection to MySQL Made\n";
+    echo "<br>";
+    echo "Now Checking Database!\n";
+    echo "<br>";
 
-buildMinimotifDatabase($conn);
+    $create_db = true;
+    if(!mysqli_select_db($dbhandle,"rlswor5_proteins")){
+      echo "Database needs to be Created!";
+      echo "<br>";
+      $dbName="rlswor5_proteins";                          //create Protein Database
+      $createDb = "CREATE DATABASE ";
+      $sql= $createDb.$dbName;
+      //exit();
+      $create_db = proteinDatabaseCreate($sql,$dbhandle);
+      mysqli_select_db($dbhandle,"rlswor5_proteins");
+    }
+    else{
+      echo "Proteins Database already Exists!";
+      echo "<br>";
+      $create_db = false;
+      return true;
+    }
+  }
 
-}  // End of buildProteinDb function
+  if($create_db){
 
-function buildMinimotifDatabase($conn)
+      $sql = "CREATE TABLE protein (id int not null primary key auto_increment, locus varchar(75),speciesNumber varchar(75),speciesName varchar(75), accessionNumber varchar(75), proteinSequence varchar(2000), proteinLength int)";
+      mysqli_query($dbhandle,$sql);
+      
+      for($i=0;$i<$num_Seqs;$i++)  // clean up strings and fill protein database
+        {
+          $locus[$i][0]= substr($locus[$i][0],1,strlen($locus[$i][0])-2);  // locus strings
+          $lc = $locus[$i][0];
+          //echo '<br/>'.$lc;
+
+          $gi_number[$i][0]= substr($gi_number[$i][0],3,strlen($gi_number[$i][0])-7);  //  gi-number or species-number
+          $gi = $gi_number[$i][0];
+          //echo '<br/>'.$gi;
+
+          $accession_num[$i][0]= substr($accession_num[$i][0],4,strlen($accession_num[$i][0])-5);  //  accession numbers
+          $acc = $accession_num[$i][0];
+          //echo '<br/>'.$acc;
+
+          $seqnc[$i][0]= substr($seqnc[$i][0],4,strlen($seqnc[$i][0]));  //  sequences
+          $sq =  $seqnc[$i][0];
+          //echo '<br/>'.$sq;
+
+          $spcNm = $spcName[$i][0];      // species Names
+
+          $seqLength[$i] = strlen($sq);
+          //echo '<br/> Length of String:  '.$locus_length[$i];
+            
+          $sql = "INSERT INTO protein values('$i', '$lc', '$gi','$spcNm', '$acc', '$sq','$seqLength[$i]' )";   
+          $result = mysqli_query($dbhandle,$sql);                              
+        } 
+      buildMinimotifDatabase($dbhandle);
+    }
+    
+
+}     // End of buildProteinDb function
+
+function buildMinimotifDatabase($dbhandle)
 {
        
-        $num_rows=0;
+  $num_rows=0;
 	$amino_code = array();
 	$amino_code[]= 'G';
 	$amino_code[]='P';
@@ -284,71 +271,52 @@ function buildMinimotifDatabase($conn)
    
    
    $sql = "CREATE TABLE miniMotif (id int not null primary key auto_increment,motifPattern varchar(75),actualMotif varchar(1500),accessionNumber varchar(75),speciesName varchar(75), proteinLength int, motifLength int, startPosition int, endPosition int )";
-
-    // execute SQL
-    $esql = executeSQL($sql,$conn,$mess);
-    if(!$esql)
-       //if(!stripos($mess,"already exists"))
-          die($mess);
-    else
-      {
-       // Building MiniMotifs
-             
-             $sql = "SELECT * FROM protein";
-
-	     $result = mysqli_query($sql, $conn);  // check for already existing miniMotif table
-             //$num_rows = mysqli_num_rows($result);
-	     while($newArray = mysqli_fetch_array($result)) // One Protein per Loop
-		      {
-			  $seq = $newArray[proteinSequence];
-			  $acc = $newArray[accessionNumber];
-			  $spName = $newArray[speciesName];
-			  $sqName = $newArray[seqName];
-			  $sqLength = $newArray[proteinLength];
-
-			  //echo "The seq is: ".$seq;
-			  $so = sizeof($amino_code);
-                          for($k=0;$k<$so;$k++)
-			     {
-			      for($j=0;$j<$so;$j++)
-				  {
-				  $pattrn = $amino_code[$k]."XX".$amino_code[$j];
-				  //echo "miniMotif Pattern: ".$pattrn."<br/>";
-				  
-				  findMotifs($conn,$seq,$amino_code[$k],$amino_code[$j],$pattrn,$acc,$spName,$sqLength);
-				 
-				  }
-				  
-				
-			       
-			     }  // end for
-			 
-		     }//End While
    
-			
-     }//end else
-        
+    // execute SQL
+    mysqli_query($dbhandle, $sql);
+  
+       // Building MiniMotifs             
+       $sql = "SELECT * FROM protein";
+       $result = mysqli_query($dbhandle,$sql);  // check for already existing miniMotif table
+     
+	     while($newArray = mysqli_fetch_array($result, MYSQLI_ASSOC)) // One Protein per Loop
+		      {
+            
+            $seq = $newArray[proteinSequence];
+            $acc = $newArray[accessionNumber];
+            $spName = $newArray[speciesName];
+            $sqName = $newArray[seqName];
+            $sqLength = $newArray[proteinLength];
+
+            //echo "The seq is: ".$seq;
+            $so = sizeof($amino_code);
+            for($k=0;$k<$so;$k++)
+              {
+                for($j=0;$j<$so;$j++)
+                  {
+                  $pattrn = $amino_code[$k]."XX".$amino_code[$j];
+                  //echo "miniMotif Pattern: ".$pattrn."<br/>";              
+                  findMotifs($dbhandle,$seq,$amino_code[$k],$amino_code[$j],$pattrn,$acc,$spName,$sqLength);            
+                  }
+              }  // end for
+          
+          }//End While       
   
 }  // end of buildMinimotifDatabase
 
 
-function query3($conn,&$cntarr,$mopat)
+function query3($dbhandle,&$cntarr,$mopat)
 {
 // Begin calculation of count of motifs for all accession numbers, subst. for query 3 below query 0 is the first
-  $sql = 'SELECT DISTINCT accessionNumber FROM miniMotif WHERE motifPattern = "'.$mopat.'" ORDER BY accessionNumber';
-  $esql = executeSQL($sql,$conn,$mess);
-  $sarr = array();
+  $sql = 'SELECT DISTINCT accessionNumber FROM miniMotif WHERE motifPattern = "'.$mopat.'" ORDER BY accessionNumber'; 
+  $sarr = array();  
   //$cntarr = array();
   //echo $mopat;
-  if(!esql)
-    die($mess);
-  else
-    {
-     while($newArray = mysqli_fetch_array($esql))
-       { 
-       $sarr[]=$newArray[accessionNumber];
-      
-        }
+  
+  while($newArray = mysqli_fetch_array($result))
+    { 
+    $sarr[]=$newArray[accessionNumber];
+  
     }
     //echo "acc nos: ".sizeof($sarr);   
      //print_r($sarr);
@@ -358,41 +326,47 @@ function query3($conn,&$cntarr,$mopat)
    {
     //echo $sarr[$w];
      $sql = 'SELECT COUNT(p.actualMotif) FROM (SELECT actualMotif, accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$mopat.'" AND accessionNumber = "'.$sarr[$w].'")p';
-     //echo $sql.'<br/>';
-     $esql = executeSQL($sql,$conn,$mess);
-	  if(!esql)
-	    die($mess);
+     
+	  if(!$result = mysqli_query($dbhandle,$sql))
+	    die("Error getting count of Motifs: ".mysqli_error());
 	  else
-             {
-              
-              while($newArray = mysqli_fetch_array($esql))
-	       { 
-               
-	       //print_r($newArray);
-               $cntarr[] = $newArray[0];
-		}
-             
-             }
- 
+      {              
+      while($newArray = mysqli_fetch_array($result))
+        {                       
+          //print_r($newArray);
+          $cntarr[] = $newArray[0];
+        }             
+      } 
    }
-
-    //print_r($cntarr);  //End of motif count for all accession numbers
-
- 
+    //print_r($cntarr);  //End of motif count for all accession numbers 
 }
+
+
+
+// END OF FUNCTION SECTION
+
+
+
+
+// API SECTION *********************************************************
+
 if(isset($_GET["dropDb"]))
   {
 	if($_GET["dropDb"] == "yes")
 		{
-		    $mess='';
-		    $conn=connectTomysqli("localhost","rlswor5_richard","syp3rt",$mess);  //connect to mysqli
-			$sql = 'DROP DATABASE rlswor5_proteins';
-			if (mysqli_query($sql, $conn)) {
-				echo "Database rlswor5_proteins was successfully dropped\n";
-			} 
-			else {
-				echo 'Error dropping database: ' . mysqli_error() . "\n";
-			}
+		    
+		    $dbhandle = mysqli_connect("localhost","rlswor5_richard","syp3rt");  //connect to mysqli
+        $sql = 'DROP DATABASE rlswor5_proteins';
+        mysqli_query($dbhandle,$sql);
+        if (!mysqli_error()) {
+          echo "Database rlswor5_proteins was successfully dropped";
+          echo "<br>";
+        } 
+        else if(mysqli_error()) {
+          echo 'Error dropping database: ' . mysqli_error();
+          echo "<br>";
+          
+        }
 		}
   }
 
@@ -402,7 +376,10 @@ if(isset($_GET["file"]) && !isset($_GET["motif"]))
 	  {
         $file = $_GET["file"];
         //$file = "FASTA-TEST.txt";
-	    $fileString = file_get_contents($file);
+        $path = dirname(__FILE__). '/'.$file;
+        //echo $path;
+        $fileString = file_get_contents($path);
+        //echo $fileString;
         buildProteinDb($fileString);   // call function to Build Protein Database
       }  
         
@@ -419,105 +396,106 @@ if(isset($_GET["motif"]))
   //echo "gets question: ".$mo[2]."<br/>";
   //echo "motif pattern: ".$moPatt."<br/>";
 
-  $conn=connectTomysqli("localhost","rlswor5_richard","syp3rt",$mess);  //connect to mysqli
-  
-  $conn->select_db('rlswor5_proteins');
-
- 
-
-  $qstr = array();
-  $qstr[] = 'SELECT DISTINCT accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber';
-  $qstr[] = 'SELECT actualMotif, motifPattern, accessionNumber,motifLength FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber, motifLength';
-  $qstr[] = 'SELECT DISTINCT startPosition, motifPattern, accessionNumber FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber, startPosition';
-  $qstr[] = 'SELECT  DISTINCT accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber';
-  $qstr[] = 'SELECT DISTINCT speciesName, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY speciesName';
-  $qstr[] = 'SELECT AVG(DISTINCT p.proteinLength), motifPattern FROM (SELECT DISTINCT actualMotif,motifPattern, accessionNumber, proteinLength  FROM miniMotif WHERE motifPattern = "'.$moPatt.'")p';
-  //echo "check query: ".$qstr[5];
-  $qu = array(array('accessionNumber','motifPattern','',''),
-               array('actualMotif','motifPattern','accessionNumber','motifLength'),
-               array('startPosition','motifPattern','accessionNumber',''),
-               array('accessionNumber','motifPattern','',''),
-               array('speciesName','motifPattern','',''),
-               array('AVG(DISTINCT p.proteinLength)','motifPattern','',''));
-
-  $qu1 = array(array('Accession Number','Motif Pattern','',''),
-               array('Actual Motif','Motif Pattern','Accession Number','Motif Length'),
-               array('Start Position','Motif Pattern','Accession Number',''),
-               array('Accession Number','Number of '.$moPatt.' motifs<br/>Per Protein (accession Number)','',''),
-               array('Species Name','Motif Pattern','',''),
-               array('AVG Protein Length','Motif Patterns','',''));
-
-
-   
-
-
-
-  
-
-  
-
-
- 
-  
-  
-  $in = $mo[2];   // question number 
-  $sql= $qstr[$in];
-  //echo $qu[$in][1];
-  $esql = executeSQL($sql,$conn,$mess);
-  //echo $mess;
-
-  if(!esql)
-    die($mess);
-  else
-    {
-
-   $tp = 0;
-   if($in == 1)
-     $tp = 4;
-   else if ($in ==2 || $in == 0 )
-     $tp = 3;
-  //else if ($in == 5)
-   //  $tp = 1;
-   else
-     $tp = 2;
-
-
-  if($in==3) 
-     {
-      $cntarry = array();
-      query3($conn,$cntarry,$moPatt);
-     }
-     //echo "check: ".$tp;
-     echo "<div style='position:relative;height:auto;width:800px'><table border ='1'>";
+  $dbhandle = mysqli_connect("localhost","rlswor5_richard","syp3rt");  //connect to mysqli
+  if(mysqli_connect_errno()){
+    echo "Failed to connect to MySQL: ".mysqli_connect_error(). "\n";
+    echo "<br>";
     
-	   echo"<tr>";
-	     for($x=0;$x<$tp;$x++)
-	       echo "<th>".$qu1[$in][$x]."</th>";
-	   echo "</tr>";
-     $count  = 0;
-	
-     while($newArray = mysqli_fetch_array($esql))
-       { 
-         //print_r($newArray);
-         echo "<tr>";
-         for($z=0;$z<$tp;$z++)
-           {
-              if($in == 3 && $z==1)  // substitute for query3 for motif counts per protein
-                echo "<td>".$cntarry[$count]."</td>";
-              else
-                echo "<td>".$newArray[$qu[$in][$z]]."</td>";
-           }
-          echo "</tr>";
-       $count++;   
-       }
-      echo "</table></div>";
+  }
+      else{
+      mysqli_select_db($dbhandle,'rlswor5_proteins');
+
+    
+
+      $qstr = array();
+      $qstr[] = 'SELECT DISTINCT accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber';
+      $qstr[] = 'SELECT actualMotif, motifPattern, accessionNumber,motifLength FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber, motifLength';
+      $qstr[] = 'SELECT DISTINCT startPosition, motifPattern, accessionNumber FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber, startPosition';
+      $qstr[] = 'SELECT  DISTINCT accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber';
+      $qstr[] = 'SELECT DISTINCT speciesName, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY speciesName';
+      $qstr[] = 'SELECT AVG(DISTINCT p.proteinLength), motifPattern FROM (SELECT DISTINCT actualMotif,motifPattern, accessionNumber, proteinLength  FROM miniMotif WHERE motifPattern = "'.$moPatt.'")p';
+      //echo "check query: ".$qstr[5];
+      $qu = array(array('accessionNumber','motifPattern','',''),
+                  array('actualMotif','motifPattern','accessionNumber','motifLength'),
+                  array('startPosition','motifPattern','accessionNumber',''),
+                  array('accessionNumber','motifPattern','',''),
+                  array('speciesName','motifPattern','',''),
+                  array('AVG(DISTINCT p.proteinLength)','motifPattern','',''));
+
+      $qu1 = array(array('Accession Number','Motif Pattern','',''),
+                  array('Actual Motif','Motif Pattern','Accession Number','Motif Length'),
+                  array('Start Position','Motif Pattern','Accession Number',''),
+                  array('Accession Number','Number of '.$moPatt.' motifs<br/>Per Protein (accession Number)','',''),
+                  array('Species Name','Motif Pattern','',''),
+                  array('AVG Protein Length','Motif Patterns','',''));
+
+
       
 
-    } 
-
-   //print $tbstr;  
 
 
+      
+
+      
+
+
+    
+      
+      
+      $in = $mo[2];   // question number 
+      $sql= $qstr[$in];
+      if(!$result = mysqli_query($dbhandle,$sql))
+        die("Error selecting Motif: ". mysqli_error());
+      else
+        {
+          
+          $tp = 0;
+          if($in == 1)
+            $tp = 4;
+          else if ($in ==2 || $in == 0 )
+            $tp = 3;
+          //else if ($in == 5)
+          //  $tp = 1;
+          else
+            $tp = 2;
+
+          if($in==3) 
+            {
+              $cntarry = array();
+              query3($dbhandle,$cntarry,$moPatt);
+            }
+            //echo "check: ".$tp;
+            echo "<div style='postion:relative;height:30em;width:90%;zoom:50%;font-size:auto'><table cellpadding='0' cellspacing='0' border='0'  class='table table-striped table-bordered' style='width:100%'>";
+            
+            echo"<thead><tr>";
+              for($x=0;$x<$tp;$x++)
+                echo "<th class='th-sm'>".$qu1[$in][$x]."</th>";
+            echo "</tr></thead><tbody>";
+            $count  = 0;
+          
+            while($newArray = mysqli_fetch_array($result))
+              { 
+                //print_r($newArray);
+                echo "<tr>";
+                for($z=0;$z<$tp;$z++)
+                  {
+                      if($in == 3 && $z==1)  // substitute for query3 for motif counts per protein
+                        echo "<td>".$cntarry[$count]."</td>";
+                      else
+                        echo "<td>".$newArray[$qu[$in][$z]]."</td>";
+                  }
+                  echo "</tr>";
+              $count++;   
+              }
+              echo "</tbody></table></div>";
+              
+
+            } 
+
+          //print $tbstr;  
+
+
+      }
   }
 
 

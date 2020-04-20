@@ -94,11 +94,5 @@ position:absolute;left:6%;float:left;width:92%;height:70%;margin-left:9%;margin-
 {
      border: dashed 1px blue; font-size:40%;height:auto;width:80%;margin:1% 1% 1% 10%;padding:1px;text-align:center;
 }
-    
-#subbutton  {margin: 1% 20% 1% 37%}    
-
-#playbutton  {margin: 5% 20% 1% 35%}     
-
-#nextbutton {margin: 2% 20% 1% 32%}
 
 #botcontainer {height:auto;margin-bottom:0.5%}

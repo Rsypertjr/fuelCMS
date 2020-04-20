@@ -141,15 +141,14 @@ class Resume extends CI_Controller {
   
     
     
-    function pdfResume($hf='yes'){
-        
-        $this->vars['headAndFoot'] = 'yes';
-         if($hf=='no')
-              $this->vars['headAndFoot'] = 'no';
-        
-        $this->vars['pdfFilePath'] = pdf_path('RichardSypertJrResumePDF.pdf');
-        $this->vars['pdfFileName'] = 'Resume for Richard L. Sypert';
-        $this->fuel->pages->render('showPDF/showAPDFDoc',$this->vars);
+    function pdfResume(){
+     
+        $vars['pdfFilePath'] = pdf_path('RichardSypertJrResumePDF.pdf');
+        $vars['pdfFileName'] = 'Resume for Richard L. Sypert';
+        $vars['pageTitle'] = 'Resume for Richard L. Sypert';
+        $this->load->view('showPDF/showAPDFDoc',$vars);
+
+
     }
     
  

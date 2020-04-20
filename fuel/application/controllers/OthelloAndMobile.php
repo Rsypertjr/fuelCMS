@@ -30,9 +30,7 @@ class OthelloAndMobile extends CI_Controller {
 			  // $this->data['indexTwo'] =  css_path('index2');
             $this->data['indexTwo'] =  'index2';
 			$this->data['homePage'] = '';
-			//$this->data['prodSite'] = C9_PRODUCTION_css_path_SSL;
-			//$this->data['devSite'] = C9_DEVELOPMENT_css_path_SSL;
-			//$this->data['prodSite'] = css_path('../ci');
+			
 			$this->data['newOrominerXML'] = css_path('xml/oro_xml4.xml');
 			$this->data['orominerHistoXML'] = css_path('xml/oro_xml.xml');
 			
@@ -310,7 +308,7 @@ class OthelloAndMobile extends CI_Controller {
 			/********************************  End Of MOBILE APP HEADER Variables   *********************/
             
             $vars['headAndFoot'] = 'yes';
-		   
+            $this->othello_data['headAndFoot'] = 'yes';
 		  
 					
     }
@@ -319,12 +317,8 @@ class OthelloAndMobile extends CI_Controller {
     
     
 function index($app='desktop')
-{
-		
-						$this->data['whichPage'] = "front";
-					
-					
-
+{		
+	$this->data['whichPage'] = "front";
 	
 }
 
@@ -338,16 +332,14 @@ function mobile(){
 			
 				$this->load->view('mobile/mobileHeader.php', $this->vars);
 				$this->load->view('mobile/frontPageMobile.php',$this->vars);
-				$this->load->view('mobile/mobileFooter.php');
-				
+				$this->load->view('mobile/mobileFooter.php');				
 }
 
 
 
 function othello(){
     
-     $this->vars['pageTitle'] = "Othello Game"; 
-         
+     $this->vars['pageTitle'] = "Othello Game";          
          
      // Save Initialized Board to File
 	 $this->saveBoard();
@@ -481,7 +473,6 @@ private function index2($mobileitem = null, $applicType = null)
                               // Send to header to load correct CSS files
 							  $this->data['whichPage'] = "othello";
 							  //Load header, Page, and Footer
-							   //$this->load->view('game/othelloGame',$this->data);  //for Ajax mode only update board
 								$this->load->view('othello/othello',$this->othello_data);
 								$this->load->view('othello/myinitboard');
 								$this->load->view('othello/footer'); 
@@ -500,9 +491,7 @@ private function index2($mobileitem = null, $applicType = null)
             else if($this->input->post('submit') == 'Submit This Move')
                       {    
 							$this->playermove($x,$y,$this->input->post('hid') );
-                      }      
-          
-      
+                      }         
         
         }
     
@@ -546,7 +535,7 @@ private function index2($mobileitem = null, $applicType = null)
                     foreach($cells as $cell)
                           {
                             $cellArray[$j][$i-1] = $cell->nodeValue;          //Flip Board Indices between players
-                                                                                                     // Because computer player algorithm is nested loop          
+                                                                             // Because computer player algorithm is nested loop          
                             
                            $j++;
                         }                  
@@ -649,11 +638,6 @@ private function index2($mobileitem = null, $applicType = null)
 					   // Only Process first Move Option, and no comparison of other possible movies													
 						return;
 	                 }
-					
-					
-					
-					
-					
 								
                   } // end of foreach
                 }
@@ -763,12 +747,10 @@ private function index2($mobileitem = null, $applicType = null)
 	        		$noPlayerMoves = true;
 	           
 	           if($noComputerMoves || $noPlayerMoves)  //Stop Game when No Computer Moves Left
-	                {
-	                    
+	                {	                    
 	                    //print_r($this->othello_data["twoDimBoard"]);
 	                    $this->saveBoard();
-	                    $this->gameOver($noComputerMoves,$noPlayerMoves);
-	                  
+	                    $this->gameOver($noComputerMoves,$noPlayerMoves);	                  
 	                }
             
           
@@ -930,7 +912,7 @@ public function getPossibleMoves($emptySpaces,$symbol,$twDimBoard)
                 $y = $emptySpaces[$i][1];
                 $flipSpaces= $this->verifyMove($x,$y,$symbol,$twDimBoard); 
                 //print_r(count($flipSpaces));
-               if(count($flipSpaces) > 1 )
+               if(is_array($flipSpaces) && count($flipSpaces) > 1 )
                     {  
                         $goodMoves[$cnt][0]=$x;
                         $goodMoves[$cnt][1]=$y;
