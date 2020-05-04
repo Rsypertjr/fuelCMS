@@ -19,9 +19,15 @@
 		<meta name="description" content="<?php echo fuel_var('meta_description')?>">
 	
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-		<!-- Latest compiled and minified CSS -->
-		<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'  rel='stylesheet' type='text/css'>
-		<link href='https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css'  rel='stylesheet' type='text/css'>
+		<!-- Latest compiled and minified CSS -->	
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+		
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" ></link>
+        <script type = "text/javascript" src = "<?php echo js_path('vue.js'); ?>"></script>
+
 
 		<?php
 			//echo css('main').css($css);
@@ -33,12 +39,6 @@
 		<?=jquery()?>
 	       
      
-		<!-- Custom ThemeRoller files -- excite bike  -->
-  		<link href="<?php echo $vars['jqUiCSS']; ?>" rel="stylesheet">
-		<script src="<?php echo $vars['jqJS']; ?>"></script>
-		<script src="<?php echo $vars['jqUiJS']; ?>"></script>
-
-		
 		
 
 		<?php $page =  $vars['whichPage'];
@@ -197,6 +197,8 @@
 		//		{
 						 var title = "<?php echo $pageTitle; ?>";
 						 $(document).prop('title', title);
+						 
+						 
 			//	});
 				
 		</script>

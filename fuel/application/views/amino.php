@@ -1,4 +1,8 @@
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" ></link>
 <script type="text/javascript">
+
+
 function mobileLoader(message)
 	{
 	
@@ -17,7 +21,8 @@ function mobileLoader(message)
 $(document).ready(function()
 	{
 	
-
+	var gheader = '';
+	var grows = '';
 	$('.aButton2')
 	    .on('mouseover',function()
 			{
@@ -165,19 +170,64 @@ function makeRequest2(snd,recid,mess)
 {
  
 	mobileLoader(mess);
-  	$.ajax(
+		$.ajax(
 				
 				{
 					type:	"GET",
 					url: "<?php echo assets_path('ht_ml/getMotifs.php'); ?>"+"?motif="+snd,
 					success:function(result)
 						{
-						  
-							$('#'+recid).html(result);
-							
+							if(result != null){
+									
+									var arr = JSON.parse(result);
+									var gheader = arr[0].header;
+									var grows = arr[0].rows;
+									
+									var table = `<div id = "results_table" v-show = "rows.length > 0 && headers.length > 0">
+																				
+													<table id='example1'  class='table table-striped table-bordered' style='width:100%'>
+														<thead> 
+															<tr>
+																<th class="th-sm" v-for="header in headers" v-html="header"></th>
+															</tr>
+														</thead>
+														<tbody>                    
+															<template v-for = "row in rows">
+																<tr>
+																	<td v-for = "cell in row">{{cell}}</td>
+																</tr>  
+															</template>
+														</tbody>
+													</table>
+												</div>`;
+									$('#'+recid).html(table);
+									
+									vm = new Vue({
+										el: '#results_table',
+										data: {
+											test: "This is a Test",
+											headers : gheader,
+											row: '',
+											header: '',
+											cell:'',
+											itr: '',
+											rows: grows
+										},
+										mounted(){
+											$('#example1').DataTable();	
+										}
+									});
+									
+									
+													
+
+							}
+						
+
 						},
 					cache:false
 				});
+  
    
 }
 
@@ -311,5 +361,10 @@ var recid = "wait";
 					
 				</div>
 				<div id="wait"></div>
-			</div>
+			    
 		</div>
+
+		
+		<script type = "text/javascript" >       
+            
+        </script>          

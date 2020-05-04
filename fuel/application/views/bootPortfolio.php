@@ -829,13 +829,13 @@
 				<div>
 				  <div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-					  <li class="active"><a href="#home">Home</a></li>
+					  <!--<li class="active"><a href="#home">Home</a></li>-->
 					  <li><a href="#about">About</a></li>
 					  <li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 						  <li><a href="#lamp">PHP/MySQL/HTML/CSS/JQuery/DOM/XML</a></li>
-						  <li><a href="#wordPress">WordPress</a></li>
+						  <!--<li><a href="#wordPress">WordPress</a></li>-->
 						  <li><a href="#mobile">JQuery Mobile</a></li>
 						  <li><a href="#codeStorage">Code Storage</a></li>
 						  <li><a href="#frameworks">Frameworks</a></li>
@@ -931,7 +931,7 @@
 			  </div> <!-- end of myCarousel -->
 			   
 		
-				  <div id="home" class="container-fluid">
+				  <!--<div id="home" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Home</span>	
@@ -971,7 +971,7 @@
 							is also available.  Click this Panel to See.</p>
 						</div>
 					 </div>
-				  </div>
+				  </div>-->
 				  
 				
 		
@@ -1105,7 +1105,7 @@
 					 </div>
 				 </div>
 				  
-				<div id="wordPress" class="container-fluid">
+				<!--<div id="wordPress" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>WordPress Apps</span>
@@ -1158,7 +1158,7 @@
 							use of WooCommerce Plug-in for financial transctions, and some front-end CSS3 3-D tranformational animations.</p>
 						</div>
 					 </div>
-				 </div>
+				 </div> -->
 				 
 				 
 				 <div id="mobile" class="container-fluid">
@@ -1266,7 +1266,7 @@
 								</p>
 							</li>
 							-->
-							<li class="list-group-item list-group-item-warning">
+							<!--<li class="list-group-item list-group-item-warning">
 								<img class="img-circle" src="<?php echo $vars['laravelMVC']; ?>" alt="Laravel MVC">
 								<a href="laravelApp1" target="_blank">
 									<p  class="sectionTitle">
@@ -1280,10 +1280,11 @@
 								Server. I have coded a 2 programs for job applications and they can be accessed by the buttons below.
 								</p>
 							</li>
+							-->
 							<li class="list-group-item list-group-item-danger">
 								<a href="laravelApp2" target="_blank">
 									<p  class="sectionTitle">
-										<a href="laravelApp2" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel MVC App 2</a>
+										<a href="laravelApp2" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Simple Laravel App</a>
 									</p>
 								</a>
 								<object data="laravelApp2" height="200" width="300"></object>
@@ -1295,7 +1296,7 @@
 							<li class="list-group-item list-group-item-info">
 								<a href="laravelApp3" target="_blank">
 									<p  class="sectionTitle">
-										<a href="laravelApp3" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel MVC App 3</a>
+										<a href="laravelApp3" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Another Laravel App</a>
 									</p>
 								</a>
 								<object data="laravelApp3" height="200" width="300"></object>
@@ -1421,16 +1422,7 @@
 								I authored it as an Environmental Health Engineer for Southern Nevada Health District.
 								</p>
 							</li>
-							<li class="list-group-item list-group-item-danger">
-								<a href="softwareTW" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="softwareTW" target="_blank"  data-toggle="tooltip" data-placement="right"   title="Click to it Full Page!">Code Development Specification</a>
-									</p>
-								</a>
-								<object data="softwareTW" height="200" width="300"></object>
-								<p>This is a technical specification for guidance in developing Object Oriented Code. It was 
-								written as a HTML document.</p>
-							</li>
+							
 						</div>
 					</div>
 					
@@ -1563,14 +1555,13 @@
 												<p><a href="amino" target="_blank" >Amino Acid Sequence Analyzer</a></p>
 												<p><a href="orominer1" target="_blank" >Human Organ System Analyzer 1</a></p>
 												<p><a href="orominer2" target="_blank" >Human Organ System Analyzer 2</a></p>	
-												<p><a href="caribCatering" target="_blank" >Vegas Caribbean Catering -- In Development</a></p>
-												<p><a href="caribStore" target="_blank" >Caribbean Food Store -- In Development</a></p>
+												<!--<p><a href="caribCatering" target="_blank" >Vegas Caribbean Catering -- In Development</a></p>
+												<p><a href="caribStore" target="_blank" >Caribbean Food Store -- In Development</a></p>-->
 												<p><a href="mobile" target="_blank" >Mobile Web Portfopo</a></p>	
 												<p><a href="codeRepo" target="_blank" >Code Repository</a></p>
 												<p><a href="gitRepo" target="_blank" >GIT Repository</a></p>
 												<p><a href="othello" target="_blank" >Play Othello Game</a></p>
 												<p><a href="rubyTraining" target="_blank" >Ruby On Rails Training</a></p>
-												<p><a href="laravelApp1" target="_blank" >Laravel MVC App 1</a></p>
 												<p><a href="laravelApp2" target="_blank" >Laravel MVC App 2</a></p>
 												<p><a href="laravelApp3" target="_blank" >Laravel MVC App 3</a></p>
 												<p><a href="angularApp" target="_blank" >Angular JavaScript</a></p>

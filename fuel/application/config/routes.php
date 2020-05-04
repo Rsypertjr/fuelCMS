@@ -82,6 +82,7 @@ $route['orominer2/(:any)'] = 'otherApps/orominer2/$1';
 
 $route['amino'] = 'otherApps/amino';
 $route['amino/(:any)'] = 'otherApps/amino/$1';
+
 $route['webTech'] = 'otherApps/webTech';
 $route['loggingIn'] = 'otherApps/loggingIn';
 $route['frontCMS'] = 'otherApps/front';

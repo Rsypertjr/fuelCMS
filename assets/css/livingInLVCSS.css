@@ -605,9 +605,9 @@ background-color:yellow;
 #headr {
 		position:absolute;
 		display:none;
-		top:-80%;
-		height:1.5em;
-		left:-38%;	
+		top:-95%;
+		height:auto;
+		left:-60%;	
 		padding-top:0.5em;
 		padding-bottom:0.5em;
 		width:430px;

@@ -112,7 +112,7 @@ function dropNodeDatabase()
 							//$('#gui').html(data);
 						});
 }
-
+/*
 function addNodeDbase(nm,nlevel,sc,si,oi,pi,ci)  // create record of open/active nodes in Database
 {
 
@@ -165,7 +165,7 @@ function addNodeDbase(nm,nlevel,sc,si,oi,pi,ci)  // create record of open/active
 			}	
 	
 }
-
+*/
 function removeSystemNode(nm,nlevel,sc,si,oi,pi,ci)  // create record of open/active nodes in Database
 {
 				$.get("http://www.rlsworks.com/getMotifs/getMotifs.php?nodeLevel=removeSystemNode&systemId="+nm+"&systemIndex="+si,
@@ -928,7 +928,7 @@ function adjustViewers(){
 				{
 					
 					$grhdr = $('#grahdr').css('display','block'); // Graph Header object]
-					$grhdr.html("<div id='intromess'>Expanded Graph. Move to the Edge to Reduce. Click Here for Menu</div>");
+					$grhdr.html("<div id='intromess'>Expanded Graph. Move to the Edge to Reduce. Click In Blue Header Area for Menu</div>");
 					$('#grview')
 						   .css('width','65%')
 						   .css('left','0%')
@@ -981,7 +981,7 @@ function adjustViewers(){
 				.on('mouseleave',function()
 				{
 					$grhdr = $('#grahdr'); // Graph Header object]
-					$grhdr.html("<div id='intromess'>HOVER MOUSE BELOW TO ENLARGE GRAPH AREA</div>");
+					$grhdr.html("<div id='intromess'>Move the Mouse Down into Either View to Enlarge It</div>");
 						
 					$('#hierdiv')
 						   .css('width','30%')
@@ -1312,11 +1312,11 @@ $('#grahdr').on('click',function()
 	{
 	    var menubg="wheat";
 		var $menutable = $("#menutable");
-		if($menutable.length > 0)
-			$menutable.remove();
+		//if($menutable.length > 0)
+			//$menutable.remove();
 							
 		$menutable = $("<table></table>");
-		$menutable.css('z-index','3').css('border','2px solid black').css('background-color',menubg);
+		$menutable.css('z-index','3').css('border','2px solid black').css('background-color',menubg).css('font-size','0.5em').css('padding','0.25em');
 		$menutable.attr('id','menutable');
 		
 		//Menu header
@@ -1324,32 +1324,32 @@ $('#grahdr').on('click',function()
 		$tr.css('border','2px solid black')
 		var $th = $("<th></th>");
 		$th.css("background-color","yellow");
-		$th.css("width","450px");
-		$th.css("height","80px");
-		$th.html("<big>MENU</big>");
+		$th.css("width","8em");
+		$th.css("height","auto");
+		$th.html("<big><center>MENU</center></big>");
 		
 		//tr.appendChild(th);
 		$tr.append($th);
 		
 		//Zoom in label 
 		var $trin = $("<tr></tr>");
-		$trin.css("height","60px").css("cursor","pointer").css("background-color",menubg);
+		$trin.css("height","auto").css("cursor","pointer").css("background-color",menubg);
 		$trin.html("<td style='border:2px solid black'><big><center>ZOOM-IN</center></big></td>");
 		
 		//Zoom out label 
 		var $trout =  $("<tr></tr>");
-		$trout.css("height","60px").css("background-color",menubg).css("cursor","pointer");
+		$trout.css("height","auto").css("background-color",menubg).css("cursor","pointer");
 		$trout.html("<td style='border:2px solid black'><big><center>ZOOM-OUT</center></big></td>");
 		
 		// Menu exit label
 		var $trex =  $("<tr></tr>");
-		$trex.css("height","60px").css("background-color","red").css("cursor","pointer");
+		$trex.css("height","auto").css("background-color","red").css("cursor","pointer");
 		$trex.html("<td style='border:2px solid black' ><big><center>EXIT</center></big></td>");
 		
 		// How to Translate Menu Translate label
 		var $trtransht =  $("<tr></tr>");
 		$trtransht.css('border','2px solid black');
-		$trtransht.css("height","60px").css("background-color",menubg).css("cursor","pointer");
+		$trtransht.css("height","auto").css("background-color",menubg).css("cursor","pointer");
 		$trtransht.html("<td style='border:2px solid black'><big><center>HOW TO TRANSLATE IMAGE</center></big></td>");
 		
 		
@@ -1495,7 +1495,7 @@ $('#grahdr').on('click',function()
 	var $systems = $(systems);
 	
 	$grhdr = $('#grahdr').css('display','block'); // Graph Header object]
-	$grhdr.html("<div id='intromess'>HOVER MOUSE BELOW TO ENLARGE GRAPH AREA</div>");
+	$grhdr.html("<div id='intromess'>Move the Mouse Down into Either View to Enlarge It</div>");
 	
 					
     $('#hierdiv').children().css('zoom','50%');	
@@ -1587,7 +1587,7 @@ $('#grahdr').on('click',function()
 							   if(prompt == "Click on Box to Open")
 							   {   
 								    // add node to xml record of active nodes used to draw nodes
-								    addNodeDbase(nm,"system",systemcolor[indx2[1]],indx2[1],"","","");
+								    //addNodeDbase(nm,"system",systemcolor[indx2[1]],indx2[1],"","","");
 									var systemNode = {'systemindex':indx2[1],'systemid':nm,'color':systemcolor[indx2[1]],'systemname':nme,'organArr':{}};
 					                systemNodeList[indx2[1]] = systemNode;
 									systemKeyOrder.push(indx2[1]);
@@ -1773,7 +1773,7 @@ $('#grahdr').on('click',function()
 											   if(prompt == "Click on Box to Open")
 												   {
 													   // Add node to xml record of active nodes
-													   addNodeDbase(nm,"organ",systemcolor[indx2[1]],indx2[1],indx2[2],"","");
+													   //addNodeDbase(nm,"organ",systemcolor[indx2[1]],indx2[1],indx2[2],"","");
 													  
 													    var o_name =  new Array();
 														var o_name = nme.split("_");
@@ -1964,7 +1964,7 @@ $('#grahdr').on('click',function()
 														   if(prompt == "Click on Box to Open")
 																    {
 																		// Add display node to Active Nodes xml record
-																	    addNodeDbase(nm,"part",systemcolor[indx2[1]],indx2[1],indx2[2],indx2[3],"");
+																	    //addNodeDbase(nm,"part",systemcolor[indx2[1]],indx2[1],indx2[2],indx2[3],"");
 																	    var p_name =  new Array();
 																		var p_name = nme.split("_");
 																		
@@ -2142,7 +2142,7 @@ $('#grahdr').on('click',function()
 																    if(prompt == "Click on Box to Open")	
 																		{
 																		  // Add Node to Database of Active Nodes
-																		   addNodeDbase(nm,"histo",systemcolor[indx2[1]],indx2[1],indx2[2],indx2[3],indx2[4]);
+																		   //addNodeDbase(nm,"histo",systemcolor[indx2[1]],indx2[1],indx2[2],indx2[3],indx2[4]);
 																		
 																			var h_name =  new Array();
 																			var h_name = nme.split("_");

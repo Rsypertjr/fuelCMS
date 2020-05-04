@@ -22,7 +22,7 @@ th {background:linear-gradient(beige,tan)}
 {
         position:relative;
         margin-left:15%;
-        height:1.5em;
+        height:auto;
         width:70%;
         background-color:#996600;
         color:#CCFFFF;
@@ -68,7 +68,7 @@ th {background:linear-gradient(beige,tan)}
 #grview,#imgview
 {
     background-color:linen;
-    font-size:0.75em;
+    font-size:0.5em;
     
 }
 
@@ -79,6 +79,7 @@ th {background:linear-gradient(beige,tan)}
 	top:5%;
 	height:95%;
 	left:65%;
+	padding-left:0.5em;
 	border:2px solid black;
 	border-top:0;
 	border-bottom:0;

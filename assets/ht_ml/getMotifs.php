@@ -315,7 +315,8 @@ function query3($dbhandle,&$cntarr,$mopat)
   
   while($newArray = mysqli_fetch_array($result))
     { 
-    $sarr[]=$newArray[accessionNumber];
+      print_r($newArray); 
+    $sarr[]=$newArray['accessionNumber'];
   
     }
     //echo "acc nos: ".sizeof($sarr);   
@@ -325,8 +326,8 @@ function query3($dbhandle,&$cntarr,$mopat)
   for($w=0;$w<sizeof($sarr);$w++)
    {
     //echo $sarr[$w];
-     $sql = 'SELECT COUNT(p.actualMotif) FROM (SELECT actualMotif, accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$mopat.'" AND accessionNumber = "'.$sarr[$w].'")p';
-     
+     $sql = 'SELECT Count(actualMotif), actualMotif, accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$mopat.'" AND accessionNumber = "'.$sarr[$w];
+     echo $sql;
 	  if(!$result = mysqli_query($dbhandle,$sql))
 	    die("Error getting count of Motifs: ".mysqli_error());
 	  else
@@ -390,7 +391,13 @@ if(isset($_GET["motif"]))
   
   $mo = array();
   $mo = str_split($_GET["motif"],1);
-  $moPatt = $mo[0]."XX".$mo[1];
+  $moPatt = $mo[0].'XX'.$mo[1];
+  $question_num = $mo[2]; // question number 
+ 
+  $header = array();
+
+  $rows = array();
+
   //echo "gets amino #1: ".$mo[0]."<br/>";
   //echo "gets amino #2: ".$mo[1]."<br/>";
   //echo "gets question: ".$mo[2]."<br/>";
@@ -405,94 +412,61 @@ if(isset($_GET["motif"]))
       else{
       mysqli_select_db($dbhandle,'rlswor5_proteins');
 
-    
-
       $qstr = array();
       $qstr[] = 'SELECT DISTINCT accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber';
       $qstr[] = 'SELECT actualMotif, motifPattern, accessionNumber,motifLength FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber, motifLength';
       $qstr[] = 'SELECT DISTINCT startPosition, motifPattern, accessionNumber FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber, startPosition';
-      $qstr[] = 'SELECT  DISTINCT accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber';
+      $qstr[] = 'SELECT DISTINCT accessionNumber, COUNT(accessionNumber) as motifCount FROM miniMotif  WHERE motifPattern = "'.$moPatt.'" GROUP BY accessionNumber';
       $qstr[] = 'SELECT DISTINCT speciesName, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY speciesName';
-      $qstr[] = 'SELECT AVG(DISTINCT p.proteinLength), motifPattern FROM (SELECT DISTINCT actualMotif,motifPattern, accessionNumber, proteinLength  FROM miniMotif WHERE motifPattern = "'.$moPatt.'")p';
+      $qstr[] = 'SELECT AVG(proteinLength), motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'"';
       //echo "check query: ".$qstr[5];
-      $qu = array(array('accessionNumber','motifPattern','',''),
+      $columns = array(
+                  array('accessionNumber','motifPattern'),
                   array('actualMotif','motifPattern','accessionNumber','motifLength'),
-                  array('startPosition','motifPattern','accessionNumber',''),
-                  array('accessionNumber','motifPattern','',''),
-                  array('speciesName','motifPattern','',''),
-                  array('AVG(DISTINCT p.proteinLength)','motifPattern','',''));
+                  array('startPosition','motifPattern','accessionNumber'),
+                  array('accessionNumber','motifCount'),
+                  array('speciesName','motifPattern'),
+                  array('AVG(DISTINCT p.proteinLength)','motifPattern')
+                );
 
-      $qu1 = array(array('Accession Number','Motif Pattern','',''),
+      $headers = array(array('Accession Number','Motif Pattern'),
                   array('Actual Motif','Motif Pattern','Accession Number','Motif Length'),
-                  array('Start Position','Motif Pattern','Accession Number',''),
-                  array('Accession Number','Number of '.$moPatt.' motifs<br/>Per Protein (accession Number)','',''),
-                  array('Species Name','Motif Pattern','',''),
-                  array('AVG Protein Length','Motif Patterns','',''));
+                  array('Start Position','Motif Pattern','Accession Number'),
+                  array('Accession Number','Motif Count with Pattern '.$moPatt),
+                  array('Species Name','Motif Pattern'),
+                  array('AVG Protein Length','Motif Patterns'));
 
 
-      
-
-
-
-      
-
-      
-
-
-    
-      
-      
-      $in = $mo[2];   // question number 
-      $sql= $qstr[$in];
-      if(!$result = mysqli_query($dbhandle,$sql))
+      $sql= $qstr[$question_num];
+      //echo $sql;
+      $result = mysqli_query($dbhandle,$sql);
+      if (mysqli_error()) 
         die("Error selecting Motif: ". mysqli_error());
-      else
+      else if(!mysqli_error())
         {
-          
-          $tp = 0;
-          if($in == 1)
-            $tp = 4;
-          else if ($in ==2 || $in == 0 )
-            $tp = 3;
-          //else if ($in == 5)
-          //  $tp = 1;
-          else
-            $tp = 2;
-
-          if($in==3) 
-            {
-              $cntarry = array();
-              query3($dbhandle,$cntarry,$moPatt);
-            }
-            //echo "check: ".$tp;
-            echo "<div style='postion:relative;height:30em;width:90%;zoom:50%;font-size:auto'><table cellpadding='0' cellspacing='0' border='0'  class='table table-striped table-bordered' style='width:100%'>";
-            
-            echo"<thead><tr>";
-              for($x=0;$x<$tp;$x++)
-                echo "<th class='th-sm'>".$qu1[$in][$x]."</th>";
-            echo "</tr></thead><tbody>";
+            $headers = $headers[$question_num];
+            $columns = $columns[$question_num];
             $count  = 0;
-          
             while($newArray = mysqli_fetch_array($result))
-              { 
-                //print_r($newArray);
-                echo "<tr>";
-                for($z=0;$z<$tp;$z++)
-                  {
-                      if($in == 3 && $z==1)  // substitute for query3 for motif counts per protein
-                        echo "<td>".$cntarry[$count]."</td>";
-                      else
-                        echo "<td>".$newArray[$qu[$in][$z]]."</td>";
+              {                   
+                $rows[$count] = array(); 
+                for($i=0;$i < count($headers);$i++) {
+                  if($columns[$i] == 'motifPattern'){
+                    $newArray[$i] = str_replace('XX','---',$newArray[$i]);
                   }
-                  echo "</tr>";
-              $count++;   
+                  if($columns[$i] == 'motifCount'){
+                    $headers[$i] = str_replace('XX','---',$headers[$i]);
+                  }
+                  $rows[$count][$i] = $newArray[$i];
+
+                }               
+                $count++;   
               }
-              echo "</tbody></table></div>";
+              //print_r($rows);
+              $return_arr[] = array("header" => $headers, "rows" => $rows);
+              echo json_encode($return_arr);
               
-
             } 
-
-          //print $tbstr;  
 
 
       }

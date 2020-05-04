@@ -1385,13 +1385,13 @@
 <body>
 	<div id="headbar" class="ui-widget ui-state-default">
 		<div id="hmenuContainer"><div id="triggerDiv">
-			<div id="btn1" class="bCon">
+			<!--<div id="btn1" class="bCon">
 				<button>Home</button>
 				<div id="hmUl1" class="aUl">
 						<div id="hmLi2" class="aLi" >Log-in to FUEL-CMS</div>
 						<div id="hmLi1" class="aLi" >FUEL-CMS Git Repository</div>
 				</div>
-			</div>
+			</div>-->
 			<div id="btn2" class="bCon"> 
 				<button>About</button>
 				<div id="abUl1" class="aUl">

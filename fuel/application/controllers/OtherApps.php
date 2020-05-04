@@ -176,6 +176,8 @@ class OtherApps extends CI_Controller {
         $this->load->view('amino',$this->vars);
     } 
     
+   
+
   
     function front(){
         $this->vars['whichPage'] = 'front';

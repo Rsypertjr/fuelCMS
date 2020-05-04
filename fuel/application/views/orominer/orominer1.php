@@ -77,7 +77,7 @@ function getTab(xmlDoc,nodeDoc,tableDoc,mode)  // Creates tabs for cell-to-cell 
 
 	
 	// Menu Message
-	$('#gphmess').text('Click Here For Menu!!!').css('font-size','2.5em').css('padding-top','1.0em');
+	$('#gphmess').parent().text('Click Here For Menu!!!').css('font-size','2.5em').css('padding-top','1.0em');
 
 }
 
@@ -754,11 +754,11 @@ function drawNodes2(xmlDoc,nodeDoc,tableDoc,mode)
 					var setTableScale = function(){
 					
 							// Scale text to containter div as it zooms
-							var scaleSource = $dframeHeader.height();
-							scaleFactor2 = 0.80;
-							var fontSize = scaleSource * scaleFactor2; 
-							$table.css('font-size', fontSize + 'px');
-							$('#menutable').css('font-size','2.0em');   // Set menutable font size
+							//var scaleSource = $dframeHeader.height();
+							//scaleFactor2 = 0.80;
+							//var fontSize = scaleSource * scaleFactor2; 
+							$table.css('font-size', '1em');
+							$('#menutable').css('font-size','1em');   // Set menutable font size
 							
 						}
 						$(window).resize(function(){
@@ -1911,7 +1911,7 @@ function loadGUI()  // This function loads the HTML of gui on body load
 								// Get flag for menutable from xml
 							    menubg="wheat";
 								
-							    $('#menutable').css('font-size','2.0em');   // Set menutable font size
+							    $('#menutable').css('font-size','1em');   // Set menutable font size
 								$menutable = $('#menutable');
 								if($menutable)
 									$menutable.remove();
@@ -1928,7 +1928,7 @@ function loadGUI()  // This function loads the HTML of gui on body load
 								
 								//Menu header
 								$tr = $("<tr></tr>");
-								$th = $("<th><big>MENU</big><div id='popUp1'></div></th>");
+								$th = $("<th><big><center>MENU</center></big><div id='popUp1'></div></th>");
 								$th.attr("bgcolor","yellow");
 								$th.attr("height","4%");
 								$tr.html($th);
@@ -2033,7 +2033,7 @@ function loadGUI()  // This function loads the HTML of gui on body load
 								$('#gphmess').html('');
 								$('#gphdisp').prepend($menutable);
 								//$menutable.css('zoom','150%');
-								$menutable.css('left','50%').css('position','absolute').css('font-size','2.0em').css('z-index','200').draggable(
+								$menutable.css('margin-right','3em').css('position','relative').css('font-size','1em').css('z-index','200').draggable(
 									{
 										
 										create: function( event, ui ) 
@@ -2068,7 +2068,7 @@ function loadGUI()  // This function loads the HTML of gui on body load
 							});  // end circle onclick and Menu Builder
 
 	                    //  Make graph screen draggble using JQuery UI
-						$('#gphdisp').append('<div id="popUp2" style="position:absolute"></div>');
+						$('#gphdisp').append('<div id="popUp2" style="position:relative;width:6em;height:auto;margin-left:2em"></div>');
 						$('#gphdisp2').draggable(
 							{
 								
@@ -2077,8 +2077,6 @@ function loadGUI()  // This function loads the HTML of gui on body load
 										$('#popUp2')
 											.text("You can Drag this Graph Area")
 											.css('opacity','0.8')
-											.css('left','30%')
-											.css('top','10%')
 											.css('font-size','1.0em')
 											.css('z-index','-1')
 											.css('opacity','0.7')
@@ -2089,8 +2087,6 @@ function loadGUI()  // This function loads the HTML of gui on body load
 										$('#popUp2')
 											.text("You can Drag this Graph Area")
 											.css('opacity','0.8')
-											.css('left','30%')
-											.css('top','10%')
 											.css('font-size','1.0em')
 											.css('z-index','-1')
 											.css('opacity','0.7')
@@ -2108,8 +2104,6 @@ function loadGUI()  // This function loads the HTML of gui on body load
 									$('#popUp2')
 											.text("You can Drag this Graph Area")
 											.css('opacity','0.8')
-											.css('left','30%')
-											.css('top','10%')
 											.css('font-size','1.0em')
 											.css('z-index','-1')
 											.css('opacity','0.7')
