@@ -237,7 +237,7 @@ else{
         } 
       buildMinimotifDatabase($dbhandle);
     }
-    
+    mysqli_close($dbhandle); 
 
 }     // End of buildProteinDb function
 
@@ -470,6 +470,7 @@ if(isset($_GET["motif"]))
 
 
       }
+      mysqli_close($dbhandle);
   }
 
 

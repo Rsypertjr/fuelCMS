@@ -810,8 +810,15 @@
 			<div id="tophdr" class="container">
 			   <div class="jumbotron">
 				<h1>Richard L. Sypert Jr's Portfolio</h1> 
-				<p>This site shows my experience as a Software Developer, Technical Writer, and Engineer.  Use Top Menu to scroll Content
-				  to the Top-of-Page and Preview Content.  A link for Full-Screen-Display also exists.</p> 
+				<p>This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
+				 	and Vue.js and Semantic UI on the front end.  This site is hosted on Digital Ocean Droplets.
+				</p>
+				<p>One droplet is Ubuntu 16 with nginx server utilizing Express.js/Node.js application framework.  It has an application using Pug templating, Bootstrap, 
+				   Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies. 
+				</p> 
+				<p>This site is mostly hosted on a Digital Ocean droplet containing Ubuntu 18.04 LAMP setup.  Fuel CMS framework, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are the main 
+				    technologies uses.  Some Vue.js can also be found.
+				</p>
 			  </div>
 			</div>	
 			
@@ -829,7 +836,7 @@
 				<div>
 				  <div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-					  <!--<li class="active"><a href="#home">Home</a></li>-->
+					  <li class="active"><a href="#home">Home</a></li>
 					  <li><a href="#about">About</a></li>
 					  <li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
@@ -931,14 +938,14 @@
 			  </div> <!-- end of myCarousel -->
 			   
 		
-				  <!--<div id="home" class="container-fluid">
+				  <div id="home" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Home</span>	
 							<span class="glyphicon glyphicon-home"></span>
 						</div>
 						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
+							<!--<li class="list-group-item list-group-item-success">
 								<img class="img-circle" src="<?php echo $vars['fuelCMS']; ?>" alt="Fuel CMS">
 								<a href="fuel/login" target="_blank">
 									<p  class="sectionTitle" >
@@ -949,11 +956,11 @@
 								<p>Login to the FUEL-CMS Content Management System. Use the Username and Password 
 								(guest).Log-in to the FUEL-CMS
 								</p>
-							</li>
+							</li>-->
 							<li class="list-group-item list-group-item-warning">
-								<a href="https://bitbucket.org/Rsyp3rtjr/fuelcms.git" target="_blank">
+								<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF" target="_blank">
 									<p  class="sectionTitle" >
-										<a href="https://github.com/Rsypertjr/fuelCMS" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">FUEL-CMS Git Repository</a>	
+										<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">FUEL-CMS Git Repository</a>	
 									</p>
 								</a>
 								<p>Link to GIT Repository for the FUEL-CMS Content Management System.</p>
@@ -961,17 +968,16 @@
 						</div>
 					</div>
 			  
-				   <div id="homeCovr" class="container-fluid covr">
+				   <<div id="homeCovr" class="container-fluid covr">
 						<div class="cvrimg">
 							<span class="glyphicon glyphicon-home"></span>
 						</div>
 						<div class="cvrbody">
 							<h1>&nbsp;&nbsp;Home</h1>
-							<p>Beneath you can log-in to Fuel CMS to analyze the site and the GIT repository for the site
-							is also available.  Click this Panel to See.</p>
+							<p>Beneath you can <!--log-in to Fuel CMS to analyze the site and--> access the GIT repository for this site.</p>
 						</div>
-					 </div>
-				  </div>-->
+					 </div>>
+				  </div>
 				  
 				
 		
@@ -1281,6 +1287,17 @@
 								</p>
 							</li>
 							-->
+							<li class="list-group-item list-group-item-warning">
+								<a href="expressApp1" target="_blank">
+									<p  class="sectionTitle">
+										<a href="http://206.189.211.36/" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Express/Node Javascript App</a>
+									</p>
+								</a>
+								<object data="http://206.189.211.36/" height="200" width="300"></object>
+								<p>A Simple App based on a Digital Oceand droplet with Ubuntu 16 OS and nginx server installed. Express.js/Node.js application framework is used and it also
+								   utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.
+								</p>
+							</li>
 							<li class="list-group-item list-group-item-danger">
 								<a href="laravelApp2" target="_blank">
 									<p  class="sectionTitle">
