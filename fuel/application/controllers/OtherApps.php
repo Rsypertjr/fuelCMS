@@ -165,7 +165,9 @@ class OtherApps extends CI_Controller {
     
     function webTech(){
         $this->vars['whichPage'] = 'webTech';
-        $this->fuel->pages->render('webTech',$this->vars);
+        $this->vars['pageTitle'] = "Web Technologies Used";
+        $this->load->view('_blocks/header2',$this->vars);
+        $this->load->view('webTech',$this->vars);
     } 
     
    
