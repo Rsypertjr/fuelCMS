@@ -1310,12 +1310,13 @@ mysvg = document.getElementById("mySVG");
 			
 $('#grahdr').on('click',function()
 	{
+		
 	    var menubg="wheat";
-		var $menutable = $("#menutable");
+		//var $menutable = $("#menutable");
 		//if($menutable.length > 0)
 			//$menutable.remove();
 							
-		$menutable = $("<table></table>");
+		var $menutable = $("<table id='menutable' class='ui-widget-content'></table>");
 		$menutable.css('z-index','3').css('border','2px solid black').css('background-color',menubg).css('font-size','0.5em').css('padding','0.25em');
 		$menutable.attr('id','menutable');
 		
@@ -1358,7 +1359,6 @@ $('#grahdr').on('click',function()
 		$menutable.append($trout);
 		$menutable.append($trtransht);
 		$menutable.append($trex);
-		//alert($menutable.html());
 		
 		// Create zoom scale factor and put in XML
 		scalefactor = nodeDoc.createElement("scale");
@@ -1367,7 +1367,8 @@ $('#grahdr').on('click',function()
 		all = nodeDoc.getElementsByTagName("All");
 		all[0].appendChild(scalefactor);
 		var fac = 0;   
-									
+			
+						
 		$trex.on('click',function()
 			{
 				$menutable = $("#menutable");
@@ -1387,10 +1388,9 @@ $('#grahdr').on('click',function()
 			
 			$trin.click(function()
 			{
-			
+				
 				// Get scale factor from xml
 				fac = gScaleFactor.scaleFactr;
-
 			   	outerg = mysvg.getElementById("outerg");
 			
 					
@@ -1420,11 +1420,10 @@ $('#grahdr').on('click',function()
 					outerg.setAttributeNS(null,"transform","scale(" + fac + ")" + " translate(" + txval + "," + tyval + ")");
 					gScaleFactor.scaleFactr = fac;
 				});  	
-				
-				
+		
 	    // Translate function	
 	   var $mySVG = $('#mySVG');
-	   $mySVG.draggable(
+	   $("#draggable").draggable(
 		{
 			create: function( event, ui ) 
 			{
@@ -1433,19 +1432,21 @@ $('#grahdr').on('click',function()
 			}
 		});
 	
-	
-			$trtransht.on('click',function()
-				{
-					var $grhdr = $('#grahdr'); // Graph Header object]
-					$grhdr.html("<div id='intromess'>HOLD DOWN LEFT MOUSE BUTTON AND DRAG.</div>");
-			});
+		
+
+		$trtransht.on('click',function()
+			{
+				var $grhdr = $('#grahdr'); // Graph Header object]
+				$grhdr.html("<div id='intromess'>HOLD DOWN LEFT MOUSE BUTTON AND DRAG.</div>");
+		});
 				
-	
+		$('#grview').append($menutable);
+		$menutable.css('position','absolute').css('left','55%').css('top','20%');		
 		var $intro = $("#intromess");
 		$intro.remove();
 		
 	
-        $menutable.draggable(
+        $("#menutable").draggable(
 			{
 				create: function( event, ui ) 
 				{
@@ -1456,9 +1457,9 @@ $('#grahdr').on('click',function()
 			
 				
 			});
+			
 		
-		$menutable.css('position','absolute').css('left','55%').css('top','20%');
-		$('#grview').append($menutable);
+		//$menutable.css('position','absolute').css('left','55%').css('top','20%');
 		
 	});  // end circle onclick
 // END OF MENU
@@ -2282,7 +2283,7 @@ var gui = '<div id="outframe">'+
 					'<div id="hierdiv"></div>'+
 					'<div id="grview" class="thisdiv">'+
 						'<div id="grahdr"></div>'+
-						'<svg id="mySVG" width="70%" height="941px" viewBox = "0 0 4000 4000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>'+
+						'<div id="draggable" class="ui-widget-content"><svg id="mySVG" width="100%" height="941px" viewBox = "0 0 4000 4000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg></div>'+
 					'</div>'+
 					'<div id="imgview"></div>'+
 				'</div>'+

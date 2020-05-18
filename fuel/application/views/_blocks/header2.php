@@ -18,19 +18,21 @@
 		<meta name="keywords" content="<?php echo fuel_var('meta_keywords')?>">
 		<meta name="description" content="<?php echo fuel_var('meta_description')?>">
 	
-		<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-		<!-- Latest compiled and minified CSS -->	
-		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-       
+		<!-- Latest compiled and minified CSS -->			
+			<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<style>
+			#draggable { width: auto; height: auto; padding: 0.5em; }
+		</style>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-		<?php
+				<?php
 			//echo css('main').css($css);
 	
 			if (!empty($is_blog)):
 				echo $CI->fuel->blog->header();
 			endif;
 		?>
-		<?=jquery()?>
 	       
      
 		
