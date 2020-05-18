@@ -857,7 +857,7 @@
 					  </li>
 					  <li><a href="#resume">My Resume</a></li>
 					  <li><a href="#living">Living In Vegas</a></li>
-					  <!--<li><a href="#front">Non-Bootstrap Portfolio</a></li>-->
+					  <li><a href="#front">Non-Bootstrap Portfolio</a></li>
 					</ul>
 				  </div>
 				</div>
@@ -1518,7 +1518,7 @@
 			 
 			 
 			 
-			 <!--<div id="front" class="container-fluid">
+			 <div id="front" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Non Bootstrap Portfolio</span>	
@@ -1542,7 +1542,7 @@
 								GIMP (like Photoshop), and other technologies.</p>
 							</li>
 						</div>
-					</div>-->
+					</div>
 					
 					 <div id="frontCovr" class="container-fluid covr">
 						<div class="cvrimg">

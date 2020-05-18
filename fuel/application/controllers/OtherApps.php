@@ -174,7 +174,7 @@ class OtherApps extends CI_Controller {
     function amino(){
         $this->vars['whichPage'] = 'amino';
         $this->vars['pageTitle'] = "Protein Minimotif Search Program";
-        $this->load->view('_blocks/header2',$this->vars);
+        $this->load->view('_blocks/header3',$this->vars);
         $this->load->view('amino',$this->vars);
     } 
     
