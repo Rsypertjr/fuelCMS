@@ -2094,41 +2094,37 @@ $('#grahdr').on('click',function()
 														// Set histology node to open or close
 														if(activeNode==true)
 															{
-																$id3 = $("<div>Click Again to Close</div>");
-																$od.append($id3);
+																$id3 = $("<div class='hcell' style='color:black;margin:1em 0 0 8em'>Click Again to Close</div>");
+																$id2.append($id3);
 																$('#hierdiv').append($od);
 															}
 														else
 															{
-																$id3 = $("<div>Click on Box to Open</div>");
-																$od.append($id3);
+																$id3 = $("<div class='hcell' style='color:black;margin:1em 0 0 8em' >Click on Box to Open</div>");
+																$id2.append($id3);
 																$('#hierdiv').append($od);	
 															}	
-																var $odd = $('#hierdiv').find(".cell_id2").filter(function()
-																   {
-																	   if($(this).attr("id") == lname)
-																		return $(this);
-																   });
-											  
-																	$odd.bind('mouseenter',function()
+																var $odd = $('.hcell');
+																	$odd.on('mouseenter',function()
 																	   {
-																			$(this).next().filter("div:contains('Click on Box to Open')").css('zoom','105%').css('color','red');
-																			$(this).parent().siblings().find('.cell_id2').next().filter("div:contains('Click on Box to Open')").css('color','black'); 
+																			$(this).css('zoom','105%').css('color','red');
+																			$(this).css('color','black'); 
 																	   })
-																   .bind('mouseleave',function()
+																   .on('mouseleave',function()
 																	   {
-																			$(this).next().filter("div:contains('Click on Box to Open')").css('zoom','100%').css('color','black');
-																			$(this).parent().siblings().find('.cell_id2').next().filter("div:contains('Click on Box to Open')").css('color','black'); 
+																			$(this).css('zoom','100%').css('color','black');
+																			$(this).css('color','red'); 
 																	   })	   
-																   .bind('mousedown',function()
+																   .on('mousedown',function()
 																	   {
-																		   $(this).next().css('zoom','105%').css('color','LightGray');
+																		   $(this).css('zoom','105%').css('color','LightGray');
 																	   });
 																   
 															  
-															   $odd.on('mousedown',function(e) 
+															   $odd.on('mouseup',function(e) 
 																   {
-																	var nm = $(this).attr("name");
+																	
+																	var nm = $(this).parent().attr("name");
 																	var indx = nm.split("_");
 																	var nme = nm.split("_1-");  // raw name
 																	nme = nme[0];
@@ -2138,13 +2134,15 @@ $('#grahdr').on('click',function()
 																    cndx = indx2[4];
 																    indx3 = indx2[3].toString() + indx2[4].toString();
 																	
+																	
 																	$grhdr.height(70).css('z-index','2');
-																    var prompt = $(this).next().text();
+																    var prompt = $(this).text();
+
 																    if(prompt == "Click on Box to Open")	
 																		{
 																		  // Add Node to Database of Active Nodes
 																		   //addNodeDbase(nm,"histo",systemcolor[indx2[1]],indx2[1],indx2[2],indx2[3],indx2[4]);
-																		
+																		    $(this).text("Click Again to Close");
 																			var h_name =  new Array();
 																			var h_name = nme.split("_");
 																			
@@ -2161,6 +2159,7 @@ $('#grahdr').on('click',function()
 																		}
 																    else if( prompt == "Click Again to Close")
 																		{
+																			$(this).text("Click on Box to Open");
 																			//Remove Node from Database of Active Nodes
 																			//removeHistoNode(nm,"histo",systemcolor[indx2[1]],indx2[1],indx2[2],indx2[3],indx2[4]); 
 																			//delete activeNodeArr['key'+indx2[1].toString()+"_"+indx2[2].toString()+"_"+indx2[3].toString()+"_"+indx2[4].toString()]; 
