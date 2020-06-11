@@ -842,7 +842,7 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 						  <li><a href="#lamp">PHP/MySQL/HTML/CSS/JQuery/DOM/XML</a></li>
-						  <!--<li><a href="#wordPress">WordPress</a></li>-->
+						  <li><a href="#wordPress">WordPress</a></li>
 						  <li><a href="#mobile">JQuery Mobile</a></li>
 						  <li><a href="#codeStorage">Code Storage</a></li>
 						  <li><a href="#frameworks">Frameworks</a></li>
@@ -938,7 +938,7 @@
 			  </div> <!-- end of myCarousel -->
 			   
 		
-				  <div id="home" class="container-fluid">
+				<div id="home" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Home</span>	
@@ -968,7 +968,7 @@
 						</div>
 					</div>
 			  
-				   <<div id="homeCovr" class="container-fluid covr">
+				   <div id="homeCovr" class="container-fluid covr" style="height:130%">
 						<div class="cvrimg">
 							<span class="glyphicon glyphicon-home"></span>
 						</div>
@@ -976,8 +976,8 @@
 							<h1>&nbsp;&nbsp;Home</h1>
 							<p>Beneath you can <!--log-in to Fuel CMS to analyze the site and--> access the GIT repository for this site.</p>
 						</div>
-					 </div>>
-				  </div>
+					</div>>
+				</div>
 				  
 				
 		
@@ -1111,7 +1111,7 @@
 					 </div>
 				 </div>
 				  
-				<!--<div id="wordPress" class="container-fluid">
+				<div id="wordPress" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>WordPress Apps</span>
@@ -1120,18 +1120,15 @@
 						<div class="panel-body">
 						  <li class="list-group-item list-group-item-success">
 							<img class="img-circle" src="<?php echo $vars['wordpressimage']; ?>" alt="WordPress">
-							<a href="caribCatering" target="_blank">
+							<a href="http://159.65.100.7/wordpress" target="_blank">
 								<p  class="sectionTitle" >
-									<a href="caribCatering" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vegas Caribbean Catering - In Development</a>
+									<a href="http://159.65.100.7/wordpress" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Wordpress Work Portfolio</a>
 								</p>
 							</a>
-							<object data="caribCatering" height="200" width="300"></object>
-							<p>A Simple WordPress skeleton site for a friends Catering business. The Woo Commerce 
-							Plug-in could be used for online ordering and payment transactions, 
-							but the client wants it kept simple.
-							</p>
+							<object data="http://159.65.100.7/wordpress" height="200" width="300"></object>
+							<p>A Simple WordPress version of my Word Portfolio.</p>
 						  </li>
-						  <li class="list-group-item list-group-item-warning">
+						  <!--<li class="list-group-item list-group-item-warning">
 							<a href="caribStore" target="_blank">
 								<p  class="sectionTitle" >
 									<a href="caribStore" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Caribbean Food Store - In Development</a>
@@ -1150,7 +1147,7 @@
 							</a>
 							<object data="wpPortfolio" height="200" width="300"></object>
 							<p>Link to a WordPress version of My work portfolio.</p>
-						  </li>
+						  </li>-->
 						</div>
 					</div>
 					
@@ -1164,7 +1161,7 @@
 							use of WooCommerce Plug-in for financial transctions, and some front-end CSS3 3-D tranformational animations.</p>
 						</div>
 					 </div>
-				 </div> -->
+				 </div> 
 				 
 				 
 				 <div id="mobile" class="container-fluid">
