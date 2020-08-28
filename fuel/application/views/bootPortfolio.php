@@ -998,9 +998,9 @@
 								<p>This is a page that gives explanation of the programming technologies used on this site.</p>
 							</li>
 							<li class="list-group-item list-group-item-warning">
-								<a href="email/no" target="_blank">
+								<a href="emailno" target="_blank">
 									<p  class="sectionTitle" >	
-										<a href="email/no" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to Email Me!">Making Contact</a>	
+										<a href="emailno" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to Email Me!">Making Contact</a>	
 									</p>
 								</a>
 								<p>You can email me if you like. Also more contact info is given in my resume.</p>

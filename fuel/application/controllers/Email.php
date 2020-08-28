@@ -16,7 +16,17 @@ class Email extends CI_Controller {
         $vars['whichPage'] = 'emailForm';
         $this->fuel->pages->render('emailForm',$vars);
     }
-    
+    public function noheader(){
+		$this->load->helper('form');
+		$this->load->library('email');
+        $this->load->library('form_validation');
+        $this->vars['whichPage'] = 'emailForm';
+		$this->vars['pageTitle'] = "Making Contact";
+		$this->vars['hfSwitch'] = 'off';  // off for desktop header, on for mobile header		
+		$this->vars['emailFormCSS'] = css_path('emailFormCSS.css');
+        $this->load->view('_blocks/header2',$this->vars);
+        $this->load->view('emailForm',$this->vars);
+	}
     
 	function processEmail()
 	{  
