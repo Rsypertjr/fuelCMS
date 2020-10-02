@@ -1206,7 +1206,7 @@
 									</p>
 								</a>
 								<object data="laravelApp3" height="200" width="300"></object>
-								<p>Developed using Laravel Homestead Environment for gnerating Homeschool grade transcripts for my kids.<br>
+								<p>Developed using Laravel Homestead Environment for generating Homeschool grade transcripts for my kids.<br>
 								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/transcript-generator/src/master/">Laravel Code</a>
 								</p>
 							</li>
