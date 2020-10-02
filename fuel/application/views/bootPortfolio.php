@@ -1453,19 +1453,15 @@
 								</div>
 								<div id="collapse1" class="panel-collapse collapse">
 									  <div class="panel-body">
-												<p><a href="amino" target="_blank" >Amino Acid Sequence Analyzer</a></p>
-												<p><a href="orominer1" target="_blank" >Human Organ System Analyzer 1</a></p>
-												<p><a href="orominer2" target="_blank" >Human Organ System Analyzer 2</a></p>	
-												<!--<p><a href="caribCatering" target="_blank" >Vegas Caribbean Catering -- In Development</a></p>
-												<p><a href="caribStore" target="_blank" >Caribbean Food Store -- In Development</a></p>-->
-												<p><a href="mobile" target="_blank" >Mobile Web Portfopo</a></p>	
-												<p><a href="codeRepo" target="_blank" >Code Repository</a></p>
-												<p><a href="gitRepo" target="_blank" >GIT Repository</a></p>
-												<p><a href="othello" target="_blank" >Play Othello Game</a></p>
-												<p><a href="rubyTraining" target="_blank" >Ruby On Rails Training</a></p>
-												<p><a href="laravelApp2" target="_blank" >Laravel MVC App 2</a></p>
-												<p><a href="laravelApp3" target="_blank" >Laravel MVC App 3</a></p>
-												<p><a href="angularApp" target="_blank" >Angular JavaScript</a></p>
+											<p><a href="amino" target="_blank" >Amino Acid Sequence Analyzer</a></p>
+											<p><a href="orominer1" target="_blank" >Human Organ System Analyzer 1</a></p>
+											<p><a href="orominer2" target="_blank" >Human Organ System Analyzer 2</a></p>													
+											<p><a href="mobile" target="_blank" >Mobile Web Portfopo</a></p>	
+											<p><a href="gitRepo" target="_blank" >GIT Repository</a></p>
+											<p><a href="othello" target="_blank" >Play Othello Game</a></p>
+											<p><a href="laravelApp2" target="_blank" >Sample Laravel 1</a></p>
+											<p><a href="laravelApp3" target="_blank" >Sample Laravel 2</a></p>
+											<p><a href="angularApp" target="_blank" >Angular JavaScript</a></p>
 									  </div>
 								</div>
 						</div>
@@ -1483,9 +1479,8 @@
 											<p><a href="graingerABCDE" target="_blank" >Grainger ABCDE Series B Product Manual</a></p>
 											<p><a href="graingerCDE" target="_blank" >Grainger CDE Product Manual</a></p>
 											<p><a href="mecPManual" target="_blank" >MEC Product Manual VT 1.6</a></p>	
-											<p><a href="lightBluePaper" target="_blank" >Technology White Paper</a></p>
+											<p><a href="whitePaper" target="_blank" >Technology White Paper</a></p>
 											<p><a href="engSpec" target="_blank" >Engineering Specification</a></p>
-											<p><a href="softwareTW" target="_blank" >Code Development Specification</a></p>
 								 </div>
 						   </div>
 					</div>
