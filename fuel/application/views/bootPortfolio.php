@@ -1194,10 +1194,7 @@
 									</p>
 								</a>
 								<object data="laravelApp2" height="200" width="300"></object>
-								<p>I learned the Homestead development environment which utilizes Vagrant VM Linux Server, 
-								from which I deployed the finished application to Heroku. PhpUnit testing was used 
-								to develop this code. 
-								</p>
+								<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.</p>
 							</li>
 							<li class="list-group-item list-group-item-info">
 								<a href="laravelApp3" target="_blank">
@@ -1206,10 +1203,7 @@
 									</p>
 								</a>
 								<object data="laravelApp3" height="200" width="300"></object>
-								<p>I developed this application using Laravel Homestead Environment for calculating Homeschool 
-								grade transcripts for my kids. This app is located by adding '/cinp' to the base url of 
-								Application 2. This application is developed utilizing PHPUnit, including Database seeding.   
-								</p>
+								<p>Developed using Laravel Homestead Environment for gnerating Homeschool grade transcripts for my kids.</p>
 							</li>
 							<li class="list-group-item list-group-item-success">
 								<a href="angularApp" target="_blank">
@@ -1218,12 +1212,7 @@
 									</p>
 								</a>
 								<object data="angularApp" height="200" width="300"></object>
-								<p>I was asked to complete Laravel MVC program in application for a jobs. I 
-								learned the following technologies to complete the program in about 2 weeks: 
-								Laravel MVC, Twitter Bootstrap, Active Campaign API, Facebook and GitHub authentication. 
-								The program uses Facebook and GitHub authentication and allows a user to create contacts 
-								and register them with Active Campaign.A Git Repo of the Code is Here
-								</p>
+								<p>Angular2 App with Redux deployed to Heroku Server.</p>
 							</li>
 						</div>
 					 </div> 
