@@ -936,9 +936,9 @@
 								<p>Link to GIT Repository for this FuelCMS-based Site</p>
 							</li>
 							<li class="list-group-item list-group-item-warning">
-								<a href="https://github.com/Rsypertjr/wordpress" target="_blank">
+								<a href="https://github.com/Rsypertjr/wordpress/tree/sshwordpress" target="_blank">
 									<p  class="sectionTitle" >
-										<a href="https://github.com/Rsypertjr/wordpress" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">WordPress Git Repository</a>	
+										<a href="https://github.com/Rsypertjr/wordpress/tree/sshwordpress" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">WordPress Git Repository</a>	
 									</p>
 								</a>
 								<p>Link to GIT Repository for a Simple WordPress Portfolio Version</p>
@@ -1165,42 +1165,17 @@
 							<span class="glyphicon glyphicon-tree-conifer"></span>
 						</div>
 						<div class="panel-body">
-						<!--
-							
-							<li class="list-group-item list-group-item-warning">
-								<img style="position:relative;width:20em" src="<?php echo $vars['viewslimtwig']; ?>" alt="Vue.JS/Slim3/Twig">
-								<a href="vueSlimTwig" target="_blank">
+						   <li class="list-group-item list-group-item-warning">
+								<a href="vueapp" target="_blank">
 									<p  class="sectionTitle">
-										<a href="vueSlimTwig" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue-JavaScript__Slim3-PHP__Twig-Templating</a>
+										<a href="http://159.65.100.7/api_test/hptest.php" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue Javascript App</a>
 									</p>
 								</a>
-								<object data="vueSlimTwig" height="200" width="300"></object>
-								<p>This Site is a job application assignment for programming position with Analytical Owl. 
-								It utilizes technologies of CentOS 7 Linux Distribution, Apache Server, PostgresSQL Database, 
-								Slim3 PHP, Twig Templating, Vue JavaScript, Axios Ajax, and others. Vue Javascript and PostgresSQL 
-								are used together to show tables representing Relational Data. Vue does not externally manipulate 
-								the DOM elements, but instead allows DOM elemental structure to be responsive to changes in data. 
-								A Vue controller manipulates DOM content internally and interacts with Slim PHP Controllers to get 
-								and send data thru an API to the PostgresSQL database. Twig is also used for PHP Templating of HTML data
-								including conditional looping.
+								<object data="http://159.65.100.7/api_test/hptest.php" height="200" width="300"></object>
+								<p>A Vue JS based app that accesses an API to create a Dynamic List converted from a static HMTL page.  Added Paging Function and Select Page Size.<br>GitHub link
+								   to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp">Vue App Code</a>
 								</p>
 							</li>
-							-->
-							<!--<li class="list-group-item list-group-item-warning">
-								<img class="img-circle" src="<?php echo $vars['laravelMVC']; ?>" alt="Laravel MVC">
-								<a href="laravelApp1" target="_blank">
-									<p  class="sectionTitle">
-										<a href="laravelApp1" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel MVC App 1</a>
-									</p>
-								</a>
-								<object data="laravelApp1" height="200" width="300"></object>
-								<p>I was asked to complete Laravel MVC programs in application for a jobs. I have recently 
-								learned the following technologies: Laravel MVC, Twitter Bootstrap, Active Campaign API, 
-								Facebook and GitHub authentication, Homestead Development, Vagrant Virtual 
-								Server. I have coded a 2 programs for job applications and they can be accessed by the buttons below.
-								</p>
-							</li>
-							-->
 							<li class="list-group-item list-group-item-warning">
 								<a href="expressApp1" target="_blank">
 									<p  class="sectionTitle">
