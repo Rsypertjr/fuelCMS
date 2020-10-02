@@ -1512,12 +1512,12 @@
 				  <div class="panel panel-default">
 						<div class="panel-heading">
 							  <h4 class="panel-title">
-								<a data-toggle="collapse" href="#collapse4">Engineering</a>
+								<a data-toggle="collapse" href="#collapse4">Contact</a>
 							  </h4>  
 						</div>
 						<div id="collapse4" class="panel-collapse collapse">
 							  <div class="panel-body">
-										<p><a href="sendEmail" target="_blank" >Email</a></p>
+										<p><a href="emailno" target="_blank" >Email</a></p>
 										<p><a href="linkedIn" target="_blank" >Linked In Profile</a></p>
 							 </div>
 						</div>
