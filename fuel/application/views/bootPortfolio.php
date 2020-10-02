@@ -807,7 +807,7 @@
 				<div>
 				  <div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-					  <li class="active"><a href="#home">Home</a></li>
+					  <li class="active"><a href="#home">Home/Code Repos</a></li>
 					  <li><a href="#about">About</a></li>
 					  <li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
@@ -911,7 +911,7 @@
 				<div id="home" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<span>Home</span>	
+							<span>Home/Code Repos</span>	
 							<span class="glyphicon glyphicon-home"></span>
 						</div>
 						<div class="panel-body">
@@ -933,7 +933,15 @@
 										<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">FUEL-CMS Git Repository</a>	
 									</p>
 								</a>
-								<p>Link to GIT Repository for the FUEL-CMS Content Management System.</p>
+								<p>Link to GIT Repository for this FuelCMS-based Site</p>
+							</li>
+							<li class="list-group-item list-group-item-warning">
+								<a href="https://github.com/Rsypertjr/wordpress" target="_blank">
+									<p  class="sectionTitle" >
+										<a href="https://github.com/Rsypertjr/wordpress" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">WordPress Git Repository</a>	
+									</p>
+								</a>
+								<p>Link to GIT Repository for a Simple WordPress Portfolio Version</p>
 							</li>
 						</div>
 					</div>
@@ -943,8 +951,8 @@
 							<span class="glyphicon glyphicon-home"></span>
 						</div>
 						<div class="cvrbody">
-							<h1>&nbsp;&nbsp;Home</h1>
-							<p>Beneath you can <!--log-in to Fuel CMS to analyze the site and--> access the GIT repository for this site.</p>
+							<h1>&nbsp;&nbsp;Home/Code Repos</h1>
+							<p>Beneath are links to FuelCMS-based site Code and WordPress-based site Code</p>
 						</div>
 					</div>>
 				</div>
@@ -1098,26 +1106,7 @@
 							<object data="http://159.65.100.7/wordpress" height="200" width="300"></object>
 							<p>A Simple WordPress version of my Word Portfolio.</p>
 						  </li>
-						  <!--<li class="list-group-item list-group-item-warning">
-							<a href="caribStore" target="_blank">
-								<p  class="sectionTitle" >
-									<a href="caribStore" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Caribbean Food Store - In Development</a>
-								</p>
-							</a>
-							<object data="caribStore" height="200" width="300"></object>
-							<p>A Sample WordPress site for a friends Caribbean Food Catering. The 
-							Woo Commerce Plug-in is utilized ordering and payment transactions.
-							</p>
-						  </li>
-						  <li class="list-group-item list-group-item-danger">
-							<a href="wpPortfolio" target="_blank">
-								<p  class="sectionTitle" >
-									<a href="wpPortfolio"  target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">WordPress Work Portfolio</a>
-								</p>
-							</a>
-							<object data="wpPortfolio" height="200" width="300"></object>
-							<p>Link to a WordPress version of My work portfolio.</p>
-						  </li>-->
+						 
 						</div>
 					</div>
 					
@@ -1127,8 +1116,7 @@
 						</div>
 						<div class="cvrbody">
 							<h1>WordPress Apps</h1>
-							<p>Beneath are a few WordPress site began as a favor to a friend.  But never fully realized.  There is 
-							use of WooCommerce Plug-in for financial transctions, and some front-end CSS3 3-D tranformational animations.</p>
+							<p>Beneath is a WordPress version of my work portfolio</p>
 						</div>
 					 </div>
 				 </div> 
