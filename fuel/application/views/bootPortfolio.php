@@ -782,13 +782,13 @@
 			   <div class="jumbotron">
 				<h1>Richard L. Sypert Jr's Portfolio</h1> 
 				<p>This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
-				 	and Vue.js and Semantic UI on the front end.  This site is hosted on Digital Ocean Droplets.
+				 	and Vue.js and Semantic UI on the front end.  This site is hosted on Digital Ocean Droplets.  Some apps have been deployed to Heroku Server.
 				</p>
 				<p>One droplet is Ubuntu 16 with nginx server utilizing Express.js/Node.js application framework.  It has an application using Pug templating, Bootstrap, 
 				   Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies. 
 				</p> 
 				<p>This site is mostly hosted on a Digital Ocean droplet containing Ubuntu 18.04 LAMP setup.  Fuel CMS framework, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are the main 
-				    technologies uses.  Some Vue.js can also be found.
+				    technologies used.  Some Vue.js, and Angular2 can also be found.
 				</p>
 			  </div>
 			</div>	
