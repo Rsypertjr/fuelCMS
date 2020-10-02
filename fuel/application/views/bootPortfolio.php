@@ -1223,8 +1223,7 @@
 						</div>
 						<div class="cvrbody">
 							<h1>Frameworks</h1>
-							<p>I've done some Laravel MVC programming using Homestead Development Environment.  Also there 
-							is an Angular JavaScript with Redux app with Central Store/State management.</p>
+							<p>Programming I've done using:<br>Vue Javascript,<br>Express/Node JavaScript,<br>Laravel MVC with Homestead Development Environment,<br>and Angular2 JavaScript with Redux app using Central Store/State management.</p>
 						</div>
 					  </div>
 				  </div>
