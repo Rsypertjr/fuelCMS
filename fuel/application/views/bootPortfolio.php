@@ -1183,8 +1183,9 @@
 									</p>
 								</a>
 								<object data="http://206.189.211.36/" height="200" width="300"></object>
-								<p>A Simple App based on a Digital Oceand droplet with Ubuntu 16 OS and nginx server installed. Express.js/Node.js application framework is used and it also
-								   utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.
+								<p>A Simple App based on a Digital Oceand droplet with Ubuntu 16 OS and nginx server installed.<br>Express.js/Node.js application framework is used and it also
+								   utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.<br>
+								   Here is the code: <a href="https://github.com/Rsypertjr/expressnode">Express/Node Code</a>
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-danger">
@@ -1194,7 +1195,9 @@
 									</p>
 								</a>
 								<object data="laravelApp2" height="200" width="300"></object>
-								<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.</p>
+								<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.<br>
+								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/laravel-test/src/master/">Laravel Code</a>
+								</p>
 							</li>
 							<li class="list-group-item list-group-item-info">
 								<a href="laravelApp3" target="_blank">
@@ -1203,7 +1206,9 @@
 									</p>
 								</a>
 								<object data="laravelApp3" height="200" width="300"></object>
-								<p>Developed using Laravel Homestead Environment for gnerating Homeschool grade transcripts for my kids.</p>
+								<p>Developed using Laravel Homestead Environment for gnerating Homeschool grade transcripts for my kids.<br>
+								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/transcript-generator/src/master/">Laravel Code</a>
+								</p>
 							</li>
 							<li class="list-group-item list-group-item-success">
 								<a href="angularApp" target="_blank">
@@ -1212,7 +1217,9 @@
 									</p>
 								</a>
 								<object data="angularApp" height="200" width="300"></object>
-								<p>Angular2 App with Redux deployed to Heroku Server.</p>
+								<p>Angular2 App with Redux deployed to Heroku Server.<br>
+								Here is the code: <a href="https://github.com/Rsypertjr/angularRedux">Angular Code</a>
+								</p>
 							</li>
 						</div>
 					 </div> 
