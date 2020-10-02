@@ -237,7 +237,7 @@ class OtherApps extends CI_Controller {
     }
     
      function gitRepo(){
-       $this->vars['url'] = "https://bitbucket.org/Rsypertjr/profile/repositories?visibility[9]%20=all";
+       $this->vars['url'] = "https://github.com/Rsypertjr/fuelCMS/tree/fuelPF";
        $this->fuel->pages->render('showApp',$this->vars);
     }
     

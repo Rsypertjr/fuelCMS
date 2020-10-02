@@ -194,28 +194,7 @@
 		   }
 		   
 
-		   #codeStorage{
-				position:relative;
-				height:auto;
-				margin:2em 0;
-				color: #fff; 
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-			#codeStorageCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				margin:auto;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
+		  
 		   
 	
 		   
@@ -443,7 +422,6 @@
 		
 		
 		#home .panel-body li>p, #about .panel-body li>p, #mobile .panel-body li>p,#wordPress .panel-body li>p,
-		#codeStorage .panel-body li>p  	{position:relative;height:auto;width:100%}
 		
 		#resume .panel-body li>p ,#living .panel-body li>p   	{position:relative;height:auto;width:100%}
 		#lamp > div > div.panel-body > li:nth-child(4) > p:nth-child(6) {color:black}
@@ -692,13 +670,6 @@
 						});
 							
 			  
-						$('#codeStorage').on('mouseenter',function(){
-							$('#codeStorageCovr').css('opacity','0.85');
-							var height1 = $('#codeStorageCovr').height();
-							var height2 = $('#codeStorageCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#codeStorageCovr .container').css('margin-top',margin);
-						});
 			
 						$('#frameworks').on('mouseenter',function(){
 							$('#frameworksCovr').css('opacity','0.85');
@@ -754,7 +725,7 @@
 						
 									
 				$('#frontCovr').add('#homeCovr').add('#aboutCovr').add('#lampCovr').add('#wordPressCovr')
-							   .add('#mobileCovr').add('#codeStorageCovr').add('#frameworksCovr').add('#manualsCovr')
+							   .add('#mobileCovr').add('#frameworksCovr').add('#manualsCovr')
 							   .add('#specificationsCovr').add('#resumeCovr').add('#livingCovr')
 							   .on('mousedown',function(){
 								
@@ -844,7 +815,6 @@
 						  <li><a href="#lamp">PHP/MySQL/HTML/CSS/JQuery/DOM/XML</a></li>
 						  <li><a href="#wordPress">WordPress</a></li>
 						  <li><a href="#mobile">JQuery Mobile</a></li>
-						  <li><a href="#codeStorage">Code Storage</a></li>
 						  <li><a href="#frameworks">Frameworks</a></li>
 						</ul>
 					  </li>
@@ -1198,47 +1168,6 @@
 				 </div>
 				 
 				 
-				 
-				 <div id="codeStorage" class="container-fluid">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<span>Code Storage</span>
-							<span class="glyphicon glyphicon-hdd"></span>
-						</div>
-						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['codeStorageImage']; ?>" alt="Code Storage">
-								<a href="codeRepo" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="codeRepo" target="_blank"  data-toggle="tooltip" data-placement="right" title="Click Here to See Code Repo!">Code Repository</a>
-									</p>
-								</a>
-								<p>Link to Repository of Code I have written. See the Git Repository link for the 
-								code of this site done within the CodeIgniter MVC Framework.
-								</p>
-							</li>
-							<li class="list-group-item list-group-item-warning">
-								<a href="gitRepo" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="gitRepo" target="_blank"  data-toggle="tooltip"  data-placement="right" title="Click Here to See Code Repo!">GIT Repository</a>
-									</p>
-								</a>
-								<p>Link to GIT code repository provided thru BitBucket.</p>
-							</li>
-						</div>
-					  </div>
-					  
-					 <div id="codeStorageCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-hdd"></span>
-						</div>
-						<div class="cvrbody">
-							<h1>Code Storage</h1>
-							<p>Repositories of Code that I've Done.</p>
-						</div>
-					</div>
-				  </div> 
-				  
 				  
 				  
 				  <div id="frameworks" class="container-fluid">

@@ -170,7 +170,7 @@ function makeRequest2(snd,recid,mess)
 {
  
 	mobileLoader(mess);
-		$.ajax(
+	$.ajax(
 				
 				{
 					type:	"GET",
