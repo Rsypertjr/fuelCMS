@@ -780,7 +780,7 @@
 				<p>One droplet is Ubuntu 16 with nginx server utilizing Express.js/Node.js application framework.  It has an application using Pug templating, Bootstrap, 
 				   Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies. 
 				</p> 
-				<p>This site is mostly hosted on a Digital Ocean droplet containing Ubuntu 18.04 LAMP setup.  Fuel CMS framework, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are the main 
+				<p>This site is mostly hosted on a Digital Ocean droplet containing Ubuntu 18.04 LAMP setup.  Fuel CMS framework (CodeIgniter-based), Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are the main 
 				    technologies used.  Laravel, Vue.js, and Angular2 applications are under the <span style="font-style:italic;color:blue">Software Development->Frameworks</span> menu tab.
 					PHP-based applications are located at the <span style="font-style:italic;color:blue">Software Development->LAMP - based</span> menu tab
 				</p>
