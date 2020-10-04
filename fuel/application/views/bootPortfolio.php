@@ -775,14 +775,15 @@
 			   <div class="jumbotron">
 				<h1>Richard L. Sypert Jr's Portfolio</h1> 
 				<p>This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
-				 	and Vue.js and Semantic UI on the front end (Please see: <span style="font-style:italic;color:blue">My Resume</span> menu tab).  This site is hosted on Digital Ocean Droplets.  Some apps have been deployed to Heroku Server.
+				 	and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This site is hosted on Digital Ocean Droplets.  Some apps have been deployed to Heroku Server.
 				</p>
 				<p>One droplet is Ubuntu 16 with nginx server utilizing Express.js/Node.js application framework.  It has an application using Pug templating, Bootstrap, 
-				   Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies. 
+				   Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies. This app is found under the <a href="#frameworks">Software Development->Frameworks</a> menu tab, as 
+				   <a href="http://206.189.211.36/">Express/Node JavaScript App</a>.
 				</p> 
 				<p>This site is mostly hosted on a Digital Ocean droplet containing Ubuntu 18.04 LAMP setup.  Fuel CMS framework (CodeIgniter-based), Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are the main 
-				    technologies used.  Laravel, Vue.js, and Angular2 applications are under the <span style="font-style:italic;color:blue">Software Development->Frameworks</span> menu tab.
-					PHP-based applications are located at the <span style="font-style:italic;color:blue">Software Development->LAMP - based</span> menu tab
+				    technologies used.  Laravel, Vue.js, and Angular2 applications are under the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
+					PHP-based applications are located at the <a href="#lamp">Software Development->LAMP - based</a> menu tab
 				</p>
 			  </div>
 			</div>	
