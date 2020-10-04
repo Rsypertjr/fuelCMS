@@ -771,24 +771,18 @@
 	
 		
 </script>
-		
-		
-	
-	</head>
-		<!--Using scrollspy and Affix-->
-		
-		<body data-spy="scroll" data-target=".navbar" data-offset="50">
 			<div id="tophdr" class="container">
 			   <div class="jumbotron">
 				<h1>Richard L. Sypert Jr's Portfolio</h1> 
 				<p>This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
-				 	and Vue.js and Semantic UI on the front end.  This site is hosted on Digital Ocean Droplets.  Some apps have been deployed to Heroku Server.
+				 	and Vue.js and Semantic UI on the front end (Please see: <span style="font-style:italic;color:blue">My Resume</span> menu tab).  This site is hosted on Digital Ocean Droplets.  Some apps have been deployed to Heroku Server.
 				</p>
 				<p>One droplet is Ubuntu 16 with nginx server utilizing Express.js/Node.js application framework.  It has an application using Pug templating, Bootstrap, 
 				   Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies. 
 				</p> 
 				<p>This site is mostly hosted on a Digital Ocean droplet containing Ubuntu 18.04 LAMP setup.  Fuel CMS framework, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are the main 
-				    technologies used.  Some Vue.js, and Angular2 can also be found.
+				    technologies used.  Laravel, Vue.js, and Angular2 applications are under the <span style="font-style:italic;color:blue">Software Development->Frameworks</span> menu tab.
+					PHP-based applications are located at the <span style="font-style:italic;color:blue">Software Development->LAMP - based</span> menu tab
 				</p>
 			  </div>
 			</div>	
@@ -812,7 +806,7 @@
 					  <li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-						  <li><a href="#lamp">PHP/MySQL/HTML/CSS/JQuery/DOM/XML</a></li>
+						  <li><a href="#lamp">LAMP - based</a></li>
 						  <li><a href="#wordPress">WordPress</a></li>
 						  <li><a href="#mobile">JQuery Mobile</a></li>
 						  <li><a href="#frameworks">Frameworks</a></li>
@@ -1031,7 +1025,8 @@
 								parsed by regex techniques from a text file, into a MySQL database. 
 								The first and last amino acid is chosen in the GUI, as well as, 
 								the desired statistical output. The database accessed by JavaScript-AJAX to PHP-MySQL 
-								on the server side which returns the statistics.
+								on the server side which returns the statistics.<br>The Code for PHP-based apps is
+					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
 								</p>
 							 </li>
 							 <li class="list-group-item list-group-item-warning">
@@ -1046,7 +1041,8 @@
 								hierarchical display and graphic display, as well as, dynamic generation of SVG graphical elements 
 								based on DOM HTML elements.  MySQL Database information is converted into XML format using PHP 
 								for up front access by the code for generation of Hierachical Display. Unfortunately ONLY THE 
-								First 3 NODES Of DATA was developed at Project Completion.
+								First 3 NODES Of DATA was developed at Project Completion.<br>The Code for PHP-based apps is
+					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
 								</p>
 							  </li>
 							 <li class="list-group-item list-group-item-danger">
@@ -1059,6 +1055,7 @@
 								<p>This orominer program contains Histological Data within the Hierarchical Organization of Human Body 
 									makeup. Histological Data is information about Human Organs and their tissues and cells. This 
 									application uses JavaScript Objects to store active data requests from which graphics is generated.
+									<br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
 								</p>
 							 </li>
 							 <li class="list-group-item">
@@ -1069,7 +1066,9 @@
 									</p>
 								</a>
 								<object data="othello" height="200" width="300"></object>
-								<p>Play the Othello Game using AJAX technology which will eliminate Page Reloads.</p>
+								<p>Play the Othello Game using AJAX technology which will eliminate Page Reloads.
+								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
+								</p>
 							 </li>
 						</div>
 					</div>

@@ -87,7 +87,7 @@
 		<div class="description">
 			<h3>Web Developer</h3>
 			<h3>Townsquare Media/AnalyticOwl - Purchase, NY</h3>
-			<h2>I was laid off due to the Covid-19 corona virus and invited to return when things got better. My duties
+			<h2>I was laid off due to the Covid-19 corona virus. My duties
 				included: </h2>
 			<ul>
 				<li>Ubuntu 18.04 and 19.10 for Linux operating system</li>
