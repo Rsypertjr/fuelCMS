@@ -1026,7 +1026,7 @@
 								The first and last amino acid is chosen in the GUI, as well as, 
 								the desired statistical output. The database accessed by JavaScript-AJAX to PHP-MySQL 
 								on the server side which returns the statistics.<br>The Code for PHP-based apps is
-					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
+					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 								</p>
 							 </li>
 							 <li class="list-group-item list-group-item-warning">
@@ -1042,7 +1042,7 @@
 								based on DOM HTML elements.  MySQL Database information is converted into XML format using PHP 
 								for up front access by the code for generation of Hierachical Display. Unfortunately ONLY THE 
 								First 3 NODES Of DATA was developed at Project Completion.<br>The Code for PHP-based apps is
-					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
+					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 								</p>
 							  </li>
 							 <li class="list-group-item list-group-item-danger">
@@ -1055,7 +1055,7 @@
 								<p>This orominer program contains Histological Data within the Hierarchical Organization of Human Body 
 									makeup. Histological Data is information about Human Organs and their tissues and cells. This 
 									application uses JavaScript Objects to store active data requests from which graphics is generated.
-									<br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
+									<br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 								</p>
 							 </li>
 							 <li class="list-group-item">
@@ -1067,7 +1067,7 @@
 								</a>
 								<object data="othello" height="200" width="300"></object>
 								<p>Play the Othello Game using AJAX technology which will eliminate Page Reloads.
-								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application">PHP Code</a>
+								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 								</p>
 							 </li>
 						</div>
@@ -1172,7 +1172,7 @@
 								</a>
 								<object data="http://159.65.100.7/api_test/hptest.php" height="200" width="300"></object>
 								<p>A Vue JS based app that accesses an API to create a Dynamic List converted from a static HMTL page.  Added Paging Function and Select Page Size.<br>GitHub link
-								   to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp">Vue App Code</a>
+								   to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp" target="_blank">Vue App Code</a>
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-warning">
@@ -1184,7 +1184,7 @@
 								<object data="http://206.189.211.36/" height="200" width="300"></object>
 								<p>A Simple App based on a Digital Oceand droplet with Ubuntu 16 OS and nginx server installed.<br>Express.js/Node.js application framework is used and it also
 								   utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.<br>
-								   Here is the code: <a href="https://github.com/Rsypertjr/expressnode">Express/Node Code</a>
+								   Here is the code: <a href="https://github.com/Rsypertjr/expressnode" target="_blank">Express/Node Code</a>
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-danger">
@@ -1195,7 +1195,7 @@
 								</a>
 								<object data="laravelApp2" height="200" width="300"></object>
 								<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.<br>
-								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/laravel-test/src/master/">Laravel Code</a>
+								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/laravel-test/src/master/" target="_blank">Laravel Code</a>
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-info">
@@ -1206,7 +1206,7 @@
 								</a>
 								<object data="laravelApp3" height="200" width="300"></object>
 								<p>Developed using Laravel Homestead Environment for generating Homeschool grade transcripts for my kids.<br>
-								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/transcript-generator/src/master/">Laravel Code</a>
+								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/transcript-generator/src/master/" target="_blank">Laravel Code</a>
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-success">
@@ -1217,7 +1217,7 @@
 								</a>
 								<object data="angularApp" height="200" width="300"></object>
 								<p>Angular2 App with Redux deployed to Heroku Server.<br>
-								Here is the code: <a href="https://github.com/Rsypertjr/angularRedux">Angular Code</a>
+								Here is the code: <a href="https://github.com/Rsypertjr/angularRedux" target="_blank">Angular Code</a>
 								</p>
 							</li>
 						</div>
