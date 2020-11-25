@@ -62,7 +62,7 @@ $route['mobile'] = 'othelloAndMobile/mobile';
 $route['playBegin'] = 'othelloAndMobile/playBegin';
 $route['(:num)'] = 'starter/test/$1';
 //$route['orominer1'] = 'orominer/orominer1';
-//$route['orominer2'] = 'orominer/orominer2';
+//$route['orominer2'] = 'orominer/orominer2';Play the Othello Game using AJAX technology which will eliminate Page Reloads.
 $route['techWriter'] = 'techWriting/writing';
 
 $route['softwareTW'] = 'techWriting/softwareTW';
@@ -86,6 +86,7 @@ $route['amino/(:any)'] = 'otherApps/amino/$1';
 $route['webTech'] = 'otherApps/webTech';
 $route['loggingIn'] = 'otherApps/loggingIn';
 $route['frontCMS'] = 'otherApps/front';
+$route['voteparser'] = 'otherApps/voteparser';
 
 $route['front'] = 'otherApps/bootPortfolio';
 $route['boot'] = 'otherApps/bootPortfolio';

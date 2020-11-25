@@ -1071,6 +1071,17 @@
 								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 								</p>
 							 </li>
+							 <li class="list-group-item">
+								<a href="http://localhost/voting/parse_votes.php" target="_blank">
+									<p  class="sectionTitle" >	
+										<a href="http://localhost/voting/parse_votes.php" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">2020 Presidential Election Vote Parser</a>
+									</p>
+								</a>
+								<object data="http://localhost/voting/parse_votes.php" height="200" width="300"></object>
+								<p>See Tabular and Graphic Parser of 2020 Presidential Election Voting
+								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
+								</p>
+							 </li>
 						</div>
 					</div>
 					
