@@ -99,6 +99,7 @@
                             "total_vote_add_trump":0,
                             "total_vote_add_biden":0,
                             "total_vote_add_other":0,
+                            "total_vote_add_total":0,
                             "time":votes.timestap
                              };
                                                 
@@ -124,6 +125,7 @@
                                 votes.total_vote_add_trump = votes.votes * votes.trumpd;
                                 votes.total_vote_add_biden = votes.votes * votes.bidenj;
                                 votes.total_vote_add_other = votes.votes - (votes.votes * votes.trumpd + votes.votes * votes.bidenj);
+                                votes.total_vote_add_total = votes.votes;
                                 votes.other_votes = (1-votes.bidenj-votes.trumpd)*votes.votes;
                             }
                             else if(index > 0){
@@ -153,6 +155,7 @@
                                 //votes.total_vote_add_biden = (pres_votes[index].votes - pres_votes[index-1].votes) * votes.bidenj;
                                 votes.total_vote_add_biden = votes.votes*votes.bidenj - pres_votes[index-1].votes*pres_votes[index-1].bidenj;
                                 votes.total_vote_add_other = (1-votes.bidenj-votes.trumpd)*votes.votes - pres_votes[index-1].votes*(1 - pres_votes[index-1].bidenj - pres_votes[index-1].trumpd);
+                                votes.total_vote_add_total = pres_votes[index].votes - pres_votes[index-1].votes;
                             }
                             return votes;
                         });
@@ -166,7 +169,7 @@
                        
                         voterows = pres_votes.map(function(vote,index){
                             return {"index":index,"bidenj":vote.bidenj,"biden_votes":vote.biden_votes,"trumpd":vote.trumpd,"trump_votes":vote.trump_votes,"other_votes":vote.other_votes,"timestamp":vote.timestamp,"votes":vote.votes,"vote_add":vote.total_vote_add,"trump_added":vote.total_vote_add_trump,
-                                "biden_added":vote.total_vote_add_biden };
+                                "biden_added":vote.total_vote_add_biden,"total_added":vote.total_vote_add_total };
                         });
                         console.log("Vote Rows:", voterows);
                         vue_obj();
@@ -219,6 +222,7 @@
                             datedata_trump_add: [],
                             datedata_other: [],
                             datedata_other_add: [],
+                            datedata_total_add: [],
                             biden_slices: [],
                             trump_slices: [],
                             other_slices: [],
@@ -230,12 +234,12 @@
                             datedatatrumpadd_store: [],
                             datedataother_store: [],
                             datedataotheradd_store: [],
+                            datedatatotaladd_store: [],
                             datedatatotal_store: [],
                             parse_interval: 10,
                             pie_headers: [],
                             the_pieheader:null,
                             the_stackedheader:null,
-                            res_selected:0,
                             state_selected:'Michigan',
                             selected:'1 Times',
                             ttable:''
@@ -254,6 +258,7 @@
                            
                             state_selected : function(val){
                                 $("#results_table").css("display","none");
+                                
                                 this.start_tables(val);   
                             },
                             vote_rows: function(val){
@@ -370,6 +375,7 @@
                                         "total_vote_add_trump":0,
                                         "total_vote_add_biden":0,
                                         "total_vote_add_other":0,
+                                        "total_vote_add_total":0,
                                         "time":votes.timestap
                                         };
                                                             
@@ -424,6 +430,7 @@
                                             //votes.total_vote_add_biden = (pres_votes[index].votes - pres_votes[index-1].votes) * votes.bidenj;
                                             votes.total_vote_add_biden = votes.votes*votes.bidenj - pres_votes[index-1].votes*pres_votes[index-1].bidenj;
                                             votes.total_vote_add_other = (1-votes.bidenj-votes.trumpd)*votes.votes - pres_votes[index-1].votes*(1 - pres_votes[index-1].bidenj - pres_votes[index-1].trumpd);
+                                            votes.total_vote_add_total = pres_votes[index].votes - pres_votes[index-1].votes;
                                         }
                                         return votes;
                                     });
@@ -435,7 +442,7 @@
                                     return vote;
                                     }).sort(function(a, b){return a.votes - b.votes});
 
-                                    table = $("table.display").DataTable();
+                                    
 
                                     this2.vote_rows = temp_rows.map(function(vote,index){
                                         return {"index":index,"bidenj":vote.bidenj,"biden_votes":vote.biden_votes,"trumpd":vote.trumpd,"trump_votes":vote.trump_votes,"other_votes":vote.other_votes,"timestamp":vote.timestamp,"votes":vote.votes,"vote_add":vote.total_vote_add,"trump_added":vote.total_vote_add_trump,
@@ -454,15 +461,16 @@
                             },
                             start_tables: function(state){
                                 
-                                if(table){
-                                   table.destroy();
-                               }
-                                
+                               
                                 this.get_data(state);  
+
+                                if(table)
+                                   table.destroy();
+                               
                                 $('table.display').css('display','block');
                                 setTimeout(function(){ 
                                     $('#results_table').show();
-                                    table.draw();
+                                    table = $("table.display").DataTable();
                                    
                                 }, 1000);
 
@@ -489,6 +497,7 @@
                                     var datedatatrump = [];
                                     var datedatatrumpadd = [];
                                     var datedatatotal = [];
+                                    var datedatatotaladd = [];
                                     var datedataother = [];
                                     var datedataotheradd = [];
                                     this.dateheaders_store = [];
@@ -509,9 +518,11 @@
                                             datedatabidenadd.push(voterows[i].biden_votes);
                                             datedatatrumpadd.push(voterows[i].trump_votes);
                                             datedataotheradd.push(voterows[i].other_votes);
+                                            datedatatotaladd.push(voterows[i].votes);
                                             datedatatrump.push(voterows[i].trump_votes);
                                             datedatatotal.push(voterows[i].votes);
                                             datedataother.push(voterows[i].other_votes);
+                                            
                                         }
                                         else if( i % this.parse_interval != 0 ){
                                             dateheaders.push(voterows[i].timestamp);
@@ -521,6 +532,7 @@
                                             datedatabidenadd.push(voterows[i].biden_votes-voterows[i-1].biden_votes);
                                             datedatatrumpadd.push(voterows[i].trump_votes-voterows[i-1].trump_votes);
                                             datedataotheradd.push(voterows[i].other_votes-voterows[i-1].other_votes);
+                                            datedatatotaladd.push(voterows[i].votes-voterows[i-1].votes);
                                             datedatatotal.push(voterows[i].votes);
                                         }
                                         else if(i % this.parse_interval == 0) {
@@ -532,6 +544,7 @@
                                             datedatabidenadd.push(voterows[i].biden_votes-voterows[i-1].biden_votes);
                                             datedatatrumpadd.push(voterows[i].trump_votes-voterows[i-1].trump_votes);
                                             datedataotheradd.push(voterows[i].other_votes-voterows[i-1].other_votes);
+                                            datedatatotaladd.push(voterows[i].votes-voterows[i-1].votes);
                                             this.dateheaders_store.push(dateheaders);
                                             dateheaders = []; 
                                             this.datedatabiden_store.push(datedatabiden);
@@ -547,7 +560,9 @@
                                             this.datedataother_store.push(datedataother);
                                             datedataother = [];     
                                             this.datedataotheradd_store.push(datedataotheradd);
-                                            datedataotheradd = [];                             
+                                            datedataotheradd = [];       
+                                            this.datedatatotaladd_store.push(datedatatotaladd);
+                                            datedatatotaladd = [];                              
                                         }
                                         else{
                                             dateheaders.push(voterows[i].timestamp);
@@ -558,6 +573,7 @@
                                             datedatabidenadd.push(voterows[i].biden_votes-voterows[i-1].biden_votes);
                                             datedatatrumpadd.push(voterows[i].trump_votes-voterows[i-1].trump_votes);
                                             datedataotheradd.push(voterows[i].other_votes-voterows[i-1].other_votes);
+                                            datedatatotaladd.push(voterows[i].votes-voterows[i-1].votes);
                                         }
 
                                     }
@@ -634,6 +650,8 @@
                                 else;
 
                               
+                             
+                              
                                 trump_vote_set = {
 
                                     "biden_votes": biden_total,
@@ -652,7 +670,7 @@
                                     "voteincrease": vote_increase
 
                                     };
-                                //console.log("Trump Vote Set:", trump_vote_set);
+                                                                    //console.log("Trump Vote Set:", trump_vote_set);
 
                                 if(vote2 < vote1)   
                                     return trump_vote_set;
@@ -878,6 +896,7 @@
                                 this.datedata_biden_add = this.datedatabidenadd_store[this.selectedindex];
                                 this.datedata_trump_add = this.datedatatrumpadd_store[this.selectedindex];
                                 this.datedata_other_add = this.datedataotheradd_store[this.selectedindex];
+                                this.datedata_total_add = this.datedatatotaladd_store[this.selectedindex];
                                 var canvas = document.getElementById("newlineChart");
                                 var ctx = canvas.getContext('2d');
 
@@ -890,7 +909,7 @@
                                 var data = {
                                 labels: this.date_headers,
                                 datasets: [{
-                                    label: "New Trump Votes",
+                                    label: "Trump Spikes",
                                     fill: true,
                                     lineTension: 0.1,
                                     backgroundColor: "rgba(167,105,0,0.4)",
@@ -912,7 +931,7 @@
                                     data: this.datedata_trump_add,
                                     spanGaps: false,
                                     },{
-                                    label: "New Biden Votes",
+                                    label: "Biden Spikes",
                                     fill: false,
                                     lineTension: 0.1,
                                     backgroundColor: "rgba(225,0,0,0.4)",
@@ -934,7 +953,7 @@
                                     data: this.datedata_biden_add,
                                     spanGaps: true,
                                     }, {
-                                    label: "New Other Votes",
+                                    label: "Other Spikes",
                                     fill: true,
                                     lineTension: 0.1,
                                     backgroundColor: "rgba(86,105,0,0.4)",
@@ -954,6 +973,28 @@
                                     pointHitRadius: 10,
                                     // notice the gap in the data and the spanGaps: false
                                     data: this.datedata_other_add,
+                                    spanGaps: false,
+                                    },{
+                                    label: "Total Spikes",
+                                    fill: true,
+                                    lineTension: 0.1,
+                                    backgroundColor: "lightblue",
+                                    borderColor: "blue",
+                                    borderCapStyle: 'butt',
+                                    borderDash: [],
+                                    borderDashOffset: 0.0,
+                                    borderJoinStyle: 'miter',
+                                    pointBorderColor: "white",
+                                    pointBackgroundColor: "black",
+                                    pointBorderWidth: 1,
+                                    pointHoverRadius: 8,
+                                    pointHoverBackgroundColor: "brown",
+                                    pointHoverBorderColor: "yellow",
+                                    pointHoverBorderWidth: 2,
+                                    pointRadius: 4,
+                                    pointHitRadius: 10,
+                                    // notice the gap in the data and the spanGaps: false
+                                    data: this.datedata_total_add,
                                     spanGaps: false,
                                     }
 
