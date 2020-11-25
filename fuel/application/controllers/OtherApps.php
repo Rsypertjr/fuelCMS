@@ -87,10 +87,6 @@ class OtherApps extends CI_Controller {
             $this->vars['explainTechnology'] = img_path('explainTechnology.jpg');
             $this->vars['myFace'] = img_path('myFace.jpg');
             $this->vars['upArrow'] = img_path('upArrow.gif'); 
-            $this->vars['softwareTechWriting'] = img_path('softwareTechWriting.gif');
-            $this->vars['rubyRailsImage'] = img_path('rubyRailsImage.jpg');
-            $this->vars['laravelMVC'] = img_path('laravelMVC.jpg');
-            $this->vars['fuelCMS'] = img_path('fuelCMS.jpg');
             $this->vars['viewslimtwig'] = img_path('viewslimtwig.jpg');
             
             $this->vars['vegas1'] = img_path('vegas/vegas1.jpg');
@@ -186,13 +182,6 @@ class OtherApps extends CI_Controller {
         $this->vars['pageTitle'] = "Original Portfolio";
         $this->fuel->pages->render('front',$this->vars);
     }  
-    
-     function loggingIn(){
-       
-        $this->vars['url'] =  base_url("index.php/fuel/login");
-        $this->fuel->pages->render('showApp',$this->vars);
-     }
-     
     
     function caribCateringBak(){
         $this->vars['url'] = "https://rlsworks.com/wordpress";
@@ -292,4 +281,39 @@ class OtherApps extends CI_Controller {
      function bootPortfolio(){
          $this->load->view('bootPortfolio',$this->vars);  
     }
+
+    function getData($state){
+
+            $state = str_replace(' ','-',strtolower($state));
+            $url='https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/'.$state.'/president.json';
+         
+            
+            $ch=curl_init();
+            $timeout=2;
+      
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+      
+            // Get URL content
+            $str_data =curl_exec($ch);
+            // close handle to release resources
+            curl_close($ch);
+            //output, you can also save it locally on the server
+            //$str_data = file_get_contents("/home/rlsjr/Documents/Michigan2020.txt");
+            header('Content-Type: application/json');
+            //echo json_encode($data);
+            echo $str_data;
+            die();
+    }
+
+    function voteParser(){
+        
+        $this->load->view('voting/parse_votes');  
+    
+   }
+
+
 }
+  
+  

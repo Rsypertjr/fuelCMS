@@ -86,7 +86,8 @@ $route['amino/(:any)'] = 'otherApps/amino/$1';
 $route['webTech'] = 'otherApps/webTech';
 $route['loggingIn'] = 'otherApps/loggingIn';
 $route['frontCMS'] = 'otherApps/front';
-$route['voteparser'] = 'otherApps/voteparser';
+$route['voteparser'] = 'otherApps/voteParser';
+$route['getdata/(:any)'] = 'otherApps/getData/$1';
 
 $route['front'] = 'otherApps/bootPortfolio';
 $route['boot'] = 'otherApps/bootPortfolio';
