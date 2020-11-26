@@ -508,43 +508,45 @@
                                     this.datedatatotal_store = [];
                                     this.datedataother_store = [];
                                     this.datedataotheradd_store = [];
+                                    this.datedatatotaladd_store = [];
+
 
                                     console.log("Parse Interval",this.parse_interval);
-                                    for(i=0;i<voterows.length;i++){
+                                    for(i=0;i<this.vote_rows.length;i++){
                                         if(i == 0){
-                                            dateheaders.push(voterows[i].timestamp);
-                                            datedatabiden.push(voterows[i].biden_votes);
-                                            datedatatrump.push(voterows[i].trump_votes);
-                                            datedatabidenadd.push(voterows[i].biden_votes);
-                                            datedatatrumpadd.push(voterows[i].trump_votes);
-                                            datedataotheradd.push(voterows[i].other_votes);
-                                            datedatatotaladd.push(voterows[i].votes);
-                                            datedatatrump.push(voterows[i].trump_votes);
-                                            datedatatotal.push(voterows[i].votes);
-                                            datedataother.push(voterows[i].other_votes);
+                                            dateheaders.push(this.vote_rows[i].timestamp);
+                                            datedatabiden.push(this.vote_rows[i].biden_votes);
+                                            datedatatrump.push(this.vote_rows[i].trump_votes);
+                                            datedatabidenadd.push(this.vote_rows[i].biden_votes);
+                                            datedatatrumpadd.push(this.vote_rows[i].trump_votes);
+                                            datedataotheradd.push(this.vote_rows[i].other_votes);
+                                            datedatatotaladd.push(this.vote_rows[i].votes);
+                                            datedatatrump.push(this.vote_rows[i].trump_votes);
+                                            datedatatotal.push(this.vote_rows[i].votes);
+                                            datedataother.push(this.vote_rows[i].other_votes);
                                             
                                         }
                                         else if( i % this.parse_interval != 0 ){
-                                            dateheaders.push(voterows[i].timestamp);
-                                            datedatabiden.push(voterows[i].biden_votes);
-                                            datedatatrump.push(voterows[i].trump_votes);
-                                            datedataother.push(voterows[i].other_votes);
-                                            datedatabidenadd.push(voterows[i].biden_votes-voterows[i-1].biden_votes);
-                                            datedatatrumpadd.push(voterows[i].trump_votes-voterows[i-1].trump_votes);
-                                            datedataotheradd.push(voterows[i].other_votes-voterows[i-1].other_votes);
-                                            datedatatotaladd.push(voterows[i].votes-voterows[i-1].votes);
-                                            datedatatotal.push(voterows[i].votes);
+                                            dateheaders.push(this.vote_rows[i].timestamp);
+                                            datedatabiden.push(this.vote_rows[i].biden_votes);
+                                            datedatatrump.push(this.vote_rows[i].trump_votes);
+                                            datedataother.push(this.vote_rows[i].other_votes);
+                                            datedatabidenadd.push(this.vote_rows[i].biden_votes-this.vote_rows[i-1].biden_votes);
+                                            datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
+                                            datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
+                                            datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
+                                            datedatatotal.push(this.vote_rows[i].votes);
                                         }
                                         else if(i % this.parse_interval == 0) {
-                                            dateheaders.push(voterows[i].timestamp);
-                                            datedatabiden.push(voterows[i].biden_votes);
-                                            datedatatrump.push(voterows[i].trump_votes);
-                                            datedataother.push(voterows[i].other_votes);
-                                            datedatatotal.push(voterows[i].votes);
-                                            datedatabidenadd.push(voterows[i].biden_votes-voterows[i-1].biden_votes);
-                                            datedatatrumpadd.push(voterows[i].trump_votes-voterows[i-1].trump_votes);
-                                            datedataotheradd.push(voterows[i].other_votes-voterows[i-1].other_votes);
-                                            datedatatotaladd.push(voterows[i].votes-voterows[i-1].votes);
+                                            dateheaders.push(this.vote_rows[i].timestamp);
+                                            datedatabiden.push(this.vote_rows[i].biden_votes);
+                                            datedatatrump.push(this.vote_rows[i].trump_votes);
+                                            datedataother.push(this.vote_rows[i].other_votes);
+                                            datedatatotal.push(this.vote_rows[i].votes);
+                                            datedatabidenadd.push(this.vote_rows[i].biden_votes-this.vote_rows[i-1].biden_votes);
+                                            datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
+                                            datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
+                                            datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
                                             this.dateheaders_store.push(dateheaders);
                                             dateheaders = []; 
                                             this.datedatabiden_store.push(datedatabiden);
@@ -565,19 +567,20 @@
                                             datedatatotaladd = [];                              
                                         }
                                         else{
-                                            dateheaders.push(voterows[i].timestamp);
-                                            datedatabiden.push(voterows[i].biden_votes);
-                                            datedatatrump.push(voterows[i].trump_votes);
-                                            datedataother.push(voterows[i].other_votes);
-                                            datedatatotal.push(voterows[i].votes);
-                                            datedatabidenadd.push(voterows[i].biden_votes-voterows[i-1].biden_votes);
-                                            datedatatrumpadd.push(voterows[i].trump_votes-voterows[i-1].trump_votes);
-                                            datedataotheradd.push(voterows[i].other_votes-voterows[i-1].other_votes);
-                                            datedatatotaladd.push(voterows[i].votes-voterows[i-1].votes);
+                                            dateheaders.push(this.vote_rows[i].timestamp);
+                                            datedatabiden.push(this.vote_rows[i].biden_votes);
+                                            datedatatrump.push(this.vote_rows[i].trump_votes);
+                                            datedataother.push(this.vote_rows[i].other_votes);
+                                            datedatatotal.push(this.vote_rows[i].votes);
+                                            datedatabidenadd.push(this.vote_rows[i].biden_votes-this.vote_rows[i-1].biden_votes);
+                                            datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
+                                            datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
+                                            datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
                                         }
 
                                     }
                                 
+                                    console.log("Date Total Add: ", this.datedatatotaladd_store);
 
                                     // PieChart calculations
                                     var totalslices = [];
