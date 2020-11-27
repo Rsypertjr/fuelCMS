@@ -275,6 +275,7 @@
                             this.start_tables(this.state_selected);                                
 
                             var this2 = this;
+                            console.log("This2: ", this2.$el);
                             $("table.display").on( 'page.dt', function () {
                                 var info = table.page.info();
                                 $('#pageInfo').html( 'Showing page: '+info.page+' of '+info.pages );
@@ -287,25 +288,26 @@
 
                             $('#lineChart').on('click',function(){
                             
-                                if($(this).parent().parent().find('#flinec').hasClass('col-sm-12')){
-                                    $(this).parent().parent().find('#flinec').removeClass('col-sm-12').addClass('col-sm-3');
-                                    $(this).parent().parent().find('#fpiec').add('#fstackedc').add('#flinecnew').show();
+                                if($(this2.$el).find('#flinec').hasClass('col-sm-12')){
+                                    //$(this).parent().parent().find('#flinec').removeClass('col-sm-12').addClass('col-sm-3');
+                                    $(this2.$el).find('#flinec').removeClass('col-sm-12').addClass('col-sm-3');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').show();
                                 } 
                                 else{
-                                    $(this).parent().parent().find('#fpiec').add('#fstackedc').add('#flinecnew').hide();
-                                    $(this).parent().parent().find('#flinec').removeClass('col-sm-3').addClass('col-sm-12');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').hide();
+                                    $(this2.$el).find('#flinec').removeClass('col-sm-3').addClass('col-sm-12');
                                 }
                             });
 
                             $('#newlineChart').on('click',function(){
                             
-                            if($(this).parent().parent().find('#flinecnew').hasClass('col-sm-12')){
-                                $(this).parent().parent().find('#flinecnew').removeClass('col-sm-12').addClass('col-sm-3');
-                                $(this).parent().parent().find('#fpiec').add('#fstackedc').add('#flinec').show();
+                            if($(this2.$el).find('#flinecnew').hasClass('col-sm-12')){
+                                $(this2.$el).find('#flinecnew').removeClass('col-sm-12').addClass('col-sm-3');
+                                $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').show();
                             } 
                             else{
-                                $(this).parent().parent().find('#fpiec').add('#fstackedc').add('#flinec').hide();
-                                $(this).parent().parent().find('#flinecnew').removeClass('col-sm-3').addClass('col-sm-12');
+                                $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').hide();
+                                $(this2.$el).find('#flinecnew').removeClass('col-sm-3').addClass('col-sm-12');
                             }
                         }); 
 
@@ -1197,7 +1199,16 @@
         #results_table{
             display:none
         }
-    
+        
+
+        .dataTables_wrapper{
+            margin-left:-12%;
+          
+        }
+
+        #DataTables_Table_0 > tbody{
+            width:50%;
+        }
 
         [v-cloak] > * { display:none; }
         [v-cloak]::before { content: "loading..."; }
@@ -1223,7 +1234,7 @@
                     <p>{{ race_info.url }}</p>          
                 </div>
             </div>	
-            <div class="container" style="margin:0 0 0 25em;">      
+            <div class="container" >
                 <table id="" class="display" v-if = "vote_rows.length > 0 && headers.length > 0"  style='width:100%'>
                     <thead> 
                         <tr>
@@ -1235,7 +1246,7 @@
                             <td v-for = "cell in row" >{{ cell }}</td>
                         </tr>  
                     </tbody>
-                </table>
+                </table>                  
             </div>
             <br>
                     
@@ -1317,43 +1328,5 @@
                     <div class="col-sm-12" id="single"></div>
             </div>
         
-        <!--<script>
-            //var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        </script>-->
+       
     </body>
