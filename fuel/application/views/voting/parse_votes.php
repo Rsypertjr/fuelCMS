@@ -275,7 +275,7 @@
                             this.start_tables(this.state_selected);                                
 
                             var this2 = this;
-                            console.log("This2: ", this2.$el);
+                            //console.log("This2: ", this2.$el);
                             $("table.display").on( 'page.dt', function () {
                                 var info = table.page.info();
                                 $('#pageInfo').html( 'Showing page: '+info.page+' of '+info.pages );
@@ -474,7 +474,7 @@
                                     $('#results_table').show();
                                     table = $("table.display").DataTable();
                                    
-                                }, 1000);
+                                }, 2000);
 
                                 
                                 //this.parse_vote();
