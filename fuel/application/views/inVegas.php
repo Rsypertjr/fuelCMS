@@ -21,8 +21,8 @@
 				    
 				        $config2 = array();
 				        $config2['hostname'] = "localhost";
-						$config2['username'] = "rlsworks_richard";
-						$config2['password'] = "syp3rt";
+						$config2['username'] = "rlswor5_richard";
+						$config2['password'] = 'Fu3lcm$pass';
 						$config2['database'] = "fuel_cms";
 						$config2['dbdriver'] = "mysqli";
 						$config2['dbprefix'] = "";

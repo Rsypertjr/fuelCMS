@@ -186,9 +186,10 @@ else{
     echo "<br>";
 
     $create_db = true;
-    if(!mysqli_select_db($dbhandle,"rlswor5_proteins")){
+    $dbName = "rlswor5_proteins";
+    if(!mysqli_select_db($dbhandle,$dbName)){
       echo "Database needs to be Created!";
-      echo "<br>";syp3rtreate Protein Database
+      echo "<br>";
       $createDb = "CREATE DATABASE ";
       $sql= $createDb.$dbName;
       //exit();
@@ -355,7 +356,7 @@ if(isset($_GET["dropDb"]))
 	if($_GET["dropDb"] == "yes")
 		{
 		    
-		    $dbhandle = mysqli_connect("localhost","rlswor5_richard","syp3rt");  //connect to mysqli
+		    $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');  //connect to mysqli
         $sql = 'DROP DATABASE rlswor5_proteins';
         mysqli_query($dbhandle,$sql);
         if (!mysqli_error()) {
@@ -402,7 +403,7 @@ if(isset($_GET["motif"]))
   //echo "gets question: ".$mo[2]."<br/>";
   //echo "motif pattern: ".$moPatt."<br/>";
 
-  $dbhandle = mysqli_connect("localhost","rlswor5_richard","syp3rt");  //connect to mysqli
+  $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');  //connect to mysqli
   if(mysqli_connect_errno()){
     echo "Failed to connect to MySQL: ".mysqli_connect_error(). "\n";
     echo "<br>";

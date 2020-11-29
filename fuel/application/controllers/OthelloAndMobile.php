@@ -290,7 +290,7 @@ class OthelloAndMobile extends CI_Controller {
 			
 			$config2['hostname'] = "localhost";
 			$config2['username'] = "rlswor5_richard";
-			$config2['password'] = "syp3rt";
+			$config2['password'] = 'Fu3lcm$pass';
 			$config2['database'] = "rlswor5_app_images";
 			$config2['dbdriver'] = "mysql";
 			$config2['dbprefix'] = "";
@@ -1271,7 +1271,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
    function updateInitBoard($initBoard){
             $servername = "localhost";
 			$username = "rlswor5_richard";
-			$password = "syp3rt";
+			$password = 'Fu3lcm$pass';
 			$dbname = "rlswor5_fuel_cms";
             
             $conn = mysqli_connect($servername,$username,$password, $dbname);
@@ -1297,7 +1297,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
   function updateMyBoard($myBoard){
             $servername = "localhost";
 			$username = "rlswor5_richard";
-			$password = "syp3rt";
+			$password = 'Fu3lcm$pass';
 			$dbname = "rlswor5_fuel_cms";
             
             $conn = mysqli_connect($servername,$username,$password, $dbname);
@@ -1323,7 +1323,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
    function updateTheBody2($theBody2){
             $servername = "localhost";
 			$username = "rlswor5_richard";
-			$password = "syp3rt";
+			$password = 'Fu3lcm$pass';
 			$dbname = "rlswor5_fuel_cms";
             
             $conn = mysqli_connect($servername,$username,$password, $dbname);
@@ -1349,7 +1349,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
   function selectTable($table){
   	    $servername = "localhost";
 		$username = "rlswor5_richard";
-		$password = "syp3rt";
+		$password = 'Fu3lcm$pass';
 		$dbname = "rlswor5_fuel_cms";
 		$file="";
         

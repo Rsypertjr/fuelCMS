@@ -4,7 +4,7 @@
   function selectTable($table){
   	    $servername = "localhost";
 		$username = "rlswor5_richard";
-		$password = "syp3rt";
+		$password = 'Fu3lcm$pass';
 		$dbname = "rlswor5_fuel_cms";
 		$file="";
         
