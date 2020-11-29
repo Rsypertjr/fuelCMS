@@ -172,7 +172,7 @@ $num_Names=$trns5-$trns4;
 
 //Create Proteins Database
 
-$dbhandle = mysqli_connect("localhost","rlswor5_richard","syp3rt");
+$dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');
 
 if(mysqli_connect_errno()){
   echo "Failed to connect to MySQL: ".mysqli_connect_error(). "\n";
@@ -188,8 +188,7 @@ else{
     $create_db = true;
     if(!mysqli_select_db($dbhandle,"rlswor5_proteins")){
       echo "Database needs to be Created!";
-      echo "<br>";
-      $dbName="rlswor5_proteins";                          //create Protein Database
+      echo "<br>";syp3rtreate Protein Database
       $createDb = "CREATE DATABASE ";
       $sql= $createDb.$dbName;
       //exit();
