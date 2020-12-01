@@ -57,6 +57,7 @@
                 var myLineChart = null;
                 var myLineChart2 = null;
                 var myLineChart3 = null;
+                var myLineChart4 = null;
                 var myPieChart = null;
                 var myStackedChart = null;
                 var myStackedChart2 = null;
@@ -194,7 +195,7 @@
                         el: '#results_table',
                         data: {
                             test: "This is a Test",
-                            headers : ["Index","Biden %","Biden Votes","Trump %","Trump Votes","Other Votes","Time Stamps","Votes", "Votes Added","Trump Added","Biden Added"],
+                            headers : ["Index","Biden %","Biden Votes","Trump %","Trump Votes","Other Votes","Time Stamps","Votes", "Votes Added","Trump Added","Biden Added","% of Remaining Biden","% of Remaining Trump"],
                             tlheaders: ["Biden Votes","Biden Vote Increase","1st Index","2nd Index", "Other Votes","Time1","Time2","1st Trump Votes","2nd Trump Votes",
                                         "Trump Vote Loss","Accumulated Trump Vote Loss","Votes Increase + Trump Loss","Last Vote Total", "Overall Vote Increase"],
 
@@ -245,6 +246,8 @@
                             datedataotheradd_store: [],
                             datedatatotaladd_store: [],
                             datedatatotal_store: [],
+                            perremainingtrump_store: [],
+                            perremainingbiden_store:[],
                             parse_interval: 10,
                             pie_headers: [],
                             the_pieheader:null,
@@ -265,6 +268,7 @@
                                 this.linechart();
                                 this.linechart2();
                                 this.linechart3();
+                                this.linechart4();
                                 this.piechart();
                                 this.stackedchart();
                                 this.fill_votebins();
@@ -311,22 +315,24 @@
                                 this2.linechart();
                                 this2.linechart2();
                                 this2.linechart3();
+                                this2.linechart4();
                                 this2.piechart();
                                 this2.stackedchart();
                                 this2.fill_votebins();
                                 this2.stackedchart2();
                             } );
 
+                           
                             $('#lineChart').on('click',function(){
                             
                                 if($(this2.$el).find('#flinec').hasClass('col-sm-12')){
                                     //$(this).parent().parent().find('#flinec').removeClass('col-sm-12').addClass('col-sm-4');
                                     $(this2.$el).find('#flinec').removeClass('col-sm-12').addClass('col-sm-4');
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').show();
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').show();
                                 } 
                                 else{
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').hide();
-                                    $(this2.$el).find('#flinec').removeClass('col-sm-4').addClass('col-sm-12');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').hide();
+                                    $(this2.$el).find('#flinec').removeClass('col-sm-4').addClass('col-sm-12').append($('#example_paginate'));
                                 }
                             });
 
@@ -334,10 +340,10 @@
                             
                                 if($(this2.$el).find('#flinecnew').hasClass('col-sm-12')){
                                     $(this2.$el).find('#flinecnew').removeClass('col-sm-12').addClass('col-sm-4');
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecdiff').add('#fstackedcbin').show();
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').show();
                                 } 
                                 else{
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecdiff').add('#fstackedcbin').hide();
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').hide();
                                     $(this2.$el).find('#flinecnew').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             }); 
@@ -346,24 +352,36 @@
                             
                                 if($(this2.$el).find('#flinecdiff').hasClass('col-sm-12')){
                                     $(this2.$el).find('#flinecdiff').removeClass('col-sm-12').addClass('col-sm-4');
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').show();
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').add('#flinecper').show();
                                 } 
                                 else{
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').hide();
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').add('#flinecper').hide();
                                     $(this2.$el).find('#flinecdiff').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             }); 
 
+
+                            $('#perLineChart').on('click',function(){
+                            
+                                if($(this2.$el).find('#flinecper').hasClass('col-sm-12')){
+                                    $(this2.$el).find('#flinecper').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').add('#flinecdiff').show();
+                                } 
+                                else{
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').add('#flinecdiff').hide();
+                                    $(this2.$el).find('#flinecper').removeClass('col-sm-4').addClass('col-sm-12');
+                                }
+                            }); 
 
 
                             $('#pieChart').on('click',function(){
                                 //alert('ok');
                                 if($('#fpiec').hasClass('col-sm-12')){
                                     $('#fpiec').removeClass('col-sm-12').addClass('col-sm-4');
-                                    $('#flinec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').show();
+                                    $('#flinec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').show();
                                 } 
                                 else{
-                                    $('#flinec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').hide();
+                                    $('#flinec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').hide();
                                     $('#fpiec').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             });
@@ -372,10 +390,10 @@
                                 //alert('ok');
                                 if($('#fstackedc').hasClass('col-sm-12')){
                                     $('#fstackedc').removeClass('col-sm-12').addClass('col-sm-4');
-                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').show();
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').show();
                                 } 
                                 else{
-                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').hide();
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').add('#flinecper').hide();
                                     $('#fstackedc').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             });
@@ -384,10 +402,10 @@
                                 //alert('ok');
                                 if($('#fstackedcbin').hasClass('col-sm-12')){
                                     $('#fstackedcbin').removeClass('col-sm-12').addClass('col-sm-4');
-                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedc').show();
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedc').add('#flinecper').show();
                                 } 
                                 else{
-                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedc').hide();
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedc').add('#flinecper').hide();
                                     $('#fstackedcbin').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             });
@@ -435,6 +453,8 @@
                                         "total_vote_add_biden":0,
                                         "total_vote_add_other":0,
                                         "total_vote_add_total":0,
+                                        "percent_of_remaining_trump":0,
+                                        "percent_of_remaining_biden":0,
                                         //"total_vote_add_bdiff":0,
                                        // "total_vote_add_tdiff":0,
                                         "time":votes.timestap
@@ -500,18 +520,28 @@
                                         return votes;
                                     });
                                     console.log("Total Votes:",pres_votes);
-
+                                    
                                     // Final Format Display Rows of Votes
                                     var temp_rows = pres_votes.map(function(vote,index){                            
                                     //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
+                                  
                                     return vote;
                                     }).sort(function(a, b){return a.votes - b.votes});
 
-                                    
+                                    var totalnum_votes = pres_votes[pres_votes.length-1].votes;
+                                    console.log("Total Num of Votes: ",totalnum_votes);
 
+                                    var temp_rows = pres_votes.map(function(vote,index){                            
+                                        //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
+                                        vote.percent_of_remaining_trump = vote.total_vote_add_trump*100/(totalnum_votes-vote.votes);
+                                        vote.percent_of_remaining_biden = vote.total_vote_add_biden*100/(totalnum_votes-vote.votes);
+                                        return vote;
+                                    }).sort(function(a, b){return a.votes - b.votes}); 
+                                    console.log("Total Votes Again:",temp_rows);
+                                    
                                     this2.vote_rows = temp_rows.map(function(vote,index){
                                         return {"index":index,"bidenj":vote.bidenj,"biden_votes":vote.biden_votes,"trumpd":vote.trumpd,"trump_votes":vote.trump_votes,"other_votes":vote.other_votes,"timestamp":vote.timestamp,"votes":vote.votes,"vote_add":vote.total_vote_add,"trump_added":vote.total_vote_add_trump,
-                                            "biden_added":vote.total_vote_add_biden };
+                                            "biden_added":vote.total_vote_add_biden, "remaining_percent_trump":vote.percent_of_remaining_trump,"remaining_percent_biden": vote.percent_of_remaining_biden};
                                     });
                                     console.log("Vote Rows:", this2.vote_rows);
                                     
@@ -548,6 +578,7 @@
                                     this2.linechart();
                                     this2.linechart2();
                                     this2.linechart3();
+                                    this2.linechart4();
                                     this2.piechart();
                                     this2.fill_votebins();
                                     this2.stackedchart2();
@@ -575,6 +606,9 @@
                                     var datedatatotaladd = [];
                                     var datedataother = [];
                                     var datedataotheradd = [];
+                                    var perremainingtrump = [];
+                                    var perremainingbiden = [];
+
                                     this.dateheaders_store = [];
                                     this.datedatabiden_store = [];
                                     this.datedatabidenadd_store = [];
@@ -586,6 +620,8 @@
                                     this.datedataother_store = [];
                                     this.datedataotheradd_store = [];
                                     this.datedatatotaladd_store = [];
+                                    this.perremainingtrump_store = [];
+                                    this.perremainingbiden_store = [];
 
 
                                     console.log("Parse Interval",this.parse_interval);
@@ -603,6 +639,9 @@
                                             datedatatrump.push(this.vote_rows[i].trump_votes);
                                             datedatatotal.push(this.vote_rows[i].votes);
                                             datedataother.push(this.vote_rows[i].other_votes);
+                                            perremainingtrump.push(this.vote_rows[i].remaining_percent_trump);
+                                            perremainingbiden.push(this.vote_rows[i].remaining_percent_biden);
+                                            
                                             
                                         }
                                         else if( i % this.parse_interval != 0 ){
@@ -617,6 +656,8 @@
                                             datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
                                             datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
                                             datedatatotal.push(this.vote_rows[i].votes);
+                                            perremainingtrump.push(this.vote_rows[i].remaining_percent_trump);
+                                            perremainingbiden.push(this.vote_rows[i].remaining_percent_biden);
                                         }
                                         else if(i % this.parse_interval == 0) {
                                             dateheaders.push(this.vote_rows[i].timestamp);
@@ -630,7 +671,10 @@
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
                                             datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
                                             datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
-                                            
+                                            perremainingtrump.push(this.vote_rows[i].remaining_percent_trump);
+                                            perremainingbiden.push(this.vote_rows[i].remaining_percent_biden);
+
+
                                             this.dateheaders_store.push(dateheaders);
                                             dateheaders = []; 
                                             this.datedatabiden_store.push(datedatabiden);
@@ -652,7 +696,11 @@
                                             this.datedatabidenadddiff_store.push(datedatabidenadddiff);
                                             datedatabidenadddiff = [];       
                                             this.datedatatrumpadddiff_store.push(datedatatrumpadddiff);
-                                            datedatatrumpadddiff = [];                                              
+                                            datedatatrumpadddiff = [];    
+                                            this.perremainingtrump_store.push(perremainingtrump);
+                                            perremainingtrump = [];
+                                            this.perremainingbiden_store.push(perremainingbiden);
+                                            perremainingbiden = [];                                          
                                         }
                                         else{
                                             dateheaders.push(this.vote_rows[i].timestamp);
@@ -666,7 +714,8 @@
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
                                             datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
                                             datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
-                                           
+                                            perremainingtrump.push(this.vote_rows[i].remaining_percent_trump);
+                                            perremainingbiden.push(this.vote_rows[i].remaining_percent_biden);
                                         }
 
                                     }
@@ -1319,6 +1368,99 @@
                                     });
                             },
 
+                            linechart4:function(){
+                                this.date_headers = this.dateheaders_store[this.selectedindex];
+                                var pertrump = this.perremainingtrump_store[this.selectedindex];
+                                var perbiden = this.perremainingbiden_store[this.selectedindex];
+                                var canvas = document.getElementById("perLineChart");
+                                var ctx = canvas.getContext('2d');
+
+                                
+
+                                // Global Options:
+                                Chart.defaults.global.defaultFontColor = 'black';
+                                Chart.defaults.global.defaultFontSize = 16;
+
+                                var data = {
+                                labels: this.date_headers,
+                                datasets: [{
+                                    label: "Trump % of Remaining Vote",
+                                    fill: true,
+                                    lineTension: 0.1,
+                                    backgroundColor: "rgba(167,105,0,0.4)",
+                                    borderColor: "rgb(167, 105, 0)",
+                                    borderCapStyle: 'butt',
+                                    borderDash: [],
+                                    borderDashOffset: 0.0,
+                                    borderJoinStyle: 'miter',
+                                    pointBorderColor: "white",
+                                    pointBackgroundColor: "black",
+                                    pointBorderWidth: 1,
+                                    pointHoverRadius: 8,
+                                    pointHoverBackgroundColor: "brown",
+                                    pointHoverBorderColor: "yellow",
+                                    pointHoverBorderWidth: 2,
+                                    pointRadius: 4,
+                                    pointHitRadius: 10,
+                                    // notice the gap in the data and the spanGaps: false
+                                    data: pertrump,
+                                    spanGaps: false,
+                                    },{
+                                    label: "Biden % of Remaining Vote",
+                                    fill: false,
+                                    lineTension: 0.1,
+                                    backgroundColor: "rgba(225,0,0,0.4)",
+                                    borderColor: "red", // The main line color
+                                    borderCapStyle: 'square',
+                                    borderDash: [], // try [5, 15] for instance
+                                    borderDashOffset: 0.0,
+                                    borderJoinStyle: 'miter',
+                                    pointBorderColor: "black",
+                                    pointBackgroundColor: "white",
+                                    pointBorderWidth: 1,
+                                    pointHoverRadius: 8,
+                                    pointHoverBackgroundColor: "yellow",
+                                    pointHoverBorderColor: "brown",
+                                    pointHoverBorderWidth: 2,
+                                    pointRadius: 4,
+                                    pointHitRadius: 10,
+                                    // notice the gap in the data and the spanGaps: true
+                                    data: perbiden,
+                                    spanGaps: true,
+                                    }
+                                ]
+                                };
+
+                                // Notice the scaleLabel at the same level as Ticks
+                                var options = {
+                                scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero:true
+                                                },
+                                                scaleLabel: {
+                                                    display: true,
+                                                    labelString: 'Percent of Remaining Votes',
+                                                    fontSize: 20 
+                                                }
+                                            }]            
+                                        }  
+                                };
+
+                                if(myLineChart4){
+                                    myLineChart4.destroy();
+                                }
+                                // Chart declaration:
+                                myLineChart4 = new Chart(ctx, {
+                                    type: 'line',
+                                    data: data,
+                                    options: options
+                                    });
+                            },
+
+
+
+
 
 
 
@@ -1554,7 +1696,7 @@
         
 
         .dataTables_wrapper{
-            margin-left:-12%;
+            margin-left:-31.5%;
           
         }
 
@@ -1681,6 +1823,16 @@
                     <div id="fstackedcbin" class="col-sm-4">
                         <canvas id="binStackedChart" class="achart"></canvas>
                     </div> 
+                </div>
+
+                <div class="row">                   
+                    <div id="flinecper" class="col-sm-4">
+                        <canvas id="perLineChart" class="achart"></canvas>
+                    </div>
+                    <!--<div id="" class="col-sm-4">
+                    </div>
+                    <div id="" class="col-sm-4">
+                    </div>--> 
                 </div>
             </div>
            
