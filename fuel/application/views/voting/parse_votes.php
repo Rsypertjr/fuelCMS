@@ -56,8 +56,10 @@
                 var xmlhttp = new XMLHttpRequest();
                 var myLineChart = null;
                 var myLineChart2 = null;
+                var myLineChart3 = null;
                 var myPieChart = null;
                 var myStackedChart = null;
+                var myStackedChart2 = null;
                 var voterows = [];
                 var racedata = {};
                 var table = '';
@@ -220,9 +222,14 @@
                             datedata_trump: [],
                             datedata_biden_add: [],
                             datedata_trump_add: [],
+                            datedata_biden_diff_add: [],
+                            datedata_trump_diff_add: [], 
                             datedata_other: [],
                             datedata_other_add: [],
                             datedata_total_add: [],
+                            bin_headers: [],
+                            bin_trump: [],
+                            bin_biden: [],
                             biden_slices: [],
                             trump_slices: [],
                             other_slices: [],
@@ -230,8 +237,10 @@
                             dateheaders_store: [],
                             datedatabiden_store: [],
                             datedatabidenadd_store: [],
+                            datedatabidenadddiff_store: [],
                             datedatatrump_store: [],
                             datedatatrumpadd_store: [],
+                            datedatatrumpadddiff_store: [],
                             datedataother_store: [],
                             datedataotheradd_store: [],
                             datedatatotaladd_store: [],
@@ -242,7 +251,11 @@
                             the_stackedheader:null,
                             state_selected:'Michigan',
                             selected:'1 Times',
-                            ttable:''
+                            ttable:'',                           
+                            vote_bins: [],
+                            number_pages: 0,
+                            step: 0
+                            
                         },
 
                         watch:{
@@ -251,9 +264,17 @@
                                 this.parse_vote();
                                 this.linechart();
                                 this.linechart2();
+                                this.linechart3();
                                 this.piechart();
                                 this.stackedchart();
+                                this.fill_votebins();
+                                this.stackedchart2();
+                                
                                
+                            },
+                            number_pages: function(val){
+                                console.log("Number of Pages: ", val);                               
+                                this.parse_vote();
                             },
                            
                             state_selected : function(val){
@@ -262,17 +283,23 @@
                                 this.start_tables(val);   
                             },
                             vote_rows: function(val){
-                                this.parse_vote();
+                               
+                               /* this.parse_vote();
                                 this.linechart();
                                 this.linechart2();
+                                this.linechart3();
                                 this.piechart();
+                                this.fill_votebins();
+                                this.stackedchart2();
                                 this.stackedchart();
+                                */
+                               
                             }
 
                         },
                                                  
                         mounted: function() {                           
-                            this.start_tables(this.state_selected);                                
+                            this.start_tables(this.state_selected);       
 
                             var this2 = this;
                             //console.log("This2: ", this2.$el);
@@ -280,58 +307,88 @@
                                 var info = table.page.info();
                                 $('#pageInfo').html( 'Showing page: '+info.page+' of '+info.pages );
                                 this2.selectedindex = info.page;
+                                this2.number_pages = info.pages;
                                 this2.linechart();
                                 this2.linechart2();
+                                this2.linechart3();
                                 this2.piechart();
                                 this2.stackedchart();
+                                this2.fill_votebins();
+                                this2.stackedchart2();
                             } );
 
                             $('#lineChart').on('click',function(){
                             
                                 if($(this2.$el).find('#flinec').hasClass('col-sm-12')){
-                                    //$(this).parent().parent().find('#flinec').removeClass('col-sm-12').addClass('col-sm-3');
-                                    $(this2.$el).find('#flinec').removeClass('col-sm-12').addClass('col-sm-3');
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').show();
+                                    //$(this).parent().parent().find('#flinec').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $(this2.$el).find('#flinec').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').show();
                                 } 
                                 else{
-                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').hide();
-                                    $(this2.$el).find('#flinec').removeClass('col-sm-3').addClass('col-sm-12');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').hide();
+                                    $(this2.$el).find('#flinec').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             });
 
                             $('#newlineChart').on('click',function(){
                             
-                            if($(this2.$el).find('#flinecnew').hasClass('col-sm-12')){
-                                $(this2.$el).find('#flinecnew').removeClass('col-sm-12').addClass('col-sm-3');
-                                $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').show();
-                            } 
-                            else{
-                                $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').hide();
-                                $(this2.$el).find('#flinecnew').removeClass('col-sm-3').addClass('col-sm-12');
-                            }
-                        }); 
+                                if($(this2.$el).find('#flinecnew').hasClass('col-sm-12')){
+                                    $(this2.$el).find('#flinecnew').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecdiff').add('#fstackedcbin').show();
+                                } 
+                                else{
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecdiff').add('#fstackedcbin').hide();
+                                    $(this2.$el).find('#flinecnew').removeClass('col-sm-4').addClass('col-sm-12');
+                                }
+                            }); 
+
+                            $('#diffLineChart').on('click',function(){
+                            
+                                if($(this2.$el).find('#flinecdiff').hasClass('col-sm-12')){
+                                    $(this2.$el).find('#flinecdiff').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').show();
+                                } 
+                                else{
+                                    $(this2.$el).find('#fpiec').add('#fstackedc').add('#flinec').add('#flinecnew').add('#fstackedcbin').hide();
+                                    $(this2.$el).find('#flinecdiff').removeClass('col-sm-4').addClass('col-sm-12');
+                                }
+                            }); 
+
+
 
                             $('#pieChart').on('click',function(){
                                 //alert('ok');
                                 if($('#fpiec').hasClass('col-sm-12')){
-                                    $('#fpiec').removeClass('col-sm-12').addClass('col-sm-3');
-                                    $('#flinec').add('#fstackedc').add('#flinecnew').show();
+                                    $('#fpiec').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $('#flinec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').show();
                                 } 
                                 else{
-                                    $('#flinec').add('#fstackedc').add('#flinecnew').hide();
-                                    $('#fpiec').removeClass('col-sm-3').addClass('col-sm-12');
+                                    $('#flinec').add('#fstackedc').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').hide();
+                                    $('#fpiec').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             });
                         
                             $('#stackedChart').on('click',function(){
                                 //alert('ok');
                                 if($('#fstackedc').hasClass('col-sm-12')){
-                                    $('#fstackedc').removeClass('col-sm-12').addClass('col-sm-3');
-                                    $('#flinec').add('#fpiec').add('#flinecnew').show();
+                                    $('#fstackedc').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').show();
                                 } 
                                 else{
-                                    $('#flinec').add('#fpiec').add('#flinecnew').hide();
-                                    $('#fstackedc').removeClass('col-sm-3').addClass('col-sm-12');
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedcbin').hide();
+                                    $('#fstackedc').removeClass('col-sm-4').addClass('col-sm-12');
+                                }
+                            });
+
+                            $('#binStackedChart').on('click',function(){
+                                //alert('ok');
+                                if($('#fstackedcbin').hasClass('col-sm-12')){
+                                    $('#fstackedcbin').removeClass('col-sm-12').addClass('col-sm-4');
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedc').show();
+                                } 
+                                else{
+                                    $('#flinec').add('#fpiec').add('#flinecnew').add('#flinecdiff').add('#fstackedc').hide();
+                                    $('#fstackedcbin').removeClass('col-sm-4').addClass('col-sm-12');
                                 }
                             });
                                 
@@ -378,6 +435,8 @@
                                         "total_vote_add_biden":0,
                                         "total_vote_add_other":0,
                                         "total_vote_add_total":0,
+                                        //"total_vote_add_bdiff":0,
+                                       // "total_vote_add_tdiff":0,
                                         "time":votes.timestap
                                         };
                                                             
@@ -403,6 +462,8 @@
                                             votes.total_vote_add_trump = votes.votes * votes.trumpd;
                                             votes.total_vote_add_biden = votes.votes * votes.bidenj;
                                             votes.total_vote_add_other = votes.votes - (votes.votes * votes.trumpd + votes.votes * votes.bidenj);
+                                            //votes.total_vote_add_bdiff = votes.votes * votes.bidenj - votes.votes * votes.trumpd;
+                                            //votes.total_vote_add_tdiff = votes.votes * votes.trumpd - votes.votes * votes.bidenj;
                                             votes.other_votes = (1-votes.bidenj-votes.trumpd)*votes.votes;
                                         }
                                         else if(index > 0){
@@ -433,6 +494,8 @@
                                             votes.total_vote_add_biden = votes.votes*votes.bidenj - pres_votes[index-1].votes*pres_votes[index-1].bidenj;
                                             votes.total_vote_add_other = (1-votes.bidenj-votes.trumpd)*votes.votes - pres_votes[index-1].votes*(1 - pres_votes[index-1].bidenj - pres_votes[index-1].trumpd);
                                             votes.total_vote_add_total = pres_votes[index].votes - pres_votes[index-1].votes;
+                                           // votes.total_vote_add_bdiff = (votes.votes*votes.bidenj - pres_votes[index-1].votes*pres_votes[index-1].bidenj) - (votes.votes*votes.trumpd - pres_votes[index-1].votes*pres_votes[index-1].trumpd);
+                                           // votes.total_vote_add_tdiff = (votes.votes*votes.trumpd - pres_votes[index-1].votes*pres_votes[index-1].trumpd) - (votes.votes*votes.bidenj - pres_votes[index-1].votes*pres_votes[index-1].bidenj);
                                         }
                                         return votes;
                                     });
@@ -470,21 +533,29 @@
                                    table.destroy();
                                
                                 $('table.display').css('display','block');
+                                var this2 = this;
                                 setTimeout(function(){ 
                                     $('#results_table').show();
                                     table = $("table.display").DataTable();
+                                    var info = table.page.info();
+                                    this2.number_pages = info.pages; 
+                                    //this.step = 200000/this.number_pages;
+                                    //console.log("Step:",this.step);
+
+                                    console.log("Pages:", this2.number_pages);
+
+                                    this2.parse_vote();
+                                    this2.linechart();
+                                    this2.linechart2();
+                                    this2.linechart3();
+                                    this2.piechart();
+                                    this2.fill_votebins();
+                                    this2.stackedchart2();
+                                    this2.stackedchart();
+                                    
                                    
                                 }, 2000);
-
-                                
-                                //this.parse_vote();
-                                //this.linechart();
-                                //this.linechart2();
-                                //this.piechart();
-                                //this.stackedchart();  
                                
-                                
-                                
                                 
                                 $('#pieheader').css('display','block');
                                
@@ -496,8 +567,10 @@
                                     var dateheaders = [];
                                     var datedatabiden = [];
                                     var datedatabidenadd = [];
+                                    var datedatabidenadddiff = [];
                                     var datedatatrump = [];
                                     var datedatatrumpadd = [];
+                                    var datedatatrumpadddiff = [];
                                     var datedatatotal = [];
                                     var datedatatotaladd = [];
                                     var datedataother = [];
@@ -505,8 +578,10 @@
                                     this.dateheaders_store = [];
                                     this.datedatabiden_store = [];
                                     this.datedatabidenadd_store = [];
+                                    this.datedatabidenadddiff_store = [];
                                     this.datedatatrump_store = [];
                                     this.datedatatrumpadd_store = [];
+                                    this.datedatatrumpadddiff_store = [];
                                     this.datedatatotal_store = [];
                                     this.datedataother_store = [];
                                     this.datedataotheradd_store = [];
@@ -521,6 +596,8 @@
                                             datedatatrump.push(this.vote_rows[i].trump_votes);
                                             datedatabidenadd.push(this.vote_rows[i].biden_votes);
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes);
+                                            datedatabidenadddiff.push(this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes);
+                                            datedatatrumpadddiff.push(this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes);
                                             datedatatrump.push(this.vote_rows[i].trump_votes);
@@ -537,6 +614,8 @@
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
+                                            datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
+                                            datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
                                             datedatatotal.push(this.vote_rows[i].votes);
                                         }
                                         else if(i % this.parse_interval == 0) {
@@ -549,6 +628,9 @@
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
+                                            datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
+                                            datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
+                                            
                                             this.dateheaders_store.push(dateheaders);
                                             dateheaders = []; 
                                             this.datedatabiden_store.push(datedatabiden);
@@ -566,7 +648,11 @@
                                             this.datedataotheradd_store.push(datedataotheradd);
                                             datedataotheradd = [];       
                                             this.datedatatotaladd_store.push(datedatatotaladd);
-                                            datedatatotaladd = [];                              
+                                            datedatatotaladd = [];  
+                                            this.datedatabidenadddiff_store.push(datedatabidenadddiff);
+                                            datedatabidenadddiff = [];       
+                                            this.datedatatrumpadddiff_store.push(datedatatrumpadddiff);
+                                            datedatatrumpadddiff = [];                                              
                                         }
                                         else{
                                             dateheaders.push(this.vote_rows[i].timestamp);
@@ -578,11 +664,16 @@
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
+                                            datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
+                                            datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
+                                           
                                         }
 
                                     }
                                 
                                     console.log("Date Total Add: ", this.datedatatotaladd_store);
+                                    console.log("Date Biden Add Diff: ", this.datedatabidenadddiff_store);
+                                    console.log("Date Trump Add Diff: ", this.datedatatrumpadddiff_store);
 
                                     // PieChart calculations
                                     var totalslices = [];
@@ -623,7 +714,111 @@
                                 this.pie_headers = pieheaders;
 
                                 console.log("Other Slices: ",otherslices);
+
+
+
                        
+                            },
+                            fill_votebins: function(){
+
+                                // Set up Vote Bins
+                                var index = 0;
+                                var interval = 0;
+                                this.vote_bins = [];
+                                var vote_bin = {
+                                    "interval":0,
+                                    "biden_in_bin": 0,
+                                    "trump_in_bin":0,
+                                };
+                              
+                                   
+                                //var step = parseInt(200000/(this.number_pages*10));
+                                var step = 2500;
+                                
+                                console.log("Step",step);
+
+                                while(interval <= 200000){
+                                    vote_bin.interval = interval;
+                                    vote_bin.trump_in_bin = 0;
+                                    vote_bin.biden_in_bin = 0;
+                                    this.vote_bins[index] = vote_bin;
+                                    //console.log("Vote Bins: ",this.vote_bins[index]);
+                                    index++;
+                                    interval = interval + step;
+                                    
+                                    var vote_bin = {
+                                        "interval":0,
+                                        "biden_in_bin": 0,
+                                        "trump_in_bin":0,
+                                    };
+
+                                }
+                               
+
+
+                                // Put in Biden Bins
+                                for(var j = 0;j<this.datedatabidenadddiff_store.length;j++){
+                                    var store = this.datedatabidenadddiff_store[j];
+                                    for(var k=0;k < store.length;k++){
+                                        for(var l = 0;l < this.vote_bins.length;l++){
+                                            //console.log("Store value:",store[k]);
+                                            if(l > 0)
+                                                if(store[k] < this.vote_bins[l].interval && store[k] >= this.vote_bins[l-1].interval)
+                                                    this.vote_bins[l].biden_in_bin++;
+                                        }
+                                    }
+                                    //console.log("Store:",store);
+                                }
+
+                                // Put in Trump Bins
+                                for(var j = 0;j<this.datedatatrumpadddiff_store.length;j++){
+                                    var store = this.datedatatrumpadddiff_store[j];
+                                    for(var k=0;k < store.length;k++){
+                                        for(var l = 0;l < this.vote_bins.length;l++){
+                                            //console.log("Store value:",store[k]);
+                                            if(l > 0)
+                                                if(store[k] < this.vote_bins[l].interval && store[k] >= this.vote_bins[l-1].interval)
+                                                    this.vote_bins[l].trump_in_bin++;
+                                        }
+                                    }
+                                    //console.log("Store:",store);
+                                }
+                                console.log("Vote Bins: ",this.vote_bins);
+
+                                var index = 0;
+                                for(i=0;i<this.vote_bins.length;i++){
+                                        if(i == 0){
+                                            this.bin_headers[index] = [];
+                                            this.bin_biden[index] = [];
+                                            this.bin_trump[index] = [];
+                                            this.bin_headers[index].push(this.vote_bins[i].interval);
+                                            this.bin_biden[index].push(this.vote_bins[i].biden_in_bin);
+                                            this.bin_trump[index].push(this.vote_bins[i].trump_in_bin);
+                                            
+                                        }
+                                        else if( i % this.parse_interval != 0 ){
+                                            this.bin_headers[index].push(this.vote_bins[i].interval);
+                                            this.bin_biden[index].push(this.vote_bins[i].biden_in_bin);
+                                            this.bin_trump[index].push(this.vote_bins[i].trump_in_bin);
+                                        }
+                                        else if(i % this.parse_interval == 0) {
+                                            this.bin_headers[index].push(this.vote_bins[i].interval);
+                                            this.bin_biden[index].push(this.vote_bins[i].biden_in_bin);
+                                            this.bin_trump[index].push(this.vote_bins[i].trump_in_bin);
+                                            
+                                            index++;     
+                                            this.bin_headers[index] = [];
+                                            this.bin_biden[index] = [];
+                                            this.bin_trump[index] = [];     
+                                        }
+                                        else{
+                                            this.bin_headers[index].push(this.vote_bins[i].interval);
+                                            this.bin_biden[index].push(this.vote_bins[i].biden_in_bin);
+                                            this.bin_trump[index].push(this.vote_bins[i].trump_in_bin);
+                                        }
+
+                                    }
+                                
                             },
                             trump_decrease: function(votes,index2){
                                 if(index2 > 0 ){
@@ -914,7 +1109,7 @@
                                 var data = {
                                 labels: this.date_headers,
                                 datasets: [{
-                                    label: "Trump Spikes",
+                                    label: "Trump Spike",
                                     fill: true,
                                     lineTension: 0.1,
                                     backgroundColor: "rgba(167,105,0,0.4)",
@@ -936,7 +1131,7 @@
                                     data: this.datedata_trump_add,
                                     spanGaps: false,
                                     },{
-                                    label: "Biden Spikes",
+                                    label: "Biden Spike",
                                     fill: false,
                                     lineTension: 0.1,
                                     backgroundColor: "rgba(225,0,0,0.4)",
@@ -958,7 +1153,7 @@
                                     data: this.datedata_biden_add,
                                     spanGaps: true,
                                     }, {
-                                    label: "Other Spikes",
+                                    label: "Other Spike",
                                     fill: true,
                                     lineTension: 0.1,
                                     backgroundColor: "rgba(86,105,0,0.4)",
@@ -980,7 +1175,7 @@
                                     data: this.datedata_other_add,
                                     spanGaps: false,
                                     },{
-                                    label: "Total Spikes",
+                                    label: "Total Spike",
                                     fill: true,
                                     lineTension: 0.1,
                                     backgroundColor: "lightblue",
@@ -1034,7 +1229,99 @@
                             },
 
 
-    
+                            linechart3:function(){
+                                this.date_headers = this.dateheaders_store[this.selectedindex];
+                                this.datedata_biden_diff_add = this.datedatabidenadddiff_store[this.selectedindex];
+                                this.datedata_trump_diff_add = this.datedatatrumpadddiff_store[this.selectedindex];
+                                var canvas = document.getElementById("diffLineChart");
+                                var ctx = canvas.getContext('2d');
+
+                                
+
+                                // Global Options:
+                                Chart.defaults.global.defaultFontColor = 'black';
+                                Chart.defaults.global.defaultFontSize = 16;
+
+                                var data = {
+                                labels: this.date_headers,
+                                datasets: [{
+                                    label: "Trump Gain/Loss",
+                                    fill: true,
+                                    lineTension: 0.1,
+                                    backgroundColor: "rgba(167,105,0,0.4)",
+                                    borderColor: "rgb(167, 105, 0)",
+                                    borderCapStyle: 'butt',
+                                    borderDash: [],
+                                    borderDashOffset: 0.0,
+                                    borderJoinStyle: 'miter',
+                                    pointBorderColor: "white",
+                                    pointBackgroundColor: "black",
+                                    pointBorderWidth: 1,
+                                    pointHoverRadius: 8,
+                                    pointHoverBackgroundColor: "brown",
+                                    pointHoverBorderColor: "yellow",
+                                    pointHoverBorderWidth: 2,
+                                    pointRadius: 4,
+                                    pointHitRadius: 10,
+                                    // notice the gap in the data and the spanGaps: false
+                                    data: this.datedata_trump_diff_add,
+                                    spanGaps: false,
+                                    },{
+                                    label: "Biden Gain/Loss",
+                                    fill: false,
+                                    lineTension: 0.1,
+                                    backgroundColor: "rgba(225,0,0,0.4)",
+                                    borderColor: "red", // The main line color
+                                    borderCapStyle: 'square',
+                                    borderDash: [], // try [5, 15] for instance
+                                    borderDashOffset: 0.0,
+                                    borderJoinStyle: 'miter',
+                                    pointBorderColor: "black",
+                                    pointBackgroundColor: "white",
+                                    pointBorderWidth: 1,
+                                    pointHoverRadius: 8,
+                                    pointHoverBackgroundColor: "yellow",
+                                    pointHoverBorderColor: "brown",
+                                    pointHoverBorderWidth: 2,
+                                    pointRadius: 4,
+                                    pointHitRadius: 10,
+                                    // notice the gap in the data and the spanGaps: true
+                                    data: this.datedata_biden_diff_add,
+                                    spanGaps: true,
+                                    }
+                                ]
+                                };
+
+                                // Notice the scaleLabel at the same level as Ticks
+                                var options = {
+                                scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero:true
+                                                },
+                                                scaleLabel: {
+                                                    display: true,
+                                                    labelString: 'Votes Gain/Loss',
+                                                    fontSize: 20 
+                                                }
+                                            }]            
+                                        }  
+                                };
+
+                                if(myLineChart3){
+                                    myLineChart3.destroy();
+                                }
+                                // Chart declaration:
+                                myLineChart3 = new Chart(ctx, {
+                                    type: 'line',
+                                    data: data,
+                                    options: options
+                                    });
+                            },
+
+
+
+
 
 
                         piechart: function(){
@@ -1133,7 +1420,7 @@
                                 responsive: true,
                                 title: {
                                 display: true,
-                                text: 'Stacked Bars'
+                                text: 'Vote Gains Per Time Interval'
                                 },
                                 tooltips: {
                                 mode: 'index',
@@ -1145,6 +1432,66 @@
                                 }]
                                 }
                             }
+                            });
+                        },
+                        stackedchart2: function(){
+                            //this.bin_headers = [];
+                           
+
+                            window.chartColors = {
+                            red: 'rgb(255, 99, 132)',
+                            orange: 'rgb(255, 159, 64)',
+                            yellow: 'rgb(255, 205, 86)',
+                            green: 'rgb(75, 192, 192)',
+                            blue: 'rgb(54, 162, 235)',
+                            purple: 'rgb(153, 102, 255)',
+                            grey: 'rgb(231,233,237)'
+                            };
+
+                            var ctx = document.getElementById("binStackedChart").getContext("2d");
+
+                            
+                            if(myStackedChart2){
+                                myStackedChart2.destroy();
+                            }
+                            myStackedChart2 = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: this.bin_headers[this.selectedindex],
+                                    datasets: [{
+                                    type: 'bar',
+                                    label: 'Number for Trump',
+                                    backgroundColor: "rgba(167,105,0,0.4)",
+                                    borderColor: "rgb(167, 105, 0)",
+                                    stack: 'Stack 0',
+                                    borderWidth: 2,
+                                    data: this.bin_trump[this.selectedindex]
+                                    }, {
+                                    type: 'bar',
+                                    label: 'Number for Biden',
+                                    backgroundColor: "red",
+                                    borderColor:"red",
+                                    stack: 'Stack 0',
+                                    data: this.bin_biden[this.selectedindex],
+                                    borderWidth: 2
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    title: {
+                                    display: true,
+                                    text: 'Number of Gains within Gain Size Interval'
+                                    },
+                                    tooltips: {
+                                    mode: 'index',
+                                    intersect: true
+                                    },
+                                    scales: {
+                                    xAxes: [{
+                                        stacked: true,
+                                    }]
+                                    }
+                                }
                             });
                         }
 
@@ -1180,6 +1527,11 @@
             /*   Check out the fancy shadow  on this one */
             box-shadow: 0 3rem 5rem -2rem rgba(0, 0, 0, 0.6);
         }
+        .fxchart{
+            background-color: beige;
+            padding-top: 1em
+
+        }
         div.jumbotron p{
                 font-size:1.35em;
                 text-align:center
@@ -1189,7 +1541,7 @@
                 text-align:center
              }
         
-        container.fxchart{"margin-bottom":2em}
+      
 
         #pieheader{
             text-align:center;
@@ -1206,8 +1558,10 @@
           
         }
 
-        #DataTables_Table_0 > tbody{
-            width:50%;
+      
+        #charts [class*="col"] {
+            border:2px dashed black;
+            padding:0.5em;
         }
 
         [v-cloak] > * { display:none; }
@@ -1235,7 +1589,7 @@
                 </div>
             </div>	
             <div class="container" >
-                <table id="" class="display" v-if = "vote_rows.length > 0 && headers.length > 0"  style='width:100%'>
+                <table id="example" class="display table table-striped table-bordered" v-if = "vote_rows.length > 0 && headers.length > 0"  style='width:100%'>
                     <thead> 
                         <tr>
                             <th class="th-sm" v-for="header in headers">{{header}}</th>
@@ -1248,8 +1602,6 @@
                     </tbody>
                 </table>                  
             </div>
-            <br>
-                    
 
             <!--<canvas id="myChart" width="400" height="400">}}</th>
                         </tr>
@@ -1284,11 +1636,10 @@
         
             <!--<canvas id="myChart" width="400" height="400"></canvas>-->
            
-            <div class="fxchart" class="container" style="background-color:beige;padding-top:2em">
+            <div class="fxchart" class="container">
                 <div class="row">
                     <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                       
+                    <div class="col-sm-4">                       
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">Choose Chart Resolution</label>
@@ -1299,34 +1650,40 @@
                                 <option>10 Times</option>
                                 <option>15 Times</option>
                             </select>
-                        </div>   
-                        <h3 style="color:red;background-color:lightgray;padding:0.25em;text-align:center">You Can Click Charts to Enlarge and Reduce</h3>
-                   
+                        </div>                     
                     </div>
                     <div class="col-sm-4"></div>
                 </div>
-             
-                <br />
-                <br />
-                <div class="row" id="multiple">
-                    <div id="flinec" class="col-sm-3">
+            </div>
+            <div id="charts"  style="margin-top:-4em;transform:scale(0.8,0.8)">
+                <h4 style="color:red;background-color:lightgray;padding:0.25em;text-align:center">You Can Click Charts to Enlarge and Reduce</h4>
+                <div class="row">
+                    <div id="flinec" class="col-sm-4">
                         <canvas id="lineChart" class="achart"></canvas>
                     </div>
-                    <div id="flinecnew" class="col-sm-3">
+                    <div id="flinecnew" class="col-sm-4">
                         <canvas id="newlineChart" class="achart"></canvas>
                     </div>
-                    <div id="fpiec" class="col-sm-3">
+                    <div id="fpiec" class="col-sm-4">
                         <h3 id="pieheader" v-cloak>{{ the_pieheader }}</h3>
                         <canvas id="pieChart" class="achart"></canvas>
                     </div>
-                    <div id="fstackedc" class="col-sm-3">
+                </div>
+
+                <div class="row">                   
+                    <div id="fstackedc" class="col-sm-4">
                         <h1 id="stackedheader" v-cloak>{{ the_stackedheader }}</h1>
                         <canvas id="stackedChart" class="achart"></canvas>
                     </div>
+                    <div id="flinecdiff" class="col-sm-4">
+                        <canvas id="diffLineChart" class="achart"></canvas>
+                    </div>
+                    <div id="fstackedcbin" class="col-sm-4">
+                        <canvas id="binStackedChart" class="achart"></canvas>
+                    </div> 
                 </div>
-                <div class="row" >
-                    <div class="col-sm-12" id="single"></div>
             </div>
+           
         
        
     </body>
