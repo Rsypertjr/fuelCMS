@@ -781,8 +781,8 @@
                                 };
                               
                                    
-                                //var step = parseInt(200000/(this.number_pages*10));
-                                var step = 2500;
+                                var step = parseInt(200000/(this.number_pages*10));
+                                //var step = 2500;
                                 
                                 console.log("Step",step);
 
@@ -833,6 +833,10 @@
                                     //console.log("Store:",store);
                                 }
                                 console.log("Vote Bins: ",this.vote_bins);
+
+                                this.bin_headers = [];
+                                this.bin_biden = [];
+                                this.bin_trump = [];
 
                                 var index = 0;
                                 for(i=0;i<this.vote_bins.length;i++){
