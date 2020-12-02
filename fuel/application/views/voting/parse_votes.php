@@ -837,6 +837,7 @@
                                 this.bin_headers = [];
                                 this.bin_biden = [];
                                 this.bin_trump = [];
+                                // Just for update
 
                                 var index = 0;
                                 for(i=0;i<this.vote_bins.length;i++){
