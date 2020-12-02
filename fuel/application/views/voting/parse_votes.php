@@ -1567,7 +1567,7 @@
                                 responsive: true,
                                 title: {
                                 display: true,
-                                text: 'Vote Gains Per Time Interval'
+                                text: 'Vote Totals Per Time Interval'
                                 },
                                 tooltips: {
                                 mode: 'index',
