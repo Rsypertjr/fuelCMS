@@ -1195,7 +1195,7 @@
 									</p>
 								</a>
 								<object data="http://206.189.211.36/" height="200" width="300"></object>
-								<p>A Simple App based on a Digital Oceand droplet with Ubuntu 16 OS and nginx server installed.<br>Express.js/Node.js application framework is used and it also
+								<p>A Simple App based on a Digital Ocean droplet with Ubuntu 16 OS and nginx server installed.<br>Express.js/Node.js application framework is used and it also
 								   utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.<br>
 								   Here is the code: <a href="https://github.com/Rsypertjr/expressnode" target="_blank">Express/Node Code</a>
 								</p>
