@@ -209,17 +209,17 @@ class appimages_model extends CI_Model {
 					array(
 					'id' => 40,
 					'name' => 'resume',
-					'link' => 'pdf/RichardSypert122020.pdfPDF.pdf'
+					'link' => 'pdf/RichardSypert122020.pdf'
 				),
 					array(
 					'id' => 41,
 					'name' => 'resumeMobileDownload',
-					'link' => "http://docs.google.com/gview?embedded=true&url=".base_url("pdf/RichardSypert122020.pdfPDF.pdf")
+					'link' => "http://docs.google.com/gview?embedded=true&url=".base_url("pdf/RichardSypert122020.pdf")
 				),
 					array(
 					'id' => 42,
 					'name' => 'resumeMobilePDF',
-					'link' => "http://docs.google.com/gview?embedded=true&url=".base_url("pdf/RichardSypert122020.pdfPDF.pdf")
+					'link' => "http://docs.google.com/gview?embedded=true&url=".base_url("pdf/RichardSypert122020.pdf")
 				),
 					array(
 					'id' => 43,
