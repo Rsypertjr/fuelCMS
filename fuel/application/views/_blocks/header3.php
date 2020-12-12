@@ -36,8 +36,7 @@
 				echo $CI->fuel->blog->header();
 			endif;
 		?>
-		<?=jquery()?>
-	       
+		
      
 		
 
