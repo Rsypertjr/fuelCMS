@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'mom';
+    src: url('mom-webfont.eot');
+    src: url('mom-webfont.eot?#iefix') format('embedded-opentype'),
+         url('mom-webfont.woff2') format('woff2'),
+         url('mom-webfont.woff') format('woff'),
+         url('mom-webfont.ttf') format('truetype'),
+         url('mom-webfont.svg#momstypewriterregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

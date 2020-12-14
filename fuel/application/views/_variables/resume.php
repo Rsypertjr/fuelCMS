@@ -1,0 +1,2 @@
+<?php 
+$vars['whichPage'] = 'resumes';

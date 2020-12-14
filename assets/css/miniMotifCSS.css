@@ -1,0 +1,339 @@
+	.fsiz {
+		position:relative;
+		float:left;
+		width:22%;
+		background-color:lightgrey;
+		font-size:0.65em;
+		height:2.5em;
+		font-family:"Comic Sans MS", cursive, sans-serif;
+		margin:2px;
+		
+		}
+
+       h1 {position:relative;
+       	   width:90%;
+       	   margin:1em;
+       	   font-size:3.0em}
+       
+	   #am1-button .fsiz,#am2-button .fsiz {
+				position:absolute;
+				height:100%;
+				width:100%;
+				}
+				
+	#am1-button span.fsiz,#am2-button span.fsiz {
+		top:0.1em;
+		left:-0.1em;
+		padding-top:0.4em;
+		font-size:2.3em;
+	}
+	
+	body {position:relative;}
+	#filecapt {
+		position:relative;
+		width:100%;
+		font-size:1.2em;
+		padding:0.5em;
+		height:20em;
+		font-family:"Comic Sans MS", cursive, sans-serif;
+		
+	}
+    #mmContainer
+		{
+		    position:relative;
+		    height:90em;
+		    width:97%;
+		    padding-bottom:1.0em;
+		    border-style:ridge;
+		    border-color:grey;
+		    border-width:20px 20px 20px 20px;
+		    
+		 }
+		 
+	
+	
+	#headBar
+	{
+	 
+	 border-style:ridge;
+	 border-color:grey;
+	 border-width:20px 20px 20px 20px;
+	
+	}
+	
+
+	#qu {
+		position:relative;
+		float:right;
+		font-size:0.85em;
+		width:50%;
+		top:2em;
+		margin-right:38%;
+        padding-left:1em;
+		height:2.5em;
+		font-family:"Comic Sans MS", cursive, sans-serif;
+		}
+	
+	#subButton
+		{
+			position:relative;
+			float:left;
+			font-size:0.85em;
+			top:4em;
+			width:17%;
+			height:2.5em;
+			margin-left:15%;
+			font-family:"Comic Sans MS", cursive, sans-serif;
+		
+		
+		
+		}
+	
+
+        #clearButton
+		{
+			position:relative;
+			float:left;
+			font-size:0.85em;
+			top:4em;
+			margin-left:10%;	
+			width:17%;
+			height:2.5em;
+			font-family:"Comic Sans MS", cursive, sans-serif;
+		
+		
+		
+		} 
+
+
+	#aminocodes p {font-size:1.5em}
+	
+	.inputC {
+		position:relative;
+		float:left;
+		width:15%;
+		
+	}
+	.aButton2 {
+		position:relative;
+		display:block;
+		float:left;
+		font-size:0.65em;
+		margin-left:1em;
+		color:black;
+		border:1px solid black;
+		border-radius:5px;
+		cursor:pointer;
+		padding:1em;
+		background-color:white;
+		}
+	
+    .aButton2:nth-child(1){width:32%;}
+    .aButton2:nth-child(2){width:15%;} 
+    
+    form#aminocodes{
+    	position:relative;
+    	width:100%;
+    }
+  
+	#motifsel
+		{
+			height:50em; 
+			border-style:solid; 
+			border-width:1px;
+			background-color:rgb(240,240,240);
+		}
+		
+
+	 #wait {
+	 			 padding:0.5em;
+	             position:relative;
+	             float:left;
+	             width:87.7%;
+	             height:auto;
+                 z-index:200;
+                 font-size:1.5em;
+                 
+                 margin-left: 0.3em;
+            	 border: 10px solid black;
+        		 background-color:rgb(220,220,220); 
+			 	 background-color:rgb(350,275,190);
+				 overflow-x:scroll;
+				 overflow-y:scroll;
+                 transition: top 2s;
+				-webkit-transition: top 2s;  /* Safari */
+                }	
+		
+	#fileinput, #motifsel{
+			padding:0.5em;
+            position:relative;
+            float:left;
+            width:90%;
+            font-size:1.1em;
+            margin:1em;
+            border: 10px solid black;
+            height:20em;
+            background-color:rgb(220,220,220);
+	}
+	
+
+
+        #aFormContainer {
+                         position:relative;
+                         float:left;
+                         height:23em;
+                         width:100%;
+
+                        }
+
+
+
+	
+	#inputdiv{
+			position:relative;
+			height:auto;
+       	    width:100%;
+	}
+	
+	
+	#wait img {
+	
+	opacity:0.55;
+	}
+	
+	
+	
+	#loaderMessage {margin-bottom:1em}
+	
+	#wait img {margin-left:3em}
+	#wait #loaderMessage {margin-left:1em}
+	
+	
+	
+	#aminocodes > div:nth-child(2) {
+		
+		float:left;
+		width:17em;
+		top:-1em;
+		left;2em;
+		padding:2px;
+	}
+	
+	#aminocodes > div:nth-child(4) {
+		float:left;
+		top:-1em;
+		width:17em;
+		left:2em;
+		padding:2px;
+		
+	}
+	
+	.ui-page #filecapt > p {font-size:1.5em}
+	
+	   #am1, #am2, #mobX {
+	   			position:relative;
+                float:left;
+                font-size:0.9em;
+                margin-top:2em;
+        }
+
+       #mobX {
+		        padding-top:0.75em;
+		        font-size:1.2em;
+                width:10%;
+                margin-left:1.0em;
+                top:-0.85em;
+                text-align:center;
+          }
+      
+     
+        #am2 {
+                width:25%;
+                padding-left:2em;
+                margin-left:1em;
+             
+          }
+
+        #am1  {
+                 width:25%;
+                 padding-left:1em; 
+                 margin-left:3em;
+           }
+	
+	
+    #am1-button, #am2-button  {
+				position:relative;
+				height:2em;
+				
+			}
+    #am1-button select,#am2-button select {
+		position:absolute;
+		height:100%;
+		width:100%;
+	    font-size:2.0em}
+	
+	#aminocodes > div:nth-child(5)
+		{
+		display:block;
+		top:0em;
+		left:10em;
+		width:0em;
+		margin-left:2em;
+	
+		}
+		
+	
+	.ui-mobile #aminocodes > p {font-size:1.8em}	
+	.ui-mobile #aminocodes > div:nth-child(5)
+		{
+		display:block;
+		top:0em;
+		left:0em;
+		width:50em;
+		margin:3em 0em;
+	
+		}	
+	#aminocodes > div:nth-child(5) {height:1em}	
+	
+		
+	#qu-button  {
+				position:relative;
+				height:2.5em;
+				width:70em;
+				top:6em;
+				}
+				
+				
+	#qu-button #qu {
+		position:absolute;
+		height:100%;
+		width:100%;
+		font-size:2.5em;
+		
+		
+	}
+	.ui-btn-icon-right:after {zoom:200%}
+	#aminocodes > div.ui-btn.ui-input-btn.ui-corner-all.ui-shadow.ui-btn-inline {
+	    position:relative;
+		float:left;
+		top:14em;
+		width:20em;
+		font-size:1.8em;		
+		}
+	.ui-page .inputC {font-size:1.6em}
+	.ui-page .aButton2 {font-size:1.6em}	
+	.ui-page #qu option {font-size:2.0em}	
+	.ui-select~#mobX {margin:0 0 0 1em}
+     
+
+	#mobfHeader h2 {font-size:2.5em}	
+    #qu-button span {
+		position:absolute;
+		height:100%;
+		width:100%;
+		font-size:2.5em;
+		padding-left:0.5em;
+	 }
+	
+ 	.ui-page #filecapt > div > div.inputC > div {position:relative;left:6em;top:-2em}
+	.ui-input-text div.aButton2 {font-size:1.5em;width:auto}

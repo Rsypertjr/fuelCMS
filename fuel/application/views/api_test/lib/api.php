@@ -1,0 +1,19 @@
+<?php
+
+require('OAuth.php');
+require('ArchivesTreeAPI.php');
+
+// Account Info
+define('ARCHIVESTREE_ACCOUNT_ID', 47);
+define('ARCHIVESTREE_API_VERSION', '0.3');
+define('ARCHIVESTREE_CONSUMER_KEY', 'f21d49410f2e6ddda913fe26752a05f205b3f66aa');
+define('ARCHIVESTREE_CONSUMER_SECRET', '28b4ce05fa8649b552e161c719ecf2a3');
+
+$api = new ArchivesTreeAPI(
+				ARCHIVESTREE_ACCOUNT_ID,
+				ARCHIVESTREE_API_VERSION,
+				ARCHIVESTREE_CONSUMER_KEY,
+				ARCHIVESTREE_CONSUMER_SECRET
+			);
+
+?>
