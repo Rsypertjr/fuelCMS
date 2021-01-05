@@ -90,35 +90,28 @@
                             var biden = votes.vote_shares.bidenj*votes.votes;
                             
                             var vote_row = {      
-                            "index": index,
-                            "votes": votes.votes,
-                            "timestamp": votes.timestamp,
-                            "bidenj": votes.vote_shares.bidenj,
-                            "biden_votes":0,
-                            "trumpd": votes.vote_shares.trumpd,
-                            "trump_votes":0,
-                            "other_votes":0,
-                            "total_vote_add":0,
-                            "total_vote_add_trump":0,
-                            "total_vote_add_biden":0,
-                            "total_vote_add_other":0,
-                            "total_vote_add_total":0,
-                            "time":votes.timestap
+                                "index": index,
+                                "votes": votes.votes,
+                                "timestamp": votes.timestamp,
+                                "bidenj": votes.vote_shares.bidenj,
+                                "biden_votes":0,
+                                "trumpd": votes.vote_shares.trumpd,
+                                "trump_votes":0,
+                                "other_votes":0,
+                                "total_vote_add":0,
+                                "total_vote_add_trump":0,
+                                "total_vote_add_biden":0,
+                                "total_vote_add_other":0,
+                                "total_vote_add_total":0,
+                                "time":votes.timestap
                              };
                                                 
-                            return vote_row;
-                        }
+                             return vote_row;
+                            }
 
                         
                         var pres_votes = timeseries.map(calc_votes);
-
-                        // Calculate Additional Values in Votes Object
-                        pres_votes = pres_votes.map(function(vote,index){                            
-                         //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
-                         return vote;
-                        // }).sort(function(a, b){return a.index- b.index});  // Sort by index
-                        //}).sort(function(a, b){return a.votes- b.votes});   // Sort by votes
-                        }).sort(function(a, b){return a.timestamp- b.timestamp});   // Sort by timestamp
+                     
 
                         pres_votes = pres_votes.map(function(votes,index){
                             if(index == 0){
@@ -168,13 +161,14 @@
                        voterows = pres_votes.map(function(vote,index){                            
                          //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
                          return vote;
-                        }).sort(function(a, b){return a.votes - b.votes});
+                        //}).sort(function(a, b){return a.votes - b.votes});
+                        }).sort(function(a, b){return a.timestamp - b.timestamp});
                        
                         voterows = pres_votes.map(function(vote,index){
                             return {"index":index,"bidenj":vote.bidenj,"biden_votes":vote.biden_votes,"trumpd":vote.trumpd,"trump_votes":vote.trump_votes,"other_votes":vote.other_votes,"timestamp":vote.timestamp,"votes":vote.votes,"vote_add":vote.total_vote_add,"trump_added":vote.total_vote_add_trump,
                                 "biden_added":vote.total_vote_add_biden,"total_added":vote.total_vote_add_total };
                         });
-                        console.log("Vote Rows:", voterows);
+                        console.log("Initial Vote Rows:", voterows);
                         vue_obj();
                            
                       
@@ -205,7 +199,8 @@
                                         "Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota",
                                         "Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina",
                                         "North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee",
-                                        "Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],      
+                                        "Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],    
+                            sorts: ["Time Stamps","Cumulative Vote Totals"],  
                             row: '',
                             header: '',
                             cell:'',
@@ -253,6 +248,7 @@
                             the_pieheader:null,
                             the_stackedheader:null,
                             state_selected:'Michigan',
+                            sort_selected:'Time Stamps',
                             selected:'1 Times',
                             ttable:'',                           
                             vote_bins: [],
@@ -284,7 +280,12 @@
                             state_selected : function(val){
                                 $("#results_table").css("display","none");
                                 
-                                this.start_tables(val);   
+                                this.start_tables(val,this.sort_selected);   
+                            },
+                            sort_selected : function(val){
+                                $("#results_table").css("display","none");
+                                
+                                this.start_tables(this.state_selected,val);   
                             },
                             vote_rows: function(val){
                                
@@ -303,7 +304,7 @@
                         },
                                                  
                         mounted: function() {                           
-                            this.start_tables(this.state_selected);       
+                            this.start_tables(this.state_selected,this.sort_selected);       
 
                             var this2 = this;
                             //console.log("This2: ", this2.$el);
@@ -414,7 +415,7 @@
                       
                         methods: {
                             // Mapping Function Used for calculating when vote total decreases and the accumulation
-                            get_data: function(state){
+                            get_data: function(state,selected_sort){
                               var this2 = this;
                               var getdata =  xmlhttp.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
@@ -465,15 +466,7 @@
 
 
                                     var pres_votes = timeseries.map(calc_votes);
-
-                                    // Calculate Additional Values in Votes Object
-                                    pres_votes = pres_votes.map(function(vote,index){                            
-                                    //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
-                                    return vote;
-                                    // }).sort(function(a, b){return a.index- b.index});  // Sort by index
-                                    //}).sort(function(a, b){return a.votes- b.votes});   // Sort by votes
-                                    }).sort(function(a, b){return a.timestamp- b.timestamp});   // Sort by timestamp
-
+                               
                                     pres_votes = pres_votes.map(function(votes,index){
                                         if(index == 0){
                                             votes.biden_votes = votes.bidenj*votes.votes;
@@ -520,23 +513,28 @@
                                         return votes;
                                     });
                                     console.log("Total Votes:",pres_votes);
-                                    
-                                    // Final Format Display Rows of Votes
-                                    var temp_rows = pres_votes.map(function(vote,index){                            
-                                    //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
-                                  
-                                    return vote;
-                                    }).sort(function(a, b){return a.votes - b.votes});
-
+                                 
                                     var totalnum_votes = pres_votes[pres_votes.length-1].votes;
                                     console.log("Total Num of Votes: ",totalnum_votes);
-
-                                    var temp_rows = pres_votes.map(function(vote,index){                            
-                                        //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
-                                        vote.percent_of_remaining_trump = vote.total_vote_add_trump*100/(totalnum_votes-vote.votes);
-                                        vote.percent_of_remaining_biden = vote.total_vote_add_biden*100/(totalnum_votes-vote.votes);
-                                        return vote;
-                                    }).sort(function(a, b){return a.votes - b.votes}); 
+                                    if(selected_sort && selected_sort.includes('Time')) {
+                                        console.log("Sort Selected: ",selected_sort);
+                                        var temp_rows = pres_votes.map(function(vote,index){                            
+                                            //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
+                                            vote.percent_of_remaining_trump = vote.total_vote_add_trump*100/(totalnum_votes-vote.votes);
+                                            vote.percent_of_remaining_biden = vote.total_vote_add_biden*100/(totalnum_votes-vote.votes);
+                                            return vote;
+                                        }).sort(function(a, b){return a.timestamp - b.timestamp});
+                                    }
+                                    if(selected_sort && selected_sort.includes('Vote')) {
+                                        console.log("Sort Selected: ",selected_sort);
+                                        var temp_rows = pres_votes.map(function(vote,index){                            
+                                            //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
+                                            vote.percent_of_remaining_trump = vote.total_vote_add_trump*100/(totalnum_votes-vote.votes);
+                                            vote.percent_of_remaining_biden = vote.total_vote_add_biden*100/(totalnum_votes-vote.votes);
+                                            return vote;
+                                        }).sort(function(a, b){return a.votes - b.votes}); 
+                                    }
+ 
                                     console.log("Total Votes Again:",temp_rows);
                                     
                                     this2.vote_rows = temp_rows.map(function(vote,index){
@@ -554,10 +552,10 @@
                             xmlhttp.send();   
                             
                             },
-                            start_tables: function(state){
+                            start_tables: function(state,sort){
                                 
                                
-                                this.get_data(state);  
+                                this.get_data(state,sort);  
 
                                 if(table)
                                    table.destroy();
@@ -632,8 +630,8 @@
                                             datedatatrump.push(this.vote_rows[i].trump_votes);
                                             datedatabidenadd.push(this.vote_rows[i].biden_votes);
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes);
-                                            datedatabidenadddiff.push(this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes);
-                                            datedatatrumpadddiff.push(this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes);
+                                            datedatabidenadddiff.push(this.vote_rows[i].biden_votes);
+                                            datedatatrumpadddiff.push(this.vote_rows[i].trump_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes);
                                             datedatatrump.push(this.vote_rows[i].trump_votes);
@@ -653,8 +651,8 @@
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
-                                            datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
-                                            datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
+                                            datedatabidenadddiff.push(this.vote_rows[i].biden_votes - this.vote_rows[i-1].biden_votes);
+                                            datedatatrumpadddiff.push(this.vote_rows[i].trump_votes - this.vote_rows[i-1].trump_votes);
                                             datedatatotal.push(this.vote_rows[i].votes);
                                             perremainingtrump.push(this.vote_rows[i].remaining_percent_trump);
                                             perremainingbiden.push(this.vote_rows[i].remaining_percent_biden);
@@ -669,8 +667,8 @@
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
-                                            datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
-                                            datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
+                                            datedatabidenadddiff.push(this.vote_rows[i].biden_votes - this.vote_rows[i-1].biden_votes);
+                                            datedatatrumpadddiff.push(this.vote_rows[i].trump_votes - this.vote_rows[i-1].trump_votes);
                                             perremainingtrump.push(this.vote_rows[i].remaining_percent_trump);
                                             perremainingbiden.push(this.vote_rows[i].remaining_percent_biden);
 
@@ -712,8 +710,8 @@
                                             datedatatrumpadd.push(this.vote_rows[i].trump_votes-this.vote_rows[i-1].trump_votes);
                                             datedataotheradd.push(this.vote_rows[i].other_votes-this.vote_rows[i-1].other_votes);
                                             datedatatotaladd.push(this.vote_rows[i].votes-this.vote_rows[i-1].votes);
-                                            datedatabidenadddiff.push((this.vote_rows[i].biden_votes - this.vote_rows[i].trump_votes)-(this.vote_rows[i-1].biden_votes - this.vote_rows[i-1].trump_votes));
-                                            datedatatrumpadddiff.push((this.vote_rows[i].trump_votes - this.vote_rows[i].biden_votes)-(this.vote_rows[i-1].trump_votes - this.vote_rows[i-1].biden_votes));
+                                            datedatabidenadddiff.push(this.vote_rows[i].biden_votes - this.vote_rows[i-1].biden_votes);
+                                            datedatatrumpadddiff.push(this.vote_rows[i].trump_votes - this.vote_rows[i-1].trump_votes);
                                             perremainingtrump.push(this.vote_rows[i].remaining_percent_trump);
                                             perremainingbiden.push(this.vote_rows[i].remaining_percent_biden);
                                         }
@@ -874,162 +872,7 @@
                                     }
                                 
                             },
-                            trump_decrease: function(votes,index2){
-                                if(index2 > 0 ){
-                                   
-                                    var biden_increase =  this.vote_rows[index2].biden_votes - this.vote_rows[index2-1].biden_votes;
-                                    var biden_total = this.vote_rows[index2].biden_votes; 
-                                    var vote_increase = this.vote_rows[index2].votes - this.vote_rows[index2-1].votes;  
-                                    var vote1 = this.vote_rows[index2-1].trump_votes;   
-                                    var vote2 = this.vote_rows[index2].trump_votes;       
-                                    var time1 = this.vote_rows[index2-1].timestamp.toString();  
-                                    var time2 = this.vote_rows[index2].timestamp.toString();                        
-                                    var totals_err = votes.votes - (votes.biden_votes + votes.trump_votes);
-                                    var vote_total = votes.votes;  
-                                    var trumpvoteloss = vote1-vote2;  
-                                    var vinc_plus_tloss = vote_increase + (vote1-vote2);                                   
-                                }
-                                else if(index2 == 0)  {
-                                    var vote1 = null;
-                                    var time1 = null;
-                                    var biden_increase = null;
-                                    var biden_total = 0;
-                                    var vote_increase = null;
-                                    var totals_err = null;
-                                    var vote_total = null;
-                                    var trumpvoteloss = 0;
-                                    var trumpvotelosstotal = 0;
-                                    var vinc_plus_tloss = null;
-                                }
-                                else;
-
-                              
-                             
-                              
-                                trump_vote_set = {
-
-                                    "biden_votes": biden_total,
-                                    "biden_increase": biden_increase,
-                                    "index1":index2-1,
-                                    "index2":index2,
-                                    "other_votes": totals_err,
-                                    "time1":time1,
-                                    "time2":time2,
-                                    "trumpd1":vote1,
-                                    "trumpd2": vote2,
-                                    "trumpvoteloss":trumpvoteloss,
-                                    "trumpvotelosstotal":0,
-                                    "vote_increase_plus_trumploss": vinc_plus_tloss,
-                                    "vote_total": vote_total,
-                                    "voteincrease": vote_increase
-
-                                    };
-                                                                    //console.log("Trump Vote Set:", trump_vote_set);
-
-                                if(vote2 < vote1)   
-                                    return trump_vote_set;
-                                else 
-                                    return {};
-                            },
-                            get_trump_decrease: function(){
-                                var tvd = this.vote_rows.map(this.trump_decrease);
-                               tvd = tvd.filter(function(votes){return votes.index1 != null})
-
-                               
-                                for (i=0;i<tvd.length;i++){
-                                    if(i == 0){
-                                        tvd[i].trumpvotelosstotal = tvd[i].trumpvoteloss;
-                                    }
-                                    else if(i>0){
-                                        tvd[i].trumpvotelosstotal  =  tvd[i-1].trumpvotelosstotal
-                                            + tvd[i].trumpvoteloss;
-
-                                        this.trump_voteloss = tvd[i].trumpvotelosstotal;
-                                    }
-                                    
-                                  
-                                   }
-
-                                tvd = tvd.map(function(vote){                            
-                                    //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
-                                    return vote;
-                                    }).sort(function(a, b){return a.index1 - b.index1});
-                                    
-                             
-                                this.trump_votes_decrease = tvd;
-                                console.log("Vote Rows2:", this.trump_votes_decrease);
-                        },
-
-                        biden_decrease: function(votes, index){
-                             // Mapping Function Used for calculating when Biden Vote Total Decreases and the Accumulation
-                             if(index > 0 ) {
-                             
-                                var vote1 = this.vote_rows[index-1].biden_votes;
-                                var vote2 = this.vote_rows[index].biden_votes;;
-                                var trump_increase =  this.vote_rows[index].trump_votes - this.vote_rows[index-1].tpieheader
-                                var vote_total = this.vote_rows[index].votes;  
-                                var bidenvoteloss = vote1-vote2;  
-                                var vinc_plus_bloss = vote_increase + (vote1-vote2);
-                             }
-                             else  {
-                                var vote1 = null;
-                                var trump_increase = null;
-                                var trump_total = 0;
-                                var vote_increase = null;
-                                var totals_err = null;
-                                var vote_total = null;
-                                var bidenvoteloss = 0;
-                                var bidenvotelosstotal = 0;
-                                var vinc_plus_bloss = null;
-                                }
-
-                             var biden_vote_set = {
-                                    "trump votes": trump_total,
-                                    "trumpincrease":trump_increase,
-                                    "index1":index-1,
-                                    "index2":index,
-                                    "other_votes": totals_err,
-                                    "biden1":vote1,
-                                    "biden2": vote2,
-                                    "bidenvoteloss":bidenvoteloss,
-                                    "bidenvotelosstotal":0,
-                                    "vote_increase_plus_bidenloss": vinc_plus_bloss,  
-                                    "vote_total": vote_total,
-                                    "voteincrease": vote_increase         
-                                }
-                             //console.log(vote_set);
-
-                             if(vote2 < vote1)
-                                return biden_vote_set;
-                             else 
-                                return {};15
-                            },
-                        get_biden_decrease: function(){
-                        
-                            var tvd = this.vote_rows.map(this.biden_decrease);
-                                tvd = tvd.filter(function(votes){return votes.indexpieheader1 != null})
-
-                               
-                                for (i=0;i<tvd.length;i++){
-                                    if(i == 0){
-                                        tvd[i].bidenvotelosstotal = tvd[i].bidenvoteloss;
-                                    }
-                                    else if(i>0){
-                                        tvd[i].bidenvotelosstotal  =  tvd[i-1].bidenvotelosstotal
-                                            + tvd[i].bidenvoteloss;
-
-                                        this.biden_voteloss = tvd[i].bidenvotelosstotal; 
-                                    }   
-                                }
-
-                                tvd = tvd.map(function(vote,index){                            
-                                    //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
-                                    return vote;
-                                    }).sort(function(a, b){return a.index1 - b.index1});
-                             
-                                this.biden_votes_decrease = tvd;
-                                console.log("Vote Rows2:", this.biden_votes_decrease);
-                        },
+                    
                       // Function used to Display Line Chart based on ChartFx Jquery Plugin
                         linechart:function(){
                             this.date_headers = this.dateheaders_store[this.selectedindex];
@@ -1726,7 +1569,14 @@
                     <select v-model="state_selected" class="custom-select" id="inputGroupSelect01">
                         <option v-for="state in states">{{ state }}</option>
                     </select>
-                </div>   
+              
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sort By</label>
+                    </div>
+                    <select v-model="sort_selected" class="custom-select" id="inputGroupSelect01">
+                        <option v-for="sort in sorts">{{ sort }}</option>
+                    </select>
+                </div>    
                 <div class="jumbotron" >
                     <h1>2020 Presidential Election Parser</h1> 
                     <h2>Race Data:</h2>  
@@ -1750,37 +1600,6 @@
                 </table>                  
             </div>
 
-            <!--<canvas id="myChart" width="400" height="400">}}</th>
-                        </tr>
-                    </thead>
-                    <tbody> 
-                        <tr v-for = "row in trump_votes_decrease">
-                            <td v-for = "cell in row">{{cell}}</td>
-                        </tr>  
-                    </tbody>
-                </table>
-                <br>table.display
-                        <tr>
-                            <th class="th-sm" v-for="header in blheaders">{{header}}</th>
-                        </tr>
-                    </thead>
-                    <tbody> 
-                        <tr v-for = "row in biden_votes_decrease">
-                            <td v-for = "cell in row">{{cell}}</td>
-                        </tr>  
-                    </tbody>
-                </table>
-                <div id="tophdr" class="container">
-                    <div class="jumbotron" >
-                        <h1>Summary</h1> 
-                        <h2>Total Trump Vote Loss: {{ trump_voteloss }}</h2>  
-                        <h2>Total Biden Vote Loss: {{ biden_voteloss }}</h2> 
-                        <h2 v-if="trump_voteloss > biden_voteloss">Trump Lost More Votes By: {{ trump_voteloss - biden_voteloss }}</h2>
-                        <h2 v-if="biden_voteloss > trump_voteloss">Biden Lost More Votes By: {{ biden_voteloss - trump_voteloss }}</h2>
-                    </div>
-                </div>-->	
-            
-        
             <!--<canvas id="myChart" width="400" height="400"></canvas>-->
            
             <div class="fxchart" class="container">
