@@ -1,38 +1,37 @@
 <head>
       	
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-		<title>Votes Parsing</title>
-		<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Votes Parsing</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
-        <meta content = "text/html; charset = ISO-8859-1" http-equiv = "content-type">
+    <meta content = "text/html; charset = ISO-8859-1" http-equiv = "content-type">
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 
-        <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">  
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
-       
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-       
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   
     <script type="text/javascript">
 
         $(document).ready(function()
@@ -561,9 +560,11 @@
                                    table.destroy();
                                
                                 $('table.display').css('display','block');
+                                $('.loader').show();
                                 var this2 = this;
                                 setTimeout(function(){ 
                                     $('#results_table').show();
+                                    $('.loader').hide();
                                     table = $("table.display").DataTable();
                                     var info = table.page.info();
                                     this2.number_pages = info.pages; 
@@ -1556,10 +1557,27 @@
 
         [v-cloak] > * { display:none; }
         [v-cloak]::before { content: "loading..."; }
+
+        .loader {
+            position:relative;
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            left: 45%;
+            top:15%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
     <body>  
-          
+        <div class="loader"></div>  
         <div id = "results_table"  v-cloak>
             <div id="tophdr" class="container">
                 <div class="input-group mb-3" style="margin-top:2em">
