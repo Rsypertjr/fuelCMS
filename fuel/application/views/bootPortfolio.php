@@ -760,10 +760,19 @@
 						});
 			});
 				
+        var ht = $('object').css('height');
+		var wd = $('object').css('width');
+		
+		$('object').on('mouseenter', function(){
+			$(this).animate({height:'900'}); 
+		});
+				
+		$('object').on('mouseleave', function(){
+			$(this).animate({height:ht,width:wd}); 
+		});	
 
-				
-				
-			
+	
+
 				
 				
 	});
