@@ -24,7 +24,7 @@ function assocArray($m,&$resarr, $c/*for comments*/,$ss/*strip spaces*/,$prev)  
                 if(is_array($value))
                   {
                 if($c) echo "Value #: ".$turns.'<br />';
-                  assocArray($value,$resarr,$c,$tr,$prev);
+                  assocArray($value,$resarr,$c,false,$prev);
                   $turns++;
                   }
                 else 
@@ -440,9 +440,9 @@ if(isset($_GET["motif"]))
       $sql= $qstr[$question_num];
       //echo $sql;
       $result = mysqli_query($dbhandle,$sql);
-      if (mysqli_error()) 
-        die("Error selecting Motif: ". mysqli_error());
-      else if(!mysqli_error())
+      if (mysqli_error($dbhandle)) 
+        die("Error selecting Motif: ". mysqli_error($dbhandle));
+      else if(!mysqli_error($dbhandle))
         {
             $headers = $headers[$question_num];
             $columns = $columns[$question_num];
