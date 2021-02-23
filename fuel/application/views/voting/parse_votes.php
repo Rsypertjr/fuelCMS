@@ -62,7 +62,7 @@
                 var myStackedChart2 = null;
                 var voterows = [];
                 var racedata = {};
-                var table = '';
+               // var table = '';
 
 
                 var getdata =  xmlhttp.onreadystatechange = function() {
@@ -252,7 +252,8 @@
                             ttable:'',                           
                             vote_bins: [],
                             number_pages: 0,
-                            step: 0
+                            step: 0,
+                            table:'',
                             
                         },
 
@@ -542,7 +543,34 @@
                                     });
                                     console.log("Vote Rows:", this2.vote_rows);
                                     
-                                    
+                                    if(this2.table)
+                                   this2.table.destroy();
+                               
+                                $('table.display').css('display','block');
+                               
+                                var this3 = this2;
+                                setTimeout(function(){ 
+                                        $('#results_table').show();
+                                        $('.loader').hide();
+                                        this3.table = $("table.display").DataTable();
+                                        var info = this3.table.page.info();
+                                        this3.number_pages = info.pages; 
+                                        //this.step = 200000/this.number_pages;
+                                        //console.log("Step:",this.step);
+
+                                        console.log("Pages:", this3.number_pages);
+
+                                        this3.parse_vote();
+                                        this3.linechart();
+                                        this3.linechart2();
+                                        this3.linechart3();
+                                        this3.linechart4();
+                                        this3.piechart();
+                                        this3.fill_votebins();
+                                        this3.stackedchart2();
+                                        this3.stackedchart();                                   
+                                   
+                                    }, 500);
                                     
                                 }
                                 
@@ -553,38 +581,10 @@
                             },
                             start_tables: function(state,sort){
                                 
-                               
+                                $('.loader').show();
                                 this.get_data(state,sort);  
 
-                                if(table)
-                                   table.destroy();
-                               
-                                $('table.display').css('display','block');
-                                $('.loader').show();
-                                var this2 = this;
-                                setTimeout(function(){ 
-                                    $('#results_table').show();
-                                    $('.loader').hide();
-                                    table = $("table.display").DataTable();
-                                    var info = table.page.info();
-                                    this2.number_pages = info.pages; 
-                                    //this.step = 200000/this.number_pages;
-                                    //console.log("Step:",this.step);
-
-                                    console.log("Pages:", this2.number_pages);
-
-                                    this2.parse_vote();
-                                    this2.linechart();
-                                    this2.linechart2();
-                                    this2.linechart3();
-                                    this2.linechart4();
-                                    this2.piechart();
-                                    this2.fill_votebins();
-                                    this2.stackedchart2();
-                                    this2.stackedchart();
-                                    
-                                   
-                                }, 2000);
+                              
                                
                                 
                                 $('#pieheader').css('display','block');
