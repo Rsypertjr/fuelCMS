@@ -65,12 +65,11 @@
                // var table = '';
 
 
-                var getdata =  xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                       
-                        
-                        jobj = JSON.parse(this.responseText);  // Get Vote Data from text file in JSON form
-
+                //var getdata =  xmlhttp.onreadystatechange = function() {
+                var state = 'michigan';
+                var state_url='https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/'+ state.toLowerCase().replace(/\-/,'') + '/president.json';
+                $.ajax({url: state_url, success: function(result){          
+                        jobj = result;
                         timeseries = jobj.data.races[0].timeseries;
                         console.log(jobj);
                         race_data = {
@@ -80,107 +79,10 @@
                         };
 
                         console.log("Race Data:", race_data);
-                        console.log(timeseries);
-                    
-                       // Parse Votes for Master Table
-                        var total_trump_increase = 0;
-                        function calc_votes(votes,index){
-                            var per_adj = votes.vote_shares.bidenj+votes.vote_shares.trumpd;
-                            var biden = votes.vote_shares.bidenj*votes.votes;
-                            
-                            var vote_row = {      
-                                "index": index,
-                                "votes": votes.votes,
-                                "timestamp": votes.timestamp,
-                                "bidenj": votes.vote_shares.bidenj,
-                                "biden_votes":0,
-                                "trumpd": votes.vote_shares.trumpd,
-                                "trump_votes":0,
-                                "other_votes":0,
-                                "total_vote_add":0,
-                                "total_vote_add_trump":0,
-                                "total_vote_add_biden":0,
-                                "total_vote_add_other":0,
-                                "total_vote_add_total":0,
-                                "time":votes.timestap
-                             };
-                                                
-                             return vote_row;
-                            }
-
-                        
-                        var pres_votes = timeseries.map(calc_votes);
-                     
-
-                        pres_votes = pres_votes.map(function(votes,index){
-                            if(index == 0){
-                                votes.biden_votes = votes.bidenj*votes.votes;
-                                votes.trump_votes = votes.trumpd*votes.votes;
-                                votes.total_vote_add = votes.votes;
-                                votes.total_vote_add_trump = votes.votes * votes.trumpd;
-                                votes.total_vote_add_biden = votes.votes * votes.bidenj;
-                                votes.total_vote_add_other = votes.votes - (votes.votes * votes.trumpd + votes.votes * votes.bidenj);
-                                votes.total_vote_add_total = votes.votes;
-                                votes.other_votes = (1-votes.bidenj-votes.trumpd)*votes.votes;
-                            }
-                            else if(index > 0){
-                               
-                                
-                                if(votes.votes == 0)
-                                    votes.total_vote_add = 0;
-                                else 
-                                    votes.total_vote_add = pres_votes[index].votes - pres_votes[index-1].votes;
-
-
-                                if(votes.bidenj == 0)
-                                    votes.biden_votes = 0;
-                                    //votes.biden_votes = pres_votes[index-1].biden_votes + votes.total_vote_add*votes.bidenj;
-                                    votes.biden_votes = votes.bidenj*votes.votes;
-                                
-                                if(votes.trumpd == 0)
-                                    votes.trump_votes = 0;
-                                else  
-                                   //votes.trump_votes = pres_votes[index-1].trump_votes + votes.total_vote_add*votes.trumpd;
-                                   votes.trump_votes = votes.trumpd*votes.votes;
-   
-                                votes.other_votes = votes.votes - votes.biden_votes - votes.trump_votes;
-
-                                //votes.total_vote_add_trump = (pres_votes[index].votes - pres_votes[index-1].votes) * votes.trumpd;
-                                votes.total_vote_add_trump = votes.votes*votes.trumpd - pres_votes[index-1].votes*pres_votes[index-1].trumpd;
-                                //votes.total_vote_add_biden = (pres_votes[index].votes - pres_votes[index-1].votes) * votes.bidenj;
-                                votes.total_vote_add_biden = votes.votes*votes.bidenj - pres_votes[index-1].votes*pres_votes[index-1].bidenj;
-                                votes.total_vote_add_other = (1-votes.bidenj-votes.trumpd)*votes.votes - pres_votes[index-1].votes*(1 - pres_votes[index-1].bidenj - pres_votes[index-1].trumpd);
-                                votes.total_vote_add_total = pres_votes[index].votes - pres_votes[index-1].votes;
-                            }
-                            return votes;
-                        });
-                        console.log("Total Votes:",pres_votes);
-
-                     // Final Format Display Rows of Votes
-                       voterows = pres_votes.map(function(vote,index){                            
-                         //return {"votes":vote.votes,"timestamp":vote.timestamp,"bidenj":vote.bidenj,"trumpd":vote.trumpd};
-                         return vote;
-                        //}).sort(function(a, b){return a.votes - b.votes});
-                        }).sort(function(a, b){return a.timestamp - b.timestamp});
-                       
-                        voterows = pres_votes.map(function(vote,index){
-                            return {"index":index,"bidenj":vote.bidenj,"biden_votes":vote.biden_votes,"trumpd":vote.trumpd,"trump_votes":vote.trump_votes,"other_votes":vote.other_votes,"timestamp":vote.timestamp,"votes":vote.votes,"vote_add":vote.total_vote_add,"trump_added":vote.total_vote_add_trump,
-                                "biden_added":vote.total_vote_add_biden,"total_added":vote.total_vote_add_total };
-                        });
-                        console.log("Initial Vote Rows:", voterows);
-                        vue_obj();
-                           
-                      
-                     
-                   
-
-                   
-            }
-            
-        };
-        xmlhttp.open("GET", "getdata/Michigan", true);
-        xmlhttp.send();
-
+                        console.log(timeseries);                  
+                        vue_obj();         
+            }});
+    
         function vue_obj(){
                                 
                         // Vue Object
@@ -416,12 +318,10 @@
                         methods: {
                             // Mapping Function Used for calculating when vote total decreases and the accumulation
                             get_data: function(state,selected_sort){
-                              var this2 = this;
-                              var getdata =  xmlhttp.onreadystatechange = function() {
-                                if (this.readyState == 4 && this.status == 200) {
-
-                                     
-                                    jobj = JSON.parse(this.responseText);  // Get Vote Data from text file in JSON form
+                                var this2 = this;                            
+                                var state_url='https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/'+ state.toLowerCase().replace(/\-/,'') + '/president.json';
+                                $.ajax({url: state_url, success: function(result){
+                                    jobj = result;  // Get Vote Data from text file in JSON form
 
                                     timeseries = jobj.data.races[0].timeseries;
                                     console.log(jobj);
@@ -571,13 +471,8 @@
                                         this3.stackedchart();                                   
                                    
                                     }, 500);
-                                    
-                                }
-                                
-                            };
-                            xmlhttp.open("GET", "getdata/"+state, true);
-                            xmlhttp.send();   
-                            
+                                }});
+                         
                             },
                             start_tables: function(state,sort){
                                 
