@@ -210,20 +210,7 @@
 
                             var this2 = this;
                             //console.log("This2: ", this2.$el);
-                            $("table.display").on( 'page.dt', function () {
-                                var info = table.page.info();
-                                $('#pageInfo').html( 'Showing page: '+info.page+' of '+info.pages );
-                                this2.selectedindex = info.page;
-                                this2.number_pages = info.pages;
-                                this2.linechart();
-                                this2.linechart2();
-                                this2.linechart3();
-                                this2.linechart4();
-                                this2.piechart();
-                                this2.stackedchart();
-                                this2.fill_votebins();
-                                this2.stackedchart2();
-                            } );
+                           
 
                            
                             $('#lineChart').on('click',function(){
@@ -446,13 +433,28 @@
                                     if(this2.table)
                                    this2.table.destroy();
                                
-                                $('table.display').css('display','block');
+                                   $('table.display').css('display','block');
                                
                                 var this3 = this2;
                                 setTimeout(function(){ 
                                         $('#results_table').show();
                                         $('.loader').hide();
                                         this3.table = $("table.display").DataTable();
+
+                                        $("table.display").on( 'page.dt', function () {
+                                            var info = this3.table.page.info();
+                                            $('#pageInfo').html( 'Showing page: '+info.page+' of '+info.pages );
+                                            this3.selectedindex = info.page;
+                                            this3.number_pages = info.pages;
+                                            this3.linechart();
+                                            this3.linechart2();
+                                            this3.linechart3();
+                                            this3.linechart4();
+                                            this3.piechart();
+                                            this3.stackedchart();
+                                            this3.fill_votebins();
+                                            this3.stackedchart2();
+                                        } );
                                         var info = this3.table.page.info();
                                         this3.number_pages = info.pages; 
                                         //this.step = 200000/this.number_pages;
