@@ -109,6 +109,7 @@ $route['laravelApp1'] = 'otherApps/laravelApp1';
 $route['laravelApp2'] = 'otherApps/laravelApp2';
 $route['laravelApp3'] = 'otherApps/laravelApp3';
 $route['angularApp'] = 'otherApps/angularApp';
+$route['angularVoteParser'] = 'otherApps/angularVoteParser';
 $route['angularRepo1'] = 'otherApps/angularRepo1';
 $route['angularRepo2'] = 'otherApps/angularRepo2';
 

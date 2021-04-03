@@ -323,6 +323,10 @@ class OtherApps extends CI_Controller {
 
     }
 
+    function angularVoteParser(){
+        header( "Location: http://159.65.100.7//votes" );
+    }
+
 
 
 }

@@ -1092,6 +1092,17 @@
 								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 								</p>
 							 </li>
+							 <li class="list-group-item list-group-item-success">
+								<a href="angularVoteParser" target="_blank">
+									<p  class="sectionTitle">
+										<a href="angularVoteParser" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+									</p>
+								</a>
+								<object data="angularVoteParser" height="200" width="300"></object>
+								<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
+								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
+								</p>
+							</li> 
 						</div>
 					</div>
 					
@@ -1242,6 +1253,18 @@
 								Here is the code: <a href="https://github.com/Rsypertjr/angularRedux" target="_blank">Angular Code</a>
 								</p>
 							</li>
+							<li class="list-group-item list-group-item-success">
+								<a href="angularVoteParser" target="_blank">
+									<p  class="sectionTitle">
+										<a href="angularVoteParser" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+									</p>
+								</a>
+								<object data="angularVoteParser" height="200" width="300"></object>
+								<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
+								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
+								</p>
+							</li>
+						
 						</div>
 					 </div> 
 					
