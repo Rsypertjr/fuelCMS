@@ -315,7 +315,7 @@ class OtherApps extends CI_Controller {
 
    function apiTest(){
     
-    $matches = preg_match('localhost',base_url());
+   preg_match('/localhost/',base_url(),$matches);
     if(count($matches) > 0)
          header( "Location: http://localhost/api_test/hptest.php" );
     else

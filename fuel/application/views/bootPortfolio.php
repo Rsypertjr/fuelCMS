@@ -1208,7 +1208,7 @@
 								   to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp" target="_blank">Vue App Code</a>
 								</p>
 							</li>
-							<li class="list-group-item list-group-item-warning">
+							<!--li class="list-group-item list-group-item-warning">
 								<a href="expressApp1" target="_blank">
 									<p  class="sectionTitle">
 										<a href="http://206.189.211.36/" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Express/Node Javascript App</a>
@@ -1219,7 +1219,7 @@
 								   utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.<br>
 								   Here is the code: <a href="https://github.com/Rsypertjr/expressnode" target="_blank">Express/Node Code</a>
 								</p>
-							</li>
+							</li-->
 							<li class="list-group-item list-group-item-danger">
 								<a href="laravelApp2" target="_blank">
 									<p  class="sectionTitle">
