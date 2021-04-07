@@ -1093,12 +1093,12 @@
 								</p>
 							 </li>
 							 <li class="list-group-item list-group-item-success">
-								<a href="http://presvote.tk:4200/votes" target="_blank">
+								<a href="https://presvote.tk" target="_blank">
 									<p  class="sectionTitle">
-										<a href="http://presvote.tk:4200/votes" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+										<a href="https://presvote.tk" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
 									</p>
 								</a>
-								<object data="http://presvote.tk:4200/votes" height="200" width="300"></object>
+								<object data="https://presvote.tk" height="200" width="300"></object>
 								<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
 								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
 								</p>
@@ -1254,12 +1254,12 @@
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-success">
-								<a href="http://presvote.tk:4200/votes" target="_blank">
+								<a href="http://presvote.tk" target="_blank">
 									<p  class="sectionTitle">
-										<a href="http://presvote.tk:4200/votes" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+										<a href="http://presvote.tk" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
 									</p>
 								</a>
-								<object data="http://presvote.tk:4200/votes" height="200" width="300"></object>
+								<object data="http://presvote.tk" height="200" width="300"></object>
 								<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
 								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
 								</p>
