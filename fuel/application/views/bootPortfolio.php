@@ -784,10 +784,11 @@
 			   <div class="jumbotron">
 				<h1>Richard L. Sypert Jr's Portfolio</h1> 
 				<p>This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
-				 	and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual
-					Hosting.  Some apps have been deployed to Heroku Server.
+				 	and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
+					service classes of enterprise software.
 				</p>
-				<p>Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
+				<p>  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual Hosting.  Some apps have been deployed to Heroku Server.
+				Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
 				sshfs to the files on the droplets.
 				</p> 
 				<p> Fuel CMS framework (CodeIgniter-based), Angular, Node, NPM, PM2, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
