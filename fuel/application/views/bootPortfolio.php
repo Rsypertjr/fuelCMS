@@ -790,7 +790,7 @@
 				<p>Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
 				sshfs to the files on the droplets.
 				</p> 
-				<p> Fuel CMS framework (CodeIgniter-based), Angular, Node, NPM, PM2, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are many of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
+				<p> Fuel CMS framework (CodeIgniter-based), Angular, Node, NPM, PM2, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
 					PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
 				</p>
 			  </div>
