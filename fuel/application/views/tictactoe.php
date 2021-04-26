@@ -206,6 +206,8 @@
                     });
                     $('.pyro').css('display','none'); 
                     $('.game').addClass('shimmer');
+                    $('.status').css('color','blueviolet');
+                    $('.toe').css('color','black');
                 }
             }
 
@@ -266,6 +268,7 @@
                         status = 'Winner: ' + winner;
                         $('.pyro').css('display','block');
                         $('.game').removeClass('shimmer');
+                        $('.status').add('.toe').css('color','yellow');
                     } else {
                         status = "Next player: " + (this.state.xIsNext ? 'X' : 'O');
                     }
@@ -277,7 +280,7 @@
                             <div class="before"></div>
                             <div class="after"></div>
                         </div>
-                        <h1 className="top"><font color="lightBlue">TIC</font> <font color="blueviolet">TAC</font> TOE</h1>
+                        <h1 className="top"><font color="lightBlue">TIC</font> <font color="blueviolet">TAC</font> <span class="toe">TOE</span></h1>
                         <div className="game-board box">
                             <Board 
                                 squares={current.squares}
@@ -293,7 +296,6 @@
                                         value = {order}
                                         onTClick={() => this.handleToggle()}
                                     />
-                                <div>{status}</div>
                                 <ol>{moves}</ol> 
                             </div>
                         
