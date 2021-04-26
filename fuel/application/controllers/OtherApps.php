@@ -313,6 +313,11 @@ class OtherApps extends CI_Controller {
     
    }
 
+   function tictactoe()
+    {
+            $this->load->view('tictactoe');
+        
+    }
    function apiTest(){
     
    preg_match('/localhost/',base_url(),$matches);
