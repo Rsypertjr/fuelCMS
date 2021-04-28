@@ -1092,28 +1092,7 @@
 								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 								</p>
 							 </li>
-							 <li class="list-group-item">
-								<a href="https://presvote.tk" target="_blank">
-									<p  class="sectionTitle">
-										<a href="https://presvote.tk" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
-									</p>
-								</a>
-								<object data="https://presvote.tk" height="200" width="300"></object>
-								<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
-								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
-								</p>
-							</li> 
-							<li class="list-group-item">
-								<a href="tictactoe" target="_blank">
-									<p  class="sectionTitle">
-										<a href="tictactoe" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React Javascript Tic-Tac-Toe</a>
-									</p>
-								</a>
-								<object data="tictactoe" height="200" width="300"></object>
-								<p>React Javascript Tic Tac Toe app with CSS animations for victory celebration.<br>
-								Here is the code: <a href="https://github.com/Rsypertjr/fuelCMS/blob/newfuel/fuel/application/views/tictactoe.php" target="_blank">React Javascript Code</a>
-								</p>
-							</li> 
+							
 						</div>
 					</div>
 					
@@ -1275,7 +1254,17 @@
 								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
 								</p>
 							</li>
-						
+							<li class="list-group-item">
+								<a href="tictactoe" target="_blank">
+									<p  class="sectionTitle">
+										<a href="tictactoe" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React Javascript Tic-Tac-Toe</a>
+									</p>
+								</a>
+								<object data="tictactoe" height="200" width="300"></object>
+								<p>React Javascript Tic Tac Toe app with CSS animations for victory celebration.<br>
+								Here is the code: <a href="https://github.com/Rsypertjr/fuelCMS/blob/newfuel/fuel/application/views/tictactoe.php" target="_blank">React Javascript Code</a>
+								</p>
+							</li> 
 						</div>
 					 </div> 
 					
