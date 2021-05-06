@@ -324,7 +324,7 @@ class OtherApps extends CI_Controller {
     if(count($matches) > 0)
          header( "Location: http://localhost/api_test/hptest.php" );
     else
-        header( "Location: http://159.65.100.7//api_test/hptest.php" );
+        header( "Location: http://159.65.100.7/api_test/hptest.php" );
 
     }
 
