@@ -58,7 +58,7 @@
 			}
 			
 			#myNavbar > ul > li.dropdown.open > ul > li > a{
-				color: #333;
+				color: #eee;
 			}
 			
 			#topNav.affix-top {
@@ -438,7 +438,13 @@
 		
 		.panel-heading {font-size:1.5em;}
 		.panel {border:none;}
-		.panel-body li>p {position:relative;width:100%;height:auto;padding:2px;text-align:center;font-size:2em}
+		.panel-body li>p {
+			position:relative;
+			width:100%;
+			height:auto;
+			padding:2px;
+			text-align:center;
+			font-size:1.5em}
 	
 		.panel-body li p {margin:1em 0;color:black}
 	  
@@ -501,9 +507,6 @@
 				80% {background:linear-gradient(to right, beige,lightGrey);}
 				100% {background:linear-gradient(to left, lightBlue,lightGrey);}
 			}
-		
-		
-		
 		
 		
 		
