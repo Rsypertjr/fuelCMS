@@ -58,7 +58,7 @@
 			}
 			
 			#myNavbar > ul > li.dropdown.open > ul > li > a{
-				color: #eee;
+				color: gray;
 			}
 			
 			#topNav.affix-top {
@@ -794,7 +794,7 @@
 				Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
 				sshfs to the files on the droplets.
 				</p> 
-				<p> Fuel CMS framework (CodeIgniter-based), Angular, Node, Ng, NPM, PM2, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
+				<p> Fuel CMS framework (CodeIgniter-based), <a href="https://presvote.tk">Angular</a>, <a href="voteparser">Vue.js</a>, <a href="http://hmobf.presvote.tk">React.js</a>,  Node.js, Ng, NPM, PM2, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
 					PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
 				</p>
 			  </div>
