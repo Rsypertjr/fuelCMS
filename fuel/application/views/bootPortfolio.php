@@ -797,6 +797,10 @@
 				<p> Fuel CMS framework (CodeIgniter-based), <a href="https://presvote.tk">Angular</a>, <a href="voteparser">Vue.js</a>, <a href="http://hmobf.presvote.tk">React.js</a>,  Node.js, Ng, NPM, PM2, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
 					PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
 				</p>
+				<p>Docker technology is used in terms of Docker Engine for implementing an Angular javascript app that contains a Dockerfile and a 
+				   Docker-compose file for implementations of development and production versions. Karma and Protractor unit testing of code is also included.
+				   Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
+				</p>
 			  </div>
 			</div>	
 			
