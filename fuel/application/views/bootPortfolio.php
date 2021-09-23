@@ -1191,12 +1191,12 @@
 						</div>
 						<div class="panel-body">
 						   <li class="list-group-item list-group-item-warning">
-								<a href="vueapp" target="_blank">
+								<a href="apitest" target="_blank">
 									<p  class="sectionTitle">
 										<a href="apitest" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue Javascript App</a>
 									</p>
 								</a>
-								<object data="apitest" height="200" width="300"></object>
+								<!--<object data="apitest" height="200" width="300"></object>-->
 								<p>A Vue JS based app that accesses an API to create a Dynamic List converted from a static HMTL page.  Added Paging Function and Select Page Size.<br>GitHub link
 								   to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp" target="_blank">Vue App Code</a>
 								</p>
@@ -1278,7 +1278,7 @@
 										<a href="http://hmobf.presvote.tk" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React Front End/Express Back End Mobile App</a>
 									</p>
 								</a>
-								<object data="http://hmobf.presvote.tk" height="200" width="300"></object>
+								<!--<object data="http://hmobf.presvote.tk" height="200" width="300"></object>-->
 								<p>React front end and Express back end Mobile App.  Both ends Virtual Hosted.  Backend uses Sequelize/Postgresql migrations and ORM queries.
 								   View in Google Mobile mode.
 									<br>
