@@ -418,7 +418,7 @@ if(isset($_GET["motif"]))
       $qstr[] = 'SELECT DISTINCT startPosition, motifPattern, accessionNumber FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY accessionNumber, startPosition';
       $qstr[] = 'SELECT DISTINCT accessionNumber, COUNT(accessionNumber) as motifCount FROM miniMotif  WHERE motifPattern = "'.$moPatt.'" GROUP BY accessionNumber';
       $qstr[] = 'SELECT DISTINCT speciesName, motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'" ORDER BY speciesName';
-      $qstr[] = 'SELECT AVG(proteinLength), motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'"';
+      $qstr[] = 'SELECT AVG(motifLength), motifPattern FROM miniMotif WHERE motifPattern = "'.$moPatt.'"';
       //echo "check query: ".$qstr[5];
       $columns = array(
                   array('accessionNumber','motifPattern'),
@@ -426,7 +426,7 @@ if(isset($_GET["motif"]))
                   array('startPosition','motifPattern','accessionNumber'),
                   array('accessionNumber','motifCount'),
                   array('speciesName','motifPattern'),
-                  array('AVG(DISTINCT p.proteinLength)','motifPattern')
+                  array('AVG(motifLength)','motifPattern')
                 );
 
       $headers = array(array('Accession Number','Motif Pattern'),
