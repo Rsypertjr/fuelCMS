@@ -773,10 +773,6 @@
 		$('object').on('mouseleave', function(){
 			$(this).animate({height:ht,width:wd}); 
 		});	
-
-	
-
-				
 				
 	});
 			
@@ -801,6 +797,9 @@
 				   Docker-compose file for implementations of development and production versions. Karma and Protractor unit testing of code is also included.
 				   Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
 				</p>
+				<p>Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="http://159.65.100.7/votes-table" 
+				target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
+			    Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.</p>
 			  </div>
 			</div>	
 			
@@ -1291,6 +1290,19 @@
 									<a href="https://github.com/Rsypertjr/hatch_mobile_front/tree/hatch_react_front" target="_blank">Express Front End Code</a>
 								</p>
 							</li> 
+							<li class="list-group-item list-group-item-success">
+								<a href="http://159.65.100.7/votes-table" target="_blank">
+									<p  class="sectionTitle">
+										<a href="http://159.65.100.7/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>
+									</p>
+								</a>
+								<object data="http://159.65.100.7/votes-table" height="200" width="300"></object>
+								<p>The app uses Laravel (Mix) with React.js (including React Router).  Composer is used to 
+								   manage PHP dependencies, and NPM is used to managed the Node-based React.js dependencies. 
+								   Laravel routing is used to serve main page and React routing for fast rendering of tables 
+								   and charts. Table and paging is a custom code and charts utilize Chart.js.
+								</p>
+							</li>
 						</div>
 					 </div> 
 					
