@@ -773,10 +773,6 @@
 		$('object').on('mouseleave', function(){
 			$(this).animate({height:ht,width:wd}); 
 		});	
-
-	
-
-				
 				
 	});
 			
@@ -802,7 +798,12 @@
 				   Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
 				</p>
 				<p>Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="http://159.65.100.7/votes-table" 
+<<<<<<< HEAD
 				target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a></p>
+=======
+				target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
+			    Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.</p>
+>>>>>>> 431936e499c22a03dc8393a117a0790b28aee7b4
 			  </div>
 			</div>	
 			
