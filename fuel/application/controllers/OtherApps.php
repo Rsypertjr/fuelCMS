@@ -43,6 +43,8 @@ class OtherApps extends CI_Controller {
             $this->vars['jqUiJS'] = js_path('jquery-ui-1.10.4.custom.js');
             $this->vars['jqueryloc']= js_path('jquery-1.10.2.js');
             $this->vars['jqfile']= js_path('global.js');
+            $this->vars['jsBootPortfolio'] = js_path('bootPortfolio.js');
+
             
             //XML Files
             $this->vars['orominer1XML'] = img_path('oro_xml1.xml');
@@ -53,6 +55,8 @@ class OtherApps extends CI_Controller {
             $this->vars['hfSwitch'] = 'off';  // off for desktop header, on for mobile header
             $this->vars['headerCSS'] = css_path('headerCSS.css');
             $this->vars['footerCSS'] = css_path('footerCSS.css');
+            
+            $this->vars['bootPortfolioCSS'] = css_path('bootPortfolio.css');
             $this->vars['livingInLVCSS'] = css_path('livingInLVCSS.css');
             $this->vars['frontCSS'] = css_path('frontCSS.css');
             $this->vars['miniMotifCSS'] = css_path('miniMotifCSS.css');

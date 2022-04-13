@@ -10,7 +10,7 @@
 		.rightpart {float:right}
 		.spfont {}
 		#hovdisp {position:absolute;display:none}
-		.spfont:hover #hovdisp {display:block;font-size:0.9em;z-index:2;border:solid 1px blue;background-color:yellow;color:blue;padding 2px}
+		.spfont:hover #hovdisp {display:block;font-size:0.9em;z-index:2;border:solid 1px blue;background-color:yellow;color:blue;padding: 2px}
 	
 	#rpsContainer {
 		position:relative;

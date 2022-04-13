@@ -7,6 +7,7 @@
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href = "<?php echo $vars['bootPortfolioCSS'];?>" rel="stylesheet" type="text/css" />
 
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,505 +17,8 @@
 		
 		
 		
-		<style>
-			body {
-					position:relative;
-					height:auto;
-					background-color:lightGrey;
-					-webkit-transition: height 2s; /* Safari */
-					transition: height 2s;
-					padding:0em 1em 1em 1em;
-					margin-bottom:50%;
-			}
-			.glyphicon {margin-left:1em;}
-			.caret {margin-left:0.5em;}
-			.btn-group {margin-right:0.25em;}
-			.badge {margin-left:0.35em;}
-			.abutton {position:relative;zoom:100%;}
-			/*.outer {position:relative;zoom:70%;}*/
-			li {font-size:0.75em;height:auto}
-			.list-group-item {position:relative;padding:0em 20%;}
-			.list-group-item img {display:block;height:7em;width:7em;padding:0em;margin-left:auto;margin-right:auto}
-			.list-group-item img.img-rounded {width:14em;}
-			.list-group-item h2 {width:100%;text-align:center;color:black}
-		  
-			
-			#topNav.affix {
-				top: 0;
-				width: 100%;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-				background-color: #3c3c3c;
-				border-color: #3c3c3c;
-				z-index: 9999 !important;
-			}
-			
-			
-			.affix .dropdown>a, .affix ul.nav>li>a {
-				color: #fff !important;
-				padding: 15px !important;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-			}
-			
-			#myNavbar > ul > li.dropdown.open > ul > li > a{
-				color: gray;
-			}
-			
-			#topNav.affix-top {
-				position: static;
-				top: -35px;
-			}
-						
-			#topNav.affix-top a {
-				padding: 25px !important;
-			}
-
-			.navbar {
-				  margin-bottom: 0px;
-			  }
-	
-			
-		   #home{  
-				   position:relative;
-				   height:auto;
-				   margin:2em 0;
-				   color: #fff; 
-				   -webkit-transition: all .5s ease-in-out;
-				   transition: all .5s ease-in-out;
-		   }
-		   #homeCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-	
-		   
-		   
-		   #about {
-					position:relative;
-					height:auto;
-					margin:2em 0;
-					color: #fff; 
-					-webkit-transition: all .5s ease-in-out;
-					transition: all .5s ease-in-out;
-				   }
-				   
-		  #aboutCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-				
-		   }
-
-		   #lamp {
-			position:relative;
-			height:auto;
-			margin:2em 0;
-			color: #fff; 
-			-webkit-transition: all .5s ease-in-out;
-			transition: all .5s ease-in-out;
-			
-		   }
-		   
-		   #lampCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-	
-		   
-		   
-		   #wordPress {
-			position:relative;
-			height:auto;
-			margin:2em 0;
-			color: #fff; 
-			-webkit-transition: all .5s ease-in-out;
-			transition: all .5s ease-in-out;
-		   }
-		   
-			#wordPressCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-
-		   
-		   #mobile{
-				position:relative;
-				height:auto;
-				margin:2em 0;
-				color: #fff; 
-				padding:1em;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-		   #mobileCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-
-		  
-		   
-	
-		   
-		   #frameworks {
-				position:relative;
-				height:auto;
-				margin:2em 0;
-				color: #fff; 
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-		   #frameworksCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out; 
-		   }
-		   
-
-		   
-		   #manuals {
-				position:relative;
-				height:auto;
-				margin:2em 0;
-				color: #fff; 
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-		   
-		   #manualsCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				margin:auto;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out; 
-		   }
-		   
-
-		   
-		   
-		   #specifications {
-					position:relative;
-					height:auto;
-					margin:2em 0;
-					color: #fff; 
-					-webkit-transition: all .5s ease-in-out;
-					transition: all .5s ease-in-out;
-		   }
-		   
-		   #specificationsCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-
-		   #resume {
-				position:relative;
-				height:auto;
-				margin:2em 0;
-				color: #fff; 
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-			#resumeCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-
-		   
-		   
-		   #living {
-				position:relative;
-				height:auto;
-				margin:2em 0;
-				color: #fff; 
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-			#livingCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				opacity:0.0;
-				top:0;
-				left:0;
-				padding:1em;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-	
-		   
-		   
-		   
-			#front {
-				position:relative;
-				height:auto;
-				margin:2em 0;
-				color: #fff; 
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out;
-		   }
-		   
-			#frontCovr {
-				position:absolute;
-				height:100%;
-				width:100%;
-				top:0;
-				left:0;
-				padding:1em;
-				opacity:0.0;
-				background-color:black;
-				-webkit-transition: all .5s ease-in-out;
-				transition: all .5s ease-in-out; 
-		   }
-
-		   
-		   #footer {
-						height:auto;
-						color: lightBlue; 
-						background-color:black;
-						padding:3em 0;
-						-webkit-transition: all .5s ease-in-out;
-						transition: all .5s ease-in-out;
-		   }
-		   
-		   #footer .panel-default>.panel-heading {
-				color: lightBlue;
-				background-color: black;
-				border-color: black;
-			}
-		   
-		   #footer .panel-title {font-size:0.6em;}
-		   
-		   #footer .panel-default {
-				position:relative;
-				height:auto;
-				border-color: black;
-				
-			}	
-					
-			#footer .row button {position:relative;transform:scale(.65,.65);margin-left:-2em}
-			
-			#footer .row {padding-left:5em;}
-					
-			#footer .panel-body {padding:0.125em;margin:0em}
-			#footer .panel-body p  {position:relative;width:95%;margin:0.125em 2.5%;padding:0.25em;text-align:left;font-size:0.80em}
-			
-			#footer .panel-body p:nth-child(even) {background-color:black} 
-			#footer .panel-body p:nth-child(odd) {background-color:black}
-			
-			#footer .panel-body p:nth-child(even) a {color:lightBlue} 
-			#footer .panel-body p:nth-child(odd) a {color:lightBlue}
-			#footer .panel-body p a {position:relative;width:100%;text-align:left}
-			
-			
-			
-			#myCarousel {margin:6em 0 6em 0}
-			
-		   .nav-tabs
-				  {
-					position: fixed;
-					z-index: 9;
-					background-color: #fff;
-				  }
-				  
-		 
-		
-		.carousel-inner>.item {
-		  width: 100%;
-
-			}
-		
-		object {
-				position:relative;
-				width:90%;
-				margin:auto 5%;
-				display:none;
-				padding:0em;
-				border:10px solid grey;
-				background:linear-gradient(lightGrey,lightBlue);
-				-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-				-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-				animation-name: example;
-				animation-duration: 4s;
-				animation-iteration-count: infinite;
-			
-		}
-		a[data-toggle='tooltip']  {position:relative;text-align:center;font-size:1.5em;width:100%;height:auto;padding:2px;margin-bottom:0.5em}
-		
-	
-		
-		
-		#home .panel-body li>p, #about .panel-body li>p, #mobile .panel-body li>p,#wordPress .panel-body li>p,
-		
-		#resume .panel-body li>p ,#living .panel-body li>p   	{position:relative;height:auto;width:100%}
-		#lamp > div > div.panel-body > li:nth-child(4) > p:nth-child(6) {color:black}
-		
-		.panel-body li {
-			position:relative;
-			padding:3em;
-			border:10px solid lightGrey;
-			margin:3em;
-			background:linear-gradient(to right, lightGrey,lightBlue);
-			-webkit-transition: all 1s ease-in-out;
-			transition: all 1s ease-in-out;
-		}
-		
-		.panel-heading {font-size:1.5em;}
-		.panel {border:none;}
-		.panel-body li>p {
-			position:relative;
-			width:100%;
-			height:auto;
-			padding:2px;
-			text-align:center;
-			font-size:1.5em}
-	
-		.panel-body li p {margin:1em 0;color:black}
-	  
-		div.panel-body > li.list-group-item > p:last-child {border:5px solid grey; padding:5px}
-		
-		.cvrimg {
-			position:relative;
-			height:40%;
-			width:100%;
-			margin:0em;
-			padding-top:1em;
-			
-		}
-		
-		.cvrimg span{
-			position:relative;
-			transform:scale(12,12);
-			top:50%;
-			left:50%;
-		}
-		
-		.cvrbody{
-			
-			 position:relative;
-			 height:60%;
-			 width:100%;
-			 margin:0em;
-			 padding:0em;
-			 font-size:2.0em;
-			 margin:0em 0em 0em 0em;
-			 text-align:center;
-		}
-		
-		.cvrbody h1 {
-			text-align:center;
-			margin:0.5em 0em 0.5em 0em;
-			font-size:2.0em
-			
-		}
-		
-		
-		
-	  
-			/* Safari 4.0 - 8.0 */
-			@-webkit-keyframes example {
-				0%   {background:linear-gradient(lightGrey,lightBlue);}
-				20%   {background:linear-gradient(to right,lightGrey,lightBlue);}
-				40%   {background:linear-gradient(to left,lightBlue,lightGreen);}
-				60%   {background:linear-gradient(lightGreen,beige);}
-				80% {background:linear-gradient(to right, beige,lightGrey);}
-				100% {background:linear-gradient(to left, lightBlue,lightGrey);}
-			}
-			
-			/* Standard syntax */
-			@keyframes example {
-				0%   {background:linear-gradient(lightGrey,lightBlue);}
-				20%   {background:linear-gradient(to right,lightGrey,lightBlue);}
-				40%   {background:linear-gradient(to left,lightBlue,lightGreen);}
-				60%   {background:linear-gradient(lightGreen,beige);}
-				80% {background:linear-gradient(to right, beige,lightGrey);}
-				100% {background:linear-gradient(to left, lightBlue,lightGrey);}
-			}
-		
-		
-		
-		#tophdr {position:relative;}
-	  
-		</style>
-		
-		
+		<style></style>
+		<!-- needed in this file first -->
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var vegas1 = "<?php echo $vars['vegas1']; ?>";
@@ -538,7 +42,6 @@
 				var work9 = "<?php echo $vars['dataanalysis']; ?>";
 				var work10 = "<?php echo $vars['websiteconstruction']; ?>";
 				
-				var anyShowing = '';
 				
 				$(".carousel-inner .item:nth-child(1) img").attr('src',work1);
 				$(".carousel-inner .item:nth-child(2) img").attr('src',work2);
@@ -550,262 +53,77 @@
 				$(".carousel-inner .item:nth-child(8) img").attr('src',work8);
 				$(".carousel-inner .item:nth-child(9) img").attr('src',work9);
 				$(".carousel-inner .item:nth-child(10) img").attr('src',work10);
+
 				
-				 $(".carousel-inner .item img").css('width','13em').css('height','6em').css('zoom','400%').css('border','2px solid lightBlue');
-			  
-		
-				 $('body').on('mouseover mousemove mouseleave mousedown mouseup',function(){
-					
-					  anyShowing = $('.row#content').find('div.collapse').filter(function(index){
-						return $(this).css('display') === 'block';
-					   }).length;
-				 
-					  
-				 }); 
-			   
-		
-				  $('.nav ul.dropdown-menu li.panelPart a,.nav li.panelPart a ').on('mouseup',function(){
-					 
-					 var target = $(this).attr('data-target');
-					// alert(target);
-				  
-					 var isTarget = $('.row#content').find(target).css('display') == 'block';
-					// alert(isTarget);
-					  if(isTarget == true)  //You are closing content
-								anyShowing--;
-					  else if(isTarget == false)  // You are opening content
-								anyShowing++;
-					
-					//alert(anyShowing);			
-								
-					if(anyShowing == 0)
-						$('#myCarousel').show();
-					else if(anyShowing > 0)
-						$('#myCarousel').hide();
-				 
-				  });
-				 
-			
-			   $("ul.dropdown-menu li a[href='#lamp']").add("ul.dropdown-menu li a[href='#wordPress']").add("ul.dropdown-menu li a[href='#mobile']")
-					   .add("ul.dropdown-menu li a[href='#frameworks']").add("ul li a[href='#resume']").add("ul.dropdown-menu li a[href='#manuals']")
-					   .add("ul.dropdown-menu li a[href='#specifications']").add("ul li a[href='#living']").add("ul li a[href='#front']")
-					   .add("ul li a[href='#home']")
-					   .on('mousedown',function(){
-					
-					$('object').css('display','none');
-					 var hrf = $(this).attr('href');
-					 //alert(hrf);
-					 var sel = hrf+" > div > div.panel-body > li > object";
-					 
-					 //#living > div > div.panel-body > li > object
-					 //alert(sel);
-					 $(sel).css('display','block');
-			   
-			   }); 
-			   
-			   $(document).ready(function(){
-						$('[data-toggle="tooltip"]').tooltip(); 
-					});  
-					
-	
-			   
-			   $('ul.nav li').on('mousedown mouseenter mouseover',function(){
-					$(this).addClass('active');
-			   });
-			   
-				 $('ul.nav li').on('mouseleave',function(){
-					$(this).removeClass('active');
-			   });
-			   
-			   
-				$("#topNav.navbar").affix({offset: {top: $("#tophdr").outerHeight(true)} });
-		   
-				$( window ).scroll(function() {
-					
-					// Adjusting Cover Panels
-						$('#home').on('mouseenter',function(){
-							$('#homeCovr').css('opacity','0.85');
-							var height1 = $('#homeCovr').height();
-							var height2 = $('#homeCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#homeCovr .container').css('margin-top',margin);
-					
-						});
-						
-						
-			  
-						$('#about').on('mouseenter',function(){
-							$('#aboutCovr').css('opacity','0.85');
-							var height1 = $('#aboutCovr').height();
-							var height2 = $('#aboutCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#aboutCovr .container').css('margin-top',margin);
-					
-						});
-							
-			  
-						$('#lamp').on('mouseenter',function(){
-							$('#lampCovr').css('opacity','0.85');
-							var height1 = $('#lampCovr').height();
-							var height2 = $('#lampCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#lampCovr .container').css('margin-top',margin);
-					
-						});
-						
-						
-						$('#wordPress').on('mouseenter',function(){
-							$('#wordPressCovr').css('opacity','0.85');
-							var height1 = $('#wordPressCovr').height();
-							var height2 = $('#wordPressCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#wordPressCovr .container').css('margin-top',margin);
-						});
-						
-						
-			   
-						$('#mobile').on('mouseenter',function(){
-							$('#mobileCovr').css('opacity','0.85');
-							var height1 = $('#mobileCovr').height();
-							var height2 = $('#mobileCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#mobileCovr .container').css('margin-top',margin);
-						});
-							
-			  
-			
-						$('#frameworks').on('mouseenter',function(){
-							$('#frameworksCovr').css('opacity','0.85');
-							var height1 = $('#frameworksCovr').height();
-							var height2 = $('#frameworksCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#frameworksCovr .container').css('margin-top',margin);
-						});
-							
-						
-		   
-						$('#manuals').on('mouseenter',function(){
-							$('#manualsCovr').css('opacity','0.85');
-							var height1 = $('#manualsCovr').height();
-							var height2 = $('#manualsCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#manualsCovr .container').css('margin-top',margin);
-						});
-		
-						$('#specifications').on('mouseenter',function(){
-							$('#specificationsCovr').css('opacity','0.85');
-							var height1 = $('#specificationsCovr').height();
-							var height2 = $('#specificationsCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#specificationsCovr .container').css('margin-top',margin);
-						});
-		  
-						$('#resume').on('mouseenter',function(){
-							$('#resumeCovr').css('opacity','0.85');
-							var height1 = $('#resumeCovr').height();
-							var height2 = $('#resumeCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#resumeCovr .container').css('margin-top',margin);
-						});
-						
-			  
-						$('#living').on('mouseenter',function(){
-							$('#livingCovr').css('opacity','0.85');
-							var height1 = $('#livingCovr').height();
-							var height2 = $('#livingCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#livingCovr .container').css('margin-top',margin);
-						});
-			   
-						$('#front').on('mouseenter',function(){
-							$('#frontCovr').css('opacity','0.85');
-							var height1 = $('#frontCovr').height();
-							var height2 = $('#frontCovr .container').height();
-							var margin = (height1-height2)/2.0;
-							$('#frontCovr .container').css('margin-top',margin);
-						});
-						
-						
-									
-				$('#frontCovr').add('#homeCovr').add('#aboutCovr').add('#lampCovr').add('#wordPressCovr')
-							   .add('#mobileCovr').add('#frameworksCovr').add('#manualsCovr')
-							   .add('#specificationsCovr').add('#resumeCovr').add('#livingCovr')
-							   .on('mousedown',function(){
-								
-								var el = $(this).css('z-index','-1');
-								var par = $(this).parent();
-								el.css('opacity','0');
-							 
-								
-								par.find('li img').css('zoom','300%');
-									
-												
-								par.on('mouseenter',function(){
-									el.css('opacity','0.85').css('z-index','100');
-									
-								
-								});
-								
-								
-								
-											
-								par.on('mouseleave',function(){
-									el.css('opacity','0.85').css('z-index','100');
-									
-									
-									
-										$(this).on('mouseleave',function(){
-											$(this).find('li img').css('zoom','100%');
-										});
-								});
-								
-							
-						});
+				$(".carousel-inner .item img").css('width','13em').css('height','6em').css('zoom','400%').css('border','2px solid lightBlue');
 			});
-				
-        var ht = $('object').css('height');
-		var wd = $('object').css('width');
-		
-		$('object').on('mouseenter', function(){
-			$(this).animate({height:'900'}); 
-		});
-				
-		$('object').on('mouseleave', function(){
-			$(this).animate({height:ht,width:wd}); 
-		});	
-				
-	});
-			
-	
-		
-</script>
+		</script>
+		<!-- loaded from framework -->
+		<script src="<?php echo $vars['jsBootPortfolio']; ?>"></script>
+
+
 			<div id="tophdr" class="container">
 			   <div class="jumbotron">
-				<h1>Richard L. Sypert Jr's Portfolio</h1> 
-				<p>This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
-				 	and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
-					service classes of enterprise software.
-				</p>
-				<p>  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual Hosting.  Some apps have been deployed to Heroku Server.
-				Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
-				sshfs to the files on the droplets.
-				</p> 
-				<p> Fuel CMS framework (CodeIgniter-based), <a href="https://presvote.tk">Angular</a>, <a href="voteparser">Vue.js</a>, <a href="http://hmobf.presvote.tk">React.js</a>,  Node.js, Ng, NPM, PM2, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
-					PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
-				</p>
-				<p>Docker technology is used in terms of Docker Engine for implementing an Angular javascript app that contains a Dockerfile and a 
-				   Docker-compose file for implementations of development and production versions. Karma and Protractor unit testing of code is also included.
-				   Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
-				</p>
-				<p>Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="http://159.65.100.7/votes-table" 
-<<<<<<< HEAD
-				target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a></p>
-=======
-				target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
-			    Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.</p>
->>>>>>> 431936e499c22a03dc8393a117a0790b28aee7b4
-			  </div>
-			</div>	
+
+			   <div id="myJumboCarousel"  class="carousel slide" data-ride="carousel"> 
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+					<!--li data-target="#myCarousel" data-slide-to="4"></li-->
+				  </ol> 
+				
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+					<div class="item active">
+						<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">Richard L. Sypert Jr's Portfolio</h3> 
+						<p style="margin:0 15% 2% 15%">This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
+							and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
+							service classes of enterprise software.
+						</p>
+					</div>				
+					<div class="item">
+						<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h3> 
+						<p style="margin:0 15% 2% 15%">  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual Hosting.  Some apps have been deployed to Heroku Server.
+						Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
+						sshfs to the files on the droplets.
+						</p> 
+					</div>				
+					<div class="item">
+						<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">PHP-based and JavaScript-based technologies and frameworks featured</h3>
+						<p style="margin:0 15% 2% 15%"> Fuel CMS framework (CodeIgniter-based), <a href="https://angularvotes.rsypertjr.com/votes">Angular</a>, <a href="voteparser">Vue.js</a>,Node.js, Ng, NPM, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
+							PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
+						</p>
+					</div>					
+					 <!--div class="item">
+					 	<h3 style="text-align:center">Docker Technology</h3>
+						<p>Docker technology is used in terms of Docker Engine for implementing an Angular javascript app that contains a Dockerfile and a 
+						Docker-compose file for implementations of development and production versions. Karma and Protractor unit testing of code is also included.
+						Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
+						</p>
+					</div-->					
+					 <div class="item">
+					 	<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based front end</h3> 
+						<p style="margin:0 15% 2% 15%">Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="http://laravelvotes.rsypertjr.com/votes-table" 
+						target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
+						Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
+						</p>				
+					</div>
+				  </div>
+				  
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myJumboCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myJumboCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				  </a>
+			  </div> <!-- end of myCarousel -->
+			</div></div>	
 			
 			<nav class="navbar navbar-inverse" id="topNav">
 			  
@@ -827,7 +145,6 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 						  <li><a href="#lamp">LAMP - based</a></li>
-						  <li><a href="#wordPress">WordPress</a></li>
 						  <li><a href="#mobile">JQuery Mobile</a></li>
 						  <li><a href="#frameworks">Frameworks</a></li>
 						</ul>
@@ -948,15 +265,7 @@
 									</p>
 								</a>
 								<p>Link to GIT Repository for this FuelCMS-based Site</p>
-							</li>
-							<li class="list-group-item list-group-item-warning">
-								<a href="https://github.com/Rsypertjr/wordpress/tree/sshwordpress" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="https://github.com/Rsypertjr/wordpress/tree/sshwordpress" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">WordPress Git Repository</a>	
-									</p>
-								</a>
-								<p>Link to GIT Repository for a Simple WordPress Portfolio Version</p>
-							</li>
+							</li>							
 						</div>
 					</div>
 			  
@@ -966,7 +275,7 @@
 						</div>
 						<div class="cvrbody">
 							<h1>&nbsp;&nbsp;Home/Code Repos</h1>
-							<p>Beneath are links to FuelCMS-based site Code and WordPress-based site Code</p>
+							<p>Beneath are links to FuelCMS-based site Code</p>
 						</div>
 					</div>>
 				</div>
@@ -1121,37 +430,7 @@
 					 </div>
 				 </div>
 				  
-				<div id="wordPress" class="container-fluid">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<span>WordPress Apps</span>
-							<span class="glyphicon glyphicon-tasks"></span>
-						</div>
-						<div class="panel-body">
-						  <li class="list-group-item list-group-item-success">
-							<img class="img-circle" src="<?php echo $vars['wordpressimage']; ?>" alt="WordPress">
-							<a href="http://159.65.100.7/wordpress" target="_blank">
-								<p  class="sectionTitle" >
-									<a href="http://159.65.100.7/wordpress" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Wordpress Work Portfolio</a>
-								</p>
-							</a>
-							<object data="http://159.65.100.7/wordpress" height="200" width="300"></object>
-							<p>A Simple WordPress version of my Word Portfolio.</p>
-						  </li>
-						 
-						</div>
-					</div>
-					
-					 <div id="wordPressCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-tasks"></span>
-						</div>
-						<div class="cvrbody">
-							<h1>WordPress Apps</h1>
-							<p>Beneath is a WordPress version of my work portfolio</p>
-						</div>
-					 </div>
-				 </div> 
+				
 				 
 				 
 				 <div id="mobile" class="container-fluid">
@@ -1254,12 +533,12 @@
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-success">
-								<a href="https://presvote.tk" target="_blank">
+								<a href="https://angularvotes.rsypertjr.com" target="_blank">
 									<p  class="sectionTitle">
-										<a href="https://presvote.tk" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+										<a href="https://angularvotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
 									</p>
 								</a>
-								<object data="https://presvote.tk" height="200" width="300"></object>
+								<object type="text/html" data="https://angularvotes.rsypertjr.com" height="200" width="300"></object>
 								<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
 								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
 								<br/>This same app has a Docker implementation that uses Docker Engine and contains Dockerfile and Docker-compose<br> 
@@ -1278,29 +557,14 @@
 								<p>React Javascript Tic Tac Toe app with CSS animations for victory celebration.<br>
 								Here is the code: <a href="https://github.com/Rsypertjr/fuelCMS/blob/newfuel/fuel/application/views/tictactoe.php" target="_blank">React Javascript Code</a>
 								</p>
-							</li> 
-							<li class="list-group-item">
-								<a href="http://hmobf.presvote.tk" target="_blank">
-									<p  class="sectionTitle">
-										<a href="http://hmobf.presvote.tk" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React Front End/Express Back End Mobile App</a>
-									</p>
-								</a>
-								<!--<object data="http://hmobf.presvote.tk" height="200" width="300"></object>-->
-								<p>React front end and Express back end Mobile App.  Both ends Virtual Hosted.  Backend uses Sequelize/Postgresql migrations and ORM queries.
-								   View in Google Mobile mode.
-									<br>
-									<a href="https://github.com/Rsypertjr/hatch_mobile_back/tree/hatch_react_back" target="_blank">Express Back End Code</a>
-									<br>
-									<a href="https://github.com/Rsypertjr/hatch_mobile_front/tree/hatch_react_front" target="_blank">Express Front End Code</a>
-								</p>
-							</li> 
+							</li> 							
 							<li class="list-group-item list-group-item-success">
-								<a href="http://159.65.100.7/votes-table" target="_blank">
+								<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank">
 									<p  class="sectionTitle">
-										<a href="http://159.65.100.7/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>
+										<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>
 									</p>
 								</a>
-								<object data="http://159.65.100.7/votes-table" height="200" width="300"></object>
+								<object data="https://laravelvotes.rsypertjr.com/votes-table" height="200" width="300"></object>
 								<p>The app uses Laravel (Mix) with React.js (including React Router).  Composer is used to 
 								   manage PHP dependencies, and NPM is used to managed the Node-based React.js dependencies. 
 								   Laravel routing is used to serve main page and React routing for fast rendering of tables 
@@ -1316,7 +580,7 @@
 						</div>
 						<div class="cvrbody">
 							<h1>Frameworks</h1>
-							<p>Programming I've done using:<br>Vue Javascript,<br>Express/Node JavaScript,<br>Laravel MVC with Homestead Development Environment,<br>and Angular2 JavaScript with Redux app using Central Store/State management.</p>
+							<p>Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Laravel MVC Framework</p>
 						</div>
 					  </div>
 				  </div>
