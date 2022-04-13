@@ -282,6 +282,8 @@ class OtherApps extends CI_Controller {
          $this->load->view('bootPortfolio',$this->vars);  
     }
 
+  
+
     function getData($state){
 
             $state = str_replace(' ','-',strtolower($state));
