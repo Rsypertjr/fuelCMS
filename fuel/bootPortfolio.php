@@ -146,7 +146,28 @@
 	
 		   
 		   
-		 
+		   #wordPress {
+			position:relative;
+			height:auto;
+			margin:2em 0;
+			color: #fff; 
+			-webkit-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+		   }
+		   
+			#wordPressCovr {
+				position:absolute;
+				height:100%;
+				width:100%;
+				opacity:0.0;
+				top:0;
+				left:0;
+				padding:1em;
+				background-color:black;
+				-webkit-transition: all .5s ease-in-out;
+				transition: all .5s ease-in-out;
+		   }
+		   
 
 		   
 		   #mobile{
@@ -400,7 +421,8 @@
 	
 		
 		
-		#home .panel-body li>p, #about .panel-body li>p, #mobile .panel-body li>p,		
+		#home .panel-body li>p, #about .panel-body li>p, #mobile .panel-body li>p,#wordPress .panel-body li>p,
+		
 		#resume .panel-body li>p ,#living .panel-body li>p   	{position:relative;height:auto;width:100%}
 		#lamp > div > div.panel-body > li:nth-child(4) > p:nth-child(6) {color:black}
 		
@@ -564,7 +586,7 @@
 				  });
 				 
 			
-			   $("ul.dropdown-menu li a[href='#lamp']").add("ul.dropdown-menu li a[href='#mobile']")
+			   $("ul.dropdown-menu li a[href='#lamp']").add("ul.dropdown-menu li a[href='#wordPress']").add("ul.dropdown-menu li a[href='#mobile']")
 					   .add("ul.dropdown-menu li a[href='#frameworks']").add("ul li a[href='#resume']").add("ul.dropdown-menu li a[href='#manuals']")
 					   .add("ul.dropdown-menu li a[href='#specifications']").add("ul li a[href='#living']").add("ul li a[href='#front']")
 					   .add("ul li a[href='#home']")
@@ -631,7 +653,15 @@
 					
 						});
 						
-					
+						
+						$('#wordPress').on('mouseenter',function(){
+							$('#wordPressCovr').css('opacity','0.85');
+							var height1 = $('#wordPressCovr').height();
+							var height2 = $('#wordPressCovr .container').height();
+							var margin = (height1-height2)/2.0;
+							$('#wordPressCovr .container').css('margin-top',margin);
+						});
+						
 						
 			   
 						$('#mobile').on('mouseenter',function(){
@@ -697,7 +727,7 @@
 						
 						
 									
-				$('#frontCovr').add('#homeCovr').add('#aboutCovr').add('#lampCovr')
+				$('#frontCovr').add('#homeCovr').add('#aboutCovr').add('#lampCovr').add('#wordPressCovr')
 							   .add('#mobileCovr').add('#frameworksCovr').add('#manualsCovr')
 							   .add('#specificationsCovr').add('#resumeCovr').add('#livingCovr')
 							   .on('mousedown',function(){
@@ -743,6 +773,10 @@
 		$('object').on('mouseleave', function(){
 			$(this).animate({height:ht,width:wd}); 
 		});	
+
+	
+
+				
 				
 	});
 			
@@ -767,19 +801,6 @@
 				   Docker-compose file for implementations of development and production versions. Karma and Protractor unit testing of code is also included.
 				   Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
 				</p>
-				<p>Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="http://159.65.100.7/votes-table" 
-<<<<<<< HEAD
-					target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
-					Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
-				</p>
-=======
-<<<<<<< HEAD
-				target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a></p>
-=======
-				target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
-			    Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.</p>
->>>>>>> 431936e499c22a03dc8393a117a0790b28aee7b4
->>>>>>> ed567653e28a77154b209f4a80340d0a770cc5d8
 			  </div>
 			</div>	
 			
@@ -803,6 +824,7 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 						  <li><a href="#lamp">LAMP - based</a></li>
+						  <li><a href="#wordPress">WordPress</a></li>
 						  <li><a href="#mobile">JQuery Mobile</a></li>
 						  <li><a href="#frameworks">Frameworks</a></li>
 						</ul>
@@ -924,7 +946,14 @@
 								</a>
 								<p>Link to GIT Repository for this FuelCMS-based Site</p>
 							</li>
-							
+							<li class="list-group-item list-group-item-warning">
+								<a href="https://github.com/Rsypertjr/wordpress/tree/sshwordpress" target="_blank">
+									<p  class="sectionTitle" >
+										<a href="https://github.com/Rsypertjr/wordpress/tree/sshwordpress" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">WordPress Git Repository</a>	
+									</p>
+								</a>
+								<p>Link to GIT Repository for a Simple WordPress Portfolio Version</p>
+							</li>
 						</div>
 					</div>
 			  
@@ -934,7 +963,7 @@
 						</div>
 						<div class="cvrbody">
 							<h1>&nbsp;&nbsp;Home/Code Repos</h1>
-							<p>Beneath are links to FuelCMS-based site Code.</p>
+							<p>Beneath are links to FuelCMS-based site Code and WordPress-based site Code</p>
 						</div>
 					</div>>
 				</div>
@@ -1089,7 +1118,38 @@
 					 </div>
 				 </div>
 				  
-								 
+				<div id="wordPress" class="container-fluid">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<span>WordPress Apps</span>
+							<span class="glyphicon glyphicon-tasks"></span>
+						</div>
+						<div class="panel-body">
+						  <li class="list-group-item list-group-item-success">
+							<img class="img-circle" src="<?php echo $vars['wordpressimage']; ?>" alt="WordPress">
+							<a href="http://159.65.100.7/wordpress" target="_blank">
+								<p  class="sectionTitle" >
+									<a href="http://159.65.100.7/wordpress" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Wordpress Work Portfolio</a>
+								</p>
+							</a>
+							<object data="http://159.65.100.7/wordpress" height="200" width="300"></object>
+							<p>A Simple WordPress version of my Word Portfolio.</p>
+						  </li>
+						 
+						</div>
+					</div>
+					
+					 <div id="wordPressCovr" class="container-fluid covr">
+						<div class="cvrimg">
+							<span class="glyphicon glyphicon-tasks"></span>
+						</div>
+						<div class="cvrbody">
+							<h1>WordPress Apps</h1>
+							<p>Beneath is a WordPress version of my work portfolio</p>
+						</div>
+					 </div>
+				 </div> 
+				 
 				 
 				 <div id="mobile" class="container-fluid">
 					<div class="panel panel-primary">
@@ -1444,7 +1504,7 @@
 								(a CodeIgniter-based Content Management System), PHP, MySQL, HTML, JavaScript,
 								JQuery, JQuery UI, JQuery Mobile, Angular JS, ReactJS (ngrx) CSS, CSS3, SVG, AJAX, XML,
 								JSON, Regex, DOM, Notepad++, Cloud9 IDE, GIT, Heroku Server, Laravel MVC, GitHub API,
-								Facebook API, Active Campaign API, Bootstrap, Ruby On Rails,
+								Facebook API, Active Campaign API, Bootstrap, WordPress, Ruby On Rails,
 								Google Developer Tools, Homestead Dev, Vagrant VMs, Adobe InDesign,
 								GIMP (like Photoshop), and other technologies.</p>
 							</li>

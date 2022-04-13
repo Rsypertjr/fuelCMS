@@ -1,5 +1,5 @@
 <?php
-$file ='pdf/RichardSypert122020.pdf';
+$file ='pdf/Richard-Sypert-12-13-2021.pdf';
 $filename = 'Richard L. Sypert Jr. Resume'; /* Note: Always use .pdf at the end. */
 
 header('Content-type: application/pdf');
