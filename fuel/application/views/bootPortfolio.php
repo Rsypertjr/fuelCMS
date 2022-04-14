@@ -159,6 +159,7 @@
 					  <li><a href="#resume">My Resume</a></li>
 					  <li><a href="#living">Living In Vegas</a></li>
 					  <li><a href="#front">Non-Bootstrap Portfolio</a></li>
+					  <li><a href="#laravelreact">Laravel React Bootstrap Portfolio</a></li>
 					</ul>
 				  </div>
 				</div>
@@ -476,17 +477,17 @@
 							<span class="glyphicon glyphicon-tree-conifer"></span>
 						</div>
 						<div class="panel-body">
-						   <li class="list-group-item list-group-item-warning">
+						   <!--li class="list-group-item list-group-item-warning">
 								<a href="apitest" target="_blank">
 									<p  class="sectionTitle">
 										<a href="apitest" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue Javascript App</a>
 									</p>
 								</a>
-								<!--<object data="apitest" height="200" width="300"></object>-->
+								<object data="apitest" height="200" width="300"></object>
 								<p>A Vue JS based app that accesses an API to create a Dynamic List converted from a static HMTL page.  Added Paging Function and Select Page Size.<br>GitHub link
 								   to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp" target="_blank">Vue App Code</a>
 								</p>
-							</li>
+							</li-->
 							<!--li class="list-group-item list-group-item-warning">
 								<a href="expressApp1" target="_blank">
 									<p  class="sectionTitle">
@@ -753,43 +754,83 @@
 			 
 			 
 			 <div id="front" class="container-fluid">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<span>Non Bootstrap Portfolio</span>	
-							<span class="glyphicon glyphicon-lamp"></span>
-						</div> 
-						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
-								<img class="img-rounded" src="<?php echo $vars['lampTechs']; ?>" alt="Lamp Technologies">
-								<a href="frontCMS" target="_blank">
-									<p class="sectionTitle">
-										<a href="frontCMS"  target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">Non-Bootstrap Work Portfolio</a>
-									</p>
-								</a>
-								<object data="frontCMS" height="200" width="300"></object>
-								<p>My old work portfolio using LAMP technologies including  CodeIgniter MVC Framework,FUEL-CMS
-								(a CodeIgniter-based Content Management System), PHP, MySQL, HTML, JavaScript,
-								JQuery, JQuery UI, JQuery Mobile, Angular JS, ReactJS (ngrx) CSS, CSS3, SVG, AJAX, XML,
-								JSON, Regex, DOM, Notepad++, Cloud9 IDE, GIT, Heroku Server, Laravel MVC, GitHub API,
-								Facebook API, Active Campaign API, Bootstrap, WordPress, Ruby On Rails,
-								Google Developer Tools, Homestead Dev, Vagrant VMs, Adobe InDesign,
-								GIMP (like Photoshop), and other technologies.</p>
-							</li>
-						</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span>Non Bootstrap Portfolio</span>	
+						<span class="glyphicon glyphicon-lamp"></span>
+					</div> 
+					<div class="panel-body">
+						<li class="list-group-item list-group-item-success">
+							<img class="img-rounded" src="<?php echo $vars['lampTechs']; ?>" alt="Lamp Technologies">
+							<a href="frontCMS" target="_blank">
+								<p class="sectionTitle">
+									<a href="frontCMS"  target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">Non-Bootstrap Work Portfolio</a>
+								</p>
+							</a>
+							<object data="frontCMS" height="200" width="300"></object>
+							<p>My old work portfolio using LAMP technologies including  CodeIgniter MVC Framework,FUEL-CMS
+							(a CodeIgniter-based Content Management System), PHP, MySQL, HTML, JavaScript,
+							JQuery, JQuery UI, JQuery Mobile, Angular JS, ReactJS (ngrx) CSS, CSS3, SVG, AJAX, XML,
+							JSON, Regex, DOM, Notepad++, Cloud9 IDE, GIT, Heroku Server, Laravel MVC, GitHub API,
+							Facebook API, Active Campaign API, Bootstrap, WordPress, Ruby On Rails,
+							Google Developer Tools, Homestead Dev, Vagrant VMs, Adobe InDesign,
+							GIMP (like Photoshop), and other technologies.</p>
+						</li>
 					</div>
-					
-					 <div id="frontCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-lamp"></span>
-						</div>
-						<div class="cvrbody">
-							<h1>Non-Bootstrap Portfolio</h1>
-							<p>CodeIgniter,Fuel CMS, and Lamp technologies are used as the MVC framework. They are based on PHP/LAMP technologies. 
-							Includes lot of built-in routing, modular storage of code in a database, and Active Object database access.  
-							On the front-end, CSS 2-D and 3-D tranformations are used to produce animations.</p>
-						</div>
-					 </div>
-				  </div>
+				</div>
+			
+				<div id="frontCovr" class="container-fluid covr">
+				<div class="cvrimg">
+					<span class="glyphicon glyphicon-lamp"></span>
+				</div>
+				<div class="cvrbody">
+					<h1>Non-Bootstrap Portfolio</h1>
+					<p>CodeIgniter,Fuel CMS, and Lamp technologies are used as the MVC framework. They are based on PHP/LAMP technologies. 
+					Includes lot of built-in routing, modular storage of code in a database, and Active Object database access.  
+					On the front-end, CSS 2-D and 3-D tranformations are used to produce animations.</p>
+				</div>
+				</div>
+			</div>
+
+			<div id="laravelreact" class="container-fluid">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span>Laravel Mix/React/Bootstrap Portfolio</span>	
+						<img class="img-circle" src="<?php echo $vars['laravelMVC.jpg']; ?>" alt="Resume">
+					</div> 
+					<div class="panel-body">
+						<li class="list-group-item list-group-item-success">
+							<img class="img-rounded" src="<?php echo $vars['lampTechs']; ?>" alt="Lamp Technologies">
+							<a href="frontCMS" target="_blank">
+								<p class="sectionTitle">
+									<a href="frontCMS"  target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">Non-Bootstrap Work Portfolio</a>
+								</p>
+							</a>
+							<object data="frontCMS" height="200" width="300"></object>
+							<p>My old work portfolio using LAMP technologies including  CodeIgniter MVC Framework,FUEL-CMS
+							(a CodeIgniter-based Content Management System), PHP, MySQL, HTML, JavaScript,
+							JQuery, JQuery UI, JQuery Mobile, Angular JS, ReactJS (ngrx) CSS, CSS3, SVG, AJAX, XML,
+							JSON, Regex, DOM, Notepad++, Cloud9 IDE, GIT, Heroku Server, Laravel MVC, GitHub API,
+							Facebook API, Active Campaign API, Bootstrap, WordPress, Ruby On Rails,
+							Google Developer Tools, Homestead Dev, Vagrant VMs, Adobe InDesign,
+							GIMP (like Photoshop), and other technologies.</p>
+						</li>
+					</div>
+				</div>
+			
+				<div id="frontCovr" class="container-fluid covr">
+				<div class="cvrimg">
+					<span class="glyphicon glyphicon-lamp"></span>
+				</div>
+				<div class="cvrbody">
+					<h1>Non-Bootstrap Portfolio</h1>
+					<p>CodeIgniter,Fuel CMS, and Lamp technologies are used as the MVC framework. They are based on PHP/LAMP technologies. 
+					Includes lot of built-in routing, modular storage of code in a database, and Active Object database access.  
+					On the front-end, CSS 2-D and 3-D tranformations are used to produce animations.</p>
+				</div>
+				</div>
+			</div>
+
 			  
 		  <div id="footer" class="container-fluid">
 
