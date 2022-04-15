@@ -78,21 +78,21 @@
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner">
 					<div class="item active">
-						<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">Richard L. Sypert Jr's Portfolio</h3> 
+						<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Richard L. Sypert Jr's Portfolio</h3> 
 						<p style="margin:0 15% 2% 15%">This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
 							and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
 							service classes of enterprise software.
 						</p>
 					</div>				
 					<div class="item">
-						<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h3> 
+						<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h3> 
 						<p style="margin:0 15% 2% 15%">  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual Hosting.  Some apps have been deployed to Heroku Server.
 						Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
 						sshfs to the files on the droplets.
 						</p> 
 					</div>				
 					<div class="item">
-						<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">PHP-based and JavaScript-based technologies and frameworks featured</h3>
+						<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">PHP-based and JavaScript-based technologies and frameworks featured</h3>
 						<p style="margin:0 15% 2% 15%"> Fuel CMS framework (CodeIgniter-based), <a href="https://angularvotes.rsypertjr.com/votes">Angular</a>, <a href="voteparser">Vue.js</a>,Node.js, Ng, NPM, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
 							PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
 						</p>
@@ -105,7 +105,7 @@
 						</p>
 					</div-->					
 					 <div class="item">
-					 	<h3 style="text-align:center;background-color:darkgray;color:whitesmoke;margin:1% 15%">Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based front end</h3> 
+					 	<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based front end</h3> 
 						<p style="margin:0 15% 2% 15%">Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="http://laravelvotes.rsypertjr.com/votes-table" 
 						target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
 						Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
@@ -792,45 +792,7 @@
 				</div>
 			</div>
 
-			<div id="laravelreact" class="container-fluid">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<span>Laravel Mix/React/Bootstrap Portfolio</span>	
-						<img class="img-circle" src="<?php echo $vars['laravelMVC.jpg']; ?>" alt="Resume">
-					</div> 
-					<div class="panel-body">
-						<li class="list-group-item list-group-item-success">
-							<img class="img-rounded" src="<?php echo $vars['lampTechs']; ?>" alt="Lamp Technologies">
-							<a href="frontCMS" target="_blank">
-								<p class="sectionTitle">
-									<a href="frontCMS"  target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">Non-Bootstrap Work Portfolio</a>
-								</p>
-							</a>
-							<object data="frontCMS" height="200" width="300"></object>
-							<p>My old work portfolio using LAMP technologies including  CodeIgniter MVC Framework,FUEL-CMS
-							(a CodeIgniter-based Content Management System), PHP, MySQL, HTML, JavaScript,
-							JQuery, JQuery UI, JQuery Mobile, Angular JS, ReactJS (ngrx) CSS, CSS3, SVG, AJAX, XML,
-							JSON, Regex, DOM, Notepad++, Cloud9 IDE, GIT, Heroku Server, Laravel MVC, GitHub API,
-							Facebook API, Active Campaign API, Bootstrap, WordPress, Ruby On Rails,
-							Google Developer Tools, Homestead Dev, Vagrant VMs, Adobe InDesign,
-							GIMP (like Photoshop), and other technologies.</p>
-						</li>
-					</div>
-				</div>
 			
-				<div id="frontCovr" class="container-fluid covr">
-				<div class="cvrimg">
-					<span class="glyphicon glyphicon-lamp"></span>
-				</div>
-				<div class="cvrbody">
-					<h1>Non-Bootstrap Portfolio</h1>
-					<p>CodeIgniter,Fuel CMS, and Lamp technologies are used as the MVC framework. They are based on PHP/LAMP technologies. 
-					Includes lot of built-in routing, modular storage of code in a database, and Active Object database access.  
-					On the front-end, CSS 2-D and 3-D tranformations are used to produce animations.</p>
-				</div>
-				</div>
-			</div>
-
 			  
 		  <div id="footer" class="container-fluid">
 

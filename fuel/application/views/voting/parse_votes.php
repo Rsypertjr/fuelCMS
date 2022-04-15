@@ -30,7 +30,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
     
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/vue"></script-->
+    <script src="https://unpkg.com/vue@3"></script>
    
     <script type="text/javascript">
 
@@ -80,16 +81,14 @@
 
                         console.log("Race Data:", race_data);
                         console.log(timeseries);                  
-                        vue_obj();         
-            }});
+      
     
-        function vue_obj(){
-                                
                         // Vue Object
-                        vm = new Vue({
-                        el: '#results_table',
-                        data: {
-                            test: "This is a Test",
+                        let vm = Vue.createApp({
+                       // el: '#results_table',
+                        data()  {
+                            return {
+                                test: "This is a Test",
                             headers : ["Index","Biden %","Biden Votes","Trump %","Trump Votes","Other Votes","Time Stamps","Votes", "Votes Added","Trump Added","Biden Added","% of Remaining Biden","% of Remaining Trump"],
                             tlheaders: ["Biden Votes","Biden Vote Increase","1st Index","2nd Index", "Other Votes","Time1","Time2","1st Trump Votes","2nd Trump Votes",
                                         "Trump Vote Loss","Accumulated Trump Vote Loss","Votes Increase + Trump Loss","Last Vote Total", "Overall Vote Increase"],
@@ -156,56 +155,12 @@
                             number_pages: 0,
                             step: 0,
                             table:'',
+                            }
+                           
                             
                         },
 
-                        watch:{
-                            selected: function(val){
-                                this.parse_interval = parseInt(val.replace('Times','').trim())*10;
-                                this.parse_vote();
-                                this.linechart();
-                                this.linechart2();
-                                this.linechart3();
-                                this.linechart4();
-                                this.piechart();
-                                this.stackedchart();
-                                this.fill_votebins();
-                                this.stackedchart2();
-                                
-                               
-                            },
-                            number_pages: function(val){
-                                console.log("Number of Pages: ", val);                               
-                                this.parse_vote();
-                            },
-                           
-                            state_selected : function(val){
-                                $("#results_table").css("display","none");
-                                
-                                this.start_tables(val,this.sort_selected);   
-                            },
-                            sort_selected : function(val){
-                                $("#results_table").css("display","none");
-                                
-                                this.start_tables(this.state_selected,val);   
-                            },
-                            vote_rows: function(val){
-                               
-                               /* this.parse_vote();
-                                this.linechart();
-                                this.linechart2();
-                                this.linechart3();
-                                this.piechart();
-                                this.fill_votebins();
-                                this.stackedchart2();
-                                this.stackedchart();
-                                */
-                               
-                            }
-
-                        },
-                                                 
-                        mounted: function() {                           
+                        mounted() {                           
                             this.start_tables(this.state_selected,this.sort_selected);       
 
                             var this2 = this;
@@ -301,6 +256,54 @@
                             });
                                 
                         },
+
+                        watch:{
+                            selected: function(val){
+                                this.parse_interval = parseInt(val.replace('Times','').trim())*10;
+                                this.parse_vote();
+                                this.linechart();
+                                this.linechart2();
+                                this.linechart3();
+                                this.linechart4();
+                                this.piechart();
+                                this.stackedchart();
+                                this.fill_votebins();
+                                this.stackedchart2();
+                                
+                               
+                            },
+                            number_pages: function(val){
+                                console.log("Number of Pages: ", val);                               
+                                this.parse_vote();
+                            },
+                           
+                            state_selected : function(val){
+                                $("#results_table").css("display","none");
+                                
+                                this.start_tables(val,this.sort_selected);   
+                            },
+                            sort_selected : function(val){
+                                $("#results_table").css("display","none");
+                                
+                                this.start_tables(this.state_selected,val);   
+                            },
+                            vote_rows: function(val){
+                               
+                               /* this.parse_vote();
+                                this.linechart();
+                                this.linechart2();
+                                this.linechart3();
+                                this.piechart();
+                                this.fill_votebins();
+                                this.stackedchart2();
+                                this.stackedchart();
+                                */
+                               
+                            }
+
+                        },
+                                                 
+                      
                       
                         methods: {
                             // Mapping Function Used for calculating when vote total decreases and the accumulation
@@ -1397,17 +1400,15 @@
                       }   
                     }
                      
-                });  // Vue Object
-                 
-        }
-
-        
+                }).mount('#results_table');  // Vue Object
+                          
+            }});     
     });
     </script>
     <style>
-        body{
-           /* background-color: #666;*/
-        }
+        /*body{
+            background-color: #666;
+        }*/
 
         #barChart{
             background-color: wheat;
