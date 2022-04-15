@@ -70,21 +70,6 @@ function nodeToggle(name,systemIndex,organIndex,tissueIndex,cellIndex,value)
 
 
 
-function getTab(xmlDoc,nodeDoc,tableDoc,mode)  // Creates tabs for cell-to-cell and cell-to-lumen display modes
-{
-	// create function to store tab selection in XML
-	
-
-	
-	// Menu Message
-	$('#gphmess').parent().text('Click Here For Menu!!!').css('font-size','2.5em').css('padding-top','1.0em');
-
-}
-
-
-	
-	
-
 
 function drawNodes2(xmlDoc,nodeDoc,tableDoc,mode)
 {
@@ -97,15 +82,17 @@ function drawNodes2(xmlDoc,nodeDoc,tableDoc,mode)
 	var tissueangle = 0;
 	var cellangle = 0;
 	var itemangle = 0;
-	
-  //  $('#menutable').css('zoom','73%');
+
 	// clear out display
-	var mysvg = document.getElementById("mySVG");
-	el = mysvg.firstChild;
+	window.mysvg = document.getElementById("mySVG");
+	if(window.mysvg == null)
+		window.mysvg = $('#mySVG')[0];
+
+	el = window.mysvg.firstChild;
 	while(el)
 		{
 			el.parentNode.removeChild(el);
-			el = mysvg.firstChild;
+			el = window.mysvg.firstChild;
 		}  
 	
 	$sysid = $('.sys_od').filter(function()
@@ -524,35 +511,34 @@ function drawNodes2(xmlDoc,nodeDoc,tableDoc,mode)
 																				  
 																				  if(cct == 0)
 																				   {
-																					 // Build Cell Contact Table
-																					 // Table for Cell Contacts    
-																					 var tname2 = "";
-																					 if(mode == "ccell")
-																					   tname2 = $sysname[sn]+$orgname[sn][o2]+$tissuename[sn][o2][ti]+$cellname[sn][o2][ti][cel]+"cellcontacttable";
-																					 else if(mode == "clumen")
-																					   tname2 = $sysname[sn]+$orgname[sn][o2]+$tissuename[sn][o2][ti]+$cellname[sn][o2][ti][cel]+"lumencontacttable";
+																						// Build Cell Contact Table
+																						// Table for Cell Contacts    
+																						var tname2 = "";
+																						if(mode == "ccell")
+																						tname2 = $sysname[sn]+$orgname[sn][o2]+$tissuename[sn][o2][ti]+$cellname[sn][o2][ti][cel]+"cellcontacttable";
+																						else if(mode == "clumen")
+																						tname2 = $sysname[sn]+$orgname[sn][o2]+$tissuename[sn][o2][ti]+$cellname[sn][o2][ti][cel]+"lumencontacttable";
+																					
+																						tname2 = tname2.replace(/\_|\s/gi,'');
 																				
-																					   tname2 = tname2.replace(/\_|\s/gi,'');
-																				
-																				    	var $table1 = $("<table id='"+ tname2 +"' class='atable'></table>");
-																				    	$table1.attr("border","1");
-																					    $table1.attr("font-size","30px");
+																						$table1.attr("border","1");
+																						$table1.attr("font-size","30px");
 																			
-																					  // Clear out tables for cell contacts if mode is changed
-																					  var $tables = new Array();
-																					  if(mode == "ccell")
-																						{
-																						  $find = $("table[id*='lumencontacttable']");
-																						  if(typeof($find) != "undefined")
-																								$find.remove();
-																						}
-																					   else if(mode == "clumen")
-																						{
-																					      $find = $("table[id='cellcontacttable']");
-																						  if(typeof($find) != "undefined")
-																								$find.remove();
-																						  
-																						}
+																						// Clear out tables for cell contacts if mode is changed
+																						var $tables = new Array();
+																						if(mode == "ccell")
+																							{
+																							$find = $("table[id*='lumencontacttable']");
+																							if(typeof($find) !== "undefined")
+																									$find.remove();
+																							}
+																						else if(mode == "clumen")
+																							{
+																							$find = $("table[id*='cellcontacttable']");
+																							if(typeof($find) !== "undefined")
+																									$find.remove();
+																							
+																							}
 																					}	// end of if(cct == 0		
 																				  
 																				   var $tr = $("<tr></tr>");
@@ -707,43 +693,6 @@ function drawNodes2(xmlDoc,nodeDoc,tableDoc,mode)
 		var x2 = 0;
 		var y1 =0;
 		var y2 = 0;
-
-		// JQuery Translate Image by Screen Method
-		$('.clickNode').bind('mouseover', function()
-			{
-						var x1 = window.event.clientX; 
-						var y1 = window.event.clientY;
-				
-						
-									$(this).mousemove(function()
-										{	
-											var x2 = window.event.clientX; 
-											var y2 = window.event.clientY;
-											
-											var dx = x2 - x1;
-											var dy = y2 - y1;
-													xval = translationCoords.x;
-													yval = translationCoords.y;
-												  
-													translationCoords.x = xval+dx;
-													translationCoords.y = yval+dy;
-													
-													xval = translationCoords.x;
-													yval = translationCoords.y;
-												 
-																gphdisp = mysvg.getElementById("gphdisp");
-													  
-																	gphdisp.setAttributeNS(null,"transform","scale(" + fac + ")" + " translate(" + (xval+dx) + "," + (yval+dy) + ")");
-									
-
-												$(this).bind('mouseout',function()
-													{
-																	$(this).unbind('mousemove');
-													});   // end of translate
-										});
-							
-			
-			}); 
 		}  // end if sys > 0
 				
 	   // Use JQuery to Dynamically Adjust Table Font Sizes for Common Organ Systems
@@ -754,11 +703,11 @@ function drawNodes2(xmlDoc,nodeDoc,tableDoc,mode)
 					var setTableScale = function(){
 					
 							// Scale text to containter div as it zooms
-							//var scaleSource = $dframeHeader.height();
-							//scaleFactor2 = 0.80;
-							//var fontSize = scaleSource * scaleFactor2; 
-							$table.css('font-size', '1em');
-							$('#menutable').css('font-size','1em');   // Set menutable font size
+							var scaleSource = $dframeHeader.height();
+							scaleFactor2 = 0.80;
+							var fontSize = scaleSource * scaleFactor2; 
+							$table.css('font-size', fontSize + 'px');
+							$('#menutable').css('font-size','2.0em');   // Set menutable font size
 							
 						}
 						$(window).resize(function(){
@@ -794,9 +743,7 @@ function draworgantables(xmlDoc,tableDoc,lname,sysid,organid,partid,cl)
 {
 	 // Builds tabular info for Organs (Common Systems, Parts, Contact Organs for Parts, etc)
      // ********************************************************************	 
-     
-   //alert((new XMLSerializer()).serializeToString(xmlDoc));  
-   //alert((new XMLSerializer()).serializeToString(tableDoc));  
+  
 	contactorgan = new Array();
     
     $sys = new Array();
@@ -807,23 +754,16 @@ function draworgantables(xmlDoc,tableDoc,lname,sysid,organid,partid,cl)
     $contactLumen = new Array();
     $contacts = new Array();
     $partContactOrgan = new Array();
-    var $tname2 = "";
-    
-    
-  
+    var $tname2 = "";  
     
     
     $sys = $(xmlDoc).find("System").eq(sysid).contents();
-    //alert($sys.text());  
     
     $sysName =$sys.eq(sysid).text();
     $org = $(xmlDoc).find("System").eq(sysid).find("Organ").contents();
     $orgName = $org.eq(organid).text();
 	$part = $(xmlDoc).find("System").eq(sysid).find("Organ").eq(organid).find("Part").contents();
-	
-   
-    //alert($part.length);
-    
+	    
 	$organContact = $(xmlDoc).find("System").eq(sysid).find("Organ").eq(organid).find("OrganContacts").contents();
     $organContactOrgan = $(xmlDoc).find("System").eq(sysid).find("Organ").eq(organid).find("OrganContacts").find("OrganContactOrgan").contents();
 	
@@ -871,10 +811,7 @@ function draworgantables(xmlDoc,tableDoc,lname,sysid,organid,partid,cl)
     
 	if($commonSystems.length > 0)	
 		{
-			
-			
 			// Prompt Alerting to Organ having Common Systems
-			$('#gphmess').html('Testing');
 			
            $table1 = $("<table></table>");
            $table1.attr("border","1");
@@ -1024,7 +961,6 @@ function draworgantables(xmlDoc,tableDoc,lname,sysid,organid,partid,cl)
             $th.attr("height","auto");
             $tr.html($th);
             $table1.append($tr);
-		//if((contactlumen > 0)  && contactlumen[0].childNodes[0].nodeValue != "")
         if(($organContactLumen.length>0)  && $organContactLumen.eq(0).text() != "")
 			{
              for(var op2=0;op2<$organContactLumen.length;op2++)
@@ -1035,7 +971,6 @@ function draworgantables(xmlDoc,tableDoc,lname,sysid,organid,partid,cl)
                     $orgContactLumen.text($organContactLumenName);
                     $Organ.append($orgContactLumen);
                     $systemOfOrgan.append($Organ);
-                    //alert($table1.html());
 					
                     $tr = $("<tr></tr>");
                     $td = $("<td><center>"+ "<font color='" + cl + "'>" + $organContactLumenName + "</font><center></td>");
@@ -1091,11 +1026,7 @@ function draworgantables(xmlDoc,tableDoc,lname,sysid,organid,partid,cl)
 			$td = $("<td><div style='background:grey;height:auto'></div></td>");
 			$tr.html($td);
 			$table1.append($tr);
-	//		$tables = $(tableDoc).find("Tables");
-			$tables.append($table1);
-			
-            //alert($tables.text()); 
-            
+			$tables.append($table1);	
             $('#dispframe').prepend($tables.contents());
 		
 	   // Use JQuery to Dynamically Adjust Table Font Sizes
@@ -1127,24 +1058,6 @@ function draworgantables(xmlDoc,tableDoc,lname,sysid,organid,partid,cl)
 // Calls functions that create open node record, draws the graphical display, and generates tables.  The xmlDoc is the xml database file, nodeDoc stores open 
 // nodes, and tableDoc stores generated tables, and 'nme' is the name of the node clicked on.
 
-function openThisSystemsOrgans(value)
-{
-this.value = false;
-}
-
-// graphenter event handler	
-/*function graphEnterHandler(e) 
-{
-   
-	$menutable = $('#menutable');
-	$('#gphmess').html('');
-	$('#gphmess').prepend($menutable);
-}  */
-
-						
-
-
-	
 function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 {
    
@@ -1240,11 +1153,7 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 				
 		});
 
-
 	
-	// Menu Message
-	$('#gphmess').text('Click Here For Menu!!!');
-
 	//Get mode for cell contacts, ie. cell-to-cell, or cell-to-lumen
 	mode = contactMode;
 	
@@ -1280,14 +1189,10 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 	var $systems = $(xmlDoc).find("System");
 	
     // Systems Section
-	//if(systems)
 	if($systems)
 	{   
-
-             
-			 // initialize variables for click-organ selections	
+			// initialize variables for click-organ selections	
 			// produce system nodes		
-		    //alert($systems.length);
 			for (i=0;i<$systems.length;i++)
 			   {   
 			
@@ -1326,27 +1231,8 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 					var $oframe = $('.sys_od');
 					var $sysnom = $('.sys_id2');
 					var $syspr = $('.sysprompt');
-				/*	var setSysnomScale = function(){
-					
-							 // Scale text to containter div as it zooms
-							var scaleSource = $sysnom.height();
-							var scaleSource2 = $oframe.height() - $sysnom.height();
-							scaleFactor = 0.8;
-							
-							var fontSize = scaleSource * scaleFactor;  
-							var fontSize2 = 1.3 * fontSize;
-															
-							$syspr.css('font-size', fontSize + 'px');
-							$sysnom.css('font-size', fontSize + 'px');
-							
-						}
-
-						$(window).resize(function(){
-							setSysnomScale();
-						}); */
+				
 					var appType = '<?php echo $vars["appType"]; ?>';
-			//		if(appType != 'mobile')
-			//			setSysnomScale();	// Run before Window 
 				
 				   $od.bind('click',{msg:idxNum[i]}, function(event)
 				   {
@@ -1421,25 +1307,7 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 								var $oframe = $('.org_od');
 								var $orgnom = $('.org_id2');
 								var $orgpr = $('.orgprompt');
-							/*	var setOrgnomScale = function(){
-								// Scale text to containter div as it zooms
-										var scaleSource = $orgnom.height();
-										var scaleSource2 = $oframe.height() - $orgnom.height();
-										scaleFactor = 1.8;
-										
-										var fontSize = scaleSource * scaleFactor;  
-										var fontSize2 = 1.2 * fontSize;
-																		
-										$orgpr.css('font-size', fontSize + 'px');
-										$orgnom.css('font-size', fontSize + 'px');
-										
-									}
-									$(window).resize(function(){
-										setOrgnomScale();
-									});   */
-								//if(appType != 'mobile')	
-							//		setOrgnomScale();	 //Run before Window Resize
-							  
+						
 							   // Events for adding and deleting a ORGAN node from display
 							   $od.bind('click',{msg:idxNum[j], msg2:idxNum[i]},function(event)
 				               {
@@ -1457,12 +1325,10 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 								  $prompt = $el.html();
 								  
 								  if($prompt == "Click to Open")
-									   {
-										  
-								           nodeToggler[nm].value = true;
+									   {										  
+								          nodeToggler[nm].value = true;
 													
-										   //Display Organ Tables
-										  //alert((new XMLSerializer()).serializeToString(xmlDoc));
+										  //Display Organ Tables
 										  var tabname = nmx+"table";
 									      tabname = tabname.replace(/\s|\_|\-/gi,'');  // Strip chars
 										  var $tab = $('#'+tabname);
@@ -1475,8 +1341,7 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 									       doSystems(xmlDoc,nm,nodeDoc,xnodeDoc,tableDoc);   // redraw  
 										 }
 								   else if($prompt == "Click to Close")
-											{
-																				                                                   
+											{																				                                                   
                                                    //Use global variable to set Tissue display
 												   nodeToggler[nm].value = false;
 												   
@@ -1485,11 +1350,8 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 													tabname = tabname.replace(/\s|\_|\-/gi,'');  // Strip chars
 													var $tab = $('#'+tabname);
 													$tab.css('display','none');
-													//if(typeof($tab) != "undefined")
-												//		$tab.remove();*/
 														
-													doSystems(xmlDoc,nm,nodeDoc,xnodeDoc,tableDoc);   // redraw  
-												
+													doSystems(xmlDoc,nm,nodeDoc,xnodeDoc,tableDoc);   // redraw  												
 											   } 
 
 									   });  // end of onclick
@@ -1527,25 +1389,11 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 										   $('#harchframe').append($od);  // Adding Element to Display
 										   $('.tiss_od').focus();
 										   
-										//Tissue Font Dynamic Adjust
-										var $oframe = $('.tiss_od');
-										var $tissnom = $('.tiss_id2');
-										var $tisspr = $('.tissprompt');
-									/*	var setTissnomScale = function(){
-										
-												// Scale text to containter div as it zooms
-												var scaleSource = $tissnom.height();
-												scaleFactor = 2.4;
-												var fontSize = scaleSource * scaleFactor;  
-												var fontSize2 = 1.1 * fontSize;
-												$tisspr.css('font-size', fontSize2 + 'px');
-												$tissnom.css('font-size', fontSize + 'px');
-											}
-											$(window).resize(function(){
-												setTissnomScale();
-											});  */
-									//	if(appType != 'mobile')	
-									//		setTissnomScale();	 //Run before Window Resize
+											//Tissue Font Dynamic Adjust
+											var $oframe = $('.tiss_od');
+											var $tissnom = $('.tiss_id2');
+											var $tisspr = $('.tissprompt');
+									
 								    		// Events for adding and deleting a Tissue node from display
 											  $od.bind('click',{msg1:idxNum[i],msg2:idxNum[j],msg:idxNum[k]}, function(event)
 											   {
@@ -1623,22 +1471,7 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 														var $oframe = $('.cell_od');
 														var $cellnom = $('.cell_id2');
 														var $cellpr = $('.cellprompt');
-													/*	var setCellnomScale = function(){
-														        // Scale text to containter div as it zooms
-																var scaleSource = $cellnom.height(); 
-																scaleFactor = 1.2; 
-																
-																var fontSize = scaleSource * scaleFactor;   
-																var fontSize2 = 0.5 * fontSize;
-																								
-																$cellpr.css('font-size', fontSize + 'px');
-																$cellnom.css('font-size', fontSize + 'px');
-															}
-															$(window).resize(function(){
-																setCellnomScale();
-															});
-														if(appType != 'mobile')	
-															setCellnomScale();	*/ //Run before Window Resize
+												
 														
 										    	// Events for adding and deleting a node from display
                                                 $od.bind('click',{msg1:idxNum[i],msg2:idxNum[j],msg3:idxNum[k],msg:idxNum[m]}, function(event)
@@ -1733,9 +1566,7 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
 					}  // end of if organs, END of Systems section
 				}  // end of for systems
 				drawNodes2(xmlDoc,nodeDoc,tableDoc,mode);  
-		//$('body').scrollTop(0);			
 		}  // end if systems
-//$('#harchframe').scrollTop(0);	
 	
 } // end of doSystems
 
@@ -1779,15 +1610,14 @@ function loadGUI()  // This function loads the HTML of gui on body load
 							<div id="panel"></div>\
 							<div id="gphdisp">\
 							  <div id="gphdisp2">\
-								<svg id="mySVG" width="100%" height="100%" viewBox = "0 0 4000 4000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>\
+								<svg id="mySVG" style="overflow: visible" width="100%" height="100%" viewBox = "0 0 4000 4000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>\
 							  </div>\
 							</div>\
 						</div>\
 					    <div id="dispframe" class="dispframe"></div>\
 				    </div>';   
                     
-                    
-          //Original Dim's for mySVG  "1093px" height="941px"
+         
 		 // Initiate xml database retreival and Hierarchical display generation
 		document.getElementById("gui").innerHTML = gui;
 
@@ -1815,321 +1645,125 @@ function loadGUI()  // This function loads the HTML of gui on body load
 		 $gmess = $('#gphmess');
 		 $tablez = $('.atable');
 		 $panel = $('#panel');
-		 setGuiScale = function(){
+	
 		
-		       // Dynamically Scale Fonts
-				var scaleSource = $htitle.height();
-				var scaleSource2 = $ptitle.height();
-				var scaleSource3 = $tab1.width();
-                var scaleSource4 = $gmess.height();
-				var scaleSource5 = $tab1.height();
-				scaleFactor = 0.55;
-				scaleFactor2 = 0.25;
-				scaleFactor3 = 0.15;
-				scaleFactor4 = 0.65;
-				scaleFactor5 = 0.65;
-                scaleFactor6 = 0.90;
-				var fontSize = scaleSource * scaleFactor;   
-                var fontSize1 = scaleSource4 * scaleFactor5; 
-				var fontSize2 = scaleSource * scaleFactor3;
-				var fontSize3 = scaleSource3 * scaleFactor3;
-				var fontSize4 = scaleSource3 * scaleFactor4;
-				var fontSize5 = scaleSource2 * scaleFactor4;
-				var fontSize6 = scaleSource5 * scaleFactor6;
-			
-				$htitle.css('font-size', fontSize + 'px');
-			    $gtitle.css('font-size', fontSize + 'px');
-				$dtitle.css('font-size', fontSize + 'px');
-				$ptitle.css('font-size', fontSize5 + 'px');
-				//$tab1.css('font-size', fontSize3 + 'px');
-				//$tab2.css('font-size', fontSize3 + 'px');
-				//$gmess.css('font-size', fontSize1 + 'px');
-				$tablez.css('font-size',fontSize2 + 'px');
-				$panel.css('font-size',fontSize6 + 'px');
-			}
-			$(window).resize(function(){
-				//setGuiScale();
+		//Intial Table Column Display
+		$('#dispframe').prepend($('#panel'));
+		$('#panel')
+			.html("You Can Point to Graph Display and Enlarge It.<br/>Then Point to Edge to Restore.</br><span id='cspan' style='color:red'>Click Here to Close</span>")
+			.css('margin','0.5em')
+			.css('padding','0.25em')
+			.css('top','0em');
+		$('#panel').slideDown("slow");
+		$('#cspan')							 
+			.animate({fontSize:'1.3em'},1000)
+			.animate({fontSize:'1.4em'},1000)
+			.animate({fontSize:'1.5em'},1000)
+			.animate({fontSize:'1.3em'},1000);	
+
+			$('.sysprompt, .orgprompt, .tissprompt').on('mousedown',function(){
+				$('#panel').css('display','none');
 			});
-		//setGuiScale();	 //Run before Window Resize
+			
+		$('#harchframe').on('mousedown',function(){
+			$('#panel').css('display','none');
+			
+		});
+		$('#harchframe').css('zoom','75%');
+
+			
+		var width = $('#grphframe1').width();
+		$('#grphframe1').bind('mouseover',function()
+		{ 
+			
+			$(this).css('position','relative').css('margin','0');
+			$(this).css('left','2.5%');
+			$(this).css('z-index','700');
+			$(this).css('width','69%');
+			$(this).css('margin-right','5%');
+			$('#harchframe').css('display','none');
+			
+		});
 		
+		$('#grphframe1').bind('mouseleave',function()
+		{
+			$(this).css('position','relative');
+			$(this).css('left','0em');
+			$(this).css('z-index','1');
+			$(this).css('width','40%');							
+			$(this).css('margin-right','0%');
+			$('#dispframe').css('display','block');
+			$('#harchframe').css('display','block');
+		});   	
 		
-		// Prompt Alerting to Expanding Graphical Display
-		   
-             	 mysvg = document.getElementById("mySVG");
-			  
-				//Intial Table Column Display
-						$('#dispframe').prepend($('#panel'));
-						$('#panel')
-							.html("You Can Point to Graph Display and Enlarge It.<br/>Then Point to Edge to Restore.</br><span id='cspan' style='color:red'>Click Here to Close</span>")
-							.css('margin','0.5em')
-							.css('padding','0.25em')
-							.css('top','0em');
-					    $('#panel').slideDown("slow");
-                        $('#cspan')							 
-						 .animate({fontSize:'1.3em'},1000)
-							.animate({fontSize:'1.4em'},1000)
-							.animate({fontSize:'1.5em'},1000)
-							.animate({fontSize:'1.3em'},1000);	
+
+
+		//  Make graph screen draggble using JQuery UI
+		$('#gphdisp2').draggable();
+
+			
+		$('#gphdisp').mouseenter(function()
+		{
+			$('#panel').slideUp("slow");
+		});
+					
+		$('#panel').click(function()
+			{				
+				$(this).slideUp("fast");
+			});
+	
+	
+		$('#gphframe').mouseenter(function()
+			{				
+				$('#panel').slideUp("fast");
+			});
+	
+				$('#gphmess').text('').append(b1);
+
+
+        // Revise Zoom Feature
+		var b1 = $('<button id="zoomup">Zoom Up</button>');
+		var b2 = $('<br><button id="zoomdwn">Zoom Down</button>');
+		var txt = $('<br><span style="color:red"><p>Hold Mouse Key Down on Image to Move it</p></span>')
+		$('#gphmess').attr("style","margin:0.5em 0 0 0").text('').append(b1).append(b2).append(txt);
+		var zooms = 0;
+
+		$('#zoomup').click(function()
+			{
+				// Get scale factor from xml				
+				let fac = gScaleFactor.scaleFactr;
+			
+				// Get translation values from xml
+				let txval = translationCoords.x;
+				let tyval = translationCoords.y;	
+				fac = parseFloat(fac) + 0.5;
+				console.log("Factor",fac);
+
+				let winSVG = $("#mySVG");			
+				let gphdisp2 = winSVG.find("#gphdisp3");
+				gphdisp2.css("transform","scale(" + fac + ")" + " translate(" + txval + "," + tyval + ")");
+				gScaleFactor.scaleFactr = fac;
+						
+			});  
+
+			// Zoom out menu function
+		$('#zoomdwn').click(function()
+			{
+				// Get scale factor from xml
+				fac = gScaleFactor.scaleFactr;
+				// Get translation values from xml
+				txval = translationCoords.x;
+				tyval = translationCoords.y;		
+				fac = parseFloat(fac) - 0.5;
+				console.log("Factor",fac);
+
+
+				let winSVG = $("#mySVG");			
+				let gphdisp2 = winSVG.find("#gphdisp3");
+				gphdisp2.css("transform","scale(" + fac + ")" + " translate(" + txval + "," + tyval + ")");
+				gScaleFactor.scaleFactr = fac;
 				
-						 $('.sysprompt, .orgprompt, .tissprompt').on('mousedown',function(){
-						    	$('#panel').css('display','none');
-						    });
-						    
-						$('#harchframe').on('mousedown',function(){
-							$('#panel').css('display','none');
-							
-						});
-							
-						var width = $('#grphframe1').width();
-						$('#grphframe1').bind('mouseover',function()
-						{
-							$(this).css('position','relative').css('margin','0');
-							$(this).css('left','10vw');
-							$(this).css('z-index','700');
-							$(this).css('width','130vw');
-							$('#dispframe').css('display','none');
-							$('#harchframe').css('display','none');
-						});
-						
-						$('#grphframe1').bind('mouseleave',function()
-						{
-						    $(this).css('position','relative');
-							$(this).css('left','0em');
-							$(this).css('z-index','1');
-							$(this).css('width','40%');
-					    	$('#dispframe').css('display','block');
-							$('#harchframe').css('display','block');
-						});   	
-						
-			
-			            //Menu display
-						$('#gphmess').click(function()
-							{
-							
-							//	$('#gphmess').text("See Info Display For Menu!!");
-							//	$(document).on("graphEnter",graphEnterHandler);	
-								// Get flag for menutable from xml
-							    menubg="wheat";
-								
-							    $('#menutable').css('font-size','1em');   // Set menutable font size
-								$menutable = $('#menutable');
-								if($menutable)
-									$menutable.remove();
-								
-								
-								$menutable = $("<table></table>");
-							//	$menutable.css('zoom','150%');
-								$menutable.attr("z-index",3);
-								$menutable.attr("border",2);
-								$menutable.attr("bgcolor","white");
-								$menutable.attr("id","menutable");
-								$menutable.attr("class","atable");
-								$menutable.attr("position","relative");
-								
-								//Menu header
-								$tr = $("<tr></tr>");
-								$th = $("<th><big><center>MENU</center></big><div id='popUp1'></div></th>");
-								$th.attr("bgcolor","yellow");
-								$th.attr("height","4%");
-								$tr.html($th);
-								
-								
-							
-								
-								
-						
-								
-								//Zoom in label 
-								$trin = $("<tr><td><center>ZOOM-IN</center></td></tr>");
-								$trin.attr("height","3%");
-								$trin.attr("bgcolor",menubg);
-							
-								//Zoom out label 
-								$trout = $("<tr><td><center>ZOOM-OUT</center></td></tr>");
-								$trout.attr("height","3%");
-								$trout.attr("bgcolor",menubg);
-								
-								// Menu exit label
-								$trex = $("<tr><td><center>EXIT</center></td></tr>");
-								$trex.attr("height","3%");
-								$trex.attr("bgcolor","red");
-								
-								// How to Translate Menu Translate label
-								$trtransht = $("<tr><td><center>HOW TO TRANSLATE IMAGE</center></td></tr>");
-								$trtransht.attr("height","3%");
-								$trtransht.attr("bgcolor",menubg);
-								
-								$getnodeinfo = $("<tr><td><center>HOW TO GET NODE INFO</center></td></tr>");
-								$getnodeinfo.attr("height","3%");
-								$getnodeinfo.attr("bgcolor",menubg);
-								
-								$menutable.append($tr);
-								$menutable.append($trin);
-								$menutable.append($trout);
-								$menutable.append($trtransht);
-								$menutable.append($getnodeinfo);
-								$menutable.append($trex);
-								
-								// Create zoom scale factor and put in Object
-								gScaleFactor.scaleFactr = 1.5;
-								
-								// Exit menu function
-								$trex.click(function()
-									{
-										$('#gphmess').text("Click Here For Menu!!!");
-										$menutable = $('#menutable');
-										if($menutable)
-											$menutable.remove();
-									});
-								
-					
-								// Zoom in menu function
-								$trin.click(function()
-									{
-										// Get scale factor from xml
-										fac = gScaleFactor.scaleFactr;
-
-									 	gphdisp = mysvg.getElementById("gphdisp3");
-										
-										// Get translation values from xml
-										txval = translationCoords.x;
-										tyval = translationCoords.y;	
-										fac = parseFloat(fac) + 0.5;
-										
-										gphdisp.setAttributeNS(null,"transform","scale(" + fac + ")" + " translate(" + txval + "," + tyval + ")");
-										gScaleFactor.scaleFactr = fac;
-									});  
-									
-								// Zoom out menu function
-								$trout.click(function()
-									{
-										// Get scale factor from xml
-										fac = gScaleFactor.scaleFactr;
-										
-										// Get translation values from xml
-										txval = translationCoords.x;
-										tyval = translationCoords.y;	
-										
-										gphdisp = mysvg.getElementById("gphdisp3");
-										fac = parseFloat(fac) - 0.5;
-										gphdisp.setAttributeNS(null,"transform","scale(" + fac + ")" + " translate(" + txval + "," + tyval + ")");
-										gScaleFactor.scaleFactr = fac;
-									});  	
-					
-								$trtransht.click(function()
-									{
-										alert("TO MOVE/PAN IMAGE: :You Can Drag the Graph Area.</br>Move mouse to edge of any node and push it where you want it to go. ");
-									});
-						
-								$getnodeinfo.click(function()
-										{
-											alert("TO GET NODE INFO: (1) Click Open or Close the Hierarchy Nodes on Left side to Generate Graph and Table Display. (2) Closing and then re-Opening a Node will bring its Table Display to the Top!");
-										});
-								
-								// Add new tables to top of view
-							//	$imgvw = $('#dispframe');
-							//	$imgvw.prepend($menutable);
-								
-								$('#gphmess').html('');
-								$('#gphdisp').prepend($menutable);
-								//$menutable.css('zoom','150%');
-								$menutable.css('margin-right','3em').css('position','relative').css('font-size','1em').css('z-index','200').draggable(
-									{
-										
-										create: function( event, ui ) 
-										{
-												$('#popUp1')
-													.text("You can Drag this Menu")
-													.css('opacity','0.8');
-										},
-										stop: function( event, ui ) 
-										{
-												$('#popUp1')
-													.text("You can Drag this Menu")
-													.css('opacity','0.8');
-										}
-										
-									})
-									.mouseover(function()
-										{
-											$('#popUp1').css('opacity','0.0');
-											
-										})
-									.mouseleave(function()
-										{
-											$('#popUp1').css('opacity','0.8');
-											
-										});
-							
-							
-							
-							
-							
-							});  // end circle onclick and Menu Builder
-
-	                    //  Make graph screen draggble using JQuery UI
-						$('#gphdisp').append('<div id="popUp2" style="position:relative;width:6em;height:auto;margin-left:2em"></div>');
-						$('#gphdisp2').draggable(
-							{
-								
-								create: function( event, ui ) 
-								{
-										$('#popUp2')
-											.text("You can Drag this Graph Area")
-											.css('opacity','0.8')
-											.css('font-size','1.0em')
-											.css('z-index','-1')
-											.css('opacity','0.7')
-											.css('color','red');
-								},
-								stop: function( event, ui ) 
-								{
-										$('#popUp2')
-											.text("You can Drag this Graph Area")
-											.css('opacity','0.8')
-											.css('font-size','1.0em')
-											.css('z-index','-1')
-											.css('opacity','0.7')
-											.css('color','red');
-								}
-								
-							})
-							.mousemove(function()
-								{
-									$('#popUp2').css('opacity','0.0');
-									
-								})
-							.mouseleave(function()
-								{
-									$('#popUp2')
-											.text("You can Drag this Graph Area")
-											.css('opacity','0.8')
-											.css('font-size','1.0em')
-											.css('z-index','-1')
-											.css('opacity','0.7')
-											.css('color','red');
-									
-								});
-
-
-			
-			 $('#gphdisp').mouseenter(function()
-				{
-					$('#panel').slideUp("slow");
-				});
-					
-		  $('#panel').click(function()
-                {				
-					$(this).slideUp("fast");
-				});
-		
-		
-		  $('#gphframe').mouseenter(function()
-                {				
-					$('#panel').slideUp("fast");
-				});
-		
-		
+			});  	
 
 		
 }
