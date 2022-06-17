@@ -83,6 +83,32 @@
 	<h1>Professional Experience:</h1>
 
 	<div class="jobContainer">
+		<h2>Web Portfolio Development.................December 2021 to Present</h2>
+		<div class="description">
+			<h3>Practicing Web Development</h3>
+			<h3>Self</h3>
+			<ul>
+				<li>Added applications to my web portfolio at: Bootstrap Portfolio that utilize technologies of
+					Laravel (Mix) with React, React with Hooks, React Bootstrap, and other technologies (https://
+					laravelvotes.rsypertjr.com/votes-table).
+				</li>
+			</ul>			
+		</div>
+	</div>
+
+	<div class="jobContainer">
+		<h2>Northwest Doors.................November 2021 to December 2021</h2>
+		<div class="description">
+			<h3>Front End Developer</h3>
+			<h3>Northwest Doors - Puyallup, WA</h3>
+			<ul>
+				<li>I used JavaScript, Java Spring Boot, SVG, HTML, CSS, JQuery, Bootstrap, etc. to code a drawing engine development 
+					system for garage doors with embedded windows.</li>
+			</ul>			
+		</div>
+	</div>
+
+	<div class="jobContainer">
 		<h2>Townsquare Media/AnalyticOwl.................September 2018 to March 2020</h2>
 		<div class="description">
 			<h3>Web Developer</h3>
