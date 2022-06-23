@@ -7,32 +7,43 @@ function assocArray($m,&$resarr, $c/*for comments*/,$ss/*strip spaces*/,$prev)  
           {
             if(!is_array($value))
               {
-              if($c) echo $key.'=>'.$value.'<br />';
+                if($c) {
+                    echo $key.'=>'.$value.'<br />';
+                    }
+                    
                 $resarr[$turns-$prev][$key]=$value;
 
-              if($ss&&$key==0) 
-                $value = str_replace(" ", "", $value);
+                if($ss&&$key==0) {
+                  $value = str_replace(" ", "", $value);
+                }                
               
-              if($index==1) 
-                $index=0;
-              else
-                $index++;
+                if($index==1) {
+                  $index=0;
+                }                 
+                else {
+                  $index++;
+                }                  
                   
               }
             else
               {
                 if(is_array($value))
                   {
-                if($c) echo "Value #: ".$turns.'<br />';
-                  assocArray($value,$resarr,$c,false,$prev);
-                  $turns++;
+                      if($c) {
+                        echo "Value #: ".$turns.'<br />';
+                      } 
+
+                      assocArray($value,$resarr,$c,false,$prev);
+                      $turns++;
                   }
-                else 
+                else {
                   break;
+                }
+                
                     
               }
-        }        
-        return $turns;
+          }        
+          return $turns;
 }
 
 
@@ -43,8 +54,6 @@ $soSeq = strlen((string)$seq);
 $seqStr = array();
 $seqStr = str_split($seq);
 
-
-//echo $conn."<br/>".$seq."<br/>".$l1."<br/>".$l2."<br/>".$patt."<br/>".$acc."<br/>".$sName."<br/>".$sLength;
 for($i=0;$i<$soSeq;$i++)
    {
     if($seqStr[$i]==$first)
@@ -56,8 +65,7 @@ for($i=0;$i<$soSeq;$i++)
                 $ss= substr($seq,$i,$sl);
                 $st= ($i+1);
                 $end=($j+1);
-                //echo "Start Position: ".$st."  End Position: ".$end."<br/>";
-                //$retPos[]=$i;
+             
                 $sql = "INSERT INTO miniMotif (motifPattern,actualMotif,accessionNumber,speciesName,proteinLength,motifLength,startPosition,endPosition) values('$patt','$ss','$acc','$sName','$sLength','$sl','$st','$end')";
                 //execute SQL
                 //$result = executeSQL($sql,$conn,$mess);
@@ -74,17 +82,15 @@ for($i=0;$i<$soSeq;$i++)
 
 function proteinDatabaseCreate($sql,$dbhandle)
 {
-  
-  //echo($sql."\n");
-   
+ 
   mysqli_query($dbhandle,$sql);
-  if (mysqli_error()) {
+  if (mysqli_error($dbhandle)) {
     echo "Error message: ". mysqli_error();
     echo "<br>";
     //exit();
     return false;
   }
- else if(!mysqli_error())
+ else if(!mysqli_error($dbhandle))
   {
     echo "Database being created";
     echo "<br>";
@@ -108,7 +114,7 @@ if($result = $conn->query($sql))
    }
 else 
    {
-   $message= "<br/>Query error: ". mysqli_error();
+   $message= "<br/>Query error: ". mysqli_error($conn);
    return NULL;
    }
 }
@@ -282,11 +288,11 @@ function buildMinimotifDatabase($dbhandle)
 	     while($newArray = mysqli_fetch_array($result, MYSQLI_ASSOC)) // One Protein per Loop
 		      {
             
-            $seq = $newArray[proteinSequence];
-            $acc = $newArray[accessionNumber];
-            $spName = $newArray[speciesName];
-            $sqName = $newArray[seqName];
-            $sqLength = $newArray[proteinLength];
+            $seq = $newArray["proteinSequence"];
+            $acc = $newArray["accessionNumber"];
+            $spName = $newArray["speciesName"];
+            $sqName = $newArray["seqName"];
+            $sqLength = $newArray["proteinLength"];
 
             //echo "The seq is: ".$seq;
             $so = sizeof($amino_code);
@@ -359,12 +365,12 @@ if(isset($_GET["dropDb"]))
 		    $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');  //connect to mysqli
         $sql = 'DROP DATABASE rlswor5_proteins';
         mysqli_query($dbhandle,$sql);
-        if (!mysqli_error()) {
+        if (!mysqli_error($dbhandle)) {
           echo "Database rlswor5_proteins was successfully dropped";
           echo "<br>";
         } 
-        else if(mysqli_error()) {
-          echo 'Error dropping database: ' . mysqli_error();
+        else if(mysqli_error($dbhandle)) {
+          echo 'Error dropping database: ' . mysqli_error($dbhandle);
           echo "<br>";
           
         }
