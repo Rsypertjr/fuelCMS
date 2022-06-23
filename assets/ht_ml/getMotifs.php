@@ -85,7 +85,7 @@ function proteinDatabaseCreate($sql,$dbhandle)
  
   mysqli_query($dbhandle,$sql);
   if (mysqli_error($dbhandle)) {
-    echo "Error message: ". mysqli_error();
+    echo "Error message: ". mysqli_error($dbhandle);
     echo "<br>";
     //exit();
     return false;
@@ -335,7 +335,7 @@ function query3($dbhandle,&$cntarr,$mopat)
      $sql = 'SELECT Count(actualMotif), actualMotif, accessionNumber, motifPattern FROM miniMotif WHERE motifPattern = "'.$mopat.'" AND accessionNumber = "'.$sarr[$w];
      echo $sql;
      if(!$result = mysqli_query($dbhandle,$sql))
-     die("Error getting count of Motifs: ".mysqli_error());
+     die("Error getting count of Motifs: ".mysqli_error($dbhandle));
    else
      {              
      while($newArray = mysqli_fetch_array($result))
