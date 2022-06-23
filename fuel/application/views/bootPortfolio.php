@@ -291,7 +291,7 @@
 						</div> 
 						<div class="panel-body">
 							<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['technologyideas']; ?>" alt="Technologies">
+								<img class="img-circle img-fluid" src="<?php echo $vars['technologyideas']; ?>" alt="Technologies">
 								<a href="webTech" target="_blank">
 									<p  class="sectionTitle" >
 										<a href="webTech" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to See Technologies!">Web Page Technologies Used</a>	
@@ -308,7 +308,7 @@
 								<p>You can email me if you like. Also more contact info is given in my resume.</p>
 							</li>
 							<li class="list-group-item list-group-item-warning">
-								<img class="img-circle" src="<?php echo $vars['myFace']; ?>" alt="My Profile">
+								<img class="img-circle img-fluid" src="<?php echo $vars['myFace']; ?>" alt="My Profile">
 								<a href="linkedIn" target="_blank">
 									<p class="sectionTitle">
 										<a href="linkedIn" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to See My Profile!">Personal Profile</a>
@@ -342,7 +342,7 @@
 						</div>
 						<div class="panel-body">
 							<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['dataanalysis']; ?>" alt="Data Anaysis">
+								<img class="img-circle img-fluid" src="<?php echo $vars['dataanalysis']; ?>" alt="Data Anaysis">
 								<a href="amino" target="_blank">
 									<p class="sectionTitle">
 										<a href="amino" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Amino Acid Code Sequence Analyzer</a>	
@@ -389,7 +389,7 @@
 								</p>
 							 </li>
 							 <li class="list-group-item">
-								<img class="img-circle" src="<?php echo $vars['othellogameimage']; ?>" alt="Game Coding">
+								<img class="img-circle img-fluid" src="<?php echo $vars['othellogameimage']; ?>" alt="Game Coding">
 								<a href="othello" target="_blank">
 									<p  class="sectionTitle" >	
 										<a href="othello" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Play Othello Game thru AJAX</a>
@@ -442,7 +442,7 @@
 						</div>
 						<div class="panel-body">
 							<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['mobiledevelopmentimage']; ?>" alt="Mobile Development">
+								<img class="img-circle img-fluid" src="<?php echo $vars['mobiledevelopmentimage']; ?>" alt="Mobile Development">
 								<a href="mobile" target="_blank">
 									<p  class="sectionTitle" >
 										<a href="mobile#" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">JQuery Mobile Web Portfolio</a>
@@ -562,7 +562,7 @@
 							<li class="list-group-item list-group-item-success">
 								<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank">
 									<p  class="sectionTitle">
-										<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>
+										<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix) w/React & Chart.js & Bootstrap.js Vote Parser</a>
 									</p>
 								</a>
 								<object data="https://laravelvotes.rsypertjr.com/votes-table" height="200" width="300"></object>
@@ -594,7 +594,7 @@
 						</div>
 						<div class="panel-body">
 							<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['technicalwritingimage']; ?>" alt="Technical Writing">
+								<img class="img-circle img-fluid" src="<?php echo $vars['technicalwritingimage']; ?>" alt="Technical Writing">
 								<a href="graingerABCDE" target="_blank">
 									<p  class="sectionTitle" >
 										<a href="graingerABCDE" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">Grainger ABCDE Series B</a>
@@ -652,7 +652,7 @@
 						</div>
 						<div class="panel-body">
 							<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['engProcessSpec']; ?>" alt="Technical Writing">
+								<img class="img-circle img-fluid" src="<?php echo $vars['engProcessSpec']; ?>" alt="Technical Writing">
 								<a href="whitePaper" target="_blank">
 									<p  class="sectionTitle" >
 										<a href="whitePaper" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">White Paper</a>
@@ -697,7 +697,7 @@
 						</div>
 						<div class="panel-body">
 							<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['jobdone']; ?>" alt="Resume">
+								<img class="img-circle img-fluid" src="<?php echo $vars['jobdone']; ?>" alt="Resume">
 								<a href="dynResume" target="_blank">
 									<p  class="sectionTitle" >
 										<a href="dynResume" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">Dynamic HTML Resume w/Downloads</a>
@@ -761,7 +761,7 @@
 					</div> 
 					<div class="panel-body">
 						<li class="list-group-item list-group-item-success">
-							<img class="img-rounded" src="<?php echo $vars['lampTechs']; ?>" alt="Lamp Technologies">
+							<img class="img-rounded img-fluid" src="<?php echo $vars['lampTechs']; ?>" alt="Lamp Technologies">
 							<a href="frontCMS" target="_blank">
 								<p class="sectionTitle">
 									<a href="frontCMS"  target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">Non-Bootstrap Work Portfolio</a>
