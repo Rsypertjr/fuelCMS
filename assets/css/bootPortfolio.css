@@ -465,3 +465,9 @@ font-size:2.0em
 
 
 #tophdr {position:relative;}
+
+.jumbo-adjust{
+  position:relative;
+  height: 25em;
+  padding: 1em 0;
+}
