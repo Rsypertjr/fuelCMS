@@ -166,7 +166,7 @@
 					  <li><a href="#resume">My Resume</a></li>
 					  <li><a href="#living">Living In Vegas</a></li>
 					  <li><a href="#front">Non-Bootstrap Portfolio</a></li>
-					  <li><a href="#laravelreact">Laravel React Bootstrap Portfolio</a></li>
+					  <li><a href="laravelreact" target="_blank">Laravel React Bootstrap Portfolio</a></li>
 					</ul>
 				  </div>
 				</div>

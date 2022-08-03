@@ -324,16 +324,21 @@ class OtherApps extends CI_Controller {
     }
    function apiTest(){
     
-   preg_match('/localhost/',base_url(),$matches);
-    if(count($matches) > 0)
-         header( "Location: http://localhost/api_test/hptest.php" );
-    else
-        header( "Location: http://159.65.100.7/api_test/hptest.php" );
+        preg_match('/localhost/',base_url(),$matches);
+            if(count($matches) > 0)
+                header( "Location: http://localhost/api_test/hptest.php" );
+            else
+                header( "Location: http://159.65.100.7/api_test/hptest.php" );
 
     }
 
     function angularVoteParser(){
         header( "Location: http://159.65.100.7//votes" );
+    } 
+
+
+    function laravelreact(){
+        header( "Location: https://laravelvotes.rsypertjr.com/work-portfolio" );
     }
 
 
