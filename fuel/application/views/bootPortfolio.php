@@ -70,21 +70,21 @@
 						
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
-							<div class="item active">
+							<div class="item active" style="text-align:center">
 								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Richard L. Sypert Jr's Portfolio</h3> 
 								<p style="margin:0 15% 2% 15%">This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
 									and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
 									service classes of enterprise software.
 								</p>
 							</div>				
-							<div class="item">
+							<div class="item" style="text-align:center">
 								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h3> 
 								<p style="margin:0 15% 2% 15%">  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual Hosting.  Some apps have been deployed to Heroku Server.
 								Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
 								sshfs to the files on the droplets.
 								</p> 
 							</div>				
-							<div class="item">
+							<div class="item" style="text-align:center">
 								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">PHP-based and JavaScript-based technologies and frameworks featured</h3>
 								<p style="margin:0 15% 2% 15%"> Fuel CMS framework (CodeIgniter-based), <a href="https://angularvotes.rsypertjr.com/votes">Angular</a>, <a href="voteparser">Vue.js</a>,Node.js, Ng, NPM, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
 									PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
@@ -97,11 +97,18 @@
 								Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
 								</p>
 							</div-->					
-							<div class="item">
+							<div class="item" style="text-align:center">
 								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based front end</h3> 
-								<p style="margin:0 15% 2% 15%">Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="http://laravelvotes.rsypertjr.com/votes-table" 
+								<p style="margin:0 15% 2% 15%">Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="https://laravelvotes.rsypertjr.com/votes-table" 
 								target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
 								Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
+								</p>				
+							</div>
+							<div class="item" style="text-align:center">
+								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Vue3 Composition API, Vue3/Bootstrap/JQuery/ChartJs Component-based front end</h3> 
+								<p style="margin:0 15% 2% 15%">Vue 3 Composition API, Chart.js, and Bootstrap is used in this app: <a href="http://vuevotes.rsypertjr.com" 
+								target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses Vue3 Composition API which allows more function-based writing of components, inspired by React Hooks.
+								Here is code link: <a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser Code</a>.
 								</p>				
 							</div>
 						</div>
@@ -578,6 +585,18 @@
 								   Laravel routing is used to serve main page and React routing for fast rendering of tables 
 								   and charts. Table and paging is a custom code and charts utilize Chart.js. Here is code link: 
 								   <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
+								</p>
+							</li>
+							<li class="list-group-item list-group-item-success">
+								<a href="http://vuevotes.rsypertjr.com" target="_blank">
+									<p  class="sectionTitle">
+										<a href="http://vuevotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
+									</p>
+								</a>
+								<object data="http://vuevotes.rsypertjr.com" height="200" width="300"></object>
+								<p>The app uses Vue 3 Composition API. NPM is used to managed the Node-based Vue 3 dependencies. 
+								   Vue 3 Composition API allows for function-based components which is inspired by React w/Hooks.  Here is code link: 
+								   <a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
 								</p>
 							</li>
 						</div>
