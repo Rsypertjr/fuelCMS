@@ -588,12 +588,12 @@
 								</p>
 							</li>
 							<li class="list-group-item list-group-item-success">
-								<a href="http://vuevotes.rsypertjr.com" target="_blank">
+								<a href="https://vuevotes.rsypertjr.com" target="_blank">
 									<p  class="sectionTitle">
-										<a href="http://vuevotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
+										<a href="https://vuevotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
 									</p>
 								</a>
-								<object data="http://vuevotes.rsypertjr.com" height="200" width="300"></object>
+								<object data="https://vuevotes.rsypertjr.com" height="200" width="300"></object>
 								<p>The app uses Vue 3 Composition API. NPM is used to managed the Node-based Vue 3 dependencies. 
 								   Vue 3 Composition API allows for function-based components which is inspired by React w/Hooks.  Here is code link: 
 								   <a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
