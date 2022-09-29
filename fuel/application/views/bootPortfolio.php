@@ -72,6 +72,7 @@
 		<!-- needed in this file first -->
 		<script type="text/javascript">
 			$(document).ready(function(){
+				
 				var vegas1 = "<?php echo $vars['vegas1']; ?>";
 				var vegas2 = "<?php echo $vars['vegas2']; ?>";
 				var vegas3 = "<?php echo $vars['vegas3']; ?>";
@@ -109,14 +110,13 @@
 				$(".carousel-inner .item img").css('width','13em').css('height','6em').css('zoom','400%').css('border','2px solid lightBlue');
 			});
 		</script>
-		<script src="<?php echo $vars['jsBootPortfolio']; ?>"></script>
+		
 		<!-- loaded from framework -->
 		
 		</head>
 		<body>
 
 			
-
 			<div id="tophdr" class="container">
 			   <div class="jumbotron">
 
@@ -950,6 +950,7 @@
 			</div>
 		</div>  
 
+		<script src="<?php echo $vars['jsBootPortfolio']; ?>"></script>
 	 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

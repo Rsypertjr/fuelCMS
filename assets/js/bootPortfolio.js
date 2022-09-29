@@ -1,7 +1,7 @@
 $(document).ready(function(){
  
     
-  
+  /*
 
      $('body').on('mouseover mousemove mouseleave mousedown mouseup',function(){
         
@@ -13,7 +13,7 @@ $(document).ready(function(){
      }); 
    
 
-      $('.nav ul.dropdown-menu li.panelPart a,.nav li.panelPart a ').on('mouseup',function(){
+      $('.nav div.dropdown-menu li.panelPart a,.nav li.panelPart a ').on('mouseup',function(){
          
          var target = $(this).attr('data-target');
         // alert(target);
@@ -33,6 +33,8 @@ $(document).ready(function(){
             $('#myCarousel').hide();
      
       });
+
+      */
      
 
    $("div.dropdown-menu a[href='#lamp']").add("div.dropdown-menu a[href='#mobile']")
@@ -44,14 +46,11 @@ $(document).ready(function(){
                 var hrf = $(this).attr('href');
                 $(hrf + "Covr").css('display','block');
                 var sel = hrf+" > div > div.panel-body > li > object";
-                //alert(sel);
                 $(sel).css('display','block');
    
    }); 
-   
-   $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip(); 
-        });  
+  
+    $('[data-toggle="tooltip"]').tooltip(); 
   
     $( window ).scroll(function() {
         
@@ -61,7 +60,7 @@ $(document).ready(function(){
                 var height1 = $('#homeCovr').height();
                 var height2 = $('#homeCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#homeCovr .container').css('margin-top',margin);
+              //  $('#homeCovr .container').css('margin-top',margin);
         
             });
             
@@ -72,7 +71,7 @@ $(document).ready(function(){
                 var height1 = $('#aboutCovr').height();
                 var height2 = $('#aboutCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#aboutCovr .container').css('margin-top',margin);
+             //   $('#aboutCovr .container').css('margin-top',margin);
         
             });
                 
@@ -82,7 +81,7 @@ $(document).ready(function(){
                 var height1 = $('#lampCovr').height();
                 var height2 = $('#lampCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#lampCovr .container').css('margin-top',margin);
+             //   $('#lampCovr .container').css('margin-top',margin);
         
             });
             
@@ -92,7 +91,7 @@ $(document).ready(function(){
                 var height1 = $('#mobileCovr').height();
                 var height2 = $('#mobileCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#mobileCovr .container').css('margin-top',margin);
+              //  $('#mobileCovr .container').css('margin-top',margin);
             });
                 
   
@@ -102,7 +101,7 @@ $(document).ready(function(){
                 var height1 = $('#frameworksCovr').height();
                 var height2 = $('#frameworksCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#frameworksCovr .container').css('margin-top',margin);
+             //   $('#frameworksCovr .container').css('margin-top',margin);
             });
                 
             
@@ -112,7 +111,7 @@ $(document).ready(function(){
                 var height1 = $('#manualsCovr').height();
                 var height2 = $('#manualsCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#manualsCovr .container').css('margin-top',margin);
+            //    $('#manualsCovr .container').css('margin-top',margin);
             });
 
             $('#specifications').on('mouseenter',function(){
@@ -120,7 +119,7 @@ $(document).ready(function(){
                 var height1 = $('#specificationsCovr').height();
                 var height2 = $('#specificationsCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#specificationsCovr .container').css('margin-top',margin);
+            //    $('#specificationsCovr .container').css('margin-top',margin);
             });
 
             $('#resume').on('mouseenter',function(){
@@ -128,7 +127,7 @@ $(document).ready(function(){
                 var height1 = $('#resumeCovr').height();
                 var height2 = $('#resumeCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#resumeCovr .container').css('margin-top',margin);
+           //     $('#resumeCovr .container').css('margin-top',margin);
             });
             
   
@@ -137,7 +136,7 @@ $(document).ready(function(){
                 var height1 = $('#livingCovr').height();
                 var height2 = $('#livingCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#livingCovr .container').css('margin-top',margin);
+            //    $('#livingCovr .container').css('margin-top',margin);
             });
    
             $('#front').on('mouseenter',function(){
@@ -145,7 +144,7 @@ $(document).ready(function(){
                 var height1 = $('#frontCovr').height();
                 var height2 = $('#frontCovr .container').height();
                 var margin = (height1-height2)/2.0;
-                $('#frontCovr .container').css('margin-top',margin);
+           //     $('#frontCovr .container').css('margin-top',margin);
             });
             
             
