@@ -44,7 +44,7 @@ $(document).ready(function(){
            .on('mousedown',function(){
                 $('object').css('display','none');
                 var hrf = $(this).attr('href');
-                $(hrf + "Covr").css('display','block');
+                $(hrf + "Covr").css('display','block').css('opacity','0.85');
                 var sel = hrf+" > div > div.panel-body > li > object";
                 $(sel).css('display','block');
    
@@ -56,11 +56,7 @@ $(document).ready(function(){
         
         // Adjusting Cover Panels
             $('#home').on('mouseenter',function(){
-                $('#homeCovr').css('opacity','0.85');
-                var height1 = $('#homeCovr').height();
-                var height2 = $('#homeCovr .container').height();
-                var margin = (height1-height2)/2.0;
-              //  $('#homeCovr .container').css('margin-top',margin);
+                $('#homeCovr').css('opacity','0.85');           
         
             });
             
@@ -68,83 +64,54 @@ $(document).ready(function(){
   
             $('#about').on('mouseenter',function(){
                 $('#aboutCovr').css('opacity','0.85');
-                var height1 = $('#aboutCovr').height();
-                var height2 = $('#aboutCovr .container').height();
-                var margin = (height1-height2)/2.0;
-             //   $('#aboutCovr .container').css('margin-top',margin);
-        
+           
             });
                 
   
             $('#lamp').on('mouseenter',function(){
                 $('#lampCovr').css('opacity','0.85');
-                var height1 = $('#lampCovr').height();
-                var height2 = $('#lampCovr .container').height();
-                var margin = (height1-height2)/2.0;
-             //   $('#lampCovr .container').css('margin-top',margin);
-        
+           
             });
             
                    
             $('#mobile').on('mouseenter',function(){
                 $('#mobileCovr').css('opacity','0.85');
-                var height1 = $('#mobileCovr').height();
-                var height2 = $('#mobileCovr .container').height();
-                var margin = (height1-height2)/2.0;
-              //  $('#mobileCovr .container').css('margin-top',margin);
+             
             });
                 
   
 
             $('#frameworks').on('mouseenter',function(){
                 $('#frameworksCovr').css('opacity','0.85');
-                var height1 = $('#frameworksCovr').height();
-                var height2 = $('#frameworksCovr .container').height();
-                var margin = (height1-height2)/2.0;
-             //   $('#frameworksCovr .container').css('margin-top',margin);
+          
             });
                 
             
 
             $('#manuals').on('mouseenter',function(){
                 $('#manualsCovr').css('opacity','0.85');
-                var height1 = $('#manualsCovr').height();
-                var height2 = $('#manualsCovr .container').height();
-                var margin = (height1-height2)/2.0;
-            //    $('#manualsCovr .container').css('margin-top',margin);
+            
             });
 
             $('#specifications').on('mouseenter',function(){
                 $('#specificationsCovr').css('opacity','0.85');
-                var height1 = $('#specificationsCovr').height();
-                var height2 = $('#specificationsCovr .container').height();
-                var margin = (height1-height2)/2.0;
-            //    $('#specificationsCovr .container').css('margin-top',margin);
+           
             });
 
             $('#resume').on('mouseenter',function(){
                 $('#resumeCovr').css('opacity','0.85');
-                var height1 = $('#resumeCovr').height();
-                var height2 = $('#resumeCovr .container').height();
-                var margin = (height1-height2)/2.0;
-           //     $('#resumeCovr .container').css('margin-top',margin);
+        
             });
             
   
             $('#living').on('mouseenter',function(){
                 $('#livingCovr').css('opacity','0.85');
-                var height1 = $('#livingCovr').height();
-                var height2 = $('#livingCovr .container').height();
-                var margin = (height1-height2)/2.0;
-            //    $('#livingCovr .container').css('margin-top',margin);
+           
             });
    
             $('#front').on('mouseenter',function(){
                 $('#frontCovr').css('opacity','0.85');
-                var height1 = $('#frontCovr').height();
-                var height2 = $('#frontCovr .container').height();
-                var margin = (height1-height2)/2.0;
-           //     $('#frontCovr .container').css('margin-top',margin);
+           
             });
             
             
