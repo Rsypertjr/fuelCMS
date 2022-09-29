@@ -35,9 +35,9 @@ $(document).ready(function(){
       });
      
 
-   $("ul.dropdown-menu li a[href='#lamp']").add("ul.dropdown-menu li a[href='#mobile']")
-           .add("ul.dropdown-menu li a[href='#frameworks']").add("ul li a[href='#resume']").add("ul.dropdown-menu li a[href='#manuals']")
-           .add("ul.dropdown-menu li a[href='#specifications']").add("ul li a[href='#living']").add("ul li a[href='#front']")
+   $("div.dropdown-menu a[href='#lamp']").add("div.dropdown-menu a[href='#mobile']")
+           .add("div.dropdown-menu a[href='#frameworks']").add("ul li a[href='#resume']").add("div.dropdown-menu a[href='#manuals']")
+           .add("div.dropdown-menu a[href='#specifications']").add("ul li a[href='#living']").add("ul li a[href='#front']")
            .add("ul li a[href='#home']")
            .on('mousedown',function(){
         
