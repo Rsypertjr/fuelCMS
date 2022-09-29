@@ -19,25 +19,6 @@ li {font-size:0.75em;height:auto}
 .list-group-item img.img-rounded {width:14em;}
 .list-group-item h2 {width:100%;text-align:center;color:black}
 
-
-#topNav.affix {
-top: 0;
-width: 100%;
--webkit-transition: all .5s ease-in-out;
-transition: all .5s ease-in-out;
-background-color: #3c3c3c;
-border-color: #3c3c3c;
-z-index: 9999 !important;
-}
-
-
-.affix .dropdown>a, .affix ul.nav>li>a {
-color: #fff !important;
-padding: 15px !important;
--webkit-transition: all .5s ease-in-out;
-transition: all .5s ease-in-out;
-}
-
 #myNavbar > ul > li.dropdown.open > ul > li > a{
 color: gray;
 }
@@ -339,8 +320,6 @@ border-color: black;
 
 
 
-#myCarousel {margin:6em 0 6em 0}
-
 .nav-tabs
   {
     position: fixed;
@@ -348,12 +327,6 @@ border-color: black;
     background-color: #fff;
   }
   
-
-
-.carousel-inner>.item {
-width: 100%;
-
-}
 
 object {
 position:relative;

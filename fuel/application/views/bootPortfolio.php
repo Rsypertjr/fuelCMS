@@ -6,18 +6,69 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- Bootstrap CSS -->
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+		
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 		<link href = "<?php echo $vars['bootPortfolioCSS'];?>" rel="stylesheet" type="text/css" />
+		
+		<style>
 
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			.carousel-item, .carousel-item.active{
+				position:relative;
+				text-align:center;
+				height:auto;
+				overfloww:scroll;
+			}
 
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			#myJumboCarousel .carousel-item {	
+				margin-bottom:3em;
+			}
+
+			#myJumboCarousel {	
+				background-image: linear-gradient(white, grey);
+			}
+
+			#myCarousel .carousel-item {				
+				margin-bottom:5em;
+			}
+
+			.carousel-item h4 {
+				background-color: black;
+				color: white;
+				padding:1em;
+				margin:1em;	
+			}
+
+			.carousel-item p {
+				background-color: lightblue;
+				padding: 0.5em;				
+				max-width:80%;
+				margin-left:10%;
+			}
+
+			.carousel-item img {
+				position:relative;
+				max-width:100%;
+				height: 100%;
+			}
+
+			#myCarousel {
+				margin-top: 2em;
+			}
+
+			.nav-item {
+				margin: 0 2em;
+			}
+
 		
-		
-		
-		<style></style>
+
+			
+		</style>
+	
 		<!-- needed in this file first -->
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -43,93 +94,90 @@
 				var work10 = "<?php echo $vars['websiteconstruction']; ?>";
 				
 				
-				$(".carousel-inner .item:nth-child(1) img").attr('src',work1);
-				$(".carousel-inner .item:nth-child(2) img").attr('src',work2);
-				$(".carousel-inner .item:nth-child(3) img").attr('src',work3);
-				$(".carousel-inner .item:nth-child(4) img").attr('src',work4);
-				$(".carousel-inner .item:nth-child(5) img").attr('src',work5);
-				$(".carousel-inner .item:nth-child(6) img").attr('src',work6);
-				$(".carousel-inner .item:nth-child(7) img").attr('src',work7);
-				$(".carousel-inner .item:nth-child(8) img").attr('src',work8);
-				$(".carousel-inner .item:nth-child(9) img").attr('src',work9);
-				$(".carousel-inner .item:nth-child(10) img").attr('src',work10);
+				$(".carousel-inner .carousel-item:nth-child(1) img").attr('src',work1);
+				$(".carousel-inner .carousel-item:nth-child(2) img").attr('src',work2);
+				$(".carousel-inner .carousel-item:nth-child(3) img").attr('src',work3);
+				$(".carousel-inner .carousel-item:nth-child(4) img").attr('src',work4);
+				$(".carousel-inner .carousel-item:nth-child(5) img").attr('src',work5);
+				$(".carousel-inner .carousel-item:nth-child(6) img").attr('src',work6);
+				$(".carousel-inner .carousel-item:nth-child(7) img").attr('src',work7);
+				$(".carousel-inner .carousel-item:nth-child(8) img").attr('src',work8);
+				$(".carousel-inner .carousel-item:nth-child(9) img").attr('src',work9);
+				$(".carousel-inner .carousel-item:nth-child(10) img").attr('src',work10);
 
 				
 				$(".carousel-inner .item img").css('width','13em').css('height','6em').css('zoom','400%').css('border','2px solid lightBlue');
 			});
 		</script>
 		<!-- loaded from framework -->
-		<script src="<?php echo $vars['jsBootPortfolio']; ?>"></script>
+		
+		</head>
+		<body>
 
+			<script src="<?php echo $vars['jsBootPortfolio']; ?>"></script>
 
 			<div id="tophdr" class="container">
-			   <div class="jumbotron">
+			   <div class="jumbotron bg-gradient-secondary">
 
-					<div id="myJumboCarousel"  class="carousel slide  jumbo-adjust" data-ride="carousel"> 
+					<div id="myJumboCarousel"  class="carousel slide text-break" data-ride="carousel"> 
 						
 						
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
-							<div class="item active" style="text-align:center">
-								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Richard L. Sypert Jr's Portfolio</h3> 
-								<p style="margin:0 15% 2% 15%">This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
+							<div class="carousel-item active">
+								<h4>Richard L. Sypert Jr's Portfolio</h4> 
+								<p class="text-break">This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
 									and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
 									service classes of enterprise software.
 								</p>
 							</div>				
-							<div class="item" style="text-align:center">
-								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h3> 
+							<div class="carousel-item">
+								<h4>Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h4> 
 								<p style="margin:0 15% 2% 15%">  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual Hosting.  Some apps have been deployed to Heroku Server.
 								Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
 								sshfs to the files on the droplets.
 								</p> 
 							</div>				
-							<div class="item" style="text-align:center">
-								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">PHP-based and JavaScript-based technologies and frameworks featured</h3>
-								<p style="margin:0 15% 2% 15%"> Fuel CMS framework (CodeIgniter-based), <a href="https://angularvotes.rsypertjr.com/votes">Angular</a>, <a href="voteparser">Vue.js</a>,Node.js, Ng, NPM, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
+							<div class="carousel-item">
+								<h4>PHP-based and JavaScript-based technologies and frameworks featured</h4>
+								<p> Fuel CMS framework (CodeIgniter-based), <a href="https://angularvotes.rsypertjr.com/votes">Angular</a>, <a href="voteparser">Vue.js</a>,Node.js, Ng, NPM, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
 									PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
 								</p>
-							</div>					
-							<!--div class="item">
-								<h3 style="text-align:center">Docker Technology</h3>
-								<p>Docker technology is used in terms of Docker Engine for implementing an Angular javascript app that contains a Dockerfile and a 
-								Docker-compose file for implementations of development and production versions. Karma and Protractor unit testing of code is also included.
-								Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
-								</p>
+							</div>		
 							</div-->					
-							<div class="item" style="text-align:center">
-								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based front end</h3> 
-								<p style="margin:0 15% 2% 15%">Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="https://laravelvotes.rsypertjr.com/votes-table" 
+							<div class="carousel-item">
+								<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based front end</h4> 
+								<p>Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="https://laravelvotes.rsypertjr.com/votes-table" 
 								target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
 								Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
-								</p>				
+								</p>		
 							</div>
-							<div class="item" style="text-align:center">
-								<h3 style="text-align:center;background-color:black;color:whitesmoke;margin:1% 15%;padding:0.5em">Vue3 Composition API, Vue3/Bootstrap/JQuery/ChartJs Component-based front end</h3> 
-								<p style="margin:0 15% 2% 15%">Vue 3 Composition API, Chart.js, and Bootstrap is used in this app: <a href="http://vuevotes.rsypertjr.com" 
+							<div class="carousel-item">
+								<h4>Vue3 Composition API, Vue3/Bootstrap/JQuery/ChartJs Component-based front end</h4> 
+								<p>Vue 3 Composition API, Chart.js, and Bootstrap is used in this app: <a href="http://vuevotes.rsypertjr.com" 
 								target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses Vue3 Composition API which allows more function-based writing of components, inspired by React Hooks.
 								Here is code link: <a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser Code</a>.
-								</p>				
+								</p>
 							</div>
 						</div>
 						<div>
 							<!-- Indicators -->
 							<ol class="carousel-indicators">
-								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-								<li data-target="#myCarousel" data-slide-to="1"></li>
-								<li data-target="#myCarousel" data-slide-to="2"></li>
-								<li data-target="#myCarousel" data-slide-to="3"></li>
-								<!--li data-target="#myCarousel" data-slide-to="4"></li-->
+								<li data-target="#myJumboCarousel" data-slide-to="0" class="active"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="1"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="2"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="3"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="4"></li>
 							</ol> 
 						</div>
 						<div>
 							<!-- Left and right controls -->
-							<a class="left carousel-control" href="#myJumboCarousel" data-slide="prev">
-								<span class="glyphicon glyphicon-chevron-left"></span>
+							<a class="carousel-control-prev" href="#myJumboCarousel" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 								<span class="sr-only">Previous</span>
 							</a>
-							<a class="right carousel-control" href="#myJumboCarousel" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right"></span>
+							<a class="carousel-control-next" href="#myJumboCarousel" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
 								<span class="sr-only">Next</span>
 							</a>
 						</div>
@@ -139,51 +187,48 @@
 				
 			</div>	
 			
-			<nav class="navbar navbar-inverse" id="topNav">
-			  
-			  <div class="container-fluid">
-				<div class="navbar-header">
-				 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>                        
-				  </button>
-				  <a class="navbar-brand" href="#">Bootstrap Work Portfolio</a>
-				</div>
-				<div>
-				  <div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-					  <li class="active"><a href="#home">Home/Code Repos</a></li>
-					  <li><a href="#about">About</a></li>
-					  <li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-						  <li><a href="#lamp">LAMP - based</a></li>
-						  <li><a href="#mobile">JQuery Mobile</a></li>
-						  <li><a href="#frameworks">Frameworks</a></li>
-						</ul>
-					  </li>
-					  <li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Technical Writing <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-						  <li><a href="#manuals">Production and Maintenance Manuals</a></li>
-						  <li><a href="#specifications">Technical Specification Manuals</a></li>
-						</ul>
-					  </li>
-					  <li><a href="#resume">My Resume</a></li>
-					  <li><a href="#living">Living In Vegas</a></li>
-					  <li><a href="#front">Non-Bootstrap Portfolio</a></li>
-					  <li><a href="laravelreact" target="_blank">Laravel React Bootstrap Portfolio</a></li>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-break" id="topNav">
+				<a class="navbar-brand" href="#">Bootstrap Work Portfolio</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				
+				<div class="collapse navbar-collapse d-flex justify-content-center" id="myNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#home">Home/Code Repos</a>
+						</li>
+						<li>
+							<a class="nav-link" href="#about">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false" >Software Development <span class="caret"></span></a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="#lamp">LAMP - based</a>
+								<a class="dropdown-item" href="#mobile">JQuery Mobile</a>
+								<a class="dropdown-item" href="#frameworks">Frameworks</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false" >Technical Writing <span class="caret"></span></a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="#manuals">Production and Maintenance Manuals</a>
+								<a class="dropdown-item" href="#specifications">Technical Specification Manuals</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="#resume">My Resume</a></li>
+						<li class="nav-item"><a class="nav-link"  href="#living">Living In Vegas</a></li>
+						<li class="nav-item" ><a class="nav-link"  href="#front">Non-Bootstrap Portfolio</a></li>
+						<li class="nav-item"><a class="nav-link"  href="laravelreact" target="_blank">Laravel React Bootstrap Portfolio</a></li>
 					</ul>
-				  </div>
 				</div>
-			  </div>
 			</nav>    
 			
 
 			<!---- End of Navigation Header --------------------------------->		   
 
-				<div id="myCarousel"  class="carousel slide" data-ride="carousel"> 
+				<div id="myCarousel"  class="carousel slide"> 
 				  <!-- Indicators -->
 				  <ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -199,58 +244,60 @@
 				  </ol> 
 				
 				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner">
-					<div class="item active">
-					  <img src="" alt="Work1" style="width:100%">
+				  <div class="carousel-inner" style="position:relative;width:90%;height:90%">
+					<div class="carousel-item active">
+					  <img src="" alt="Work1" class="img-fluid">
 					</div>
 				
-					<div class="item">
-					  <img src="" alt="Work2" style="width:100%">
+					<div class="carousel-item">
+					  <img src="" alt="Work2" class="img-fluid">
 					</div>
 				
-					<div class="item">
-					  <img src="" alt="Work3" style="width:100%">
+					<div class="carousel-item">
+					  <img src="" alt="Work3" class="img-fluid">
 					</div>
 					
-					 <div class="item">
-					  <img src="" alt="Work4" style="width:100%">
+					 <div class="carousel-item">
+					  <img src="" alt="Work4" class="img-fluid">
 					</div>
 					
-					 <div class="item">
-					  <img src="" alt="Work5" style="width:100%">
+					 <div class="carousel-item">
+					  <img src="" alt="Work5" class="img-fluid">
 					</div>
 					
-					 <div class="item">
-					  <img src="" alt="Work6" style="width:100%">
+					 <div class="carousel-item">
+					  <img src="" alt="Work6" class="img-fluid">
 					</div>
 					
-					 <div class="item">
-					  <img src="" alt="Work7" style="width:100%">
+					 <div class="carousel-item">
+					  <img src="" alt="Work7"class="img-fluid" >
 					</div>
 					
-					 <div class="item">
-					  <img src="" alt="Work8" style="width:100%">
+					 <div class="carousel-item">
+					  <img src="" alt="Work8" class="img-fluid">
 					</div>
 					
-					 <div class="item">
-					  <img src="" alt="Work9" style="width:100%">
+					 <div class="carousel-item">
+					  <img src="" alt="Work9" class="img-fluid" >
 					</div>
 					
-					 <div class="item">
-					  <img src="" alt="Work10" style="width:100%">
+					 <div class="carousel-item">
+					  <img src="" alt="Work10" class="img-fluid">
 					</div>
 				  
 				  </div>
-				  
-				  <!-- Left and right controls -->
-				  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-					<span class="sr-only">Previous</span>
-				  </a>
-				  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-					<span class="sr-only">Next</span>
-				  </a>
+				 
+				  <div>
+					<!-- Left and right controls -->
+					<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
 			  </div> <!-- end of myCarousel -->
 			   
 		
@@ -901,5 +948,14 @@
 				<div class="col-sm-1"></div>
 			</div>
 		</div>  
+
+	 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->	
 	 </body>
 </html>

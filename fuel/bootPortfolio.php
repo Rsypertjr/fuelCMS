@@ -38,7 +38,7 @@
 			.list-group-item img.img-rounded {width:14em;}
 			.list-group-item h2 {width:100%;text-align:center;color:black}
 		  
-			
+			/*
 			#topNav.affix {
 				top: 0;
 				width: 100%;
@@ -56,6 +56,7 @@
 				-webkit-transition: all .5s ease-in-out;
 				transition: all .5s ease-in-out;
 			}
+			*/
 			
 			#myNavbar > ul > li.dropdown.open > ul > li > a{
 				color: gray;

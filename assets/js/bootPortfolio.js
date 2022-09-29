@@ -55,20 +55,7 @@ $(document).ready(function(){
    $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip(); 
         });  
-        
-
-   
-   $('ul.nav li').on('mousedown mouseenter mouseover',function(){
-        $(this).addClass('active');
-   });
-   
-     $('ul.nav li').on('mouseleave',function(){
-        $(this).removeClass('active');
-   });
-   
-   
-    $("#topNav.navbar").affix({offset: {top: $("#tophdr").outerHeight(true)} });
-
+  
     $( window ).scroll(function() {
         
         // Adjusting Cover Panels
