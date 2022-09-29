@@ -125,7 +125,7 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<h4>Richard L. Sypert Jr's Portfolio</h4> 
+								<h4>Richard L. Sypert Jr's Work Portfolio</h4> 
 								<p class="text-break">This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
 									and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
 									service classes of enterprise software.
@@ -146,7 +146,7 @@
 							</div>		
 							</div-->					
 							<div class="carousel-item">
-								<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based front end</h4> 
+								<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based Front End</h4> 
 								<p>Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="https://laravelvotes.rsypertjr.com/votes-table" 
 								target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
 								Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
