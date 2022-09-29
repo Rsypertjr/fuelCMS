@@ -40,15 +40,12 @@ $(document).ready(function(){
            .add("div.dropdown-menu a[href='#specifications']").add("ul li a[href='#living']").add("ul li a[href='#front']")
            .add("ul li a[href='#home']")
            .on('mousedown',function(){
-        
-        $('object').css('display','none');
-         var hrf = $(this).attr('href');
-         //alert(hrf);
-         var sel = hrf+" > div > div.panel-body > li > object";
-         
-         //#living > div > div.panel-body > li > object
-         //alert(sel);
-         $(sel).css('display','block');
+                $('object').css('display','none');
+                var hrf = $(this).attr('href');
+                $(hrf + "Covr").css('display','block');
+                var sel = hrf+" > div > div.panel-body > li > object";
+                //alert(sel);
+                $(sel).css('display','block');
    
    }); 
    

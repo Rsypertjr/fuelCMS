@@ -109,15 +109,16 @@
 				$(".carousel-inner .item img").css('width','13em').css('height','6em').css('zoom','400%').css('border','2px solid lightBlue');
 			});
 		</script>
+		<script src="<?php echo $vars['jsBootPortfolio']; ?>"></script>
 		<!-- loaded from framework -->
 		
 		</head>
 		<body>
 
-			<script src="<?php echo $vars['jsBootPortfolio']; ?>"></script>
+			
 
 			<div id="tophdr" class="container">
-			   <div class="jumbotron bg-gradient-secondary">
+			   <div class="jumbotron">
 
 					<div id="myJumboCarousel"  class="carousel slide text-break" data-ride="carousel"> 
 						
