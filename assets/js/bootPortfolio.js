@@ -44,6 +44,7 @@ $(document).ready(function(){
            .on('mousedown',function(){
                 $('object').css('display','none');
                 var hrf = $(this).attr('href');
+                //initial cover rendering
                 $(hrf + "Covr").css('display','block').css('opacity','0.85');
                 var sel = hrf+" > div > div.panel-body > li > object";
                 $(sel).css('display','block');
