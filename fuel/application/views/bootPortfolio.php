@@ -135,37 +135,36 @@
 						<div class="carousel-inner">
 							<div class="carousel-item active">
 								<h4>Richard L. Sypert Jr's Work Portfolio</h4> 
-								<p class="text-break">This site shows my experience as a Software Developer, Technical Writer, and Engineer.  I have recent working experience with PHP and node.js on the backend
-									and Vue.js and Semantic UI on the front end (Please see: <a href="#resume">My Resume</a> menu tab).  This experience also included PHPUnit testing on controller and
-									service classes of enterprise software.
-								</p>
+								<p class="text-break">This site shows my experience as a Software Developer,&nbsp;Technical Writer,&nbsp;and Engineer.&nbsp;&nbsp;It has been updated to Bootstrap 4.0.&nbsp;&nbsp;
+									Please View thru this carousel for info about my work history.
 							</div>				
 							<div class="carousel-item">
 								<h4>Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h4> 
-								<p style="margin:0 15% 2% 15%">  This site is hosted on Ubuntu 18.04 Digital Ocean Droplets, utilizing Apache Virtual Hosting.  Some apps have been deployed to Heroku Server.
-								Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.  VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets, and 
+								<p style="margin:0 15% 2% 15%">This site is hosted on Ubuntu 18.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting.&nbsp;&nbsp; Some apps have been deployed to Heroku Server.&nbsp;&nbsp;
+								Microsoft Visual Studio Code using Virtual Linux (wsl) is the development environment for this portfolio.&nbsp;&nbsp;VirtualBox Ubuntu 18.04 machine is used for direct ssh access to the droplets,&nbsp;and 
 								sshfs to the files on the droplets.
 								</p> 
 							</div>				
 							<div class="carousel-item">
 								<h4>PHP-based and JavaScript-based technologies and frameworks featured</h4>
-								<p> Fuel CMS framework (CodeIgniter-based), <a href="https://angularvotes.rsypertjr.com/votes">Angular</a>, <a href="voteparser">Vue.js</a>,Node.js, Ng, NPM, Laravel, Bootstrap, JQuery, JQueryUI, SVG, XML, CSS are some of the technologies used.  Framework-based applications are at the <a href="#frameworks">Software Development->Frameworks</a> menu tab.
-									PHP-based applications are located at the <a href="#lamp">Software Development->LAMP-based</a> menu tab.
+								<p> Fuel CMS framework (CodeIgniter-based),&nbsp;<a href="https://angularvotes.rsypertjr.com/votes">Angular</a>,&nbsp;<a href="voteparser">Vue.js</a>,&nbsp;Node.js,&nbsp;Ng,&nbsp;NPM,&nbsp;Laravel,&nbsp;Bootstrap,&nbsp;JQuery,&nbsp;JQueryUI,&nbsp;SVG,&nbsp;XML,&nbsp;CSS are some of the technologies used.&nbsp;&nbsp;Framework-based applications are at the&nbsp;<a href="#frameworks">
+									Software Development->Frameworks</a> menu tab.&nbsp;&nbsp;
+									PHP-based applications are located at the&nbsp;<a href="#lamp"&nbsp;>Software Development->LAMP-based</a> menu tab.
 								</p>
 							</div>		
 							</div-->					
 							<div class="carousel-item">
 								<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based Front End</h4> 
-								<p>Laravel (Mix) with React.js, React Router, Chart.js, and Bootstrap is used in this app: <a href="https://laravelvotes.rsypertjr.com/votes-table" 
-								target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses React Hooks like UseEffect and UseState for functional components.
-								Here is code link: <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
+								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://laravelvotes.rsypertjr.com/votes-table" 
+								target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.&nbsp;&nbsp;This app uses React Hooks like UseEffect and UseState for functional components.&nbsp;&nbsp;
+								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
 								</p>		
 							</div>
 							<div class="carousel-item">
 								<h4>Vue3 Composition API, Vue3/Bootstrap/JQuery/ChartJs Component-based front end</h4> 
-								<p>Vue 3 Composition API, Chart.js, and Bootstrap is used in this app: <a href="http://vuevotes.rsypertjr.com" 
-								target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser</a>.  This app uses Vue3 Composition API which allows more function-based writing of components, inspired by React Hooks.
-								Here is code link: <a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser Code</a>.
+								<p>Vue 3 Composition API,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="http://vuevotes.rsypertjr.com" 
+								target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser</a>.&nbsp;&nbsp;This app uses Vue3 Composition API which allows more function-based writing of components,&nbsp;inspired by React Hooks.&nbsp;&nbsp;
+								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser Code</a>.
 								</p>
 							</div>
 						</div>
