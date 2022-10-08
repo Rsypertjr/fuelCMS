@@ -14,7 +14,10 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 		<link href = "<?php echo $vars['bootPortfolioCSS'];?>" rel="stylesheet" type="text/css" />
-		
+		<!-- Semantic UI -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js">
+    </script>
 		<style>
 
 			.carousel-item, .carousel-item.active{
@@ -34,6 +37,9 @@
 
 			#myCarousel .carousel-item {				
 				margin-bottom:5em;
+				background-color:lightgrey;
+				padding:1em 0;
+				height:25em;
 			}
 
 			.carousel-item h4 {
@@ -63,6 +69,8 @@
 			.nav-item {
 				margin: 0 2em;
 			}
+
+			
 
 		
 
@@ -229,23 +237,11 @@
 
 			<!---- End of Navigation Header --------------------------------->		   
 
-				<div id="myCarousel"  class="carousel slide"> 
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-					<li data-target="#myCarousel" data-slide-to="4"></li>
-					<li data-target="#myCarousel" data-slide-to="5"></li>
-					<li data-target="#myCarousel" data-slide-to="6"></li>
-					<li data-target="#myCarousel" data-slide-to="7"></li>
-					<li data-target="#myCarousel" data-slide-to="8"></li>
-					<li data-target="#myCarousel" data-slide-to="9"></li>  
-				  </ol> 
+				<div id="myCarousel"  class="carousel slide" data-ride="carousel" > 
+				 
 				
 				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner" style="position:relative;width:90%;height:90%">
+				  <div class="carousel-inner">
 					<div class="carousel-item active">
 					  <img src="" alt="Work1" class="img-fluid">
 					</div>
@@ -287,6 +283,21 @@
 					</div>
 				  
 				  </div>
+				  <div>
+					 <!-- Indicators -->
+					 <ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+						<li data-target="#myCarousel" data-slide-to="5"></li>
+						<li data-target="#myCarousel" data-slide-to="6"></li>
+						<li data-target="#myCarousel" data-slide-to="7"></li>
+						<li data-target="#myCarousel" data-slide-to="8"></li>
+						<li data-target="#myCarousel" data-slide-to="9"></li>  
+					</ol> 
+				  </div>
 				 
 				  <div>
 					<!-- Left and right controls -->
@@ -305,42 +316,36 @@
 				<div id="home" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<span>Home/Code Repos</span>	
-							<span class="glyphicon glyphicon-home"></span>
+							<span>Home/Code Repos</span>
 						</div>
-						<div class="panel-body">
-							<!--<li class="list-group-item list-group-item-success">
-								<img class="img-circle" src="<?php echo $vars['fuelCMS']; ?>" alt="Fuel CMS">
-								<a href="fuel/login" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="fuel/login" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Technologies Used!">Log-In to FUEL-CMS</a>	
-									</p>
-								</a>
-								<object data="loggingIn" height="200" width="300"></object>
-								<p>Login to the FUEL-CMS Content Management System. Use the Username and Password 
-								(guest).Log-in to the FUEL-CMS
-								</p>
-							</li>-->
-							<li class="list-group-item list-group-item-warning">
-								<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Sites GIT Repo!">FUEL-CMS Git Repository</a>	
-									</p>
-								</a>
-								<p>Link to GIT Repository for this FuelCMS-based Site</p>
-							</li>							
+						<div class="panel-body">						
+							<ul>
+								<li class="list-group-item list-group-item-warning">
+									<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF" target="_blank">
+										<p  class="sectionTitle" >
+											<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF" target="_blank" data-toggle="tooltip"
+												data-placement="right" title="Click for Sites GIT Repo!">FUEL-CMS Git Repository</a>
+										</p>
+									</a>
+									<p>Link to GIT Repository for this FuelCMS-based Site</p>
+								</li>
+							</ul>
 						</div>
 					</div>
 			  
-				   <div id="homeCovr" class="container-fluid covr" style="height:130%">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-home"></span>
+				   <div id="homeCovr" class="container-fluid">
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>
+								<i class="home icon"></i>
+							</span>
 						</div>
-						<div class="cvrbody">
-							<h1>&nbsp;&nbsp;Home/Code Repos</h1>
-							<p>Beneath are links to FuelCMS-based site Code</p>
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>Home/Code Repos</p>
 						</div>
-					</div>>
+						<div class="row cvrbody justify-content-center align-items-center">
+							<p class="text-center">Beneath are links to FuelCMS-based site Code</p>
+						</div>						
+					</div>
 				</div>
 				  
 				
@@ -348,54 +353,59 @@
 				  <div id="about" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<span>About</span>	
-							<span class="glyphicon glyphicon-wrench"></span>
-						</div> 
+							<span>About</span>
+						</div>
 						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
-								<img class="img-circle img-fluid" src="<?php echo $vars['technologyideas']; ?>" alt="Technologies">
-								<a href="webTech" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="webTech" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to See Technologies!">Web Page Technologies Used</a>	
-									</p>
-								</a>
-								<p>This is a page that gives explanation of the programming technologies used on this site.</p>
-							</li>
-							<li class="list-group-item list-group-item-warning">
-								<a href="emailno" target="_blank">
-									<p  class="sectionTitle" >	
-										<a href="emailno" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to Email Me!">Making Contact</a>	
-									</p>
-								</a>
-								<p>You can email me if you like. Also more contact info is given in my resume.</p>
-							</li>
-							<li class="list-group-item list-group-item-warning">
-								<img class="img-circle img-fluid" src="<?php echo $vars['myFace']; ?>" alt="My Profile">
-								<a href="linkedIn" target="_blank">
-									<p class="sectionTitle">
-										<a href="linkedIn" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to See My Profile!">Personal Profile</a>
-									</p>
-								</a>
-								<p>You can view my Linked-In Personal Profile for more info on me.</p>
-							</li>
+							<ol>
+								<li class="list-group-item list-group-item-success">
+									<img class="img-circle img-fluid" src="<?php echo $vars['technologyideas']; ?>" alt="Technologies">
+									<a href="webTech" target="_blank">
+										<p  class="sectionTitle" >
+											<a href="webTech" target="_blank" data-toggle="tooltip" data-placement="right"
+												title="Click to See Technologies!">Web Page Technologies Used</a>
+										</p>
+									</a>
+									<p>This is a page that gives explanation of the programming technologies used on this site.</p>
+								</li>
+								<li class="list-group-item list-group-item-warning">
+									<a href="emailno" target="_blank">
+										<p  class="sectionTitle">
+											<a href="emailno" target="_blank" data-toggle="tooltip" data-placement="right"
+												title="Click to Email Me!">Making Contact</a>
+										</p>
+									</a>
+									<p>You can email me if you like. Also more contact info is given in my resume.</p>
+								</li>
+								<li class="list-group-item list-group-item-warning">
+									<img class="img-circle img-fluid" src="<?php echo $vars['myFace']; ?>" alt="My Profile">
+									<a href="linkedIn" target="_blank">
+										<p class="sectionTitle">
+											<a href="linkedIn" target="_blank" data-toggle="tooltip" data-placement="right"
+												title="Click to See My Profile!">Personal Profile</a>
+										</p>
+									</a>
+									<p>You can view my Linked-In Personal Profile for more info on me.</p>
+								</li>
+							</ol>
 						</div>
 					</div>
 				  
 					 <div id="aboutCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-wrench"></span>
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>								
+								<i class="wrench icon"></i>
+							</span>
 						</div>
-						<div class="cvrbody">
-							<h1>About</h1>
-							<p>Beneath there is a page about technologies that I've used, and an email
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>About</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">
+							<p class="text-center">Beneath there is a page about technologies that I've used, and an email
 							 contact page.  Also you can see more about me on my LinkedIn profile page.  Click this cover panel to see.</p>
 						</div>
 					 </div>
-				  </div>	
-		
-		
-		
-				
+				  </div>
+				  
 				  <div id="lamp" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
@@ -403,88 +413,88 @@
 							<span class="glyphicon glyphicon-lamp"></span>
 						</div>
 						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
-								<img class="img-circle img-fluid" src="<?php echo $vars['dataanalysis']; ?>" alt="Data Anaysis">
-								<a href="amino" target="_blank">
-									<p class="sectionTitle">
-										<a href="amino" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Amino Acid Code Sequence Analyzer</a>	
+							<ol>
+								<li class="list-group-item list-group-item-success">
+									<img class="img-circle img-fluid" src="<?php echo $vars['dataanalysis']; ?>" alt="Data Anaysis">
+									<a href="amino" target="_blank">
+										<p class="sectionTitle">
+											<a href="amino" target="_blank" data-toggle="tooltip" data-placement="right"
+												title="Click for Full Page App!">Amino Acid Code Sequence Analyzer</a>
+										</p>
+									</a>
+									<object data="amino" height="200" width="300"></object>
+									<p>This program gives statistics for all combinations of 
+									amino acid sequences within a protein. The protein sequence is 
+									parsed by regex techniques from a text file, into a MySQL database. 
+									The first and last amino acid is chosen in the GUI, as well as, 
+									the desired statistical output. The database accessed by JavaScript-AJAX to PHP-MySQL 
+									on the server side which returns the statistics.<br>The Code for PHP-based apps is
+									here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application"
+										target="_blank">PHP Code</a>
 									</p>
-								
-								</a>
-								<object data="amino" height="200" width="300"></object>
-								<p>This program gives statistics for all combinations of 
-								amino acid sequences within a protein. The protein sequence is 
-								parsed by regex techniques from a text file, into a MySQL database. 
-								The first and last amino acid is chosen in the GUI, as well as, 
-								the desired statistical output. The database accessed by JavaScript-AJAX to PHP-MySQL 
-								on the server side which returns the statistics.<br>The Code for PHP-based apps is
-					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
-								</p>
-							 </li>
-							 <li class="list-group-item list-group-item-warning">
-								<a href="orominer1" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="orominer1" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Human Organ System Analyzer 1</a>	
+								</li>
+								<li class="list-group-item list-group-item-warning">
+									<a href="orominer1" target="_blank">
+										<p  class="sectionTitle" >
+											<a href="orominer1" target="_blank"  data-toggle="tooltip" data-placement="right"
+												title="Click for Full Page App!">Human Organ System Analyzer 1</a>	
+										</p>
+									</a>
+									<object data="orominer1" height="200" width="300"></object>
+									<p>The Orominer program shows a hierarchical organization of the human body constitution. 
+									Its top level is Organ Systems.  It uses JavaScript, JQuery for event synchronization between 
+									hierarchical display and graphic display, as well as, dynamic generation of SVG graphical elements 
+									based on DOM HTML elements.  MySQL Database information is converted into XML format using PHP 
+									for up front access by the code for generation of Hierachical Display. Unfortunately ONLY THE 
+									First 3 NODES Of DATA was developed at Project Completion.<br>The Code for PHP-based apps is
+									here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application"
+										target="_blank">PHP Code</a>
 									</p>
-								</a>
-								<object data="orominer1" height="200" width="300"></object>
-								<p>The Orominer program shows a hierarchical organization of the human body constitution. 
-								Its top level is Organ Systems.  It uses JavaScript, JQuery for event synchronization between 
-								hierarchical display and graphic display, as well as, dynamic generation of SVG graphical elements 
-								based on DOM HTML elements.  MySQL Database information is converted into XML format using PHP 
-								for up front access by the code for generation of Hierachical Display. Unfortunately ONLY THE 
-								First 3 NODES Of DATA was developed at Project Completion.<br>The Code for PHP-based apps is
-					            here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
-								</p>
-							  </li>
-							 <li class="list-group-item list-group-item-danger">
-								<a href="orominer2" target="_blank">
-									<p  class="sectionTitle" >	
-										<a href="orominer2" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Human Organ System Analyzer 2</a>	
+								</li>
+								<li class="list-group-item list-group-item-danger">
+									<a href="orominer2" target="_blank">
+										<p  class="sectionTitle" >	
+											<a href="orominer2" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Human Organ System Analyzer 2</a>	
+										</p>
+									</a>
+									<object data="orominer2" height="200" width="300"></object>
+									<p>This orominer program contains Histological Data within the Hierarchical Organization of Human Body 
+										makeup. Histological Data is information about Human Organs and their tissues and cells. This 
+										application uses JavaScript Objects to store active data requests from which graphics is generated.
+										<br>The Code for PHP-based apps is here: 
+											<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application"	target="_blank">PHP Code</a>
 									</p>
-								</a>
-								<object data="orominer2" height="200" width="300"></object>
-								<p>This orominer program contains Histological Data within the Hierarchical Organization of Human Body 
-									makeup. Histological Data is information about Human Organs and their tissues and cells. This 
-									application uses JavaScript Objects to store active data requests from which graphics is generated.
-									<br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
-								</p>
-							 </li>
-							 <li class="list-group-item">
-								<img class="img-circle img-fluid" src="<?php echo $vars['othellogameimage']; ?>" alt="Game Coding">
-								<a href="othello" target="_blank">
-									<p  class="sectionTitle" >	
-										<a href="othello" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Play Othello Game thru AJAX</a>
+								</li>
+								<li class="list-group-item">
+									<img class="img-circle img-fluid" src="<?php echo $vars['othellogameimage']; ?>" alt="Game Coding">
+									<a href="othello" target="_blank">
+										<p  class="sectionTitle" >	
+											<a href="othello" target="_blank" data-toggle="tooltip" data-placement="right"
+												title="Click for Full Page App!">Play Othello Game thru AJAX</a>
+										</p>
+									</a>
+									<object data="othello" height="200" width="300"></object>
+									<p>Play the Othello Game using AJAX technology which will eliminate Page Reloads.
+									<br>The Code for PHP-based apps is here: 
+											<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
 									</p>
-								</a>
-								<object data="othello" height="200" width="300"></object>
-								<p>Play the Othello Game using AJAX technology which will eliminate Page Reloads.
-								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
-								</p>
-							 </li>
-							 <!--li class="list-group-item">
-								<a href="voteparser" target="_blank">
-									<p  class="sectionTitle" >	
-										<a href="voteparser" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">2020 Presidential Election Vote Parser</a>
-									</p>
-								</a>
-								<object data="voteparser" height="200" width="300"></object>
-								<p>See Tabular and Graphic Parser of 2020 Presidential Election Voting which uses Vue.js, JQuery, Bootstrap, Datatables, and JChartfx, on the front-end, and PHP on the backend 
-									to create a dashboard and charts of elections data for all states. It pulls actual election data from the New York Times website and parses the JSON formatted data.   
-								   <br>The Code for PHP-based apps is here: <a href="https://github.com/Rsypertjr/voteparser/blob/voteparser/parse_votes.php" target="_blank">PHP Code</a>
-								</p>
-							 </li-->
-							
+								</li>
+							</ol>
+						
 						</div>
 					</div>
 					
 					 <div id="lampCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-lamp"></span>
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span class="glyphicon glyphicon-lamp">
+							 	<i class="lightbulb outline icon"></i>
+							</span>
 						</div>
-						<div class="cvrbody">
-							<h1>LAMP Technologies</h1>
-							<p>PHP/MySQL is used on the back-end for these apps. Regex is used to parse text files into a database.  
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>LAMP Technologies</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">							
+							<p class="text-center">PHP/MySQL is used on the back-end for these apps. Regex is used to parse text files into a database.  
 							I programmatically converted flat non-relational tables into a relational-XMLfile for app data.  PHP/SQL is
 							used to query database and send tabular results to front-end.  Javascript/JQuery is used for dynamic DOM manipulation
 							and SVG graphic element generation. AJAX is also used to update and process game-board data, as well as
@@ -503,28 +513,34 @@
 							<span class="glyphicon glyphicon-phone"></span>
 						</div>
 						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
-								<img class="img-circle img-fluid" src="<?php echo $vars['mobiledevelopmentimage']; ?>" alt="Mobile Development">
-								<a href="mobile" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="mobile#" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">JQuery Mobile Web Portfolio</a>
+							<ol>
+								<li class="list-group-item list-group-item-success">
+									<img class="img-circle img-fluid" src="<?php echo $vars['mobiledevelopmentimage']; ?>" alt="Mobile Development">
+									<a href="mobile" target="_blank">
+										<p  class="sectionTitle" >
+											<a href="mobile#" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">JQuery Mobile Web Portfolio</a>
+										</p>
+									</a>
+									<object data="mobile" height="200" width="300"></object>
+									<p>Link to a Mobile version of My work portfolio. I developed it using JQuery Mobile
+									and it should run on Android devices.
 									</p>
-								</a>
-								<object data="mobile" height="200" width="300"></object>
-								<p>Link to a Mobile version of My work portfolio. I developed it using JQuery Mobile
-								and it should run on Android devices.
-								</p>
-							</li>
+								</li>
+							</ol>
 						</div>
 					</div>
 				   
 					<div id="mobileCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-phone"></span>
-					   </div>
-					   <div class="cvrbody">
-							<h1>Mobile Portfolio</h1>
-							<p>Beneath is a JQuery Mobile version of my portfolio that is mobile-device-responsive</p>
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>
+								<i class="phone icon"></i>								
+							</span>
+						</div>
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>Mobile Portfolio</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">							
+							<p class="text-center">Beneath is a JQuery Mobile version of my portfolio that is mobile-device-responsive</p>
 						</div>
 					 </div>
 				 </div>
@@ -539,124 +555,130 @@
 							<span class="glyphicon glyphicon-tree-conifer"></span>
 						</div>
 						<div class="panel-body">
-						   <!--li class="list-group-item list-group-item-warning">
-								<a href="apitest" target="_blank">
-									<p  class="sectionTitle">
-										<a href="apitest" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue Javascript App</a>
+							<ol>
+								<!--li class="list-group-item list-group-item-warning">
+									<a href="apitest" target="_blank">
+										<p  class="sectionTitle">
+											<a href="apitest" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue Javascript App</a>
+										</p>
+									</a>
+									<object data="apitest" height="200" width="300"></object>
+									<p>A Vue JS based app that accesses an API to create a Dynamic List converted from a static HMTL page.  Added Paging Function and Select Page Size.<br>GitHub link
+									to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp" target="_blank">Vue App Code</a>
 									</p>
-								</a>
-								<object data="apitest" height="200" width="300"></object>
-								<p>A Vue JS based app that accesses an API to create a Dynamic List converted from a static HMTL page.  Added Paging Function and Select Page Size.<br>GitHub link
-								   to Code is here <a href="https://github.com/Rsypertjr/vueapp/tree/vueapp" target="_blank">Vue App Code</a>
-								</p>
-							</li-->
-							<!--li class="list-group-item list-group-item-warning">
-								<a href="expressApp1" target="_blank">
-									<p  class="sectionTitle">
-										<a href="http://206.189.211.36/" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Express/Node Javascript App</a>
+								</li-->
+								<!--li class="list-group-item list-group-item-warning">
+									<a href="expressApp1" target="_blank">
+										<p  class="sectionTitle">
+											<a href="http://206.189.211.36/" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Express/Node Javascript App</a>
+										</p>
+									</a>
+									<object data="http://206.189.211.36/" height="200" width="300"></object>
+									<p>A Simple App based on a Digital Ocean droplet with Ubuntu 16 OS and nginx server installed.<br>Express.js/Node.js application framework is used and it also
+									utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.<br>
+									Here is the code: <a href="https://github.com/Rsypertjr/expressnode" target="_blank">Express/Node Code</a>
 									</p>
-								</a>
-								<object data="http://206.189.211.36/" height="200" width="300"></object>
-								<p>A Simple App based on a Digital Ocean droplet with Ubuntu 16 OS and nginx server installed.<br>Express.js/Node.js application framework is used and it also
-								   utilizes Pug templating, Bootstrap, Mongo/Mongoose document-based database, Nodemon, Pm2, NPM, and other technologies.<br>
-								   Here is the code: <a href="https://github.com/Rsypertjr/expressnode" target="_blank">Express/Node Code</a>
-								</p>
-							</li-->
-							<li class="list-group-item list-group-item-danger">
-								<a href="laravelApp2" target="_blank">
-									<p  class="sectionTitle">
-										<a href="laravelApp2" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Simple Laravel App</a>
+								</li-->
+								<li class="list-group-item list-group-item-danger">
+									<a href="laravelApp2" target="_blank">
+										<p  class="sectionTitle">
+											<a href="laravelApp2" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Simple Laravel App</a>
+										</p>
+									</a>
+									<object data="laravelApp2" height="200" width="300"></object>
+									<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.<br>
+									Here is the code: <a href="https://bitbucket.org/Rsypertjr/laravel-test/src/master/" target="_blank">Laravel Code</a>
 									</p>
-								</a>
-								<object data="laravelApp2" height="200" width="300"></object>
-								<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.<br>
-								   Here is the code: <a href="https://bitbucket.org/Rsypertjr/laravel-test/src/master/" target="_blank">Laravel Code</a>
-								</p>
-							</li>
-							<li class="list-group-item list-group-item-info">
-								<a href="laravelApp3" target="_blank">
-									<p  class="sectionTitle">
-										<a href="laravelApp3" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Another Laravel App</a>
+								</li>
+								<li class="list-group-item list-group-item-info">
+									<a href="laravelApp3" target="_blank">
+										<p  class="sectionTitle">
+											<a href="laravelApp3" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Another Laravel App</a>
+										</p>
+									</a>
+									<object data="laravelApp3" height="200" width="300"></object>
+									<p>Developed using Laravel Homestead Environment for generating Homeschool grade transcripts for my kids.<br>
+									Here is the code: <a href="https://github.com/Rsypertjr/transcriptor" target="_blank">Laravel Code</a>
 									</p>
-								</a>
-								<object data="laravelApp3" height="200" width="300"></object>
-								<p>Developed using Laravel Homestead Environment for generating Homeschool grade transcripts for my kids.<br>
-								   Here is the code: <a href="https://github.com/Rsypertjr/transcriptor" target="_blank">Laravel Code</a>
-								</p>
-							</li>
-							<li class="list-group-item list-group-item-success">
-								<a href="angularApp" target="_blank">
-									<p  class="sectionTitle">
-										<a href="angularApp" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular2 JavaScript and Redux State Container</a>
+								</li>
+								<li class="list-group-item list-group-item-success">
+									<a href="angularApp" target="_blank">
+										<p  class="sectionTitle">
+											<a href="angularApp" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular2 JavaScript and Redux State Container</a>
+										</p>
+									</a>
+									<object data="angularApp" height="200" width="300"></object>
+									<p>Angular2 App with Redux deployed to Heroku Server.<br>
+									Here is the code: <a href="https://github.com/Rsypertjr/angularRedux" target="_blank">Angular Code</a>
 									</p>
-								</a>
-								<object data="angularApp" height="200" width="300"></object>
-								<p>Angular2 App with Redux deployed to Heroku Server.<br>
-								Here is the code: <a href="https://github.com/Rsypertjr/angularRedux" target="_blank">Angular Code</a>
-								</p>
-							</li>
-							<li class="list-group-item list-group-item-success">
-								<a href="https://angularvotes.rsypertjr.com" target="_blank">
-									<p  class="sectionTitle">
-										<a href="https://angularvotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+								</li>
+								<li class="list-group-item list-group-item-success">
+									<a href="https://angularvotes.rsypertjr.com" target="_blank">
+										<p  class="sectionTitle">
+											<a href="https://angularvotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+										</p>
+									</a>
+									<object type="text/html" data="https://angularvotes.rsypertjr.com" height="200" width="300"></object>
+									<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
+									Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
+									<br/>This same app has a Docker implementation that uses Docker Engine and contains Dockerfile and Docker-compose<br> 
+									implementations of development and production versions. Karma and Protractor unit testing of code is included.<br> 
+									Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
+									</p> 
+									
+								</li>
+								<li class="list-group-item">
+									<a href="tictactoe" target="_blank">
+										<p  class="sectionTitle">
+											<a href="tictactoe" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React Javascript Tic-Tac-Toe</a>
+										</p>
+									</a>
+									<object data="tictactoe" height="200" width="300"></object>
+									<p>React Javascript Tic Tac Toe app with CSS animations for victory celebration.<br>
+									Here is the code: <a href="https://github.com/Rsypertjr/fuelCMS/blob/newfuel/fuel/application/views/tictactoe.php" target="_blank">React Javascript Code</a>
 									</p>
-								</a>
-								<object type="text/html" data="https://angularvotes.rsypertjr.com" height="200" width="300"></object>
-								<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
-								Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
-								<br/>This same app has a Docker implementation that uses Docker Engine and contains Dockerfile and Docker-compose<br> 
-								implementations of development and production versions. Karma and Protractor unit testing of code is included.<br> 
-								Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
-								</p> 
-								
-							</li>
-							<li class="list-group-item">
-								<a href="tictactoe" target="_blank">
-									<p  class="sectionTitle">
-										<a href="tictactoe" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React Javascript Tic-Tac-Toe</a>
+								</li> 							
+								<li class="list-group-item list-group-item-success">
+									<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank">
+										<p  class="sectionTitle">
+											<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix) w/React & Chart.js & Bootstrap.js Vote Parser</a>
+										</p>
+									</a>
+									<object data="https://laravelvotes.rsypertjr.com/votes-table" height="200" width="300"></object>
+									<p>The app uses Laravel (Mix) with React.js (including React Router).  Composer is used to 
+									manage PHP dependencies, and NPM is used to managed the Node-based React.js dependencies. 
+									Laravel routing is used to serve main page and React routing for fast rendering of tables 
+									and charts. Table and paging is a custom code and charts utilize Chart.js. Here is code link: 
+									<a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
-								</a>
-								<object data="tictactoe" height="200" width="300"></object>
-								<p>React Javascript Tic Tac Toe app with CSS animations for victory celebration.<br>
-								Here is the code: <a href="https://github.com/Rsypertjr/fuelCMS/blob/newfuel/fuel/application/views/tictactoe.php" target="_blank">React Javascript Code</a>
-								</p>
-							</li> 							
-							<li class="list-group-item list-group-item-success">
-								<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank">
-									<p  class="sectionTitle">
-										<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix) w/React & Chart.js & Bootstrap.js Vote Parser</a>
+								</li>
+								<li class="list-group-item list-group-item-success">
+									<a href="https://vuevotes.rsypertjr.com" target="_blank">
+										<p  class="sectionTitle">
+											<a href="https://vuevotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
+										</p>
+									</a>
+									<object data="https://vuevotes.rsypertjr.com" height="200" width="300"></object>
+									<p>The app uses Vue 3 Composition API. NPM is used to managed the Node-based Vue 3 dependencies. 
+									Vue 3 Composition API allows for function-based components which is inspired by React w/Hooks.  Here is code link: 
+									<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
-								</a>
-								<object data="https://laravelvotes.rsypertjr.com/votes-table" height="200" width="300"></object>
-								<p>The app uses Laravel (Mix) with React.js (including React Router).  Composer is used to 
-								   manage PHP dependencies, and NPM is used to managed the Node-based React.js dependencies. 
-								   Laravel routing is used to serve main page and React routing for fast rendering of tables 
-								   and charts. Table and paging is a custom code and charts utilize Chart.js. Here is code link: 
-								   <a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
-								</p>
-							</li>
-							<li class="list-group-item list-group-item-success">
-								<a href="https://vuevotes.rsypertjr.com" target="_blank">
-									<p  class="sectionTitle">
-										<a href="https://vuevotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
-									</p>
-								</a>
-								<object data="https://vuevotes.rsypertjr.com" height="200" width="300"></object>
-								<p>The app uses Vue 3 Composition API. NPM is used to managed the Node-based Vue 3 dependencies. 
-								   Vue 3 Composition API allows for function-based components which is inspired by React w/Hooks.  Here is code link: 
-								   <a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
-								</p>
-							</li>
+								</li>
+							</ol>
 						</div>
 					 </div> 
 					
 					  <div id="frameworksCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span  class="glyphicon glyphicon-tree-conifer"></span>
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>
+								<i class="tree icon"></i>
+							</span>
 						</div>
-						<div class="cvrbody">
-							<h1>Frameworks</h1>
-							<p>Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Laravel MVC Framework</p>
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>Frameworks</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">
+							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Laravel MVC Framework</p>
 						</div>
 					  </div>
 				  </div>
@@ -668,98 +690,109 @@
 							<span class="glyphicon glyphicon-edit"></span>
 						</div>
 						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
-								<img class="img-circle img-fluid" src="<?php echo $vars['technicalwritingimage']; ?>" alt="Technical Writing">
-								<a href="graingerABCDE" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="graingerABCDE" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">Grainger ABCDE Series B</a>
+							<ol>
+								<li class="list-group-item list-group-item-success">
+									<img class="img-circle img-fluid" src="<?php echo $vars['technicalwritingimage']; ?>" alt="Technical Writing">
+									<a href="graingerABCDE" target="_blank">
+										<p  class="sectionTitle" >
+											<a href="graingerABCDE" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">Grainger ABCDE Series B</a>
+										</p>
+									</a>
+									<object data="graingerABCDE" height="200" width="300"></object>
+									<p>This is a Maintenance and Product Information Manual tailored for a customers implementation 
+									of a Motor Efficiency Controller (MEC). It is a new generation product manual. I wrote it
+									using Adobe InDesign according to the customers style rules
 									</p>
-								</a>
-								<object data="graingerABCDE" height="200" width="300"></object>
-								<p>This is a Maintenance and Product Information Manual tailored for a customers implementation 
-								of a Motor Efficiency Controller (MEC). It is a new generation product manual. I wrote it
-								using Adobe InDesign according to the customers style rules
-								</p>
-							</li>
-							<li class="list-group-item list-group-item-warning">
-								<a href="graingerCDE" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="graingerCDE" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">Grainger CDE</a>
+								</li>
+								<li class="list-group-item list-group-item-warning">
+									<a href="graingerCDE" target="_blank">
+										<p  class="sectionTitle" >
+											<a href="graingerCDE" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">Grainger CDE</a>
+										</p>
+									</a>
+									<object data="graingerCDE" height="200" width="300"></object>
+									<p>This is a Maintenance and Product Information Manual tailored for a customers implementation of a 
+									Motor Efficiency Controller (MEC). It is a new generation product manual. I wrote it in Adobe InDesign 
+									according to the customer's style rules.
 									</p>
-								</a>
-								<object data="graingerCDE" height="200" width="300"></object>
-								<p>This is a Maintenance and Product Information Manual tailored for a customers implementation of a 
-								Motor Efficiency Controller (MEC). It is a new generation product manual. I wrote it in Adobe InDesign 
-								according to the customer's style rules.
-								</p>
-							</li>
-							<li class="list-group-item list-group-item-danger">
-								<a href="mecPManual" target="_blank">
-									<p class="sectionTitle"> 
-										<a href="mecPManual" target="_blank"  data-toggle="tooltip"  data-placement="right" title="Click to it Full Page!">MEC Product Manual VT 1.6</a>
+								</li>
+								<li class="list-group-item list-group-item-danger">
+									<a href="mecPManual" target="_blank">
+										<p class="sectionTitle"> 
+											<a href="mecPManual" target="_blank"  data-toggle="tooltip"  data-placement="right" title="Click to it Full Page!">MEC Product Manual VT 1.6</a>
+										</p>
+									</a>
+									<object data="mecPManual" height="200" width="300"></object>
+									<p>This is a Product Manual for a Motor Efficiency Controller (MEC). It is a new generation product manual. 
+									I wrote it in Adobe InDesign according to the customer's style rules.
 									</p>
-								</a>
-								<object data="mecPManual" height="200" width="300"></object>
-								<p>This is a Product Manual for a Motor Efficiency Controller (MEC). It is a new generation product manual. 
-								I wrote it in Adobe InDesign according to the customer's style rules.
-								</p>
-							</li>
+								</li>
+								</ol>
+								
+							</div>
+						</div> 
+					
+						<div id="manualsCovr" class="container-fluid covr">							
+							<div class="row justify-content-center cvrimg align-items-center">
+								<span>
+									<i class="edit icon"></i>
+								</span>
+							</div>
+							<div class="row cvrtitle justify-content-center align-items-center">
+								<p>Production Manuals</p>
+							</div>
+							<div class="row cvrbody justify-content-center align-items-center">							
+								<p class="text-center">Operation and Maintenance Manuals for an Electro-Mechanical Application</p>
+							</div>
 						</div>
-					 </div> 
-				  
-					 <div id="manualsCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-edit"></span>
-						</div>
-						<div class="cvrbody">
-							<h1>Production Manuals</h1>
-							<p>Operation and Maintenance Manuals for an Electro-Mechanical Application</p>
-						</div>
-					 </div>
-				  </div>
-				  
-				  
-				<div id="specifications" class="container-fluid">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<span>Technical Specification Documents</span>
-							<span class="glyphicon glyphicon-edit"></span>
-						</div>
-						<div class="panel-body">
-							<li class="list-group-item list-group-item-success">
-								<img class="img-circle img-fluid" src="<?php echo $vars['engProcessSpec']; ?>" alt="Technical Writing">
-								<a href="whitePaper" target="_blank">
-									<p  class="sectionTitle" >
-										<a href="whitePaper" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">White Paper</a>
+					</div>
+					
+					
+					<div id="specifications" class="container-fluid">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<span>Technical Specification Documents</span>
+								<span class="glyphicon glyphicon-edit"></span>
+							</div>
+							<div class="panel-body">
+								<li class="list-group-item list-group-item-success">
+									<img class="img-circle img-fluid" src="<?php echo $vars['engProcessSpec']; ?>" alt="Technical Writing">
+									<a href="whitePaper" target="_blank">
+										<p  class="sectionTitle" >
+											<a href="whitePaper" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">White Paper</a>
+										</p>
+									</a>
+									<object data="whitePaper" height="200" width="300"></object>
+									<p>This is a technical specification called a White Paper which explains the technology behind 
+										a companies product. In this case an Electrical Motor Energy Efficiency Device.
+										</p>
+								</li>
+								<li class="list-group-item list-group-item-warning">
+									<a href="engSpec" target="_blank">
+										<p  class="sectionTitle">
+											<a href="engSpec" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">Engineering Specification</a>
+										</p>
+									</a>
+									<object data="engSpec" height="200" width="300"></object>
+									<p>This is a technical specification for the Clark County Land Development Approval process. 
+									I authored it as an Environmental Health Engineer for Southern Nevada Health District.
 									</p>
-								</a>
-								<object data="whitePaper" height="200" width="300"></object>
-								<p>This is a technical specification called a White Paper which explains the technology behind 
-									a companies product. In this case an Electrical Motor Energy Efficiency Device.
-									</p>
-							</li>
-							<li class="list-group-item list-group-item-warning">
-								<a href="engSpec" target="_blank">
-									<p  class="sectionTitle">
-										<a href="engSpec" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See it Full Page!">Engineering Specification</a>
-									</p>
-								</a>
-								<object data="engSpec" height="200" width="300"></object>
-								<p>This is a technical specification for the Clark County Land Development Approval process. 
-								I authored it as an Environmental Health Engineer for Southern Nevada Health District.
-								</p>
-							</li>
-							
+								</li>
+							</ol>	
 						</div>
 					</div>
 					
 					<div id="specificationsCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-edit"></span>
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>
+								<i class="edit icon"></i>
+							</span>
 						</div>
-						<div class="cvrbody">
-							<h1>Technical Specifications</h1>
-							<p>Technology Explanation (White Paper) and Business Process Description</p>
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>Technical Specifications</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">							
+							<p class="text-center">Technology Explanation (White Paper) and Business Process Description</p>
 						</div>
 					 </div>
 				  </div>
@@ -785,12 +818,16 @@
 					 </div>
 					
 					<div id="resumeCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-book"></span>
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>
+								<i class="book icon"></i>
+							</span>							
 						</div>
-						<div class="cvrbody">
-							<h1>Resume</h1>
-							<p>A Dynamic HTML and CSS version of my Resume.  Also a Download Link for a PDF version</p>
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>Resume</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">
+							<p class="text-center">A Dynamic HTML and CSS version of my Resume.  Also a Download Link for a PDF version</p>
 						</div>
 					 </div>
 				  </div>
@@ -816,12 +853,16 @@
 					</div>
 					
 					 <div id="livingCovr" class="container-fluid covr">
-						<div class="cvrimg">
-							<span class="glyphicon glyphicon-camera"></span>
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>
+								<i class="camera retro icon"></i>
+							</span>
 						</div>
-						<div class="cvrbody">
-							<h1>Living In Vegas</h1>
-							<p>How to Have Family Fun in and around Vegas!&nbsp;&nbsp;Although a little dated.</p>
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>Living In Vegas</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">
+							<p class="text-center">How to Have Family Fun in and around Vegas!&nbsp;&nbsp;Although a little dated.</p>
 						</div>
 					 </div>
 				  </div>
@@ -855,15 +896,19 @@
 				</div>
 			
 				<div id="frontCovr" class="container-fluid covr">
-				<div class="cvrimg">
-					<span class="glyphicon glyphicon-lamp"></span>
-				</div>
-				<div class="cvrbody">
-					<h1>Non-Bootstrap Portfolio</h1>
-					<p>CodeIgniter,Fuel CMS, and Lamp technologies are used as the MVC framework. They are based on PHP/LAMP technologies. 
-					Includes lot of built-in routing, modular storage of code in a database, and Active Object database access.  
-					On the front-end, CSS 2-D and 3-D tranformations are used to produce animations.</p>
-				</div>
+					<div class="row justify-content-center cvrimg align-items-center">
+						<span class="glyphicon glyphicon-lamp">
+							<i class="lightbulb icon"></i>
+						</span>
+					</div>
+					<div class="row cvrtitle justify-content-center align-items-center">
+						<p>Non-Bootstrap Portfolio</p>
+					</div>
+					<div class="row cvrbody justify-content-center align-items-center">
+						<p class="text-center">CodeIgniter,Fuel CMS, and Lamp technologies are used as the MVC framework. They are based on PHP/LAMP technologies. 
+						Includes lot of built-in routing, modular storage of code in a database, and Active Object database access.  
+						On the front-end, CSS 2-D and 3-D tranformations are used to produce animations.</p>
+					</div>
 				</div>
 			</div>
 

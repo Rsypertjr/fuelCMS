@@ -377,40 +377,36 @@ font-size:1.5em}
 
 div.panel-body > li.list-group-item > p:last-child {border:5px solid grey; padding:5px}
 
-.cvrimg {
-position:relative;
-height:40%;
-width:100%;
-margin:0em;
-padding-top:1em;
 
+.cvrimg {
+  position:relative;
+  height:auto;
+  padding:2em 0;
+  width:100%;
 }
 
-.cvrimg span{
-position:relative;
-transform:scale(12,12);
-top:50%;
-left:50%;
+.cvrimg span{  
+  margin-top:1em;
+  transform:scale(5.0,5.0);
 }
 
 .cvrbody{
-
-position:relative;
-height:60%;
-width:100%;
-margin:0em;
-padding:0em;
-font-size:2.0em;
-margin:0em 0em 0em 0em;
-text-align:center;
+  position:relative;
+  height:auto;
+  width:100%;
+  padding: 0 3em;
+  font-size:2.0em;
 }
 
-.cvrbody h1 {
-text-align:center;
-margin:0.5em 0em 0.5em 0em;
-font-size:2.0em
-
+.cvrtitle{
+  position:relative;
+  height:35%;
+  padding: 0.5em 0;
+  width:100%;
+  font-size:3em;
+  font-weight: bold;
 }
+
 
 
 
