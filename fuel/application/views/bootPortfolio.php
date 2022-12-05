@@ -373,7 +373,7 @@
 												title="Click to Email Me!">Making Contact</a>
 										</p>
 									</a>
-									<p>You can email me if you like. Also more contact info is given in my resume.</p>
+									<p>You can email me if you like.&nbsp;&nbsp;Also more contact info is given in my resume.</p>
 								</li>
 								<li class="list-group-item list-group-item-warning">
 									<img class="img-circle img-fluid" src="<?php echo $vars['myFace']; ?>" alt="My Profile">
