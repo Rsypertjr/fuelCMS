@@ -1218,7 +1218,7 @@
 								   Here is the code: <a href="https://github.com/Rsypertjr/expressnode" target="_blank">Express/Node Code</a>
 								</p>
 							</li-->
-							<li class="list-group-item list-group-item-danger">
+							<!--li class="list-group-item list-group-item-danger">
 								<a href="laravelApp2" target="_blank">
 									<p  class="sectionTitle">
 										<a href="laravelApp2" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Simple Laravel App</a>
@@ -1250,7 +1250,7 @@
 								<p>Angular2 App with Redux deployed to Heroku Server.<br>
 								Here is the code: <a href="https://github.com/Rsypertjr/angularRedux" target="_blank">Angular Code</a>
 								</p>
-							</li>
+							</li-->
 							<li class="list-group-item list-group-item-success">
 								<a href="https://presvote.tk" target="_blank">
 									<p  class="sectionTitle">
