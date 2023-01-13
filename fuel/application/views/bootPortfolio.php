@@ -147,7 +147,7 @@
 							</div>				
 							<div class="carousel-item">
 								<h4>PHP-based and JavaScript-based technologies and frameworks featured</h4>
-								<p> Fuel CMS framework (CodeIgniter-based),&nbsp;<a href="https://angularvotes.rsypertjr.com/votes">Angular</a>,&nbsp;<a href="voteparser">Vue.js</a>,&nbsp;Node.js,&nbsp;Ng,&nbsp;NPM,&nbsp;Laravel,&nbsp;Bootstrap,&nbsp;JQuery,&nbsp;JQueryUI,&nbsp;SVG,&nbsp;XML,&nbsp;CSS are some of the technologies used.&nbsp;&nbsp;Framework-based applications are at the&nbsp;<a href="#frameworks">
+								<p> Fuel CMS framework (CodeIgniter-based),&nbsp;<a href="https://angularvotes.rsypertjr.net">Angular</a>,&nbsp;<a href="voteparser">Vue.js</a>,&nbsp;Node.js,&nbsp;Ng,&nbsp;NPM,&nbsp;Laravel,&nbsp;Bootstrap,&nbsp;JQuery,&nbsp;JQueryUI,&nbsp;SVG,&nbsp;XML,&nbsp;CSS are some of the technologies used.&nbsp;&nbsp;Framework-based applications are at the&nbsp;<a href="#frameworks">
 									Software Development->Frameworks</a> menu tab.&nbsp;&nbsp;
 									PHP-based applications are located at the&nbsp;<a href="#lamp"&nbsp;>Software Development->LAMP-based</a> menu tab.
 								</p>
@@ -155,7 +155,7 @@
 							</div-->					
 							<div class="carousel-item">
 								<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based Front End</h4> 
-								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://laravelvotes.rsypertjr.com/votes-table" 
+								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://laravelvotes.rsypertjr.net/votes-table" 
 								target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser</a>.&nbsp;&nbsp;This app uses React Hooks like UseEffect and UseState for functional components.&nbsp;&nbsp;
 								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>.
 								</p>		
@@ -612,12 +612,12 @@
 									</p>
 								</li-->
 								<li class="list-group-item list-group-item-success">
-									<a href="https://angularvotes.rsypertjr.com" target="_blank">
+									<a href="https://angularvotes.rsypertjr.net" target="_blank">
 										<p  class="sectionTitle">
-											<a href="https://angularvotes.rsypertjr.com" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
+											<a href="https://angularvotes.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
 										</p>
 									</a>
-									<object type="text/html" data="https://angularvotes.rsypertjr.com" height="200" width="300"></object>
+									<object type="text/html" data="https://angularvotes.rsypertjr.net" height="200" width="300"></object>
 									<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
 									Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
 									<br/>This same app has a Docker implementation that uses Docker Engine and contains Dockerfile and Docker-compose<br> 
@@ -640,10 +640,10 @@
 								<li class="list-group-item list-group-item-success">
 									<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank">
 										<p  class="sectionTitle">
-											<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix) w/React & Chart.js & Bootstrap.js Vote Parser</a>
+											<a href="https://laravelvotes.rsypertjr.net/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix) w/React & Chart.js & Bootstrap.js Vote Parser</a>
 										</p>
 									</a>
-									<object data="https://laravelvotes.rsypertjr.com/votes-table" height="200" width="300"></object>
+									<object data="https://laravelvotes.rsypertjr.net/votes-table" height="200" width="300"></object>
 									<p>The app uses Laravel (Mix) with React.js (including React Router).  Composer is used to 
 									manage PHP dependencies, and NPM is used to managed the Node-based React.js dependencies. 
 									Laravel routing is used to serve main page and React routing for fast rendering of tables 
