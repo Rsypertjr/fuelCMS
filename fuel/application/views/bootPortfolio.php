@@ -70,6 +70,10 @@
 				margin: 0 2em;
 			}
 
+			object {
+				display:block;
+			}
+
 			
 
 		
@@ -599,18 +603,19 @@
 									<p>Developed using Laravel Homestead Environment for generating Homeschool grade transcripts for my kids.<br>
 									Here is the code: <a href="https://github.com/Rsypertjr/transcriptor" target="_blank">Laravel Code</a>
 									</p>
-								</li>
+								</li-->
 								<li class="list-group-item list-group-item-success">
-									<a href="angularApp" target="_blank">
+									<a href="reactTestApp" target="_blank">
 										<p  class="sectionTitle">
-											<a href="angularApp" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular2 JavaScript and Redux State Container</a>
+											<a href="https://hackerreact.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">HackerRank React Test App</a>
 										</p>
 									</a>
-									<object data="angularApp" height="200" width="300"></object>
-									<p>Angular2 App with Redux deployed to Heroku Server.<br>
-									Here is the code: <a href="https://github.com/Rsypertjr/angularRedux" target="_blank">Angular Code</a>
+									<object data="https://hackerreact.rsypertjr.net" height="200" width="300"></object>
+									<p>I was given a download during a Hacker Rank test the included the components, but needed all the logical and data linkage between them to operate.  I had the download, 
+										so I finished after the test.<br>
+										Link to this code is: <a href="https://github.com/Rsypertjr/react-product-cart.git" target="_blank">Hacker Rank React Test App</a>
 									</p>
-								</li-->
+								</li>
 								<li class="list-group-item list-group-item-success">
 									<a href="https://angularvotes.rsypertjr.net" target="_blank">
 										<p  class="sectionTitle">
@@ -622,7 +627,7 @@
 									Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
 									<br/>This same app has a Docker implementation that uses Docker Engine and contains Dockerfile and Docker-compose<br> 
 									implementations of development and production versions. Karma and Protractor unit testing of code is included.<br> 
-									Link to this code is <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
+									Link to this code is: <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
 									</p> 
 									
 								</li>
