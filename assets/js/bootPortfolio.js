@@ -42,7 +42,7 @@ $(document).ready(function(){
            .add("div.dropdown-menu a[href='#specifications']").add("ul li a[href='#living']").add("ul li a[href='#front']")
            .add("ul li a[href='#home']")
            .on('mousedown',function(){
-                $('object').css('display','none');
+                $('object').css('display','block');
                 let hrf = $(this).attr('href');
                 //initial cover rendering
                 $(hrf + "Covr").css('display','block').css('opacity','0.85');
