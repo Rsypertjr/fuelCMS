@@ -166,7 +166,7 @@
 							</div>
 							<div class="carousel-item">
 								<h4>Docker Laravel-9 Vite,React 17/Bootstrap/Chartjs Vote Parser Implementation</h4>
-								<p>Also included is the code for another Docker/Docker-compose implementation of Laravel 9 with Vite for React 17 javascript compilation. React Bootstrap and Chartjs is also utilized as before.
+								<p>Also included is the code for another Vote Parer implementation using Docker/Docker-compose of Laravel 9 with Vite for React 17 javascript compilation. React Bootstrap and Chartjs is also utilized as before.
 								Link to this code is <a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/docker-laravel-vite" target="_blank">Docker Laravel-Vite/React Code</a>
 								</p>
 							</div>
