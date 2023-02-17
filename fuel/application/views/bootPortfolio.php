@@ -165,12 +165,18 @@
 								</p>		
 							</div>
 							<div class="carousel-item">
+								<h4>Docker Laravel-9 Vite,React 17/Bootstrap/Chartjs Vote Parser Implementation</h4>
+								<p>Also included is the code for another Docker/Docker-compose implementation of Laravel 9 with Vite for React 17 javascript compilation. React Bootstrap and Chartjs is also utilized as before.
+								Link to this code is <a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/docker-laravel-vite" target="_blank">Docker Laravel-Vite/React Code</a>
+								</p>
+							</div>
+							<div class="carousel-item">
 								<h4>Vue3 Composition API, Vue3/Bootstrap/JQuery/ChartJs Component-based front end</h4> 
 								<p>Vue 3 Composition API,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="http://vuevotes.rsypertjr.net" 
 								target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser</a>.&nbsp;&nbsp;This app uses Vue3 Composition API which allows more function-based writing of components,&nbsp;inspired by React Hooks.&nbsp;&nbsp;
 								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser Code</a>.
 								</p>
-							</div>
+							</div>							
 						</div>
 						<div>
 							<!-- Indicators -->
