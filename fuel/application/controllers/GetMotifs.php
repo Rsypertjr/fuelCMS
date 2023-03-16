@@ -69,7 +69,7 @@ class GetMotifs extends CI_Controller {
           {
             echo "Failed to connect to MySQL: ".mysqli_connect_error(). "\n";
             echo "<br>";              
-          }Fu3lcm$pass
+          }
         else
           {
     
