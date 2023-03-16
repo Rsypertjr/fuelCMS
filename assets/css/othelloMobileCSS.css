@@ -1,0 +1,37 @@
+body 
+	{
+		font-family:Impact,fantasy;
+		zoom:105%;
+		
+	}
+	
+#oframe {margin:3% 0% 3% 20%;}
+
+li {margin-top:0.75em}
+
+
+#headBar
+	{
+	 
+	 border-style:ridge;
+	 border-color:grey;
+	 border-width:20px 20px 20px 20px;
+	
+	}
+	
+	
+#outDiv{
+
+	position:relative;
+	width:100%;
+	height:auto;
+	border-style:ridge;
+	border-color:grey;
+	border-width:20px 20px 20px 20px;
+	background: -webkit-linear-gradient(purple,silver); /* For Safari 5.1 to 6.0 */
+	  background: -o-linear-gradient(purple,silver); /* For Opera 11.1 to 12.0 */
+	  background: -moz-linear-gradient(purple,silver); /* For Firefox 3.6 to 15 */
+	  background: linear-gradient(purple,silver); /* Standard syntax */
+	
+
+}

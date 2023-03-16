@@ -1,0 +1,122 @@
+<?php
+class Othello extends CI_Controller {
+    public function _construct()
+    {
+        parent::_construct();
+    }
+    
+    public function index()
+    {
+        // load the fuel_page library class and pass
+        // it the view file you want to load
+       
+            $this->load->view('othello/othello');
+            $this->othelloMode();
+       
+        
+    }
+   
+    public function test($num=0)[
+    	echo num;
+    	]
+    
+    
+    public function othelloMode(){
+		 $CI =& get_instance();
+		// Initialize Game Tables in Database
+        //$thebody = $this->othello_data["doc2"]->getElementById('gboard');
+        //$theBodyXML = $this->othello_data["doc2"]->saveXML($thebody);
+        //file_put_contents("application/views/othello/myboard.php",$theBodyXML);
+        $theBody = 	file_get_contents("fuel/application/views/othello/myboard.php");
+        console_log($theBody);
+        updateInitBoard($theBody);
+        updateMyBoard($theBody);
+        updateTheBody2($theBody);
+				           
+					  
+					  	
+	  	 $GLOBALS["symbol"] = $vars["symbol"];	
+		 $GLOBALS["message"] ="<span id='prbutton' style='color:purple'>**Press button to Play!**<br/>Your Symbol is ".$GLOBALS['symbol']."</span>"; 
+			// Display Board
+		 $GLOBALS["flag"] = 'no';  
+	
+  	     // Send to header to load correct CSS files
+		 $GLOBALS['whichPage'] = "othello";
+	
+		//Load header, Page, and Footer\
+	
+		$CI->load->view('othello/othello');
+		$CI->load->view('othello/myinitboard');
+		$CI->load->view('othello/footer'); 
+    }
+		
+
+	        
+  public function updateInitBoard($initBoard){
+            $CI =& get_instance();
+		    $myModel = $CI->load->model('OthelloBoards_model');	
+		    
+			$initBoard = base64_encode($initBoard);	
+			$values = array();
+			$where = array();
+			$values['initBoard'] = $initBoard;
+			$where['rowNum'] = 1;
+		    
+		    $result = $CI->OthelloBoards_model->update($values,$where);
+		    if ($result) {
+			    console_log("initBoard Table updated successfully");
+			} else {
+			    console_log("initBoard Table did not update");
+			}
+		    
+    }    
+
+  public function updateMyBoard($myBoard){
+           
+            $CI =& get_instance();
+		    $myModel = $CI->load->model('OthelloBoards_model');	
+		    
+			$myBoard = base64_encode($myBoard);	
+			$values = array();
+			$where = array();
+			$values['myBoard'] = $myBoard;
+			$where['rowNum'] = 1;
+		    
+		    $result = $CI->OthelloBoards_model->update($values,$where);
+		    if ($result) {
+			    console_log("myBoard Table updated successfully");
+			} else {
+			    console_log("myBoard Table did not update");
+			}
+    }   
+  
+  
+   public function updateTheBody2($theBody2){
+            $CI =& get_instance();
+		    $myModel = $CI->load->model('OthelloBoards_model');	
+		    
+			$theBody2 = base64_encode($theBody2);	
+			$values = array();
+			$where = array();
+			$values['theBody2'] = $theBody2;
+			$where['rowNum'] = 1;
+		    
+		    $result = $CI->OthelloBoards_model->update($values,$where);
+		    if ($result) {
+			    console_log("theBody2 Table updated successfully");
+			} else {
+			    console_log("theBody2 Table did not update");
+			}
+    }   
+    
+
+
+ public function console_log( $data ) {
+	  $output  = "<script>console.log( 'PHP debugger: ";
+	  $output .= json_encode(print_r($data, true));
+	  $output .= "' );</script>";
+	  echo $output;
+    }
+
+
+}
