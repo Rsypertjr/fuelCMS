@@ -505,8 +505,8 @@
 									</a>
 									<object data="http://carinfo.rsypertjr.net" height="200" width="300"></object>
 									<p>Get A Lot of Customized Car Info from Selected Web Sites. Very Automated by Google Programmable Search API
-									<br>The Code for PHP/Javascript/Bootstrap is here: 
-											<a href="" target="_blank">Car Info Code</a>
+									<br>The Code for PHP/Javascript/Bootstrap-based App is here: 
+											<a href="https://github.com/Rsypertjr/fuelCMS/tree/rsypertjrlocal" target="_blank">Car Info Code</a>
 									</p>
 								</li>
 							</ol>
