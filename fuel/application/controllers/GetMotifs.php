@@ -16,7 +16,7 @@ class GetMotifs extends CI_Controller {
 
     $motif = $this->input->post('motif');
 
-    $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Syp3rtjr2#@!');  //connect to mysqli
+    $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');  //connect to mysqli
     if($dropDb == 'yes')
       {
         //$dbhandle = mysqli_connect("localhost","rlswor5_richard",'Syp3rtjr2#@!');  //connect to mysqli
@@ -69,7 +69,7 @@ class GetMotifs extends CI_Controller {
           {
             echo "Failed to connect to MySQL: ".mysqli_connect_error(). "\n";
             echo "<br>";              
-          }
+          }Fu3lcm$pass
         else
           {
     
