@@ -176,7 +176,14 @@
 								target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser</a>.&nbsp;&nbsp;This app uses Vue3 Composition API which allows more function-based writing of components,&nbsp;inspired by React Hooks.&nbsp;&nbsp;
 								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser Code</a>.
 								</p>
-							</div>							
+							</div>		
+							<div class="carousel-item">
+								<h4>LAMP-based (Linux,Apache,MySQL,PHP) with Javascript/JQuery utilizing Google Programmable Search API</h4> 
+								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:<br><a href="http://carinfo.rsypertjr.net" target="_blank">PHP/Javascript/Bootstrap Google Programmable API App</a><br>
+								   Bootstrap 5, JQuery, Javascript and CSS within a PHP framework is used for data presentation and front-end logic.<br><a href="" target="_blank">PHP/Javascript/Bootstrap Google 
+								   Programmable API Code</a>.
+								</p>
+							</div>						
 						</div>
 						<div>
 							<!-- Indicators -->
@@ -484,8 +491,22 @@
 									</a>
 									<object data="othello" height="200" width="300"></object>
 									<p>Play the Othello Game using AJAX technology which will eliminate Page Reloads.
-									<br>The Code for PHP-based apps is here: 
-											<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">PHP Code</a>
+									<br>The Code for PHP-based app is here: 
+											<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">Othello Game Code</a>
+									</p>
+								</li>
+								<li class="list-group-item">
+									
+									<a href="http://carinfo.rsypertjr.net" target="_blank">
+										<p  class="sectionTitle" >	
+											<a href="http://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"
+												title="Click for Full Page App!">Car Info featuring Google Programmable API</a>
+										</p>
+									</a>
+									<object data="http://carinfo.rsypertjr.net" height="200" width="300"></object>
+									<p>Get A Lot of Customized Car Info from Selected Web Sites. Very Automated by Google Programmable Search API
+									<br>The Code for PHP/Javascript/Bootstrap-based App is here: 
+											<a href="https://github.com/Rsypertjr/fuelCMS/tree/rsypertjrlocal" target="_blank">Car Info Code</a>
 									</p>
 								</li>
 							</ol>

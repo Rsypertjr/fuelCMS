@@ -48,11 +48,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
-//*/
-//$route['default_controller'] = 'portfolio';
+*/
 $route['default_controller'] = 'fuel/page_router';
 $route['404_override'] = 'fuel/page_router';
 $route['translate_uri_dashes'] = FALSE;
+
 $route['test/(:num)'] = 'starter/test/$1';
 $route['othelloAjax'] = 'othelloAndMobile/othello';
 
@@ -91,6 +91,8 @@ $route['voteparser'] = 'otherApps/voteParser';
 
 $route['apitest'] = 'otherApps/apiTest';
 $route['getdata/(:any)'] = 'otherApps/getData/$1';
+$route['ajax-getMotifs']['post'] = 'getMotifs/index';
+
 
 $route['front'] = 'otherApps/bootPortfolio';
 $route['boot'] = 'otherApps/bootPortfolio';

@@ -146,16 +146,18 @@ function getXMLHttp()
   }
   return xmlHttp;
 }
-
+/*
 function makeRequest(snd,recid,drp,mess)
 {
         mobileLoader(mess);
+		let url_a = "<?php echo assets_path('ht_ml/getMotifs.php'); ?>"+"?dropDb="+drp+"&file="+snd;
+		alert(url_a);
 		$.ajax(
 			
 				{
 					type: "GET",
 					
-					url: "<?php echo assets_path('ht_ml/getMotifs.php'); ?>"+"?dropDb="+drp+"&file="+snd,
+					url: url_a,
 					success:function(result)
 						{
 						  
@@ -164,69 +166,95 @@ function makeRequest(snd,recid,drp,mess)
 						},
 					cache:false
 				});
+			
+
+		  fetch(url_a, {
+			method:"get",
+			headers: {
+				"Content-Type": "application/json",
+				"X-Requested-With": "XMLHttpRequest"
+			}
+		  }).then(function(result){
+			$('#'+recid).html(result);
+		  });
+}
+*/
+
+function makeRequest(snd,recid,drp,mess)
+{
+	mobileLoader(mess);
+	$.ajax({
+           url:  "<?php echo base_url(); ?>" + "index.php/getMotifs/index",
+           type: "POST",
+		   dataType:"json",
+           data: {dropDb:drp,file:snd,motif:null},
+           error: function() {
+              alert('Something is wrong');
+           },
+           success: function(data) {
+				$('#'+recid).html(result);
+           }
+        });
 }
  
 function makeRequest2(snd,recid,mess)
 {
  
 	mobileLoader(mess);
-	$.ajax(
+	$.ajax({
+           url:  "<?php echo base_url(); ?>" + "index.php/getMotifs/index",
+           type: 'POST',
+		   dataType:'json',
+           data: {dropDb:null,file:null,motif:snd},
+           error: function() {
+              alert('Something is wrong');
+           },
+		   success:function(result)
+			{
+				console.log(result);
+				if(result != null){						
+					//var arr = JSON.parse(result);
+					var arr = result;
+					var gheader = arr[0].header;
+					var grows = arr[0].rows;
 				
-				{
-					type:	"GET",
-					url: "<?php echo assets_path('ht_ml/getMotifs.php'); ?>"+"?motif="+snd,
-					success:function(result)
-						{
-							if(result != null){
-									
-									var arr = JSON.parse(result);
-									var gheader = arr[0].header;
-									var grows = arr[0].rows;
-									
-									var table = `<div id = "results_table" v-show = "rows.length > 0 && headers.length > 0">
-																				
-													<table id='example1'  class='table table-striped table-bordered' style='width:100%'>
-														<thead> 
-															<tr>
-																<th class="th-sm" v-for="header in headers" v-html="header"></th>
-															</tr>
-														</thead>
-														<tbody>                    
-															<template v-for = "row in rows">
-																<tr>
-																	<td v-for = "cell in row">{{cell}}</td>
-																</tr>  
-															</template>
-														</tbody>
-													</table>
-												</div>`;
-									$('#'+recid).html(table);
-									
-									vm = new Vue({
-										el: '#results_table',
-										data: {
-											test: "This is a Test",
-											headers : gheader,
-											row: '',
-											header: '',
-											cell:'',
-											itr: '',
-											rows: grows
-										},
-										mounted(){
-											$('#example1').DataTable();	
-										}
-									});
-									
-									
-													
-
-							}
-						
-
+					var table = `<div id = "results_table" v-show = "rows.length > 0 && headers.length > 0">																
+									<table id='example1'  class='table table-striped table-bordered' style='width:100%'>
+										<thead> 
+											<tr>
+												<th class="th-sm" v-for="header in headers" v-html="header"></th>
+											</tr>
+										</thead>
+											<tbody>                    
+												<template v-for = "row in rows">
+													<tr>
+														<td v-for = "cell in row">{{cell}}</td>
+													</tr>  
+												</template>
+											</tbody>
+										</table>
+									</div>`;
+					$('#'+recid).html(table);						
+					vm = new Vue({
+						el: '#results_table',
+						data: {
+							test: "This is a Test",
+							headers : gheader,
+							row: '',
+							header: '',
+							cell:'',
+							itr: '',
+							rows: grows
 						},
-					cache:false
-				});
+						mounted(){
+							$('#example1').DataTable();	
+						}
+					});	
+				}			
+
+			},
+		cache:false
+	});
   
    
 }
