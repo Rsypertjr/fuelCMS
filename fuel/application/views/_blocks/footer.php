@@ -8,19 +8,19 @@
 	    $GLOBALS['ind'] = 0;
 	  
 	   $menuOpts = array();
-	   $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');
+	   $dbhandle = mysqli_connect("database","rlswor5_richard",/*'Fu3lcm$pass'*/"Syp3rtjr2#@!");
 	   mysqli_select_db($dbhandle,"rlswor5_fuel_cms");
 	   $sql = 'SELECT * FROM footerMenuOpts'; 
 	   if(!$result = mysqli_query($dbhandle,$sql))
 	   		die("Error: ".mysqli_error());
 	   else
 		{  
-		$i = 0;               
-		while($newArray = mysqli_fetch_array($result))
-			{      							          
-				$menuOpts[$i] = $newArray;
-				$i++;
-			}             
+			$i = 0;               
+			while($newArray = mysqli_fetch_array($result))
+				{      							          
+					$menuOpts[$i] = $newArray;
+					$i++;
+				}             
 		} 
 
 

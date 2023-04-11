@@ -189,17 +189,15 @@ function makeRequest(snd,recid,drp,mess)
 		   dataType:"json",
            data: {dropDb:drp,file:snd,motif:null},
            error: function(request, status, error) {
-				//alert(request.responseText);
 				$('#'+recid).html(request.responseText);
            },
            success: function(result) {
-				alert(result);
 				$('#'+recid).html(result);
            }
         });
 }
  
-function makeRequest2(snd,recid,mess)
+function makeRequest2(snd,recid,drp,mess)
 {
  
 	mobileLoader(mess);
@@ -208,57 +206,62 @@ function makeRequest2(snd,recid,mess)
            type: 'POST',
 		   dataType:'json',
            data: {dropDb:null,file:null,motif:snd},
-           error: function() {
-              alert('Something is wrong');
+           error: function(request, status, error) {
+				$('#'+recid).html(request.responseText);
            },
 		   success:function(result)
 			{
-				console.log(result);
-				if(result != null){						
-					//var arr = JSON.parse(result);
-					var arr = result;
-					var gheader = arr[0].header;
-					var grows = arr[0].rows;
-				
-					var table = `<div id = "results_table" v-show = "rows.length > 0 && headers.length > 0">																
-									<table id='example1'  class='table table-striped table-bordered' style='width:100%'>
-										<thead> 
-											<tr>
-												<th class="th-sm" v-for="header in headers" v-html="header"></th>
-											</tr>
-										</thead>
-											<tbody>                    
-												<template v-for = "row in rows">
-													<tr>
-														<td v-for = "cell in row">{{cell}}</td>
-													</tr>  
-												</template>
-											</tbody>
-										</table>
-									</div>`;
-					$('#'+recid).html(table);						
-					vm = new Vue({
-						el: '#results_table',
-						data: {
-							test: "This is a Test",
-							headers : gheader,
-							row: '',
-							header: '',
-							cell:'',
-							itr: '',
-							rows: grows
-						},
-						mounted(){
-							$('#example1').DataTable();	
-						}
-					});	
-				}			
-
+				showResult(result,recid);
 			},
 		cache:false
 	});
   
    
+}
+
+function showResult(result,recid){
+	if(result != null){						
+		//var arr = JSON.parse(result);
+		var arr = result;
+		var gheader = arr.header;
+		var grows = arr.rows;
+	
+		var table = `<div id = "results_table" v-show = "rows.length > 0 && headers.length > 0">																
+						<table id='example1'  class='table table-striped table-bordered' style='width:100%'>
+							<thead> 
+								<tr>
+									<th class="th-sm" v-for="header in headers" v-html="header"></th>
+								</tr>
+							</thead>
+								<tbody>                    
+									<template v-for = "row in rows">
+										<tr>
+											<td v-for = "cell in row">{{cell}}</td>
+										</tr>  
+									</template>
+								</tbody>
+							</table>
+						</div>`;
+						
+		$('#'+recid).html(table);						
+		vm = new Vue({
+			el: '#results_table',
+			data: {
+				test: "This is a Test",
+				headers : gheader,
+				row: '',
+				header: '',
+				cell:'',
+				itr: '',
+				rows: grows
+			},
+			mounted(){
+				$('#example1').DataTable();	
+			}
+		});	
+	}	
+	//return;		
+	
 }
 
 function dropDb()
@@ -298,7 +301,7 @@ var recid = "wait";
   //{
     var fnm = am1 +  am2 + qu;
     var mess = "Please Wait for Database Response!";
-    makeRequest2(fnm,recid,mess);
+    makeRequest2(fnm,recid,"no",mess);
     
  // }
 }

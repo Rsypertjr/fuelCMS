@@ -125,15 +125,17 @@ class GetMotifs extends CI_Controller {
                             $headers[$i] = str_replace('XX','---',$headers[$i]);
                         }
                       $rows[$count][$i] = $newArray[$i];  
-                    }      
-                    echo json_encode($rows);         
+                    }       
                     $count++;   
                 }
                   //print_r($rows);
-                  $return_arr[] = array("header" => $headers, "rows" => $rows);
+                  $return_arr =  ["header" => $headers, "rows" => $rows];
+                  //print_r(json_encode($return_arr));
+                  header('Content-Type: application/json; charset=utf-8');
                   echo json_encode($return_arr);                
               } 
           }
+          return;
         
       }
     

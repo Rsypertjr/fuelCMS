@@ -1269,7 +1269,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
     } 
 	        
    function updateInitBoard($initBoard){
-            $servername = "localhost";
+            $servername = "database";
 			$username = "rlswor5_richard";
 			$password = 'Syp3rtjr2#@!';
 			$dbname = "rlswor5_fuel_cms";
@@ -1295,7 +1295,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
   }    
 
   function updateMyBoard($myBoard){
-            $servername = "localhost";
+            $servername = "database";
 			$username = "rlswor5_richard";
 			$password = 'Syp3rtjr2#@!';
 			$dbname = "rlswor5_fuel_cms";
@@ -1321,7 +1321,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
   
   
    function updateTheBody2($theBody2){
-            $servername = "localhost";
+            $servername = "database";
 			$username = "rlswor5_richard";
 			$password = 'Syp3rtjr2#@!';
 			$dbname = "rlswor5_fuel_cms";
@@ -1347,7 +1347,7 @@ public function getGameBoardSpace($x, $y, $twDimBoard)
   
   
   function selectTable($table){
-  	    $servername = "localhost";
+  	    $servername = "database";
 		$username = "rlswor5_richard";
 		$password = 'Syp3rtjr2#@!';
 		$dbname = "rlswor5_fuel_cms";
