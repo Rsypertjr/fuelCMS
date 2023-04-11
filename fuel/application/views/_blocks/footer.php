@@ -15,12 +15,12 @@
 	   		die("Error: ".mysqli_error());
 	   else
 		{  
-		$i = 0;               
-		while($newArray = mysqli_fetch_array($result))
-			{      							          
-				$menuOpts[$i] = $newArray;
-				$i++;
-			}             
+			$i = 0;               
+			while($newArray = mysqli_fetch_array($result))
+				{      							          
+					$menuOpts[$i] = $newArray;
+					$i++;
+				}             
 		} 
 
 
@@ -36,34 +36,33 @@
 					var title = [];
 					var slug = [];
 					
-					var index = "<?php foreach($menuOpts as $item){
-						
-							$item = (object)$item;
-						?>";
-			        		
-			        			slug.push("<?php echo $item->slug; ?>");
-			        			menu_Tag.push("<?php echo $item->menuTag; ?>");
-			        			title.push("<?php echo $item->title; ?>");
-			        			url1.push("<?php echo $item->url1; ?>");
-			        		
+					var index = "<?php foreach($menuOpts as $item){						
+											$item = (object)$item;
+								?>";
+								
+						slug.push("<?php echo $item->slug; ?>");
+						menu_Tag.push("<?php echo $item->menuTag; ?>");
+						title.push("<?php echo $item->title; ?>");
+						url1.push("<?php echo $item->url1; ?>");
+				
 			        var index2 = "<?php } ?>";
 				     	
 					for(var i=0;i<menu_Tag.length;i++){
-						    footerMenu(menu_Tag[i],title[i],url1[i]);
-							}
+						footerMenu(menu_Tag[i],title[i],url1[i]);
+					}
 	
 	
 			});  
 			
 			
 			
-	 function footerMenu(menuTag,title,url1){
-	 		$(menuTag).on('click',function()
-								{
-									$('html title').html(title); 
-									$(location).attr('href',url1);
-								});	
-							}
+	function footerMenu(menuTag,title,url1){
+		$(menuTag).on('click',function()
+			{
+				$('html title').html(title); 
+				$(location).attr('href',url1);
+			});	
+	}
 								
 </script>
 	<div id="footContainer" class="ui-widget ui-state-default ui-corner-all">

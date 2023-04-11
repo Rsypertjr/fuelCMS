@@ -47,148 +47,148 @@
 		
 		
 
-		<?php $page =  $vars['whichPage'];
-		     
-		      if($page == "inVegas"){ ?>
-				<link href = "<?php echo $vars['livingInLVCSS'];?>" rel="stylesheet" type="text/css" />
-				<title>Living in Vegas</title>
-		<?php 
-		       $pageTitle = "Living in Las Vegas";
-		       } ?>
+		<?php $page =  $vars['whichPage'];		     
+		      	if($page == "inVegas"){ ?>
+					<link href = "<?php echo $vars['livingInLVCSS'];?>" rel="stylesheet" type="text/css" />
+					<title>Living in Vegas</title>
+				<?php 
+		       		$pageTitle = "Living in Las Vegas";
+		        } ?>
 		
 		<?php $page =  $vars['whichPage'];
 			    if($page == "front"){ ?>
-				<link href = "<?php echo $vars['frontCSS'];?>" rel="stylesheet" type="text/css" />
-				<title>Portfolio Front</title>
-		<?php 
-			    $pageTitle = "Portfolio Front Page";	 
+					<link href = "<?php echo $vars['frontCSS'];?>" rel="stylesheet" type="text/css" />
+					<title>Portfolio Front</title>
+				<?php 
+			    	$pageTitle = "Portfolio Front Page";	 
 		        } ?>	
 		
 		<?php   $page = $vars['whichPage'];
-			    if($page == "amino"){?>
-				<link href = "<?php echo $vars['miniMotifCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Input Form for Minimotif Search</title>
-		<?php 
-		        $pageTitle = "Protein Minimotif Search Program";
-		        } ?>		
+			    if($page == "amino"){ ?>
+					<link href = "<?php echo $vars['miniMotifCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Input Form for Minimotif Search</title>
+				<?php 
+		        	$pageTitle = "Protein Minimotif Search Program";
+		        } ?>	
+
 		<?php   $page = $vars['whichPage'];
-			    if($page == "orominer1"){?>
-				<link href = "<?php echo $vars['orominer1CSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Orominer Program</title>
-		<?php 
-		        $pageTitle = "Orominer Program"; 
+			    if($page == "orominer1"){ ?>
+					<link href = "<?php echo $vars['orominer1CSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Orominer Program</title>
+				<?php 
+		        	$pageTitle = "Orominer Program"; 
 		        } ?>	
 		
 		<?php   $page = $vars['whichPage'];
-			    if($page == "orominer2"){?>
-				<link href = "<?php echo $vars['orominer2CSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Orominer with Histology</title>	
-		<?php 
-		        $pageTitle = "Orominer with Histology Program";
+			    if($page == "orominer2"){ ?>
+					<link href = "<?php echo $vars['orominer2CSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Orominer with Histology</title>	
+				<?php 
+		       	 	$pageTitle = "Orominer with Histology Program";
 		        } ?>
 		
 		
 		<?php   $page = $vars['whichPage'];
-			    if($page == "othello"){?>
-				<link href = "<?php echo $vars['othelloCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Othello Game</title>	
-		<?php   
-		        $pageTitle = "Othello Game"; 
+			    if($page == "othello"){ ?>
+					<link href = "<?php echo $vars['othelloCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Othello Game</title>	
+				<?php   
+		       		 $pageTitle = "Othello Game"; 
 		        } ?>
 		
 		<?php   $page = $vars['whichPage'];
-			    if($page == "techWriter"){?>
-				<link href = "<?php echo $vars['techWriterCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Technical Writing</title>	
-		<?php 
-		        $pageTitle = "Technical Writing"; 
+			    if($page == "techWriter"){ ?>
+					<link href = "<?php echo $vars['techWriterCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Technical Writing</title>	
+				<?php 
+		        	$pageTitle = "Technical Writing"; 
 		        } ?>
 		        
 		<?php   $page = $vars['whichPage']; 
-				if($page == "resumes"){?>
-				<link href = "<?php echo $vars['resumesCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Resume Viewing</title>
-				
-		<?php   
-		        $pageTitle = "Resume Viewing";  
+				if($page == "resumes"){ ?>
+					<link href = "<?php echo $vars['resumesCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Resume Viewing</title>				
+				<?php   
+		        	$pageTitle = "Resume Viewing";  
 		        } ?>
 		        
 		<?php   $page = $vars['whichPage'];
-			    if($page == "whitePaper"){?>
-				<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>White Paper</title>	
-		<?php   
-		        $pageTitle = "Technical White Paper";
+			    if($page == "whitePaper"){ ?>
+					<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>White Paper</title>	
+				<?php   
+		        	$pageTitle = "Technical White Paper";
 		        } ?>
 		        
 		<?php   $page = $vars['whichPage'];
-			    if($page == "engSpec"){?>
-				<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Engineering Specification</title>	
-		<?php  
-		        $pageTitle = "Engineering Process Specification";
+			    if($page == "engSpec"){ ?>
+					<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Engineering Specification</title>	
+				<?php  
+		        	$pageTitle = "Engineering Process Specification";
 		        } ?>
 		        
 		<?php   $page = $vars['whichPage'];
-			    if($page == "GraingerABCDE"){?>
-				<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Grainger ABCDE Series B</title>	
-		<?php  
-		        $pageTitle = "Grainger ABCDE Series B Manual";
+			    if($page == "GraingerABCDE"){ ?>
+					<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Grainger ABCDE Series B</title>	
+				<?php  
+		        	$pageTitle = "Grainger ABCDE Series B Manual";
 		        } ?>
 		        
 		<?php   $page = $vars['whichPage'];
-			    if($page == "GraingerCDE"){?>
-				<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Grainger CDE</title>	
-		<?php 
-		        $pageTitle = "Grainger CDE Manual"; 
+			    if($page == "GraingerCDE"){ ?>
+					<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Grainger CDE</title>	
+				<?php 
+		        	$pageTitle = "Grainger CDE Manual"; 
 				} ?>
 				
 		<?php   $page = $vars['whichPage'];
 			    if($page == "mecProductManual"){?>
 				<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
 				<title>MEC Product Manual VT 1.6</title>	
-		<?php   
-		        $pageTitle = "MEC Product Manual VT 1.6";
+				<?php   
+		        	$pageTitle = "MEC Product Manual VT 1.6";
 		        } ?>
 		        
 		<?php   $page = $vars['whichPage'];
-			    if($page == "codeDev"){?>
-				<link href = "<?php echo $vars['codeDevCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Code Development Specification</title>	
-		<?php   
-		        $pageTitle = "Code Development Technical Specification";
+			    if($page == "codeDev"){ ?>
+					<link href = "<?php echo $vars['codeDevCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Code Development Specification</title>	
+				<?php   
+		        	$pageTitle = "Code Development Technical Specification";
 				} ?>
 				
 		<?php   $page = $vars['whichPage'];
-				if($page == "emailForm"){?>
-				<link href = "<?php echo $vars['emailFormCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Making Contact</title>	
-		<?php  
-		        $pageTitle = "Making Contact With Me"; 
+				if($page == "emailForm"){ ?>
+					<link href = "<?php echo $vars['emailFormCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Making Contact</title>	
+				<?php  
+		        	$pageTitle = "Making Contact With Me"; 
 		        } ?>
 		       
 		<?php   $page = $vars['whichPage'];
-				if($page == "webTech"){?>
-				<link href = "<?php echo $vars['webTechCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Web Page Technologies Used</title>	
-		<?php 
-		        $pageTitle = "Web Page Technologies Used";
+				if($page == "webTech"){	?>
+					<link href = "<?php echo $vars['webTechCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Web Page Technologies Used</title>	
+				<?php 
+		        	$pageTitle = "Web Page Technologies Used";
 				} ?>
 				
 		<?php   $page = $vars['whichPage'];
-				if($page == "viewPDFResume"){?>
-				<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Show PDF Resume</title>	
-		<?php 
-		        $pageTitle = "Show PDF Resume";
+				if($page == "viewPDFResume"){ ?>
+					<link href = "<?php echo $vars['showPDFCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Show PDF Resume</title>	
+				<?php 
+		        	$pageTitle = "Show PDF Resume";
 				} ?>
-		<?php   if($vars['hfSwitch'] == "on"){?>
-				<link href = "<?php echo $vars['mobileSwitchCSS']; ?>" rel="stylesheet" type="text/css" />
-				<title>Mobile Portfolio</title>
-		<?php 
-		        $pageTitle = "Mobile Portfolio using JQuery Mobile"; 
+
+		<?php   if($vars['hfSwitch'] == "on"){ ?>
+					<link href = "<?php echo $vars['mobileSwitchCSS']; ?>" rel="stylesheet" type="text/css" />
+					<title>Mobile Portfolio</title>
+				<?php 
+		        	$pageTitle = "Mobile Portfolio using JQuery Mobile"; 
 				} ?>
 	
 	   
@@ -527,7 +527,7 @@
 								
 		
 								
-						/******************* HEADER BUTTON AND JQUERY UI CODE *********************************************************************************/		
+				/******************* HEADER BUTTON AND JQUERY UI CODE *********************************************************************************/		
 										
 								$('#btn1 button').button({
 									icons: {

@@ -16,7 +16,7 @@ class GetMotifs extends CI_Controller {
 
     $motif = $this->input->post('motif');
 
-    $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');  //connect to mysqli
+    $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');
     if($dropDb == 'yes')
       {
         //$dbhandle = mysqli_connect("localhost","rlswor5_richard",'Syp3rtjr2#@!');  //connect to mysqli
@@ -125,14 +125,17 @@ class GetMotifs extends CI_Controller {
                             $headers[$i] = str_replace('XX','---',$headers[$i]);
                         }
                       $rows[$count][$i] = $newArray[$i];  
-                    }               
+                    }       
                     $count++;   
                 }
                   //print_r($rows);
-                  $return_arr[] = array("header" => $headers, "rows" => $rows);
+                  $return_arr =  ["header" => $headers, "rows" => $rows];
+                  //print_r(json_encode($return_arr));
+                  header('Content-Type: application/json; charset=utf-8');
                   echo json_encode($return_arr);                
               } 
           }
+          return;
         
       }
     
@@ -291,38 +294,38 @@ public function buildProteinDb($filestr)  // function for building Protein Datab
 
   $trns = $this->assocArray($matches,$gi_number,0,0,0);
   $num_Species = $trns;
-  echo "Number of Species: ".$num_Species.'<br/>';
+  //echo "Number of Species: ".$num_Species.'<br/>';
 
   $pattern = '/ref\|[A-Za-z0-9(\.)(_)]+\|/';
   preg_match_all($pattern, $fileString, $matches2, PREG_OFFSET_CAPTURE);
   $trns2=$this->assocArray($matches2,$accession_num,0,0,$trns);
   $num_Acc_Nums = $trns2-$trns;
-  echo "Number of Accessions: ".$num_Acc_Nums.'<br/>';
+  //echo "Number of Accessions: ".$num_Acc_Nums.'<br/>';
 
 
   $pattern = '/\|\s+[A-Za-z]+[\w|\d|\s|\-|:|;|\(|\)|\,|\/|]+\[/';
   preg_match_all($pattern, $fileString, $matches3, PREG_OFFSET_CAPTURE);
   $trns3=$this->assocArray($matches3,$locus,0,0,$trns2);
   $num_Locus = $trns3-$trns2;
-  echo "Number of Names: ".$num_Locus.'<br/>';
+  //echo "Number of Names: ".$num_Locus.'<br/>';
 
   $pattern = '/[A-Z][A-Z]{50}[\w|\s]+[A-Z]/';
   preg_match_all($pattern, $fileString, $matches4, PREG_OFFSET_CAPTURE);
   $trns4=$this->assocArray($matches4,$seqnc,0,0,$trns3);
   $num_Seqs = $trns4-$trns3;
-  echo "Number of Sequences: ".$num_Seqs.'<br/>';
+  //echo "Number of Sequences: ".$num_Seqs.'<br/>';
 
 
   $pattern = '/\[[\w|\s|\(|\)|\-|\.]*\]/';
   preg_match_all($pattern, $fileString, $matches5, PREG_OFFSET_CAPTURE);
   $trns5=$this->assocArray($matches5,$spcName,0,0,$trns4);
   $num_Names=$trns5-$trns4;
-  echo "Number of Species Names: ".$num_Names.'<br/>';
+  //echo "Number of Species Names: ".$num_Names.'<br/>';
 
 
   //Create Proteins Database
 
-  $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Syp3rtjr2#@!');
+  $dbhandle = mysqli_connect("database","rlswor5_richard",'Syp3rtjr2#@!');
 
   if(mysqli_connect_errno())
     {
@@ -340,56 +343,69 @@ public function buildProteinDb($filestr)  // function for building Protein Datab
       $dbName = "rlswor5_proteins";
       //mysqli_select_db($dbhandle,$dbName)
      
-      $createDb = "CREATE DATABASE IF NOT EXISTS ";
+      $createDb = "CREATE DATABASE ";
       $sql= $createDb.$dbName;
       //exit();
       //$create_db = $this->proteinDatabaseCreate($sql,$dbhandle);
      
-      if (mysqli_query($dbhandle,$sql)) {
-        if (mysqli_warning_count($dbhandle) == 0) { 
-             echo "Database created successfully";
-                }
-        } else {
-                echo "Error creating database: " . mysqli_error($mysql);
+      mysqli_query($dbhandle,$sql);
+      if (mysqli_error($dbhandle)) 
+        {
+            echo "Error creating database: " . mysqli_error($dbhandle);
+            echo "<br>";
+            //exit();
+            return false;
         }
-        
+      else if(!mysqli_error($dbhandle))
+        {         
+            echo "Database created successfully";
+        }
+   
       mysqli_select_db($dbhandle,$dbName);
-      $sql = "CREATE TABLE IF NOT EXISTS protein (id int not null primary key auto_increment, locus varchar(150),speciesNumber varchar(75),speciesName varchar(75), accessionNumber varchar(75), proteinSequence varchar(2000), proteinLength int)";
-      if(mysqli_query($dbhandle,$sql)) {
-        if(mysqli_warning_count($dbhandle) == 0){
-          for($i=0;$i<$num_Seqs;$i++)  // clean up strings and fill protein database
-          {
-            $locus[$i][0]= substr($locus[$i][0],1,strlen($locus[$i][0])-2);  // locus strings
-            $lc = $locus[$i][0];
-            echo '<br/>'.$lc;
-  
-            $gi_number[$i][0]= substr($gi_number[$i][0],3,strlen($gi_number[$i][0])-7);  //  gi-number or species-number
-            $gi = $gi_number[$i][0];
-            echo '<br/>'.$gi;
-  
-            $accession_num[$i][0]= substr($accession_num[$i][0],4,strlen($accession_num[$i][0])-5);  //  accession numbers
-            $acc = $accession_num[$i][0];
-            echo '<br/>'.$acc;
-  
-            $seqnc[$i][0]= substr($seqnc[$i][0],4,strlen($seqnc[$i][0]));  //  sequences
-            $sq =  $seqnc[$i][0];
-            echo '<br/>'.$sq;
-  
-            $spcNm = $spcName[$i][0];      // species Names
-  
-            $seqLength[$i] = strlen($sq);
-            //echo '<br/> Length of String:  '.$locus_length[$i];
-            $id = $i+1; 
-            $sql = "INSERT INTO protein values('$id', '$lc', '$gi','$spcNm', '$acc', '$sq','$seqLength[$i]' )";   
-            $result = mysqli_query($dbhandle,$sql);                              
-          } 
-  
-          
+      $sql = "CREATE TABLE protein (id int not null primary key auto_increment, locus varchar(150),speciesNumber varchar(75),speciesName varchar(75), accessionNumber varchar(75), proteinSequence varchar(2000), proteinLength int)";
+      mysqli_query($dbhandle,$sql);
+      if (mysqli_error($dbhandle)) 
+        {
+         
+          echo "Error message: ". mysqli_error($dbhandle);
+          echo "<br>";
+          //exit();
+          return false;
         }
-        else {
-          echo "Protein Table already exist!!";
-        }
-      }
+      else if(!mysqli_error($dbhandle))
+        {
+          if(mysqli_warning_count($dbhandle) == 0){
+            for($i=0;$i<$num_Seqs-1;$i++)  // clean up strings and fill protein database
+            {
+              $locus[$i][0]= substr($locus[$i][0],1,strlen($locus[$i][0])-2);  // locus strings
+              $lc = $locus[$i][0];
+              //echo '<br/>'.$lc;
+    
+              $gi_number[$i][0]= substr($gi_number[$i][0],3,strlen($gi_number[$i][0])-7);  //  gi-number or species-number
+              $gi = $gi_number[$i][0];
+              //echo '<br/>'.$gi;
+    
+              $accession_num[$i][0]= substr($accession_num[$i][0],4,strlen($accession_num[$i][0])-5);  //  accession numbers
+              $acc = $accession_num[$i][0];
+              //echo '<br/>'.$acc;
+    
+              $seqnc[$i][0]= substr($seqnc[$i][0],4,strlen($seqnc[$i][0]));  //  sequences
+              $sq =  $seqnc[$i][0];
+              //echo '<br/>'.$sq;
+    
+              $spcNm = $spcName[$i][0];      // species Names
+    
+              $seqLength[$i] = strlen($sq);
+              //echo '<br/> Length of String:  '.$locus_length[$i];
+              $id = $i+1; 
+              $sql = "INSERT INTO protein values('$id', '$lc', '$gi','$spcNm', '$acc', '$sq','$seqLength[$i]' )";   
+              $result = mysqli_query($dbhandle,$sql);                              
+            }  
+          }
+         
+        }   
+      
+   
       
       $this->buildMinimotifDatabase($dbhandle);
       //mysqli_close($dbhandle); 
@@ -430,13 +446,20 @@ public function buildMinimotifDatabase($dbhandle)
    
     // execute SQL
     mysqli_query($dbhandle, $sql);
-  
-       // Building MiniMotifs             
-       $sql = "SELECT * FROM protein";
-       $result = mysqli_query($dbhandle,$sql);  // check for already existing miniMotif table
-       echo "Please Wait... MiniMotifs Table is building...";
-	     while($newArray = mysqli_fetch_array($result, MYSQLI_ASSOC)) // One Protein per Loop
-		      {
+    if (mysqli_error($dbhandle)) 
+    {
+        echo "Error building MiniMotifs tables.." . mysqli_error($dbhandle);
+        echo "<br>";
+        //exit();
+        return false;
+    }
+    else if(!mysqli_error($dbhandle))
+      {         
+        // Building MiniMotifs             
+        $sql = "SELECT * FROM protein";
+        $result = mysqli_query($dbhandle,$sql);  // check for already existing miniMotif table
+        while($newArray = mysqli_fetch_array($result, MYSQLI_ASSOC)) // One Protein per Loop
+          {
             
             $seq = $newArray["proteinSequence"];
             $acc = $newArray["accessionNumber"];
@@ -456,7 +479,12 @@ public function buildMinimotifDatabase($dbhandle)
                   }
               }  // end for
           
-          }//End While       
+          } //End While       
+        echo "Please Wait... MiniMotifs Table Are Done Building..."; 
+        return true;
+      }
+  
+     
   
 }  // end of buildMinimotifDatabase
 
