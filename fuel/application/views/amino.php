@@ -16,8 +16,7 @@ function mobileLoader(message)
 				i++;
 			},50 ); 
 	}
-	
-	
+
 $(document).ready(function()
 	{
 	
@@ -182,16 +181,19 @@ function makeRequest(snd,recid,drp,mess)
 
 function makeRequest(snd,recid,drp,mess)
 {
-	mobileLoader(mess);
+	if(!mess.includes('Drop'))
+		mobileLoader(mess);
 	$.ajax({
            url:  "<?php echo base_url(); ?>" + "index.php/getMotifs/index",
            type: "POST",
 		   dataType:"json",
            data: {dropDb:drp,file:snd,motif:null},
-           error: function() {
-              alert('Something is wrong');
+           error: function(request, status, error) {
+				//alert(request.responseText);
+				$('#'+recid).html(request.responseText);
            },
-           success: function(data) {
+           success: function(result) {
+				alert(result);
 				$('#'+recid).html(result);
            }
         });
@@ -261,8 +263,8 @@ function makeRequest2(snd,recid,mess)
 
 function dropDb()
 {
- 
-  makeRequest("none","wait","yes");
+  var mess = "Trying to Drop Exisiting Database!";
+  makeRequest("none","wait","yes",mess);
 }
 
 
