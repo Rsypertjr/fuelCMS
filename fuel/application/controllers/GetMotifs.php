@@ -16,7 +16,7 @@ class GetMotifs extends CI_Controller {
 
     $motif = $this->input->post('motif');
 
-    $dbhandle = mysqli_connect("database","rlswor5_richard",'Syp3rtjr2#@!');  //connect to mysqli
+    $dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');
     if($dropDb == 'yes')
       {
         //$dbhandle = mysqli_connect("localhost","rlswor5_richard",'Syp3rtjr2#@!');  //connect to mysqli

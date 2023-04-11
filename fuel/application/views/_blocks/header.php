@@ -203,7 +203,7 @@
 			    $GLOBALS['ind'] = 0;
 				
 				$menuOpts = array();
-				$dbhandle = mysqli_connect("database","rlswor5_richard",/*'Fu3lcm$pass'*/"Syp3rtjr2#@!");
+				$dbhandle = mysqli_connect("localhost","rlswor5_richard",'Fu3lcm$pass');
 				mysqli_select_db($dbhandle,"rlswor5_fuel_cms");
 				$sql = 'SELECT * FROM headMenuOpts'; 
 				if(!$result = mysqli_query($dbhandle,$sql))
