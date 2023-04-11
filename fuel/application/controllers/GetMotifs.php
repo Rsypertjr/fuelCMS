@@ -325,7 +325,7 @@ public function buildProteinDb($filestr)  // function for building Protein Datab
 
   //Create Proteins Database
 
-  $dbhandle = mysqli_connect("database","rlswor5_richard",'Syp3rtjr2#@!');
+  $dbhandle = mysqli_connect("database","rlswor5_richard",'Fu3lcm$pass');
 
   if(mysqli_connect_errno())
     {
