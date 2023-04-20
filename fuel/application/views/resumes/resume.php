@@ -69,13 +69,12 @@
 	<p id="heading">
 		Richard L. Sypert Jr.
 		<br/>8612 Shady Pines Drive
-		<br/>Las Vegas, Nevada 89143
-		<br/>Home Phone: (702) 655-4901 Anytime
+		<br/>Las Vegas, Nevada 
 		<br/>Cell Phone: (702) 203-1674 Anytime
 		<br/>Citizenship: United States
 		<br/><span id="emailAdd1">Email:  Rsypertjr@hotmail.com</span>
 		<br/><span id="emailAdd2">Email:  Rsypertjr@gmail.com</span>
-		<br/><a href="http://159.65.100.7/fuel2/index.php/front">Website Portfolio</a>
+		<br/><a href="https://rsypertjr.net">Website Portfolio</a>
 	</p>
 	
    

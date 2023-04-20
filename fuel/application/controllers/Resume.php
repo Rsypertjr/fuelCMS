@@ -143,7 +143,7 @@ class Resume extends CI_Controller {
     
     function pdfResume(){
      
-        $vars['pdfFilePath'] = pdf_path('Richard-Sypert-Jr-06-22-latest.pdf');
+        $vars['pdfFilePath'] = pdf_path('Richard-Sypert-Jr-01-2023.pdf');
         $vars['pdfFileName'] = 'Resume for Richard L. Sypert';
         $vars['pageTitle'] = 'Resume for Richard L. Sypert';
         $this->load->view('showPDF/showAPDFDoc',$vars);
