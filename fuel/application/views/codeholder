@@ -1,0 +1,484 @@
+	
+		<body data-spy="scroll" data-target=".navbar" data-offset="50">
+ 			<div class="container-fluid" style="background-color:#F44336;color:#fff;height:200px;">
+			  <h1>Scrollspy & Affix Example</h1>
+			  <h3>Fixed navbar on scroll</h3>
+			  <p>Scroll this page to see how the navbar behaves with data-spy="affix" and data-spy="scrollspy".</p>
+			  <p>The navbar is attached to the top of the page after you have scrolled a specified amount of pixels, and the links in the navbar are automatically updated based on scroll position.</p>
+			</div>
+			<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			          <span class="icon-bar"></span>
+			          <span class="icon-bar"></span>
+			          <span class="icon-bar"></span>                        
+			        </button>
+			      <a class="navbar-brand" href="#">Bootstrap Work Portfolio</a>
+			    </div>
+			    <div>
+			      <div class="collapse navbar-collapse" id="myNavbar">
+			        <ul class="nav navbar-nav">
+			          <li><a href="#home">Home</a></li>
+			          <li><a href="#about">About</a></li>
+			          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Development <span class="caret"></span></a>
+			            <ul class="dropdown-menu">
+			              <li><a href="#lamp">PHP/MySQL/HTML/CSS/JQuery/DOM/XML</a></li>
+			              <li><a href="#wordPress">WordPress</a></li>
+			              <li><a href="#mobile">JQuery Mobile</a></li>
+			              <li><a href="#codeStorage">Code Storage</a></li>
+			              <li><a href="#frameworks">Frameworks</a></li>
+			            </ul>
+			          </li>
+			          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Technical Writing <span class="caret"></span></a>
+			            <ul class="dropdown-menu">
+			              <li><a href="#manuals">Production and Maintenance Manuals</a></li>
+			              <li><a href="#specifications">Technical Specification Manuals</a></li>
+			            </ul>
+			          </li>
+			          <li><a href="#resume">My Resume</a></li>
+			          <li><a href="#living">Living In Vegas</a></li>
+			        </ul>
+			      </div>
+			    </div>
+			  </div>
+			</nav>    
+		    
+
+			<!---- End of Navigation Header --------------------------------->		   
+
+		      	<div id="myCarousel"  class="carousel slide" data-ride="carousel"> 
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				    <li data-target="#myCarousel" data-slide-to="1"></li>
+				    <li data-target="#myCarousel" data-slide-to="2"></li>
+				    <li data-target="#myCarousel" data-slide-to="3"></li>
+				    <li data-target="#myCarousel" data-slide-to="4"></li>
+				    <li data-target="#myCarousel" data-slide-to="5"></li>
+				    <li data-target="#myCarousel" data-slide-to="6"></li>
+				    <li data-target="#myCarousel" data-slide-to="7"></li>
+				    <li data-target="#myCarousel" data-slide-to="8"></li>
+				    <li data-target="#myCarousel" data-slide-to="9"></li>  
+				    <li data-target="#myCarousel" data-slide-to="7"></li> 
+				  </ol> 
+				
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+				    <div class="item active">
+				      <img src="" alt="Work1" style="width:100%">
+				    </div>
+				
+				    <div class="item">
+				      <img src="" alt="Work2" style="width:100%">
+				    </div>
+				
+				    <div class="item">
+				      <img src="" alt="Work3" style="width:100%">
+				    </div>
+				    
+				     <div class="item">
+				      <img src="" alt="Work4" style="width:100%">
+				    </div>
+				    
+				     <div class="item">
+				      <img src="" alt="Work5" style="width:100%">
+				    </div>
+				    
+				     <div class="item">
+				      <img src="" alt="Work6" style="width:100%">
+				    </div>
+				    
+				     <div class="item">
+				      <img src="" alt="Work7" style="width:100%">
+				    </div>
+				    
+				     <div class="item">
+				      <img src="" alt="Work8" style="width:100%">
+				    </div>
+				    
+				     <div class="item">
+				      <img src="" alt="Work9" style="width:100%">
+				    </div>
+				    
+				     <div class="item">
+				      <img src="" alt="Work10" style="width:100%">
+				    </div>
+				     <div class="item">
+				      <img src="" alt="Vegas8" style="width:100%">
+				     </div> 
+				  </div>
+				  
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+			  </div> <!-- end of myCarousel -->
+			   
+		
+		          <div id="home" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+			      	  		<span>Home</span>	
+			      	  		<span class="glyphicon glyphicon-home"></span>
+		      	  		</div>
+		      	  		<div class="panel-body">
+			      	  		<li class="list-group-item list-group-item-success">
+						  	  	<a href="">
+						  	  		<p>Log-in to the FUEL-CMS</p>
+						  	  		<p>Login to the FUEL-CMS Content Management System. Use the Username and Password 
+						  	  		(guest).Log-in to the FUEL-CMS
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-warning">
+						  	  	<a href="">
+						  	  		<p>FUEL-CMS Git Repository</p>
+						  	  		<p>Link to GIT Repository for the FUEL-CMS Content Management System.</p>
+						  	  	</a>
+						  	</li>
+		      	  		</div>
+		      		</div>
+		      	  </div>
+		      	
+		
+		
+		
+		          <div id="about" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+			      	  		<span>About</span>	
+			      	  		<span class="glyphicon glyphicon-wrench"></span>
+		      	  		</div> 
+			      	    <div class="panel-body">
+			      	    	<li class="list-group-item list-group-item-success">
+						  	  	<a href="webTech">
+						  	  		<p>Web Page Technologies Used</p>
+						  	  		<p>This is a page that gives explanation of the programming technologies used on this site.
+						  	  		</p>
+						  	  	</a>
+					  	    </li>
+						  	<li class="list-group-item list-group-item-warning">
+						  	  	<a href="#">
+						  	  		<p>Making Contact</p>
+						  	  		<p>You can email me if you like. Also more contact info is given in my resume.</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-warning">
+						  	  	<a href="#">
+						  	  		<p>Personal Profile</p>
+						  	  		<p>You can view my Linked-In Personal Profile for more info on me.</p>
+						  	  	</a>
+						  	</li>
+			      	    </div>
+		      	  	</div>
+		      	  </div>	
+		
+		
+		
+		     	
+		      	  <div id="lamp" class="container-fluid">
+		      	  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+		      	  			<span>Software Development</span>
+		      	  			<span class="glyphicon glyphicon-lamp"></span>
+		      	  		</div>
+		      	  		<div class="panel-body">
+		      	  			<li class="list-group-item list-group-item-success">
+						     	<a href="amino">
+						     		<p>Amino Acid Code Sequence Analyzer</p>
+						     		<p>This program gives statistics for all combinations of 
+						     		amino acid sequences within a protein. The protein sequence is 
+						     		parsed by regex techniques from a text file, into a MySQL database. 
+						     		The first and last amino acid is chosen in the GUI, as well as, 
+						     		the desired statistical output. The database accessed by JavaScript-AJAX to PHP-MySQL 
+						     		on the server side which returns the statistics.
+						     		</p>
+						     	</a>
+						     </li>
+					         <li class="list-group-item list-group-item-warning">
+					         	<a href="orominer1">
+					         		<p>Human Organ System Analyzer 1</p>
+					         		<p>The Orominer program shows a hierarchical organization of the human body constitution. 
+					         		Its top level is Organ Systems.  It uses JavaScript, JQuery for event synchronization between 
+					         		hierarchical display and graphic display, as well as, dynamic generation of SVG graphical elements 
+					         		based on DOM HTML elements.  MySQL Database information is converted into XML format using PHP 
+					         		for up front access by the code for generation of Hierachical Display. Unfortunately ONLY THE 
+					         		First 3 NODES Of DATA was developed at Project Completion.
+					         		</p>
+					         	</a>
+						      </li>
+					         <li class="list-group-item list-group-item-danger">
+					         	<a href="orominer2">
+					         		<p>Human Organ System Analyzer 2</p>
+					         		<p>This orominer program contains Histological Data within the Hierarchical Organization of Human Body 
+					         		makeup. Histological Data is information about Human Organs and their tissues and cells. This 
+					         		application uses JavaScript Objects to store active data requests from which graphics is generated.
+					         		</p>
+					         	</a>
+					         </li>
+					         <li class="list-group-item">
+					         	<a href="othello">
+					         		<p>Play Othello Game thru AJAX</p>
+					         		<p>Play the Othello Game using AJAX technology which will eliminate Page Reloads.</p>
+					         	</a>
+					         </li>
+		      	  	  	</div>
+				  	</div>
+			     </div>
+				  
+				<div id="wordPress" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+		      	  			<span>WordPress Apps</span>
+		      	  			<span class="glyphicon glyphicon-tasks"></span>
+		      	  		</div>
+		      	  	    <div class="panel-body">
+			      	  	  <li class="list-group-item list-group-item-success">
+					  	  	<a href="caribCatering">
+					  	  		<p>Vegas Caribbean Catering - In Development</p>
+					  	  		<p>A Simple WordPress skeleton site for a friends Catering business. The Woo Commerce 
+					  	  		Plug-in could be used for online ordering and payment transactions, 
+					  	  		but the client wants it kept simple.
+					  	  		</p>
+					  	  	</a>
+					  	  </li>
+				          <li class="list-group-item list-group-item-warning">
+				          	<a href="caribStore">
+				          		<p>Caribbean Food Store - In Development</p>
+				          		<p>A Sample WordPress site for a friends Caribbean Food Catering. The 
+				          		Woo Commerce Plug-in is utilized ordering and payment transactions.
+				          		</p>
+				          	</a>
+			          	  </li>
+				          <li class="list-group-item list-group-item-danger">
+				          	<a href="wpPortfolio">
+				          		<p>WordPress Work Portfolio</p>
+				          		<p>Link to a WordPress version of My work portfolio.</p>
+				          	</a>
+				          </li>
+				        </div>
+				    </div>
+				 </div>
+				 
+				 
+				 <div id="mobile" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+		      	  			<span>Mobile Portfolio</span>
+		      	  			<span class="glyphicon glyphicon-phone"></span>
+		      	  		</div>
+		      	  	    <div class="panel-body">
+		      	  	    	<li class="list-group-item list-group-item-success">
+						  	  	<a href="mobile">
+						  	  		<p>JQuery Mobile Web Portfolio</p>
+						  	  		<p>Link to a Mobile version of My work portfolio. I developed it using JQuery Mobile
+						  	  		and it should run on Android devices.
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+		      	  	    </div>
+		      	    </div>
+		      	 </div>
+				 
+				 
+				 
+				 <div id="codeStorage" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+		      	  			<span>Code Storage</span>
+		      	  			<span class="glyphicon glyphicon-hdd"></span>
+		      	  		</div>
+		      	  		<div class="panel-body">
+				      	  	<li class="list-group-item list-group-item-success">
+						  	  	<a href="codeRepo">
+						  	  		<p>Code Repository</p>
+						  	  		<p>Link to Repository of Code I have written. See the Git Repository link for the 
+						  	  		code of this site done within the CodeIgniter MVC Framework.
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-warning">
+						  	  	<a href="gitRepo">
+						  	  		<p>GIT Repository</p>
+						  	  		<p>Link to GIT code repository provided thru BitBucket.</p>
+						  	  	</a>
+						  	</li>
+		      	  		</div>
+		      	  	  </div>
+		      	  </div> 
+		      	  
+		      	  
+		      	  
+		      	  <div id="frameworks" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+		      	  			<span>Frameworks</span>
+		      	  			<span class="glyphicon glyphicon-tree-conifer"></span>
+		      	  		</div>
+		      	  		<div class="panel-body">
+				      	  	<li class="list-group-item list-group-item-success">
+						  	  	<a href="#">
+						  	  		<p>Ruby On Rails -- In Training</p>
+						  	  		<p>I was engaging in self-directed study of Ruby-On-Rails, 
+						  	  		which involves MVC application development based on REST architecture.
+						  	  		I may resume in the future.
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-warning">
+						  	  	<a href="laravelApp1">
+						  	  		<p>Laravel MVC</p>
+						  	  		<p>I was asked to complete Laravel MVC programs in application for a jobs. I have recently 
+						  	  		learned the following technologies: Laravel MVC, Twitter Bootstrap, Active Campaign API, 
+						  	  		Facebook and GitHub authentication, Homestead Development, Vagrant Virtual 
+						  	  		Server. I have coded a 2 programs for job applications and they can be accessed by the buttons below.
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-danger">
+						  	  	<a href="laravelApp2">
+						  	  		<p>Laravel MVC</p>
+						  	  		<p>I learned the Homestead development environment which utilizes Vagrant VM Linux Server, 
+						  	  		from which I deployed the finished application to Heroku. PhpUnit testing was used 
+						  	  		to develop this code. 
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-info">
+						  	  	<a href="laravelApp3">
+						  	  		<p>Laravel MVC</p>
+						  	  		<p>I developed this application using Laravel Homestead Environment for calculating Homeschool 
+						  	  		grade transcripts for my kids. This app is located by adding '/cinp' to the base url of 
+						  	  		Application 2. This application is developed utilizing PHPUnit, including Database seeding.   
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-success">
+						  	  	<a href="angularApp">
+						  	  		<p>Angular2 JavaScript and Redux State Container</p>
+						  	  		<p>I was asked to complete Laravel MVC program in application for a jobs. I 
+						  	  		learned the following technologies to complete the program in about 2 weeks: 
+						  	  		Laravel MVC, Twitter Bootstrap, Active Campaign API, Facebook and GitHub authentication. 
+						  	  		The program uses Facebook and GitHub authentication and allows a user to create contacts 
+						  	  		and register them with Active Campaign.A Git Repo of the Code is Here
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+		      	  		</div>
+		      	  	 </div> 
+		      	  </div>
+		      	   	
+		      	<div id="manuals" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+		      	  			<span>Production Maintenance Manuals</span>
+		      	  			<span class="glyphicon glyphicon-edit"></span>
+		      	  		</div>
+		      	  		<div class="panel-body">
+		      	  			<li class="list-group-item list-group-item-success">
+						  	  	<a href="graingerABCDE">
+						  	  		<p>Grainger ABCDE Series B</p>
+						  	  		<p>This is a Maintenance and Product Information Manual tailored for a customers implementation 
+						  	  		of a Motor Efficiency Controller (MEC). It is a new generation product manual. I wrote it
+						  	  		using Adobe InDesign according to the customers style rules
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-warning">
+						  	  	<a href="graingerCDE">
+						  	  		<p>Grainger CDE</p>
+						  	  		<p>This is a Maintenance and Product Information Manual tailored for a customers implementation of a 
+						  	  		Motor Efficiency Controller (MEC). It is a new generation product manual. I wrote it in Adobe InDesign 
+						  	  		according to the customer's style rules.
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-danger">
+						  	  	<a href="mecPManual">
+						  	  		<p>MEC Product Manual VT 1.6</p>
+						  	  		<p>This is a Product Manual for a Motor Efficiency Controller (MEC). It is a new generation product manual. 
+						  	  		I wrote it in Adobe InDesign according to the customer's style rules.
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+		      	  		</div>
+		      	  	 </div> 
+		      	  </div>
+		      	  
+		      	  
+		      	<div id="specifications" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+		      	  			<span>Technical Specification Documents</span>
+		      	  			<span class="glyphicon glyphicon-edit"></span>
+		      	  		</div>
+		      	  		<div class="panel-body">
+		      	  			<li class="list-group-item list-group-item-success">
+						  	  	<a href="whitePaper">
+						  	  		<p>White Paper</p>
+						  	  		<p>This is a technical specification called a White Paper which explains the technology behind 
+						  	  		a companies product. In this case an Electrical Motor Energy Efficiency Device.
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-warning">
+						  	  	<a href="engSpec">
+						  	  		<p>Engineering Specification</p>
+						  	  		<p>This is a technical specification for the Clark County Land Development Approval process. 
+						  	  		I authored it as an Environmental Health Engineer for Southern Nevada Health District.
+						  	  	</a>
+						  	</li>
+						  	<li class="list-group-item list-group-item-danger">
+						  	  	<a href="softwareTW">
+						  	  		<p>Code Development Specification</p>
+						  	  		<p>This is a technical specification for guidance in developing Object Oriented Code. It was 
+						  	  		written as a HTML document.
+						  	  		</p>
+						  	  	</a>
+						  	</li>
+		      	  		</div>
+		      	  	</div>
+		      </div>
+		      
+		      <div id="resume" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+			      	  		<span>Resume</span>	
+			      	  		<span class="glyphicon glyphicon-book"></span>
+			      	  	</div>
+			      	  	<div class="panel-body">
+				      	  	<li class="list-group-item list-group-item-success">
+						  	  	<a href="dynResume">
+						  	  		<p>Dynamic HTML Resume w/Downloads</p>
+						  	  		<p>Here is a link to my resume which uses dynamic CSS formatting.</p>
+						  	  	</a>
+						  	</li>
+				      	 </div>	
+				     </div>
+			  </div>
+		
+		      
+		     <div id="living" class="container-fluid">
+				  	<div class="panel panel-primary">
+		      	  		<div class="panel-heading">
+			      	  		<span>Living In Las Vegas</span>	
+			      	  		<span class="glyphicon glyphicon-camera"></span>
+		      	  		</div> 
+		      	  		<div class="panel-body">
+		      	  			<li class="list-group-item list-group-item-success">
+						  	  	<a href="inVegas">
+						  	  		<p>Having Vegas Family Fun</p>
+						  	  		<p>See a slide show and facts about Family Fun In Vegas.</p>
+						  	  	</a>
+						  	</li>
+		      	  		</div>
+		      	  	</div>
+		     </div>
+		      
+	 </body>
+</html>

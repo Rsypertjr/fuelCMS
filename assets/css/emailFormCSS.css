@@ -1,0 +1,66 @@
+			span.ui-button-icon-primary.ui-icon.ui-icon-home ,span.ui-button-icon-secondary.ui-icon.ui-icon-locked, span.ui-button-icon-secondary.ui-icon.ui-icon-unlocked{
+			     
+					-webkit-transform: scale(2);
+					-moz-transform: scale(2);
+					transform: scale(2);
+					
+				}			
+			
+	    form {margin-bottom:0em}	
+            input.ui-button {font-size:2.1em}
+		
+	    #emess {position:relative;float:left;padding:0.3em 1em 0em 1em;font-size:2.0em;height:auto}
+		#topbar {position:relative;width:auto;height:4em;background-color:tan;font-size:1.4em; padding:15px}
+		.submit {
+				position:relative;
+				float:right;
+				height:1.5em;
+				padding:0.2em;
+			        border-radius:5px;
+				width:auto;
+				border:2px solid black;
+				background-color:orange;
+				font-size:2.0em;
+				margin:0.2em 0.5em
+			}
+		.submit:hover {
+				color:grey;
+				background-color:#FFCC99;
+				box-shadow:2px 2px 2px 2px #B0B0B0 inset,-2px -2px 2px 2px #B0B0B0 inset;
+				
+			      }
+		#emailContainer {position:relative;width:100%;height:80%;font-size:1.5em}
+		#wayoutC {
+			position:relative;
+			height:auto;
+                        float:left;
+			width:97%;
+                        background-color:beige;
+			border-style:ridge;
+		    	border-color:grey;
+		    	border-width:20px 20px 20px 20px;
+			}
+		#leftcol {position:relative;float:left;width:27em;margin:2.0em;height:auto;padding:1em;border:4px ridge tan}
+		#rightcol {position:relative;float:left;width:40em;margin:2.0em;height:auto;padding:1em;border:4px ridge tan}
+		
+		.nameField, .fromField, .bccField,.ccField {position:relative;width:75%;color:grey}
+		#from, #name, #Bcc, #Cc, #subject, #message {
+                                  position:relative;
+                                  width:85%;
+                                  margin-left:1.0em;
+                                  margin-top:0.5em;
+                                  margin-bottom:1.5em;
+                            }
+		input, textarea {cursor:pointer;font-size:1.3em}
+		#message {}
+		.subj  {position:relative}
+		.subj, .mess {color:grey}
+		
+		#headBar
+			{
+			 
+			 border-style:ridge;
+			 border-color:grey;
+			 border-width:20px 20px 20px 20px;
+			
+			}

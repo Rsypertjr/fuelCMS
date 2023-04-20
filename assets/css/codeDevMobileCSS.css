@@ -1,0 +1,23 @@
+	 
+		.par1 {position:relative;font-size:1.5em;width:85%;height:auto;border:solid 1px black;background-color:beige;padding:25px;margin:15px}
+		h1 {margin-left:15px;color:brown}
+		#quickdesc {margin-left:15px}
+		#parsyn {border:solid 1px black;background-color:linen;padding:5px}
+		.descmess {position:relative;margin-left:20px}
+		.descex {position:relative;font-size:1.25em;width:auto;height:3em;margin:1.1em;border:solid 1px black;background-color:linen;padding-left:1em;padding-right:15em;padding-top:1em;}
+		.descex2 {text-align:left;position:relative;font-size:1.25em;width:auto;height:auto;margin:1.1em;border:solid 1px black;background-color:linen;padding:25px}
+		.leftpart {float:left}
+		.rightpart {float:right}
+		.spfont {}
+		#hovdisp {position:absolute;display:none}
+		.spfont:hover #hovdisp {display:block;font-size:0.9em;z-index:2;border:solid 1px blue;background-color:yellow;color:blue;padding 2px}
+	
+	#rpsContainer {
+		position:relative;
+		border-style:ridge;
+	        border-color:grey;
+	        border-width:20px 20px 0px 20px;
+	        width:90%;
+                padding:2em;
+	        height:auto;
+	        }

@@ -1,0 +1,16 @@
+#headbar, #footContainer
+	{
+		opacity:0.0;
+		zoom:1%;
+	}
+	
+#llvOutFrame,#outDiv, body, #gui,#resumeContainer
+	{
+		border:none;
+		background:none;
+	}
+	
+
+
+#mmContainer {zoom:80%}
+
