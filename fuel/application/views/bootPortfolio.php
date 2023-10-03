@@ -179,10 +179,9 @@
 							</div>		
 							<div class="carousel-item">
 								<h4>React using Google Programmable API with Express Backend using ATLAS Cloud API with Webpack and NPM compiling and PM2 process management.</h4> 
-								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:<br><a href="https://carinfo.rsypertjr.net" target="_blank">Mern Stack Application with React-Bootstrap</a><br>
-                                              	                React-Bootstrap Components are used to enhance responsiveness.<br><a href="https://github.com/Rsypertjr/react_carinfo_client" target="_blank">Front End Code</a>.
-	                                                           <a href="https://github.com/Rsypertjr/react_carinfo_server" target="_blank">Back End Code</a>
-								</p>
+								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:<br><a href="http://wbcarinfo.rsypertjr.net" target="_blank">Mern Stack Application with React-Bootstrap</a><br>
+                                              	                React-Bootstrap Components are used to enhance responsiveness.<br><a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/webpack-express-carinfo" target="_blank">Front End/Back End Code</a>.
+	                                                       	</p>
 							</div>						
 						</div>
 						<div>
