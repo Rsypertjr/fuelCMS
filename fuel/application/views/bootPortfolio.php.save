@@ -178,10 +178,10 @@
 								</p>
 							</div>		
 							<div class="carousel-item">
-								<h4>React using Google Programmable API with Express Backend using ATLAS Cloud API with Webpack and NPM compiling and PM2 process management.</h4> 
-								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:<br><a href="https://carinfo.rsypertjr.net" target="_blank">Mern Stack Application with React-Bootstrap</a><br>
-                                              	                React-Bootstrap Components are used to enhance responsiveness.<br><a href="https://github.com/Rsypertjr/react_carinfo_client" target="_blank">Front End Code</a>.
-	                                                           <a href="https://github.com/Rsypertjr/react_carinfo_server" target="_blank">Back End Code</a>
+								<h4>React Front End utilizing Google Programmable Search API with Express and Atlas Cloud MongoDb on Back end</h4> 
+								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:<br><a href="http://carinfo.rs" target="_blank">PHP/Javascript/Bootstrap Google Programmable API App</a><br>
+								   Bootstrap 5, JQuery, Javascript and CSS within a PHP framework is used for data presentation and front-end logic.<br><a href="" target="_blank">PHP/Javascript/Bootstrap Google 
+								   Programmable API Code</a>.
 								</p>
 							</div>						
 						</div>
@@ -495,7 +495,20 @@
 											<a href="https://github.com/Rsypertjr/fuelCMS/tree/fuelPF/fuel/application" target="_blank">Othello Game Code</a>
 									</p>
 								</li>
-							
+								<li class="list-group-item">
+									
+									<a href="http://carinfo.rsypertjr.net" target="_blank">
+										<p  class="sectionTitle" >	
+											<a href="http://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"
+												title="Click for Full Page App!">Car Info featuring Google Programmable API</a>
+										</p>
+									</a>
+									<object data="http://carinfo.rsypertjr.net" height="200" width="300"></object>
+									<p>Get A Lot of Customized Car Info from Selected Web Sites. Very Automated by Google Programmable Search API
+									<br>The Code for PHP/Javascript/Bootstrap-based App is here: 
+											<a href="https://github.com/Rsypertjr/fuelCMS/tree/rsypertjrlocal" target="_blank">Car Info Code</a>
+									</p>
+								</li>
 							</ol>
 						
 						</div>
@@ -682,17 +695,6 @@
 									<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
 								</li>
-                                                                <li class="list-group-item list-group-item-success">
-                                                                        <a href="https://carinfo.rsypertjr.net" target="_blank">
-                                                                                <p  class="sectionTitle">
-                                                                                        <a href="https://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
-                                                                                </p>
-                                                                        </a>
-                                                                        <object data="https://carinfo.rsypertjr.net" height="200" width="300"></object>
-                                                                        <p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
-                                                                        <a href="https://github.com/Rsypertjr/react_carinfo_server" target="_blank">Server Code</a><a href="https://github.com/Rsypertjr/react_carinfo_client" target="_blank">Client Code</a>
-                                                                        </p>
-                                                                </li>
 							</ol>
 						</div>
 					 </div> 
@@ -707,8 +709,7 @@
 							<p>Frameworks</p>
 						</div>
 						<div class="row cvrbody justify-content-center align-items-center">
-							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Some utilization of the Laravel MVC Framework and Node Express.
-                                                         Docker and Docker Compose Technologies used withth NPM and Webpack dependency management.</p>
+							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Laravel MVC Framework</p>
 						</div>
 					  </div>
 				  </div>
