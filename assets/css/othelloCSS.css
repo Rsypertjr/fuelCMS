@@ -1,0 +1,258 @@
+body 
+	{
+		position:relative;
+		font-family:Impact,fantasy;
+		width:100%;
+		
+	}
+
+
+
+body {
+   width:100%;
+   height:100%;
+}
+
+#headr
+{
+   height:1.5em;
+   width:880px;
+   text-align:center;
+   border-width:0 0 7px 0;
+   background-color:#D8D8D8;
+   font-size:2.0em;
+   padding:5px 0;
+}
+
+
+#status {
+                position:relative;
+                background-color:beige; 
+                height:13em;
+                width:880px;
+                border-width: 0px 0px 10px 0px;
+                padding-top:0.2%;
+             }
+   
+.cell 
+{
+float:left;height:95%;width:11.5%;background-color:yellow;text-align:center;margin:0.5 2.5 2.5 0.5%;cursor:pointer;z-index:1;
+
+}
+
+
+.scell 
+{
+  height:50px;padding-top:15px;width:42px;float: right;background-color:yellow;text-align:center;
+}
+
+
+
+
+.tcell 
+{
+ float:left;height:50%;width:10.8%;background-color:yellow;text-align:center;
+}  
+
+
+#prbutton, #prbutton2, #prbutton3{
+	color:purple;	
+	
+}
+
+#xval
+{
+	position:relative;
+    height:2.25em;
+    width:75%;
+    margin:0.25em 0 0.25em 15%;
+}
+
+#yval
+{
+    position:relative;
+    height:2.25em;
+    width:75%;
+    margin:0.25em 0 0.25em 15%;
+}
+
+#xval input, #yval input {
+	position:relative;
+	background-color:#D3D3D3;
+	width:90%;
+	margin-left:1em;
+	text-align:center;
+	height:98%;
+    font-size:1.75em;
+	padding:auto;
+}
+
+#clkspace{
+	 display:inline;
+	 color:brown;
+}
+
+#nextbutton input[type=button], #subbutton input[type=button], #playbutton input[type=button] {
+	position:relative;
+	width:auto;
+	height:auto;
+	font-size:2.0em;
+	padding:0.25em;
+}
+
+#xbar {background-color:tan;float:right;padding-top:10px;height:34px;width:792px;font-size:0.7em}
+#ybar
+	{
+		background-color:tan;
+		float:left;
+		height:521px;
+		padding-left:10px;
+		width:32px;
+		
+		font-size:0.7em
+	}
+#inner {
+  width: 0;word-wrap: break-word;
+}
+#inner2 {
+  text-align:center;letter-spacing:5px
+}
+
+
+
+.grow 
+{
+  position:relative;width:780px;height:63px;padding:1px 3px 1px 10px;margin:1px;
+}
+
+.topbar 
+{
+   float:left;width:880px;height:88px;background-color:yellow;font-size: 0.6em;
+}
+
+
+
+
+.sidebar 
+{
+   float:left;
+   height:560px;
+   width:84px;
+   font-size: 0.6em;
+   background-color:tan;
+}
+
+
+#playarea
+{
+   position:relative;
+   
+   float:left;
+   width:793px;
+   height:559px;
+   font-size:0.9em;
+   padding:0.5px 0.5px 0.5px 0.5px;
+   background-color:tan;
+}
+
+#gboard
+{
+	position:relative;
+    height:617px;
+    width:878px;
+    font-size:2.5em;
+}
+
+
+
+
+#othelloFormcontainer{
+	position:relative;
+	width: 878px;
+	height:12.5em;
+}
+#message{
+	position:relative;
+	width:95%;
+	height:auto;
+	text-align:center;
+	font-size:1.7em;
+	margin-left:1.5%;
+}
+
+#message div,#message span {
+	position:relative;	
+	width:auto;
+	height:auto;
+	text-align:center;
+	font-size:1.0em;
+}
+
+
+    
+#subbutton  {height:11%;width:35%;margin: 6px 20% 2px 37%;font-size:0.85em;}    
+
+#playbutton  {height:14%;width:35%;margin: 6px 20% 2px 37%;font-size:0.85em;}     
+
+#nextbutton {height:14%;width:35%;margin: 6px 20% 2px 37%;font-size:0.85em;}
+
+#botcontainer {
+	position:relative;
+	height:70%;
+}
+
+#frontPage {position:relative;float:right;height:auto;width:170px;margin-right:10px;border: solid 2px black;background:orange;font-size:0.7em;padding: 3px 2px 3px 1px}
+
+#resetGame {position:relative;float:left;height:auto;width:170px;margin-left:10px;border: solid 2px black;background:orange;font-size:0.7em; padding: 3px 2px 2px 1px}
+
+.setCursor {cursor:pointer}
+
+#resetGame, #frontPage {border-radius: 5px;}
+
+
+
+
+
+li {margin-top:0.75em}
+
+
+#headbar
+	{
+	 
+     border-style:ridge;
+	 border-color:grey;
+	 border-width:20px 20px 20px 20px;
+	 display:none;
+	
+	}
+	
+	
+#outDiv{
+
+	position:relative;
+	width:97%;
+	height:60em;
+	border-style:ridge;
+	border-color:grey;
+	border-width:20px 20px 20px 20px;
+       
+	background: -webkit-linear-gradient(purple,silver); /* For Safari 5.1 to 6.0 */
+	  background: -o-linear-gradient(purple,silver); /* For Opera 11.1 to 12.0 */
+	  background: -moz-linear-gradient(purple,silver); /* For Firefox 3.6 to 15 */
+	  background: linear-gradient(purple,silver); /* Standard syntax */
+	
+
+}
+
+#oframe{
+	position:relative;
+	margin:auto;
+	left:-3em;
+	height:75%;
+	width:55em;
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	transform: scale(0.7);
+	border:6px groove gray;
+	font-family:Arial, Helvetica, sans-serif;
+	 }
