@@ -252,7 +252,7 @@
 						<li class="nav-item"><a class="nav-link"  href="#living">Living In Vegas</a></li>
 						<li class="nav-item" ><a class="nav-link"  href="#front">Non-Bootstrap Portfolio</a></li>
 						<li class="nav-item d-none"><a class="nav-link"  href="laravelreact" target="_blank">Laravel React Bootstrap Portfolio</a></li>
-					</ul>n
+					</ul>
 			</nav>    
 			
 
