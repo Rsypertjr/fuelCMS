@@ -186,8 +186,8 @@
 							<div class="carousel-item">
 								<h4>React using Google Programmable API with Express Backend using ATLAS Cloud API with Webpack and NPM compiling and PM2 process management.</h4> 
 								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:<br><a href="http://wbcarinfo.rsypertjr.net" target="_blank">Mern Stack Application with React-Bootstrap</a><br>
-                                              	                React-Bootstrap Components are used to enhance responsiveness.<br><a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/webpack-express-carinfo" target="_blank">Front End/Back End Code</a>.
-	                                                       	</p>
+									React-Bootstrap Components are used to enhance responsiveness.<br><a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/webpack-express-carinfo" target="_blank">Front End/Back End Code</a>.
+								</p>
 							</div>						
 						</div>
 						<div>
@@ -300,12 +300,7 @@
 					
 					 <div class="carousel-item">
 					  <img src="" alt="Work10" class="img-fluid">
-					</div>
-				  
-				  </div>
-				  <div>
-					 <!-- Indicators -->
-					 <ol class="carousel-indicators">
+					</div>Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 						<li data-target="#myCarousel" data-slide-to="1"></li>
 						<li data-target="#myCarousel" data-slide-to="2"></li>
@@ -622,33 +617,7 @@
 									Here is the code: <a href="https://github.com/Rsypertjr/transcriptor" target="_blank">Laravel Code</a>
 									</p>
 								</li-->
-								<li class="list-group-item list-group-item-success">
-									<a href="reactTestApp" target="_blank">
-										<p  class="sectionTitle">
-											<a href="https://hackerreact.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">HackerRank React Test App</a>
-										</p>
-									</a>
-									<object data="https://hackerreact.rsypertjr.net" height="200" width="300"></object>
-									<p>I was given a download during a Hacker Rank test the included the components, but needed all the logical and data linkage between them to operate.  I had the download, 
-										so I finished after the test.<br>
-										Link to this code is: <a href="https://github.com/Rsypertjr/react-product-cart.git" target="_blank">Hacker Rank React Test App</a>
-									</p>
-								</li>
-								<li class="list-group-item list-group-item-success">
-									<a href="https://angularvotes.rsypertjr.net" target="_blank">
-										<p  class="sectionTitle">
-											<a href="https://angularvotes.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Angular version of Vote Parser</a>
-										</p>
-									</a>
-									<object type="text/html" data="https://angularvotes.rsypertjr.net" height="200" width="300"></object>
-									<p>Angular used with Bootstrap, JQuery Datatable, JQuery, Node.js, NPM.  Angular utilizes Components, Services, and Routing.<br>
-									Here is the code: <a href="https://github.com/Rsypertjr/AngularVoteParser/tree/voteParser" target="_blank">Angular Code</a>
-									<br/>This same app has a Docker implementation that uses Docker Engine and contains Dockerfile and Docker-compose<br> 
-									implementations of development and production versions. Karma and Protractor unit testing of code is included.<br> 
-									Link to this code is: <a href="https://github.com/Rsypertjr/dockerVoteParser/tree/dockerVoteParser" target="_blank">Docker Angular Code</a>
-									</p> 
-									
-								</li>
+								
 								<li class="list-group-item">
 									<a href="tictactoe" target="_blank">
 										<p  class="sectionTitle">
@@ -686,17 +655,17 @@
 									<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
 								</li>
-                                                                <li class="list-group-item list-group-item-success">
-                                                                        <a href="https://carinfo.rsypertjr.net" target="_blank">
-                                                                                <p  class="sectionTitle">
-                                                                                        <a href="https://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
-                                                                                </p>
-                                                                        </a>
-                                                                        <object data="https://carinfo.rsypertjr.net" height="200" width="300"></object>
-                                                                        <p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
-                                                                        <a href="https://github.com/Rsypertjr/react_carinfo_server" target="_blank">Server Code</a><a href="https://github.com/Rsypertjr/react_carinfo_client" target="_blank">Client Code</a>
-                                                                        </p>
-                                                                </li>
+								<li class="list-group-item list-group-item-success">
+										<a href="https://wbcarinfo.rsypertjr.net" target="_blank">
+												<p  class="sectionTitle">
+														<a href="https://wbcarinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
+												</p>
+										</a>
+										<object data="https://wbcarinfo.rsypertjr.net" height="200" width="300"></object>
+										<p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
+										<a href="https://github.com/Rsypertjr/react_carinfo_server" target="_blank">Server Code</a><a href="https://github.com/Rsypertjr/react_carinfo_client" target="_blank">Client Code</a>
+										</p>
+								</li>
 							</ol>
 						</div>
 					 </div> 
