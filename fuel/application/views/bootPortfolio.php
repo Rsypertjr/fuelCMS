@@ -108,8 +108,15 @@
 				var vegas7 = "<?php echo $vars['vegas7']; ?>";
 				var vegas8 = "<?php echo $vars['vegas8']; ?>";
 				
+			
 				var work1 = "<?php echo $vars['worksImg']; ?>";
-				//alert(work1);fuel
+				//alert(work1);
+				var work2 = "<?php echo $vars['mechEngImage2']; ?>";
+				var work3 = "<?php echo $vars['engImg']; ?>";
+				var work4 = "<?php echo $vars['topLabel']; ?>";
+				var work5 = "<?php echo $vars['compSciImage']; ?>";
+				var work6 = "<?php echo $vars['mathhonorimg']; ?>";
+				var work7 = "<?php echo $vars['procprojengimg']; ?>";
 				var work8 = "<?php echo $vars['techWriter']; ?>";
 				var work9 = "<?php echo $vars['dataanalysis']; ?>";
 				var work10 = "<?php echo $vars['websiteconstruction']; ?>";
@@ -118,12 +125,13 @@
 				$(".carousel-inner .carousel-item:nth-child(1) img").attr('src',work1);
 				$(".carousel-inner .carousel-item:nth-child(2) img").attr('src',work2);
 				$(".carousel-inner .carousel-item:nth-child(3) img").attr('src',work3);
+				$(".carousel-inner .carousel-item:nth-child(4) img").attr('src',work4);
+				$(".carousel-inner .carousel-item:nth-child(5) img").attr('src',work5);
 				$(".carousel-inner .carousel-item:nth-child(6) img").attr('src',work6);
 				$(".carousel-inner .carousel-item:nth-child(7) img").attr('src',work7);
 				$(".carousel-inner .carousel-item:nth-child(8) img").attr('src',work8);
 				$(".carousel-inner .carousel-item:nth-child(9) img").attr('src',work9);
 				$(".carousel-inner .carousel-item:nth-child(10) img").attr('src',work10);
-
 				
 				$(".carousel-inner .item img").css('width','13em').css('height','6em').css('zoom','400%').css('border','2px solid lightBlue');
 			});
@@ -308,7 +316,7 @@
 					
 					 <div class="carousel-item">
 					  <img src="" alt="Work10" class="img-fluid">
-					</div>Vue3(Compostion API)/Chart.js/Bootstrap.js Vote Parser
+					</div>
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 						<li data-target="#myCarousel" data-slide-to="1"></li>
 						<li data-target="#myCarousel" data-slide-to="2"></li>
