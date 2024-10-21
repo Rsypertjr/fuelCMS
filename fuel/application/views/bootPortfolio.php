@@ -33,6 +33,7 @@
 
 			#myJumboCarousel {	
 				background-image: linear-gradient(white, grey);
+				font-size:1.25em;
 			}
 
 			#myCarousel .carousel-item {				
@@ -81,6 +82,12 @@
 				display:block;
 			}
 
+			.list-group-item > p:last-child {
+				background-color:#e6f9ff;
+				padding:1em;
+				border-radius: 5px;
+			}
+
 			
 
 		
@@ -102,13 +109,7 @@
 				var vegas8 = "<?php echo $vars['vegas8']; ?>";
 				
 				var work1 = "<?php echo $vars['worksImg']; ?>";
-				//alert(work1);
-				var work2 = "<?php echo $vars['mechEngImage2']; ?>";
-				var work3 = "<?php echo $vars['engImg']; ?>";
-				var work4 = "<?php echo $vars['topLabel']; ?>";
-				var work5 = "<?php echo $vars['compSciImage']; ?>";
-				var work6 = "<?php echo $vars['mathhonorimg']; ?>";
-				var work7 = "<?php echo $vars['procprojengimg']; ?>";
+				//alert(work1);fuel
 				var work8 = "<?php echo $vars['techWriter']; ?>";
 				var work9 = "<?php echo $vars['dataanalysis']; ?>";
 				var work10 = "<?php echo $vars['websiteconstruction']; ?>";
@@ -117,8 +118,6 @@
 				$(".carousel-inner .carousel-item:nth-child(1) img").attr('src',work1);
 				$(".carousel-inner .carousel-item:nth-child(2) img").attr('src',work2);
 				$(".carousel-inner .carousel-item:nth-child(3) img").attr('src',work3);
-				$(".carousel-inner .carousel-item:nth-child(4) img").attr('src',work4);
-				$(".carousel-inner .carousel-item:nth-child(5) img").attr('src',work5);
 				$(".carousel-inner .carousel-item:nth-child(6) img").attr('src',work6);
 				$(".carousel-inner .carousel-item:nth-child(7) img").attr('src',work7);
 				$(".carousel-inner .carousel-item:nth-child(8) img").attr('src',work8);
@@ -663,6 +662,18 @@
 									Vue 3 Composition API allows for function-based components which is inspired by React w/Hooks.  Here is code link: 
 									<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
+								</li>
+								<li class="list-group-item list-group-item-success">
+										<a href="https://preselections.rsypertjr.net" target="_blank">
+												<p  class="sectionTitle">
+														<a href="https://preselections.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Docker/Laravel/Vite/React/Boostrap/Chartjs 2020 Presidential Election Parser</a>
+												</p>
+										</a>
+										<object data="https://preselections.rsypertjr.net" height="200" width="300"></object>
+										<p>It is a Docker-Compose networked implementation using Laravel 10, php 8.2, nginx, mysql 8.0, with Composer and NPM package management.<br/>
+										Included are: React, React-Bootstrap, Chartjs Javascript technologies, and 'Vite' technology is used to bundle front-end assets, 									
+										and 'InertialJS' enables React components to be routed like Laravel Views.&nbsp;&nbsp;
+										<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/docker-laravel-vite" target="_blank">See Code</a></p>									
 								</li>
 								<li class="list-group-item list-group-item-success">
 										<a href="https://wbcarinfo.rsypertjr.net" target="_blank">
