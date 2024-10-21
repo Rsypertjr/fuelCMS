@@ -188,7 +188,7 @@
 								<p>Included are: React, React-Bootstrap, Chartjs Javascript technologies, and 'Vite' technology is used to bundle front-end assets, 									
 								and 'InertialJS' enables React components to be routed like Laravel Views.&nbsp;&nbsp;<a href="https://preselections.rsypertjr.net" target="_blank">See App</a></p>
 								<p>Please see README file in the following code repo for an explanation all included technologies, services, and utilities: 
-								<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">See Code</a>.
+								<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a>.
 								</p>
 							</div>		
 							<div class="carousel-item">
@@ -673,7 +673,7 @@
 										<p>It is a Docker-Compose networked implementation using Laravel 10, php 8.2, nginx, mysql 8.0, with Composer and NPM package management.<br/>
 										Included are: React, React-Bootstrap, Chartjs Javascript technologies, and 'Vite' technology is used to bundle front-end assets, 									
 										and 'InertialJS' enables React components to be routed like Laravel Views.&nbsp;&nbsp;
-										<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/docker-laravel-vite" target="_blank">See Code</a></p>									
+										<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a></p>									
 								</li>
 								<li class="list-group-item list-group-item-success">
 										<a href="https://wbcarinfo.rsypertjr.net" target="_blank">
