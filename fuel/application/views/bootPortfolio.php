@@ -184,9 +184,18 @@
 								</p>
 							</div>		
 							<div class="carousel-item">
+								<h4>Check Out the Newest Implementation of Vote Parser</h4> 
+								<p>It is a Docker-Compose networked implementation using Laravel 10, php 8.2, nginx, mysql 8.0, with Composer and NPM package management.</p>
+								<p>Included are: React, React-Bootstrap, Chartjs Javascript technologies, and 'Vite' technology is used to bundle front-end assets, 									
+								and 'InertialJS' enables React components to be routed like Laravel Views.&nbsp;&nbsp;<a href="https://preselections.rsypertjr.net" target="_blank">See App</a></p>
+								<p>Please see README file in the following code repo for an explanation all included technologies, services, and utilities: 
+								<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">See Code</a>.
+								</p>
+							</div>		
+							<div class="carousel-item">
 								<h4>React using Google Programmable API with Express Backend using ATLAS Cloud API with Webpack and NPM compiling and PM2 process management.</h4> 
-								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:<br><a href="http://wbcarinfo.rsypertjr.net" target="_blank">Mern Stack Application with React-Bootstrap</a><br>
-									React-Bootstrap Components are used to enhance responsiveness.<br><a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/webpack-express-carinfo" target="_blank">Front End/Back End Code</a>.
+								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:&nbsp;&nbsp;<a href="https://wbcarinfo.rsypertjr.net" target="_blank">See App</a><br>
+									React-Bootstrap Components are used to enhance responsiveness.&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a>.
 								</p>
 							</div>						
 						</div>
