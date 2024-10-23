@@ -74,8 +74,15 @@
 			}
 
 			.nav-item * {
-				font-size:1.25em;
-				padding:0.5em;
+				font-size:0.85em;
+			}
+
+			.nav-link {
+				width:auto;
+			}
+
+			.dropdown-item {
+				padding: 0.5em;
 			}
 
 			object {
