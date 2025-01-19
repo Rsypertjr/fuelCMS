@@ -2,7 +2,7 @@ Options +SymLinksIfOwnerMatch
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteBase /FUEL_CMS
+	RewriteBase /
 
 	<Files .*>
 		Order Deny,Allow
@@ -19,7 +19,7 @@ Options +SymLinksIfOwnerMatch
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 
-	RewriteRule .* index.php?/$0 [L]
+	RewriteRule (.+) index.php/$1 [L]
 
 	# Prevents access to dot files (.git, .htaccess) - security.
 	RewriteCond %{SCRIPT_FILENAME} -d
