@@ -14,17 +14,24 @@ Options +SymLinksIfOwnerMatch
 
 	# Protect application and system files from being viewed
 	RewriteRule ^(fuel/install/.+|fuel/crons/.+|fuel/data_backup/.+|fuel/codeigniter/.+|fuel/modules/.+|fuel/application/.+) - [F,L]
-
-
-	RewriteCond %{REQUEST_FILENAME} !-f
+              
+        RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-
+        
 	RewriteRule (.+) index.php/$1 [L]
+        RewriteRule ^$   index.php/front [R=301,L]
 
+        
+        #RewriteCond %{HTTP_HOST} ^(www?)\.(rsypertjr\.net)$ [NC]
+        #RewriteRule ^$ https://%1.%2/front/ [NE,R=301,L]
+
+       
 	# Prevents access to dot files (.git, .htaccess) - security.
 	RewriteCond %{SCRIPT_FILENAME} -d
 	RewriteCond %{SCRIPT_FILENAME} -f
 	RewriteRule "(^|/)\." - [F]
 
+
+        
 </IfModule>
 Options -Indexes

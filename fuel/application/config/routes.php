@@ -81,6 +81,7 @@ $route['orominer2'] = 'otherApps/orominer2';
 $route['tictactoe'] = 'otherApps/tictactoe';
 $route['orominer2/(:any)'] = 'otherApps/orominer2/$1';
 
+
 $route['amino'] = 'otherApps/amino';
 $route['amino/(:any)'] = 'otherApps/amino/$1';
 
