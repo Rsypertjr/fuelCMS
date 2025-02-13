@@ -165,10 +165,18 @@
 							</div>				
 							<div class="carousel-item">
 								<h4>Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h4> 
-								<p style="margin:0 15% 2% 15%">This site is hosted on Ubuntu 18.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting.&nbsp;&nbsp; Some apps have been deployed to Heroku Server.&nbsp;&nbsp;
-								Visual Studio Code is the development environment for this portfolio.
+								<p style="margin:0 15% 2% 15%">This site is hosted on Ubuntu 20.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting with LAMP installed.&nbsp;&nbsp; Some apps have been deployed directly to server folders and virtual hosted directly to the folders.  
+									Other Apps utilize Dockerized networking and are proxied to by virtual hosting.&nbsp;&nbsp;
+								    Visual Studio Code is the development environment for this portfolio.
 								</p> 
-							</div>				
+							</div>		
+							<div class="carousel-item">
+								<h4>New Laravel Portfolio Front Page is Available</h4> 
+								<p style="margin:0 15% 2% 15%">This site is coded with Laravel 11 and React using Vite asset management.&nbsp;&nbsp;
+									<a href="http://laravelportfolio.rsypertjr.net/portfolio" target="_blank">See App</a>&nbsp;&nbsp;
+									<a href="https://github.com/Rsypertjr/code_storage/tree/laravel_portfolio_prod" target="_blank">See code</a>
+								</p> 
+							</div>			
 							<div class="carousel-item">
 								<h4>PHP-based and JavaScript-based technologies and frameworks featured</h4>
 								<p> Fuel CMS framework (CodeIgniter-based),&nbsp;Angular&nbsp;Vue.js,&nbsp;Node.js,&nbsp;Ng,&nbsp;NPM,&nbsp;Laravel,&nbsp;Bootstrap,&nbsp;JQuery,&nbsp;JQueryUI,&nbsp;SVG,&nbsp;XML,&nbsp;CSS are some of the technologies used.&nbsp;&nbsp;Framework-based applications are at the&nbsp;<a href="#frameworks">
@@ -179,7 +187,7 @@
 							</div-->					
 							<div class="carousel-item">
 							<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based Front End</h4> 
-								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="http://lar10reactmix.rsypertjr.net/" 
+								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://lar10reactmix.rsypertjr.net/votes-table" 
 								target="_blank">See App</a>.&nbsp;&nbsp;This app uses React Hooks like UseEffect and UseState for functional components.&nbsp;&nbsp;
 								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/code_storage/tree/lar10-react-mix-prod-v2" target="_blank">See Code</a>.
 								</p>	
@@ -192,9 +200,9 @@
 							</div>
 							<div class="carousel-item">
 								<h4>Vue3 Composition API, Vue3/Bootstrap/JQuery/ChartJs Component-based front end</h4> 
-								<p>Vue 3 Composition API,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="http://vuevotes.rsypertjr.net" 
+								<p>Vue 3 Composition API,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="http://vue3chartjs.rsypertjr.net" 
 								target="_blank">See App</a>.&nbsp;&nbsp;This app uses Vue3 Composition API which allows more function-based writing of components,&nbsp;inspired by React Hooks.&nbsp;&nbsp;
-								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">See Code</a>.
+								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap/tree/vue-chart-v2" target="_blank">See Code</a>.
 								</p>
 							</div>		
 							<div class="carousel-item">
@@ -208,8 +216,8 @@
 							</div>		
 							<div class="carousel-item">
 								<h4>React using Google Programmable API with Express Backend using ATLAS Cloud API with Webpack and NPM compiling and PM2 process management.</h4> 
-								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:&nbsp;&nbsp;<a href="https://wbcarinfo.rsypertjr.net" target="_blank">See App</a><br>
-									React-Bootstrap Components are used to enhance responsiveness.&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a>.
+								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:&nbsp;&nbsp;<a href="https://carinfo.rsypertjr.net" target="_blank">See App</a><br>
+									React-Bootstrap Components are used to enhance responsiveness.&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">See Code</a>.
 								</p>
 							</div>						
 						</div>
@@ -653,29 +661,29 @@
 									</p>
 								</li> 							
 								<li class="list-group-item list-group-item-success">
-									<a href="https://laravelvotes.rsypertjr.com/votes-table" target="_blank">
+									<a href="https://lar10reactmix.rsypertjr.net/votes-table" target="_blank">
 										<p  class="sectionTitle">
-											<a href="https://laravelvotes.rsypertjr.net/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix) w/React & Chart.js & Bootstrap.js Vote Parser</a>
+											<a href="https://lar10reactmix.rsypertjr.net/votes-table" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Laravel(Mix) w/React & Chart.js & Bootstrap.js Vote Parser</a>
 										</p>
 									</a>
-									<object data="https://laravelvotes.rsypertjr.net/votes-table" height="200" width="300"></object>
+									<object data="https://lar10reactmix.rsypertjr.net/votes-table" height="200" width="300"></object>
 									<p>The app uses Laravel (Mix) with React.js (including React Router).  Composer is used to 
 									manage PHP dependencies, and NPM is used to managed the Node-based React.js dependencies. 
 									Laravel routing is used to serve main page and React routing for fast rendering of tables 
 									and charts. Table and paging is a custom code and charts utilize Chart.js. Here is code link: 
-									<a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
+									<a href="https://github.com/Rsypertjr/code_storage/blob/lar10-react-mix-prod-v2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
 								</li>
 								<li class="list-group-item list-group-item-success">
-									<a href="https://vuevotes.rsypertjr.net" target="_blank">
+									<a href="https://vue3chartjs.rsypertjr.net" target="_blank">
 										<p  class="sectionTitle">
-											<a href="https://vuevotes.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
+											<a href="https://vue3chartjs.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
 										</p>
 									</a>
-									<object data="https://vuevotes.rsypertjr.net" height="200" width="300"></object>
+									<object data="https://vue3chartjs.rsypertjr.net" height="200" width="300"></object>
 									<p>The app uses Vue 3 Composition API. NPM is used to managed the Node-based Vue 3 dependencies. 
 									Vue 3 Composition API allows for function-based components which is inspired by React w/Hooks.  Here is code link: 
-									<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
+									<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap/tree/vue-chart-v2" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
 								</li>
 								<li class="list-group-item list-group-item-success">
@@ -691,14 +699,14 @@
 										<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a></p>									
 								</li>
 								<li class="list-group-item list-group-item-success">
-										<a href="https://wbcarinfo.rsypertjr.net" target="_blank">
+										<a href="https://carinfo.rsypertjr.net" target="_blank">
 												<p  class="sectionTitle">
-														<a href="https://wbcarinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
+														<a href="https://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
 												</p>
 										</a>
-										<object data="https://wbcarinfo.rsypertjr.net" height="200" width="300"></object>
+										<object data="https://carinfo.rsypertjr.net" height="200" width="300"></object>
 										<p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
-										<a href="https://github.com/Rsypertjr/react_carinfo_server" target="_blank">Server Code</a><a href="https://github.com/Rsypertjr/react_carinfo_client" target="_blank">Client Code</a>
+										<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">Server Code and Code</a>
 										</p>
 								</li>
 							</ol>
