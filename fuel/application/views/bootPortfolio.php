@@ -553,7 +553,7 @@
 				
 				 
 				 
-				 <div id="mobile" class="container-fluid">
+				<div id="mobile" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Mobile Portfolio</span>
@@ -589,13 +589,13 @@
 						<div class="row cvrbody justify-content-center align-items-center">							
 							<p class="text-center">Beneath is a JQuery Mobile version of my portfolio that is mobile-device-responsive</p>
 						</div>
-					 </div>
-				 </div>
+					</div>
+				</div>
 				 
 				 
 				  
 				  
-				  <div id="frameworks" class="container-fluid">
+				<div id="frameworks" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Frameworks</span>
@@ -698,22 +698,23 @@
 										and 'InertialJS' enables React components to be routed like Laravel Views.&nbsp;&nbsp;
 										<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a></p>									
 								</li>
+			                                
 								<li class="list-group-item list-group-item-success">
-										<a href="https://carinfo.rsypertjr.net" target="_blank">
-												<p  class="sectionTitle">
-														<a href="https://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
-												</p>
-										</a>
-										<object data="https://carinfo.rsypertjr.net" height="200" width="300"></object>
-										<p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
-										<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">Server Code and Code</a>
+									<a href="https://carinfo.rsypertjr.net" target="_blank">
+										<p  class="sectionTitle">
+												<a href="http://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
 										</p>
+									</a>
+									<object data="https://www.carinfo.rsypertjr.net" height="200" width="300"></object>
+									<p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
+									<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">Server Code and Code</a>
+									</p>
 								</li>
 							</ol>
 						</div>
-					 </div> 
+					</div> 
 					
-					  <div id="frameworksCovr" class="container-fluid covr">
+					<div id="frameworksCovr" class="container-fluid covr">
 						<div class="row justify-content-center cvrimg align-items-center">
 							<span>
 								<i class="tree icon"></i>
@@ -724,10 +725,10 @@
 						</div>
 						<div class="row cvrbody justify-content-center align-items-center">
 							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Some utilization of the Laravel MVC Framework and Node Express.
-                                                         Docker and Docker Compose Technologies used withth NPM and Webpack dependency management.</p>
+                             Docker and Docker Compose Technologies used withth NPM and Webpack dependency management.</p>
 						</div>
-					  </div>
-				  </div>
+					</div>
+				</div>
 					
 				<div id="manuals" class="container-fluid">
 					<div class="panel panel-primary">
@@ -773,25 +774,25 @@
 									I wrote it in Adobe InDesign according to the customer's style rules.
 									</p>
 								</li>
-								</ol>
+							</ol>
 								
-							</div>
-						</div> 
+						</div>
+					</div> 
 					
-						<div id="manualsCovr" class="container-fluid covr">							
-							<div class="row justify-content-center cvrimg align-items-center">
-								<span>
-									<i class="edit icon"></i>
-								</span>
-							</div>
-							<div class="row cvrtitle justify-content-center align-items-center">
-								<p>Production Manuals</p>
-							</div>
-							<div class="row cvrbody justify-content-center align-items-center">							
-								<p class="text-center">Operation and Maintenance Manuals for an Electro-Mechanical Application</p>
-							</div>
+					<div id="manualsCovr" class="container-fluid covr">							
+						<div class="row justify-content-center cvrimg align-items-center">
+							<span>
+								<i class="edit icon"></i>
+							</span>
+						</div>
+						<div class="row cvrtitle justify-content-center align-items-center">
+							<p>Production Manuals</p>
+						</div>
+						<div class="row cvrbody justify-content-center align-items-center">							
+							<p class="text-center">Operation and Maintenance Manuals for an Electro-Mechanical Application</p>
 						</div>
 					</div>
+				</div>
 					
 					
 					<div id="specifications" class="container-fluid">
