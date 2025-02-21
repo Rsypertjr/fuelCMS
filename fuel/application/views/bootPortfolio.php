@@ -165,8 +165,12 @@
 							</div>				
 							<div class="carousel-item">
 								<h4>Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h4> 
-								<p style="margin:0 15% 2% 15%">This site is hosted on Ubuntu 18.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting.&nbsp;&nbsp; Some apps have been deployed to Heroku Server.&nbsp;&nbsp;
-								Visual Studio Code is the development environment for this portfolio.
+								<p style="margin:0 15% 2% 15%">
+									This site is hosted on Ubuntu 20.04 Digital Ocean Droplets,&nbsp;&nbsp:utilizing Apache Virtual Hosting in a LAMP stack.
+								    &nbsp;&nbsp;Visual Studio Code is the development environment within the FuelCMS Php-based framework.
+									&nbsp;&nbsp;A Laravel 11, Vite, React, Boostrap 5 version of this portfolio is also available
+									&nbsp;&nbsp;<a href="https://laravelportfolio.rsypertjr.net/portfolio" target="_blank">Here</a>
+									&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/code_storage/tree/laravel_portfolio_prod" target="_blank"> With Code Here.</a>
 								</p> 
 							</div>				
 							<div class="carousel-item">
