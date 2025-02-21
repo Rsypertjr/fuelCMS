@@ -165,18 +165,10 @@
 							</div>				
 							<div class="carousel-item">
 								<h4>Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h4> 
-								<p style="margin:0 15% 2% 15%">This site is hosted on Ubuntu 20.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting with LAMP installed.&nbsp;&nbsp; Some apps have been deployed directly to server folders and virtual hosted directly to the folders.  
-									Other Apps utilize Dockerized networking and are proxied to by virtual hosting.&nbsp;&nbsp;
-								    Visual Studio Code is the development environment for this portfolio.
+								<p style="margin:0 15% 2% 15%">This site is hosted on Ubuntu 18.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting.&nbsp;&nbsp; Some apps have been deployed to Heroku Server.&nbsp;&nbsp;
+								Visual Studio Code is the development environment for this portfolio.
 								</p> 
-							</div>		
-							<div class="carousel-item">
-								<h4>New Laravel Portfolio Front Page is Available</h4> 
-								<p style="margin:0 15% 2% 15%">This site is coded with Laravel 11 and React using Vite asset management.&nbsp;&nbsp;
-									<a href="http://laravelportfolio.rsypertjr.net/portfolio" target="_blank">See App</a>&nbsp;&nbsp;
-									<a href="https://github.com/Rsypertjr/code_storage/tree/laravel_portfolio_prod" target="_blank">See code</a>
-								</p> 
-							</div>			
+							</div>				
 							<div class="carousel-item">
 								<h4>PHP-based and JavaScript-based technologies and frameworks featured</h4>
 								<p> Fuel CMS framework (CodeIgniter-based),&nbsp;Angular&nbsp;Vue.js,&nbsp;Node.js,&nbsp;Ng,&nbsp;NPM,&nbsp;Laravel,&nbsp;Bootstrap,&nbsp;JQuery,&nbsp;JQueryUI,&nbsp;SVG,&nbsp;XML,&nbsp;CSS are some of the technologies used.&nbsp;&nbsp;Framework-based applications are at the&nbsp;<a href="#frameworks">
@@ -187,9 +179,9 @@
 							</div-->					
 							<div class="carousel-item">
 							<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based Front End</h4> 
-								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://lar10reactmix.rsypertjr.net/votes-table" 
+								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://laravelvotes.rsypertjr.net/votes-table" 
 								target="_blank">See App</a>.&nbsp;&nbsp;This app uses React Hooks like UseEffect and UseState for functional components.&nbsp;&nbsp;
-								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/code_storage/tree/lar10-react-mix-prod-v2" target="_blank">See Code</a>.
+								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">See Code</a>.
 								</p>	
 							</div>
 							<div class="carousel-item">
@@ -200,9 +192,9 @@
 							</div>
 							<div class="carousel-item">
 								<h4>Vue3 Composition API, Vue3/Bootstrap/JQuery/ChartJs Component-based front end</h4> 
-								<p>Vue 3 Composition API,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="http://vue3chartjs.rsypertjr.net" 
+								<p>Vue 3 Composition API,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="http://vuevotes.rsypertjr.net" 
 								target="_blank">See App</a>.&nbsp;&nbsp;This app uses Vue3 Composition API which allows more function-based writing of components,&nbsp;inspired by React Hooks.&nbsp;&nbsp;
-								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap/tree/vue-chart-v2" target="_blank">See Code</a>.
+								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap.git" target="_blank">See Code</a>.
 								</p>
 							</div>		
 							<div class="carousel-item">
@@ -216,8 +208,8 @@
 							</div>		
 							<div class="carousel-item">
 								<h4>React using Google Programmable API with Express Backend using ATLAS Cloud API with Webpack and NPM compiling and PM2 process management.</h4> 
-								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:&nbsp;&nbsp;<a href="https://carinfo.rsypertjr.net" target="_blank">See App</a><br>
-									React-Bootstrap Components are used to enhance responsiveness.&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">See Code</a>.
+								<p>Google Programmable API is used to target searches at selected Web Sites and Customize Return Info:&nbsp;&nbsp;<a href="https://wbcarinfo.rsypertjr.net" target="_blank">See App</a><br>
+									React-Bootstrap Components are used to enhance responsiveness.&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a>.
 								</p>
 							</div>						
 						</div>
@@ -553,7 +545,7 @@
 				
 				 
 				 
-				<div id="mobile" class="container-fluid">
+				 <div id="mobile" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Mobile Portfolio</span>
@@ -589,13 +581,13 @@
 						<div class="row cvrbody justify-content-center align-items-center">							
 							<p class="text-center">Beneath is a JQuery Mobile version of my portfolio that is mobile-device-responsive</p>
 						</div>
-					</div>
-				</div>
+					 </div>
+				 </div>
 				 
 				 
 				  
 				  
-				<div id="frameworks" class="container-fluid">
+				  <div id="frameworks" class="container-fluid">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<span>Frameworks</span>
@@ -671,16 +663,16 @@
 									manage PHP dependencies, and NPM is used to managed the Node-based React.js dependencies. 
 									Laravel routing is used to serve main page and React routing for fast rendering of tables 
 									and charts. Table and paging is a custom code and charts utilize Chart.js. Here is code link: 
-									<a href="https://github.com/Rsypertjr/code_storage/blob/lar10-react-mix-prod-v2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
+									<a href="https://github.com/Rsypertjr/code_storage/tree/lar10-react-mix-prod-v2" target="_blank">Laravel(Mix)/React/Chart.js/Bootstrap.js Vote Parser Code</a>
 									</p>
 								</li>
 								<li class="list-group-item list-group-item-success">
-									<a href="https://vue3chartjs.rsypertjr.net" target="_blank">
+									<a href="https://vue3chartjs.rsypertjr.net/" target="_blank">
 										<p  class="sectionTitle">
-											<a href="https://vue3chartjs.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
+											<a href="https://vue3chartjs.rsypertjr.net/" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Vue 3 Composition API & Chart.js & Bootstrap.js Vote Parser</a>
 										</p>
 									</a>
-									<object data="https://vue3chartjs.rsypertjr.net" height="200" width="300"></object>
+									<object data="https://vue3chartjs.rsypertjr.net/" height="200" width="300"></object>
 									<p>The app uses Vue 3 Composition API. NPM is used to managed the Node-based Vue 3 dependencies. 
 									Vue 3 Composition API allows for function-based components which is inspired by React w/Hooks.  Here is code link: 
 									<a href="https://github.com/Rsypertjr/Vue3-Chartjs-Bootstrap/tree/vue-chart-v2" target="_blank">Vue3(Composition API)/Chart.js/Bootstrap.js Vote Parser Code</a>
@@ -698,23 +690,22 @@
 										and 'InertialJS' enables React components to be routed like Laravel Views.&nbsp;&nbsp;
 										<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">See Code</a></p>									
 								</li>
-			                                
 								<li class="list-group-item list-group-item-success">
-									<a href="https://carinfo.rsypertjr.net" target="_blank">
-										<p  class="sectionTitle">
-												<a href="http://carinfo.rsypertjr.net" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
+										<a href="https://carinfo.rsypertjr.net/" target="_blank">
+												<p  class="sectionTitle">
+														<a href="https://carinfo.rsypertjr.net/" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">React-Bootstrap with Express ATLAS Cloud MongoDb Backend</a>
+												</p>
+										</a>
+										<object data="https://carinfo.rsypertjr.net/" height="200" width="300"></object>
+										<p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
+										   &nbsp;&nbsp;<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">Here is the Code.</a>
 										</p>
-									</a>
-									<object data="https://www.carinfo.rsypertjr.net" height="200" width="300"></object>
-									<p>A MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. 
-									<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">Server Code and Code</a>
-									</p>
 								</li>
 							</ol>
 						</div>
-					</div> 
+					 </div> 
 					
-					<div id="frameworksCovr" class="container-fluid covr">
+					  <div id="frameworksCovr" class="container-fluid covr">
 						<div class="row justify-content-center cvrimg align-items-center">
 							<span>
 								<i class="tree icon"></i>
@@ -725,10 +716,10 @@
 						</div>
 						<div class="row cvrbody justify-content-center align-items-center">
 							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Some utilization of the Laravel MVC Framework and Node Express.
-                             Docker and Docker Compose Technologies used withth NPM and Webpack dependency management.</p>
+                                                         Docker and Docker Compose Technologies used withth NPM and Webpack dependency management.</p>
 						</div>
-					</div>
-				</div>
+					  </div>
+				  </div>
 					
 				<div id="manuals" class="container-fluid">
 					<div class="panel panel-primary">
@@ -774,25 +765,25 @@
 									I wrote it in Adobe InDesign according to the customer's style rules.
 									</p>
 								</li>
-							</ol>
+								</ol>
 								
-						</div>
-					</div> 
+							</div>
+						</div> 
 					
-					<div id="manualsCovr" class="container-fluid covr">							
-						<div class="row justify-content-center cvrimg align-items-center">
-							<span>
-								<i class="edit icon"></i>
-							</span>
-						</div>
-						<div class="row cvrtitle justify-content-center align-items-center">
-							<p>Production Manuals</p>
-						</div>
-						<div class="row cvrbody justify-content-center align-items-center">							
-							<p class="text-center">Operation and Maintenance Manuals for an Electro-Mechanical Application</p>
+						<div id="manualsCovr" class="container-fluid covr">							
+							<div class="row justify-content-center cvrimg align-items-center">
+								<span>
+									<i class="edit icon"></i>
+								</span>
+							</div>
+							<div class="row cvrtitle justify-content-center align-items-center">
+								<p>Production Manuals</p>
+							</div>
+							<div class="row cvrbody justify-content-center align-items-center">							
+								<p class="text-center">Operation and Maintenance Manuals for an Electro-Mechanical Application</p>
+							</div>
 						</div>
 					</div>
-				</div>
 					
 					
 					<div id="specifications" class="container-fluid">

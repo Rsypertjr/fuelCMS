@@ -73,7 +73,7 @@
 		<br/>Cell Phone: (702) 203-1674 Anytime
 		<br/>Citizenship: United States
 		<br/><span id="emailAdd1">Email:  Rsypertjr@hotmail.com</span>
-		<br/><span id="emailAdd2">Email:  Rsypertjr@gmail.com</span>
+		<br/><span id="emailAdd2">Email:  Rsypertjr2@gmail.com</span>
 		<br/><a href="https://rsypertjr.net">Website Portfolio</a>
 	</p>
 	
@@ -82,10 +82,37 @@
 	<h1>Professional Experience:</h1>
 
 	<div class="jobContainer">
+		<h2>Data Scientists - AI Training (Remote Work, Contract) Outlier.....March 2024 to November 2024</h2>
+		<div class="description">
+			<h3>AI Chatbox Trainer</h3>
+			<h3>Self</h3>
+			<ul>
+				<li>I contributed to training generative artificial intelligence models, helping them become proficient
+					data analysts.
+				</li>
+				<li>I Trained AI large language models, helping cutting-edge generative AI models write better code
+					and data science writing.
+				</li>
+				<li>
+					The training projects typically included discrete, highly variable problems that involve engaging with
+					these models as they learn.
+				</li>
+				<li>
+					I solved complex data problems, like data generation, data cleaning, data visualization, and
+					machine learning modeling.
+				</li>
+				<li>
+					I Optimized code to run at maximum efficiency.
+				</li>
+			</ul>			
+		</div>
+	</div>
+
+	<div class="jobContainer">
 		<h2>Web Portfolio Development.................December 2021 to Present</h2>
 		<div class="description">
 			<h3>Practicing Web Development</h3>
-			<h3>Self</h3>
+			<h3>Outlier</h3>
 			<ul>
 				<li>Added applications to my web portfolio at: Bootstrap Portfolio that utilize technologies of
 					Laravel (Mix) with React, React with Hooks, React Bootstrap, and other technologies (https://
