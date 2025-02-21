@@ -166,10 +166,10 @@
 							<div class="carousel-item">
 								<h4>Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h4> 
 								<p style="margin:0 15% 2% 15%">
-									This site is hosted on Ubuntu 20.04 Digital Ocean Droplets,&nbsp;&nbsp:utilizing Apache Virtual Hosting in a LAMP stack.
+									This site is hosted on Ubuntu 20.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting in a LAMP stack.
 								    &nbsp;&nbsp;Visual Studio Code is the development environment within the FuelCMS Php-based framework.
 									&nbsp;&nbsp;A Laravel 11, Vite, React, Boostrap 5 version of this portfolio is also available
-									&nbsp;&nbsp;<a href="https://laravelportfolio.rsypertjr.net/portfolio" target="_blank">Here</a>
+									<a href="https://laravelportfolio.rsypertjr.net/portfolio" target="_blank">Here.</a>
 									&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/code_storage/tree/laravel_portfolio_prod" target="_blank"> With Code Here.</a>
 								</p> 
 							</div>				
@@ -277,7 +277,7 @@
 						<li class="nav-item"><a class="nav-link" href="#resume">My Resume</a></li>
 						<li class="nav-item"><a class="nav-link"  href="#living">Living In Vegas</a></li>
 						<li class="nav-item" ><a class="nav-link"  href="#front">Non-Bootstrap Portfolio</a></li>
-						<li class="nav-item d-none"><a class="nav-link"  href="laravelreact" target="_blank">Laravel React Bootstrap Portfolio</a></li>
+						<li class="nav-item"><a class="nav-link"  href="https://laravelportfolio.rsypertjr.net/portfolio" target="_blank">Laravel-11 React Bootstrap Portfolio</a></li>
 					</ul>
 			</nav>    
 			
@@ -705,6 +705,20 @@
 										   &nbsp;&nbsp;<a href="https://github.com/Rsypertjr/webpack-express-carinfo/tree/car-info-prod-v2" target="_blank">Here is the Code.</a>
 										</p>
 								</li>
+								<li class="list-group-item list-group-item-success">
+										<a href="https://laravelportfolio.rsypertjr.net/portfolio/" target="_blank">
+												<p  class="sectionTitle">
+														<a href="https://laravelportfolio.rsypertjr.net/portfolio/" target="_blank" data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">
+															Docker-Compose Laravel 11, React, Vite, Bootstrap 5 Portfolio
+														</a>
+												</p>
+										</a>
+										<object data="https://laravelportfolio.rsypertjr.net/portfolio/" height="200" width="300"></object>
+										<p>
+										   Docker Compose networked Laravel, React, Bootstrap 5 version of my portfolio using Vite technology to route to React components.
+										   &nbsp;&nbsp;<a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/lar-vite-chart-boot" target="_blank">Here is the Code.</a>
+										</p>
+								</li>
 							</ol>
 						</div>
 					 </div> 
@@ -900,7 +914,7 @@
 								<i class="camera retro icon"></i>
 							</span>
 						</div>
-						<div class="row cvrtitle justify-content-center align-items-center">
+						<div class="row cvrtitle justify-conA MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. tent-center align-items-center">
 							<p>Living In Vegas</p>
 						</div>
 						<div class="row cvrbody justify-content-center align-items-center">
