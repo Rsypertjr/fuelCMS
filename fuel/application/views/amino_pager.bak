@@ -1,0 +1,101 @@
+<?php
+
+?>
+
+<!DOCTYPE html5>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Bootstrap Table Pagination</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" ></link>
+        <script type = "text/javascript" src = "<?php echo js_path('vue.js'); ?>"></script>
+    </head>
+    <script>
+        $(document).ready(function() {
+            $('#example1').DataTable();
+            $('#example2').DataTable();
+        });
+    </script>
+
+   
+    <?php
+    /*$headers = array("Name","Position","Office","Age","Start date","Salary");
+    $rows = array(
+        array("Airi Satou","Accountant","Tokyo","33","2008/11/28","$162,700"),
+        array("Angelica Ramos","Chief Executive Office (CEO)","London","47","2009/10/09","$1,200,000"),
+        array("Ashton Cox","Junior Technical Author","San Francisco","66","2009/10/12","$86,000"),
+        array("Bradley Greer","Software Engineer","London","41","2012/10/13","$132,000")
+        );
+
+    echo "<table id='example1' class='table table-striped table-bordered' style='width:100%'>";            
+    echo"<thead><tr>";
+        foreach ($headers as $header)
+            echo "<th class='th-sm'>".$header."</th>";
+    echo "</tr></thead><tbody>";
+    
+    foreach($rows as $row){
+        echo "<tr>";
+        foreach($row as $cell){                     
+            echo "<td>".$cell."</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</tbody></table><br><br>";
+*/
+?>
+    <body>
+        <div id = "results_table">
+            {{ test }}
+            <table id='example1' class='table table-striped table-bordered' style='width:100%'>
+                <thead> 
+                    <tr>
+                        <headercomponent
+                            v-for = "item in headers"
+                        >
+                        </headercomponent>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for = "row in rows">
+                        <rowcomponent
+                            v-for = "cell in row"
+                        >
+                        </rowcomponent>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      
+
+
+    </body>
+    <script type = "text/javascript">
+        Vue.component('headercomponent',{
+            template: '<th class="th-sm">{{ item }}</th>';
+        });
+
+        Vue.component('rowcomponent',{
+            template: '<td>{{ cell }}</td>'
+        });
+
+        vm = new Vue({
+            el: '#results_table',
+            data: {
+                test: "This is a Test",
+                headers : ["Name","Position","Office","Age","Start date","Salary"],
+                rows: {
+                    ["Airi Satou","Accountant","Tokyo","33","2008/11/28","$162,700"],
+                    ["Angelica Ramos","Chief Executive Office (CEO)","London","47","2009/10/09","$1,200,000"],
+                    ["Ashton Cox","Junior Technical Author","San Francisco","66","2009/10/12","$86,000"],
+                    ["Bradley Greer","Software Engineer","London","41","2012/10/13","$132,000"]
+                }
+            }
+        });
+    </script>
+
+</html>

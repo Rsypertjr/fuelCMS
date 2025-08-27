@@ -1,0 +1,479 @@
+<html>
+<head>
+
+ <!--  the following two lines load the jQuery library and JavaScript files -->
+        
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <title>Resume Viewing</title>
+        
+  <script type="text/javascript">
+		function JQFunctions()
+			{              
+			
+	            $('#viewPDF').bind('click',function()
+					{
+						$(this).css('background','linear-gradient(lightgray,gray)');
+						$("#itemform input[name='itemchoice']").val('viewPDF');
+                        $('#itemform').submit();
+						
+					});  
+					
+				
+					
+					
+				 $('#downloadPDF').bind('mousedown',function()
+					{
+						$(this).css('background','linear-gradient(lightgray,gray)');
+						$("#itemform input[name='itemchoice']").val('downloadPDF');
+                        $('#itemform').submit();
+						$(this).mouseup(function(){$(this).css('background-color','white');};
+					});
+				
+				                          
+				$('#emailAdd1').bind('click', function()
+					{
+						
+						$("#itemform input[name='itemchoice']").val('email1');
+                        $('#itemform').submit();
+					});	
+					
+					
+				$('#emailAdd2').bind('click', function()
+					{
+						
+						$("#itemform input[name='itemchoice']").val('email2');
+                        $('#itemform').submit();
+					});	
+					
+					
+			    $('#emailAdd1').bind('mousedown',function()
+					{
+						$(this).css('color','red');
+					});
+					
+					
+				$('#emailAdd1').bind('mouseup',function()
+					{
+						$(this).css('color','blue');
+					});
+					
+					
+					
+				$('#emailAdd2').bind('mousedown',function()
+					{
+						$(this).css('color','red');
+					});
+					
+					
+				$('#emailAdd2').bind('mouseup',function()
+					{
+						$(this).css('color','blue');
+					});
+					
+					
+			
+			}
+  </script>
+
+
+<style type="text/css">
+body {position:relative;border: ridge 5px purple;height:auto;zoom:80%;width:80%;padding:200px;font-size:1.1em;background:linear-gradient(tan,linen)}
+div.jobContainer div, div.joblessContainer div, div#technicalSkillsContainer div {display:none}
+div.jobContainer:hover ,div.jobContainer:hover div, div.joblessContainer:hover ,div.joblessContainer:hover div, div#technicalSkillsContainer:hover , div#technicalSkillsContainer:hover div, li {display:block;background-color:tan;color:blue} 
+div.jobContainer:hover ,div.jobContainer:hover div, div.joblessContainer:hover ,div.joblessContainer, div#technicalSkillsContainer, div#technicalSkillsContainer {cursor:pointer} 
+
+.jobContainer,.joblessContainer, .jobTitle, #joblessTitle, #techSkills {color:red}
+
+#heading {margin: 20px auto;text-align:center;font-size:1.35em}
+#techSkillsTitle, #profExpTitle, #eduHistTitle  {font-size:1.5em}
+#techSkillsTitle {cursor:pointer}
+
+li {display:list-item;font-size:1.1em}
+#topbar {
+          position:relative;width:auto;height:95px;font-size:1.7em;text-align:center;color:red;background-color:grey;padding:2px;
+          padding-top:15px;padding-left:20px;padding-right:20px;
+		}
+#toplabel {position:relative;float:left;font-size:1.1em;width:68%;height:auto;}
+#viewPDF, #downloadPDF 
+{
+		position:relative;height:auto;width:15%;border:ridge 4px black;font-size:0.7em;
+		padding-top:5px;background-color:white;border-radius: 15px;
+}
+#viewPDF {float:left;cursor:pointer}
+#downloadPDF {float:right;cursor:pointer}
+div#viewPDF:hover, div#downloadPDF:hover {
+	background:linear-gradient(white,lightgray);
+	 box-shadow: inset 0px 0px 5px 3px rgba(0,0,0,0.2);
+	}
+#emailAdd1, #emailAdd2  {color:blue;text-decoration:underline;cursor:pointer}
+#emailAdd1:hover, #emailAdd2:hover {color:red}
+ </style>
+
+
+
+</head>
+<body onload="JQFunctions()">
+<div id="topbar"><div id="viewPDF">View PDF<br/>Resume</div><div id="toplabel">Hover Over Red Items to See Expanded Content</div><div id="downloadPDF">Download PDF<br/>Resume</div></div>
+<p id="heading">
+	Richard L. Sypert Jr.
+	<br/>8612 Shady Pines Drive
+	<br/>Las Vegas, Nevada 89143
+	<br/>Home Phone: (702) 655-4901 Anytime
+	<br/>Cell Phone: (702) 203-1674 Anytime
+	<br/>Citizenship: United States
+	<br/><span id="emailAdd1">Email:  Rsypertjr@hotmail.com</span>
+	<br/><span id="emailAdd2">Email:  Rsypertjr@gmail.com</span>
+</p><br/><br/>
+
+<div id="technicalSkillsContainer"><span id="techSkillsTitle">Technical Expertise (Through Job Experience and Study)</span>
+	<div id="techSkills">
+		<ol>
+			<li>B.S. Mechanical Engineering from Kansas University</li>
+			<li>Technical Project Management including Research/Design, Procurement,and Implementation; 
+			Object Oriented Programming (OOP) in (C++, Visual C++.Net, Visual Basic.Net, Visual C#.Net, Visual Studio, Java, VBScript, JavaScript, DHTML, DOM, XML, XSLT, AJAX, CSS, JQUERY, ASP.Net, ADO.Net)  Much of this OOP knowledge gained thru self-study in addition to many credit hours of Computer Science study at UNLV and CSN</li> 
+			<li>I have used PHP, DHTML, XMLDOM, HTMLDOM, Javascript, SVG, XML, and MySQL for programming Web-based applications</li>
+			<li>PHPUnit for unit-testing of code</li>
+			<li>Behant/Mink for behavior-driven code development</li>
+			<li>SQL, Microsoft SQL, PL/SQL programming.</li>
+			<li>ArcView GIS;</li> 
+			<li>AutoCad;</li> 
+			<li>Several years of Technical Writing experience as a Process Engineer (8 years) who led technical projects where I wrote Design, Purchase, and Operational specification documents.  I have also had two technical writing jobs, and I have done technical writing in other engineering and software jobs.</li>
+			<li>Microsoft Operating Systems (XP, Vista, 7);</li> 
+			<li>Ubuntu Linux, LAMP environment programming</li>
+			<li>Computer Networking Principles;</li> 
+			<li>Microsoft Word 2003, 2007, and 2010;</li> 
+			<li>Adobe InDesign</li>
+			<li>Graphic image editing and format conversions</li>
+			<li>Here is a link to some of my work:&nbsp;<a href='https://www.asuswebstorage.com/navigate/s/F15EBE072F6D4C63BB26399C941696384'>Work Archive</a></li>
+		</ol>
+	</div>
+</div><br/>
+<div id="profExpTitle">Professional Experience</div>
+
+<div class="jobContainer">UNLV School of Life Sciences...................................................May 1st 2012 to June 30 2012
+	
+	<div class="employerAddress">
+		University of Nevada, Las Vegas
+		4505 Maryland Parkway
+		Las Vegas, NV 89154-4004 USA  
+	</div>
+
+	<div class="jobTitle">	Software Programmer/Research Assistant
+		<ul>
+			<li>I was hired to a 5 week contract by Dr. Martin Schiller to write a program for   
+				an Organism Relation Ontology (ORO) Miner which provides hierarchical and 
+				graphical representation of the different Organ Systems and their sub-systems.  
+				I had previously completed a test program for extracting Motif (amino acid code
+				patterns) relationships and statistics from proteins (large sequences of amino
+				acid codes). 
+			</li>
+			<li>Both programs use combinations of software languages:  DHTML, CSS, XML, XMLDOM,
+				HTMLDOM, JavaScript, MySQL, SVG, DOM and PHP.  I completed two programs for two
+				different Organ System/sub-system data structures.  
+			</li>
+			<li>These programs have event-driven GUI interaction for information selection 
+			    from hierarchical tree display, and information display is in hybrid form 
+				node-based 2-D graphs and tables. 
+			</li>
+			<li>Here is a link to one of the applications:  <a href="http://rsypertjr.byethost5.com/">Orominer Program</a> 
+			</li>
+			<li>The programs transformed MySQL database information to an XML database for
+				application use.  The programs use recursive iteration and active xml data
+				objects for operation.  I worked mostly from home on this project. 
+			</li>
+		</ul>
+	</div>
+	
+</div><br/>
+
+<div class="joblessContainer">Seeking Employment...................................................Since April 2011
+	<div class="joblessDescription">
+		<ol>
+			<li>Most recently, I have written a program with PHP, MySQL, JavaScript, Ajax, and
+				Apache Server for UNLV Life Science Dept that found amino acid sequences in
+				Proteins.   PHP and Regex technology were used to create a MySQL database from
+				text files of amino acid codes.  DHTML, XML, JavaScript, Ajax technologies where
+				used to write a gui that extracted the requested statistical information from a MySQL database.
+			</li>
+			<li>I interviewed with the Southern Nevada Water Authority for a Water Systems Engineer position, 
+				and by Credit One for an .Net Programming postion. 
+			</li>
+			<li>I interviewed with Fortu-Net for a C++ Programming position.</li>
+			<li>I interviewed with Selling-Source for a Software Test Engineer position.  The later was after completing a software programming assignment with phpunit and Behat/Mink
+				Behavior Driven Development for unit-testing and application development of PHP
+				code.
+			</li>
+		</ol>
+	</div>
+</div><br/>
+
+<div class="jobContainer">InsureZone...................................................January 31, 2011 to April 11, 2011
+	
+	<div class="employerAddress">
+		1070 W. Horizon Ridge Pkwy. Suite 204
+		Henderson, NV, 89012
+    </div>
+	<div class="jobTitle">Software Developer
+		<ul>
+			<li>Web-based programming using XSLT, JavaScript, and AJAX to transform XML and HTML to Dynamic (D)HTML.  
+				The XML represented data for automated insurance quotations from on-line applicants.  XSLT and Javascript 
+			   (which  both coded insurance rules per state) transformed the XML, and the HTML on the Insurance Carrier website, to (D)HTML submitted on the carrier websites to generate automatic insurance applications, which in-turn generated automatic quotations/declines/holds/etc from the insurance carriers in XML format.
+				Used Jedit and Textpad to code XML and XSL.
+			</li>
+			<li>Used Virtual Office technologies like Trillian and Desktop VPN</li>
+			<li>Used File versioning software called Perforce</li>
+			<li>Obtained job by completing their programming test</li>
+			<li>Technical Writing</li>
+		</ul>
+	</div>
+	
+</div><br/>
+
+
+<div class="jobContainer">Power Efficiency Corporation...................................................August 9, 2010 to October 29, 2010
+	
+	<div class="employerAddress">
+		839 Pilot Road, Suite A
+		Las Vegas, NV 89119
+    </div>
+	<div class="jobTitle">Engineering Support Analyst/Technical Writer -Individual Contractor/Consultant
+		<ul>	
+			<li>Used Adobe In-Design to create product manuals for Electric Induction
+				Motor Efficiency Controllers.  This was for their existing and next generation
+				products.
+			</li>
+			<li>Used Microsoft Word 2003/2007/2010 for editing</li>
+			<li>Did conversion between PDF and Word formats</li> 
+			<li>Performed Graphic illustration format conversions</li>
+			<li>Used Picasa software and Print Screen utility for Screen Capture</li>
+			<li>Worked on Web-based-Knowledge-Repository using Microsoft Visual Studio 2010 and its LINQ-to-SQL feature.</li>
+			<li>Edited the company technology white paper for better technology clarification.</li>  
+			<li>Gave consultation for improvement of engineering and corporate inter-relationship of processes.  Helped formulate Product Requirement and Product Development 
+				procedures and documentation
+			</li>
+		</ul>
+	</div>
+</div><br/>
+
+
+
+
+
+<div class="joblessContainer">Seeking Employment...................................................March 2006 to August 2010
+	<div class="joblessDescription">
+		<ol>	
+			<li>During this time gap I was diligently seeking employment.  I applied for hundreds of jobs and I 
+				had a good amount of interviews with companies like:
+				<ul>
+					<li>Cox Communications Product Engineer</li>  
+					<li>Clark County Government GIS Programmer</li> 	
+					<li>Bally Technologies Software Engineering (twice)</li>    	
+					<li>UNLV IT position</li>   
+					<li>City of North Las Vegas Business Systems</li> 	
+					<li>Analyst; Arcata Computer Programmer II</li>	
+					<li>Agilysys Tech Trainer</li> 
+					<li>Timet Process Engineer</li> 
+					<li>AGS- Diamond Scribing</li> 	
+					<li>Operator; CPI Card Process Engineer</li>  
+				</ul>
+			</li>
+			<li>I also interviewed for several other Programming and Engineering jobs.  I was 	
+				registered with Job Placement agencies like Robert Half, TekSystems, Eastridge InfoTech, 
+				Link Technologies, and others.  I had face-to-face interviews with these organizations and I attended 
+				by many Job Fairs.
+			</li>
+			<li>I made volumes of applications online thru sites like:
+				<ul>
+					<li>JobConnect</li> 
+					<li>CareerBuilder</li> 
+					<li>Dice</li> 
+					<li>Las Vegas</li> 	
+					<li>Review Journal Jobs, and others</li>
+				</ul>
+			<li>
+				Doing Job Applications was a full-time occupation with my main focus on IT,  Technical Writing, and
+				Engineering jobs.
+			</li>
+		</ol>
+	</div>
+</div><br/>
+
+<div class="jobContainer">Southern Nevada Health District...................................................September 2005 to March 
+	
+	<div class="employerAddress">
+		625 Shadow Lane, Las Vegas, Nevada 89127
+	</div>
+	<div class="jobTitle">Environmental Health Engineer
+		<ul>
+			<li>Review of Site Plans submitted to Clark County for Residential and Commercial development, 
+				to inspect whether water and sewer design meets county design criteria and safety standards 
+				(including proper relationship to public utilities)
+			</li>
+			<li>Learned and used Python programming language and Microsoft Visual Basic</li>
+			<li>Used Microsoft Word to write Work Process Definitions for my Engineering Review processes</li>
+			<li>Learned and used Microsoft Visual C#.Net programming language to write work process automation
+				program 
+			</li>
+			<li>Used Auto-Cad to inspect Land Development plans</li>
+			<li>Learned and used Arc-View GIS to apply county design criteria to Land Development
+		</ul>
+	</div>
+</div><br/>
+
+<div class="jobContainer">Aderholt Specialty Las Vegas...................................................August 2004 to December 2004
+	
+	<div class="employerAddress">
+		5525 South Valley View, Las Vegas, NV, 89118 
+	</div>
+	<div class="jobTitle">Construction Worker
+		<ul>
+			<li>Construction work involving removal, transport, and disposal of rapidly accumulating debris in work areas to prevent the impediment of other concurrent construction operations in the building of a high-rise tower for Caesar's casino.</li>
+		</ul>
+	</div>
+</div><br/>
+
+
+<div class="jobContainer">Red Inc. Communications Las Vegas...................................................December 2002 to February 2003  
+	
+	<div class="employerAddress">
+		3320 North Buffalo #205, Las Vegas, NV, 89129
+	</div>
+	<div class="jobTitle">Technical Writer/Editor 
+		<ul>
+			<li>Used Microsoft Word to perform technical editing of Nuclear Engineering directive and procedural
+				documents in support of Bechtel Nevada
+			</li>
+			<li>Used Microsoft Excel to log a daily record of my work history</li>
+		</ul>
+	</div>
+</div><br/>
+
+
+<div class="jobContainer">Center for Enterprise and Information...................................................January 2002 to February 2002
+	
+	<div class="employerAddress">
+		Clark County Government Building
+	</div>
+	<div class="jobTitle">Systems Technician Trainee
+		<ul>
+			<li>Temporary stint of Systems Technician experience of desktop maintenance of Windows 98/NT/2000
+				Operating System
+			</li>
+			<li>Use of Internet and Windows Networking Techniques to install applications on Desktop computers</li>
+			<li>Hardware component replacement for Desktop computers</li>
+			<li>Hardware and software imaging for automated install to groups of desktop units</li>
+		</ul>
+	</div>
+</div><br/>
+
+
+<div class="joblessContainer">College Student and Christian Ministry...................................................September 1996 to May 2001
+	<div class="joblessDescription">
+		<ul>Las Vegas, Nevada
+			<li>Served as a Deacon and Usher and Teacher and Outreach Leader at my church</li>  
+			<li>Served at the local Las Vegas Rescue Mission</li> 
+			<li>Attended classes at UNLV and CSN totally 140 credit hours in mostly Computer Science, Math, 
+				and Liberal Arts
+			</li>
+			<li>Received several academic honors including:  National Collegiate Math Honor Society (UNLV), 
+				Human Behavior Student of the Year (CSN), NASA Science Scholarship (CSN), and others
+			</li>
+		</ul>
+	</div>
+</div><br/>
+
+<div class="jobContainer">Allied-Signal Aerospace (now Honeywell...................................................May 1983 to January 1991
+	
+	<div class="employerAddress">
+		2001 Bannister Road, Kansas City, Missouri, 64128
+	</div>
+	<div class="jobTitle">Process Engineer (became Senior Process Engineer)
+		<ul>
+			<li>Provided Engineering Support to the Printed Circuit Board factory's chemical/mechanical 
+				processes with process and equipment optimization and design
+			</li>
+			<li>Performed the Lead Engineering responsibility in the procurement of two computer-automated optical
+				inspection systems used for quality-verification of machining and circuitry inspection operations
+			</li>
+			<li>Designed mechanics and software algorithms which enabled system automation function of the 
+				optical inspection system
+			</li>
+			<li>Collaborated with in-house support departments (numerical programming, maintenance engineer,
+				metrology engineering) in design of system software interfaces, maintenance and calibration
+				requirements for the optical inspection system
+			</li>
+			<li>Authored the technical documents for Purchasing and Operational specifications of the system</li>  
+			<li>Led the design, procurement, and implementation functions including the provision of consultation to vendor design personnel during system build</li>
+		</ul>
+	</div>
+</div><br/>
+
+<div id="eduHistTitle">Educational History</div>
+<div class="joblessContainer">The University of Kansas...................................................September 1980 to May 1983
+	<div class="joblessDescription">
+		<ul>
+			<li>Lawrence, Kansas</li>
+			<li>Degree/Credits:  B.S. in Mechanical Engineering</li>
+		</ul>
+	</div>
+</div><br/>
+			
+<div class="joblessContainer">Community College of Southern Nevada...................................................September 1996 to May 2002 
+	<div class="joblessDescription">
+			<ul>
+				<li>Las Vegas, Nevada</li>
+				<li>Degree/Credits: 59 credits, 3.44 GPA</li> 
+				<li>Studied:
+					<ul>
+						<li>Psychology</li> 
+						<li>Computer Technology (Microsoft Windows, Oracle PL/SQL, Java, Novell and Windows
+							computer networking)
+						</li>
+						<li>Named Human Behavior Student of the Year (1997)</li> 
+						<li>Received a NASA Science Scholarship</li>
+					</ul>
+				</li>
+			</ul>
+	</div>
+</div><br/>
+
+	
+<div class="joblessContainer">University of Nevada Las Vegas...................................................September 1998 to May 2001
+	<div class="joblessDescription">
+				<ul>
+						<li>Las Vegas, Nevada</li>
+						<li>Degree/Credits:  81 credits, 3.27 GPA</li> 
+							<ul>
+								<li>Studied mostly Computer Science,  Math, and Liberal Arts</li> 
+								<li>Recognized for Outstanding Academic Achievement from the UNLV Alliance of Professionals of 
+									African Heritage
+								</li>
+								<li>Inducted into the UNLV Student Chapter of Phi Mu Epsilon Mathematical Association of America</li>
+								<li>Excelled in writing technical/mathematical computer algorithms such as:
+									<ul>
+										<li>Custom Database (with custom data structures and recursive search)</li> 
+										<li>Digital Image Processing (with Discrete Calculus and Statistical techniques applied 
+											with Microsoft foundational classes to pixel matrix)
+										</li>
+										<li>Parallel-Processing involving messaging between Unix system level processes within 
+											nested looping structure
+										</li>
+									</ul>
+								</li>
+							</ul>
+				</ul>
+	</div>
+</div><br/><br/>		 
+ </form>
+	<div id="formcontainer2">
+	<?php echo validation_errors(); ?>
+	<?php 
+			$attributes = array('id'=>'itemform');
+			echo form_open('othello/index2',$attributes); 
+	?>
+	<input type="hidden" name="itemchoice" value='none'/>
+ </form>
+       			 
+			 
+</body>
+</html>

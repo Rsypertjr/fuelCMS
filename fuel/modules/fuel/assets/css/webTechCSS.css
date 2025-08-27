@@ -1,0 +1,28 @@
+	
+		
+	      
+		#aboutContainer 
+			{
+				position:relative;
+				float:left;
+				border-top-width:20px;
+				border-bottom-width:25px;
+				border-right-width:20px;
+				border-left-width:20px;
+				border-style:ridge;
+				border-color:grey;
+				height:auto;
+				width:95%;
+				padding:1%;
+				background-color:#C5D3F1;
+	
+			}
+			
+        #aboutContainer  p {
+        	font-size:2em;
+        	margin:0.5em 0;
+        	background-color:white;
+        	padding:1em;
+        }
+         
+        #aboutContainer  h1 {font-size:3em;margin:1em 0;}
