@@ -188,7 +188,7 @@
 							</div-->					
 							<div class="carousel-item">
 							<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based Front End</h4> 
-								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://laravelvotes.rsypertjr.net/votes-table" 
+								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://lar10reactmix.rsypertjr.net/" 
 								target="_blank">See App</a>.&nbsp;&nbsp;This app uses React Hooks like UseEffect and UseState for functional components.&nbsp;&nbsp;
 								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">See Code</a>.
 								</p>	
@@ -197,7 +197,7 @@
 								<h4><a href="https://preselections.rsypertjr.net/">Docker Laravel-9 Vite,React 17/Bootstrap/Chartjs Vote Parser Implementation</a></h4>
 								<p>Also included is the code for another Vote Parer implementation using Docker/Docker-compose of Laravel 9 with Vite for React 17 javascript compilation. React Bootstrap and Chartjs is also utilized as before.
 								Link to this code is <a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/docker-laravel-vite" target="_blank">See Code</a>&nbsp;&nbsp;
-								<a href="https://preselections.rsypertjr.net/">See App</a>
+								<a href="https://preselections.rsypertjr.net/" target="_blank">See App</a>
 								</p>
 							</div>
 							<div class="carousel-item">
