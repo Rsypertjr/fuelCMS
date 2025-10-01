@@ -188,7 +188,7 @@
 							</div-->					
 							<div class="carousel-item">
 							<h4>Laravel-Mix MVC, React/Bootstrap/JQuery/ChartJs Component-based Front End</h4> 
-								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://lar10reactmix.rsypertjr.net/" 
+								<p>Laravel (Mix) with React.js,&nbsp;React Router,&nbsp;Chart.js,&nbsp;and Bootstrap is used in this app:&nbsp;<a href="https://lar10reactmix.rsypertjr.net/votes-table" 
 								target="_blank">See App</a>.&nbsp;&nbsp;This app uses React Hooks like UseEffect and UseState for functional components.&nbsp;&nbsp;
 								Here is code link:&nbsp;<a href="https://github.com/Rsypertjr/Laravel-React-Chartjs-Votes-Parser/tree/latest2" target="_blank">See Code</a>.
 								</p>	
