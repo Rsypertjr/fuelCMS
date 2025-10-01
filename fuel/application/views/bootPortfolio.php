@@ -162,15 +162,20 @@
 								<h4>Professional Experience</h4> 
 								<p class="text-break">This site shows my experience as a Software Developer,&nbsp;Technical Writer,&nbsp;and Engineer.&nbsp;&nbsp;It has been updated to Bootstrap 4.0.&nbsp;&nbsp;
 									This carousel presents Information about my Work History.
+                                                                </p>
+                                                                <div class="card-body" style="background-color:lightgrey;width:60%;margin-left:20%">
+									<h2 class="card-title" style="background-color:#b3ccff;padding:0.5em">See New Laravel-11 React Bootstrap 5 Portfolio</h2>
+									<p class="card-text"style="background-color:#b3ccff;padding:0.5em" >Laravel on Back-end and React, Vite, Boostrap 5 on the front-end.  Some apps are refactored into this framework including 
+										<a href="https://laravelportfolio.rsypertjr.net/amino" target="_blank">Amino-Acid-Code-Sequence-Analyzer</a> and <a href="https://laravelportfolio.rsypertjr.net/orominer1" target="_blank">Orominer</a>.</p>
+									<a href="https://laravelportfolio.rsypertjr.net/portfolio" target="_blank" class="btn btn-primary">Go see it!</a>
+									<a href="https://github.com/Rsypertjr/code_storage/tree/laravel-portfolio-dev" target="_blank" class="btn btn-primary">See the code!</a>
+								</div>
 							</div>				
 							<div class="carousel-item">
 								<h4>Digital Ocean Cloud-based computing and Ubuntu Linux Virtual Hosting</h4> 
 								<p style="margin:0 15% 2% 15%">
 									This site is hosted on Ubuntu 20.04 Digital Ocean Droplets,&nbsp;utilizing Apache Virtual Hosting in a LAMP stack.
 								    &nbsp;&nbsp;Visual Studio Code is the development environment within the FuelCMS Php-based framework.
-									&nbsp;&nbsp;A Laravel 11, Vite, React, Boostrap 5 version of this portfolio is also available
-									<a href="https://laravelportfolio.rsypertjr.net/portfolio" target="_blank">Here.</a>
-									&nbsp;&nbsp;<a href="https://github.com/Rsypertjr/code_storage/tree/laravel_portfolio_prod" target="_blank"> With Code Here.</a>
 								</p> 
 							</div>				
 							<div class="carousel-item">
@@ -189,9 +194,10 @@
 								</p>	
 							</div>
 							<div class="carousel-item">
-								<h4>Docker Laravel-9 Vite,React 17/Bootstrap/Chartjs Vote Parser Implementation</h4>
+								<h4><a href="https://preselections.rsypertjr.net/">Docker Laravel-9 Vite,React 17/Bootstrap/Chartjs Vote Parser Implementation</a></h4>
 								<p>Also included is the code for another Vote Parer implementation using Docker/Docker-compose of Laravel 9 with Vite for React 17 javascript compilation. React Bootstrap and Chartjs is also utilized as before.
-								Link to this code is <a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/docker-laravel-vite" target="_blank">See Code</a>
+								Link to this code is <a href="https://github.com/Rsypertjr/Docker-Laravel-Vite-React-Bootstrap-Chartjs/tree/docker-laravel-vite" target="_blank">See Code</a>&nbsp;&nbsp;
+								<a href="https://preselections.rsypertjr.net/">See App</a>
 								</p>
 							</div>
 							<div class="carousel-item">
@@ -914,7 +920,7 @@
 								<i class="camera retro icon"></i>
 							</span>
 						</div>
-						<div class="row cvrtitle justify-conA MERN Stack application that uses Google Programmable API to make customized searches for Car Information within React-Bootstrap. tent-center align-items-center">
+						<div class="row cvrtitle justify-content-center align-items-center">
 							<p>Living In Vegas</p>
 						</div>
 						<div class="row cvrbody justify-content-center align-items-center">
