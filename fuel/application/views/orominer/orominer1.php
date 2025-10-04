@@ -1173,7 +1173,7 @@ function doSystems(xmlDoc,nme,nodeDoc,xnodeDoc,tableDoc)
         	
      }
 
-
+	 console.log("nodeDoc: ",nodeDoc);
 
 	if(tableDoc==null)
 		{
@@ -1628,6 +1628,7 @@ function loadGUI()  // This function loads the HTML of gui on body load
 				{url:"<?php echo $vars['orominer1XML']; ?>",success:function(result)
 					{
 					    xmlDoc=result;
+						console.log("xmlDoc: ",xmlDoc);
 						// Main application Function.  It is called Recursively
 						doSystems(result,"top",null,null,null);
 						
