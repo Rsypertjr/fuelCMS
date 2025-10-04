@@ -159,6 +159,23 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
+								<h4>AI Developer & GitHub Copilot Specialist<br/>
+								Presidential Voting Analysis & Code Storage Platform</h4>
+								<p class="d-flex justify-content-center text-break">Comprehensive Next.js application with Supabase SQL integration featuring interactive electoral data analysis, real-time voting
+									trend visualization, and demographic insights. Incorporates GitHub Copilot-powered code management
+									with intelligent organization, automated tagging, search functionality, and collaborative development
+								</p>
+								<div class="card-body" style="background-color:lightgrey;width:60%;margin-left:20%">
+									<h3 class="card-title" style="background-color:#b3ccff;padding:0.5em;color:black">New Next.js-AI-CoPilot Developed Presidential Voting Analyzer</h3>
+									<p class="card-text"style="background-color:#b3ccff;padding:0.5em" >Supabase SQL Integration for Front-End Dynamic Interaction, with Server-Side Rendering for SEO.&nbsp;&nbsp;
+										GitHub Copilot AI is used for Code Management and Intelligent Code Generation.
+										<a href="https://codestorage.vercel.app" target="_blank" class="btn btn-primary">See App</a>&nbsp;&nbsp;and&nbsp;&nbsp;
+										<a href="https://github.com/Rsypertjr/code_storage/tree/presidentelect" target="_blank" class="btn btn-primary">See the code!</a>
+									</p>
+									
+								</div>
+							</div>				
+							<div class="carousel-item">
 								<h4>Professional Experience</h4> 
 								<p class="text-break">This site shows my experience as a Software Developer,&nbsp;Technical Writer,&nbsp;and Engineer.&nbsp;&nbsp;It has been updated to Bootstrap 4.0.&nbsp;&nbsp;
 									This carousel presents Information about my Work History.
@@ -231,6 +248,10 @@
 								<li data-target="#myJumboCarousel" data-slide-to="2"></li>
 								<li data-target="#myJumboCarousel" data-slide-to="3"></li>
 								<li data-target="#myJumboCarousel" data-slide-to="4"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="5"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="6"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="7"></li>
+								<li data-target="#myJumboCarousel" data-slide-to="8"></li>
 							</ol> 
 						</div>
 						<div>
@@ -638,19 +659,19 @@
 									<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.<br>
 									Here is the code: <a href="https://bitbucket.org/Rsypertjr/laravel-test/src/master/" target="_blank">Laravel Code</a>
 									</p>
-								</li>
+								</li-->
 								<li class="list-group-item list-group-item-info">
-									<a href="laravelApp3" target="_blank">
+									<a href="https://codestorage.vercel.app/" target="_blank">
 										<p  class="sectionTitle">
-											<a href="laravelApp3" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Another Laravel App</a>
+											<a href="https://codestorage.vercel.app/" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">AI-CoPilot-Next.js-Suprabase-Voting Analyzer</a>
 										</p>
 									</a>
-									<object data="laravelApp3" height="200" width="300"></object>
-									<p>Developed using Laravel Homestead Environment for generating Homeschool grade transcripts for my kids.<br>
-									Here is the code: <a href="https://github.com/Rsypertjr/transcriptor" target="_blank">Laravel Code</a>
+									<object data="https://codestorage.vercel.app/" height="200" width="300"></object>
+									<p>New Next.js-AI-CoPilot Developed Presidential Voting Analyzer.&nbsp;&nbsp;Supabase SQL Integration for Front-End Dynamic Interaction, with Server-Side Rendering for SEO.&nbsp;&nbsp;
+										GitHub Copilot AI is used for Code Management and Intelligent Code Generation.<br>
+									Here is the code: <a href="https://github.com/Rsypertjr/code_storage/tree/presidentelect" target="_blank">AI-Assisted Code</a>
 									</p>
-								</li-->
-								
+								</li>						
 								<li class="list-group-item">
 									<a href="tictactoe" target="_blank">
 										<p  class="sectionTitle">
@@ -739,8 +760,10 @@
 							<p>Frameworks</p>
 						</div>
 						<div class="row cvrbody justify-content-center align-items-center">
-							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Some utilization of the Laravel MVC Framework and Node Express.
-                                                         Docker and Docker Compose Technologies used withth NPM and Webpack dependency management.</p>
+							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,
+								<br/>Some utilization of the Laravel MVC Framework and Node Express.&nbsp;&nbsp;Docker and Docker Compose Technologies used with NPM and Webpack dependency management.
+								<br/>Added GitHub Copilot AI for Intelligent Code Generation and Management of Vercel-hosted Presidential Voting Analyzer App.
+							</p>
 						</div>
 					  </div>
 				  </div>
