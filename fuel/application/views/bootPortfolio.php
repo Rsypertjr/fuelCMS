@@ -659,19 +659,19 @@
 									<p>Originally developed using Homestead development environment which utilizes Vagrant VM Linux Server, and deployed to Heroku server.<br>
 									Here is the code: <a href="https://bitbucket.org/Rsypertjr/laravel-test/src/master/" target="_blank">Laravel Code</a>
 									</p>
-								</li>
+								</li-->
 								<li class="list-group-item list-group-item-info">
-									<a href="laravelApp3" target="_blank">
+									<a href="https://codestorage.vercel.app/" target="_blank">
 										<p  class="sectionTitle">
-											<a href="laravelApp3" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">Another Laravel App</a>
+											<a href="https://codestorage.vercel.app/" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click for Full Page App!">AI-CoPilot-Next.js-Suprabase-Voting Analyzer</a>
 										</p>
 									</a>
-									<object data="laravelApp3" height="200" width="300"></object>
-									<p>Developed using Laravel Homestead Environment for generating Homeschool grade transcripts for my kids.<br>
-									Here is the code: <a href="https://github.com/Rsypertjr/transcriptor" target="_blank">Laravel Code</a>
+									<object data="https://codestorage.vercel.app/" height="200" width="300"></object>
+									<p>New Next.js-AI-CoPilot Developed Presidential Voting Analyzer.&nbsp;&nbsp;Supabase SQL Integration for Front-End Dynamic Interaction, with Server-Side Rendering for SEO.&nbsp;&nbsp;
+										GitHub Copilot AI is used for Code Management and Intelligent Code Generation.<br>
+									Here is the code: <a href="https://github.com/Rsypertjr/code_storage/tree/presidentelect" target="_blank">AI-Assisted Code</a>
 									</p>
-								</li-->
-								
+								</li>						
 								<li class="list-group-item">
 									<a href="tictactoe" target="_blank">
 										<p  class="sectionTitle">
@@ -760,8 +760,10 @@
 							<p>Frameworks</p>
 						</div>
 						<div class="row cvrbody justify-content-center align-items-center">
-							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,<br>Some utilization of the Laravel MVC Framework and Node Express.
-                                                         Docker and Docker Compose Technologies used withth NPM and Webpack dependency management.</p>
+							<p class="text-center">Programming I've done using:<br>Node.js based technologies of Vue, Angular, and React,
+								<br/>Some utilization of the Laravel MVC Framework and Node Express.&nbsp;&nbsp;Docker and Docker Compose Technologies used with NPM and Webpack dependency management.
+								<br/>Added GitHub Copilot AI for Intelligent Code Generation and Management of Vercel-hosted Presidential Voting Analyzer App.
+							</p>
 						</div>
 					  </div>
 				  </div>
