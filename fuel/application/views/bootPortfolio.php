@@ -167,10 +167,10 @@
 								</p>
 								<div class="card-body" style="background-color:lightgrey;width:60%;margin-left:20%">
 									<h3 class="card-title" style="background-color:#b3ccff;padding:0.5em;color:black">New Next.js-AI-CoPilot Developed Presidential Voting Analyzer</h3>
-									<p class="card-text"style="background-color:#b3ccff;padding:0.5em" >Supabase SQL Integration for Front-End Dynamic Interaction, with Server-Side Rendering for SEO.&nbsp;&nbsp;
+									<p class="card-text"style="background-color:#b3ccff;padding:1em;height:auto" >Supabase SQL Integration for Front-End Dynamic Interaction, with Server-Side Rendering for SEO.&nbsp;&nbsp;
 										GitHub Copilot AI is used for Code Management and Intelligent Code Generation.
-										<a href="https://codestorage.vercel.app" target="_blank" class="btn btn-primary">See App</a>&nbsp;&nbsp;and&nbsp;&nbsp;
-										<a href="https://github.com/Rsypertjr/code_storage/tree/presidentelect" target="_blank" class="btn btn-primary">See the code!</a>
+										<a href="https://codestorage.vercel.app" style="margin-top:1em" target="_blank" class="btn btn-primary">See App</a>
+										<a href="https://github.com/Rsypertjr/code_storage/tree/presidentelect" style="margin-top:1em;margin-left:1em"target="_blank" class="btn btn-primary">See the code!</a>
 									</p>
 									
 								</div>
@@ -891,12 +891,12 @@
 						<div class="panel-body">
 							<li class="list-group-item list-group-item-success">
 								<img class="img-circle img-fluid" src="<?php echo $vars['jobdone']; ?>" alt="Resume">
-								<a href="dynResume" target="_blank">
+								<a href="https://rsypertjr.net/index.php/pdfResume" target="_blank">
 									<p  class="sectionTitle" >
-										<a href="dynResume" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">Dynamic HTML Resume w/Downloads</a>
+										<a href="https://rsypertjr.net/index.php/pdfResume" target="_blank"  data-toggle="tooltip" data-placement="right"  title="Click to See It Full Page!">PDF Resume with live links</a>
 									</p>
 								</a>
-								<object data="dynResume" height="200" width="300"></object>
+								<object data="https://rsypertjr.net/index.php/pdfResume" height="200" width="300"></object>
 								<p>Here is a link to my resume which uses dynamic CSS formatting.</p>
 							</li>
 						 </div>	

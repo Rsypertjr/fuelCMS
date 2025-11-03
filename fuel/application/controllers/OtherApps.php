@@ -192,6 +192,12 @@ class OtherApps extends CI_Controller {
         $this->fuel->pages->render('showApp',$this->vars);
         
     }
+
+     function laravelPortfolio(){
+        $this->vars['url'] = "https://laravelportfolio.rsypertjr.net/portfolio";
+        $this->fuel->pages->render('showApp',$this->vars);
+        
+    }
     
      
     function caribCatering(){

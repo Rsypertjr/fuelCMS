@@ -95,7 +95,7 @@ $route['getdata/(:any)'] = 'otherApps/getData/$1';
 $route['ajax-getMotifs']['post'] = 'getMotifs/index';
 
 
-$route['front'] = 'otherApps/bootPortfolio';
+$route['front'] = 'otherApps/laravelPortfolio';
 $route['boot'] = 'otherApps/bootPortfolio';
 
 $route['caribStore'] = 'otherApps/caribStore';
